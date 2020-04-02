@@ -168,7 +168,7 @@ private Object processButon(ClickEvent<Button> evt, JsonNode rowSubMenu) {
 	try {
 		String urlBase = "../dymanic";
 		String hostName = InetAddress.getLocalHost().getHostName() ;
-		if (hostName.startsWith("MacBook-Air-de-Cesar.local") == false) // to diferent when is running in local (Maven) or in remote (tys.war -> tomcat)
+		if (hostName.indexOf(".local") == -1) // to diferent when is running in local (Maven) or in remote (tys.war -> tomcat)
 			urlBase= "../tys/dymanic";
 	String resource = rowSubMenu.get("resource").asText();
 	String queryFormClassName = rowSubMenu.get("queryFormClassName").asText();
