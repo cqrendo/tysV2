@@ -1,0 +1,35 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../../bower_components/vaadin-crud/src/vaadin-crud.html">
+<link rel="import" href="../../../bower_components/vaadin-grid/src/vaadin-grid.html">
+<link rel="import" href="../../../bower_components/vaadin-grid/src/vaadin-grid-column.html">
+
+<dom-module id="crud-view">
+    <template>
+<style include="shared-styles">
+            :host {
+                display: block;
+            }
+        </style>
+<!-- <iron-ajax auto="" url="https://randomuser.me/api/?results=200" handle-as="json" last-response="{{users}}"></iron-ajax> -->
+<!-- <vaadin-crud items="[[users.results]]" include="name.first, name.last, location.street,location.city, location.postcode"></vaadin-crud> -->
+<iron-ajax auto="" url="http://cloud1.intergal.coop:8083/rest/default/gferPrueba/v1/CR-actividadprofesional" handle-as="json" last-response="{{users}}" headers="{&quot;Authorization&quot;:&quot;CALiveAPICreator Vt3qo5vXaY7W9HgkFenf:1&quot;}"></iron-ajax>
+<vaadin-crud items="[[users]]" include="SECTOR, ACTIVIDAD, DESCRIPCION"></vaadin-crud>
+<div id="divCrud" style="width: 100%; height: 100%;">
+<!-- <vaadin-crud id="vCrud"></vaadin-crud> -->
+</div>
+</template>
+    <script>
+        class CrudView extends Polymer.Element {
+            static get is() {
+                return 'crud-view';
+            }
+            static get properties() {
+                return {
+                    // Declare your properties here.
+                };
+            }
+        }
+        customElements.define(CrudView.is, CrudView);
+    </script>
+</dom-module>

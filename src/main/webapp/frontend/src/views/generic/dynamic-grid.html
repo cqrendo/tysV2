@@ -1,0 +1,38 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/vaadin-grid/src/vaadin-grid.html">
+<link rel="import" href="../../components/search-bar.html">
+<link rel="import" href="../../components/utils-mixin.html">
+<link rel="import" href="../../../styles/shared-styles.html">
+<link rel="import" href="../../../bower_components/vaadin-grid-pro/src/vaadin-grid-pro.html">
+<link rel="import" href="../../../bower_components/vaadin-button/src/vaadin-button.html">
+
+<dom-module id="dynamic-grid">
+  <template>
+<style include="shared-styles">
+      :host {
+               display: flex; 
+         flex-direction: column; 
+ /*   height: 90%; 
+  	overflow:hidden; */
+      }
+    </style>
+<!--    <search-bar id="search"></search-bar>  theme="crud"-->
+<div id="itemButtons">
+ <vaadin-button id="newRow" theme="raised primary">
+  nueva lin.
+ </vaadin-button>
+ <vaadin-button id="deleteRow" theme="raised tertiary error">
+  elimina lin.
+ </vaadin-button>
+</div>
+<vaadin-grid-pro id="grid" column-reordering-allowed></vaadin-grid-pro>
+</template>
+  <script>
+    class DynamicGrid extends Polymer.Element {
+      static get is() {
+        return 'dynamic-grid';
+      }
+    }
+    window.customElements.define(DynamicGrid.is, DynamicGrid);
+  </script>
+</dom-module>

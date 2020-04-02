@@ -1,0 +1,9 @@
+.labelright {
+	text-align: right;
+	margin-right: 10px; 
+}
+.formTitle {
+	text-align: center;
+	border-style: inset;
+	margin-bottom: 20px;
+}
