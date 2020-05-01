@@ -151,7 +151,7 @@ class PedidoProveedorForm extends PolymerElement {
      <vaadin-form-layout id="form"></vaadin-form-layout> 
      <div class="linCampos"> 
       <vaadin-text-field id="col0" label="Num " maxlength="2" class="verySmall"></vaadin-text-field> 
-      <vaadin-text-field id="col1" label="" maxlength="2" class="small"></vaadin-text-field> 
+      <vaadin-text-field id="col1" label=" " maxlength="2" class="small"></vaadin-text-field> 
       <vaadin-date-picker id="col2" label="Fecha"></vaadin-date-picker> 
       <vaadin-text-field id="col3" label="Prov." class="verySmall"></vaadin-text-field> 
       <vaadin-text-field id="col4" label="Nombre Proveedor" class="veryBig" readonly="true"></vaadin-text-field> 
@@ -167,14 +167,14 @@ class PedidoProveedorForm extends PolymerElement {
      <div class="linCampos"> 
       <vaadin-text-field id="col9" label="Atencion De " maxlength="2" class="medium" style="width:12.7em"></vaadin-text-field> 
       <vaadin-date-picker id="col10" label="Plazo Entrega"></vaadin-date-picker> 
-      <vaadin-text-area id="col11" label="Texto Libre" style="width:32.5em;height:4.2em"></vaadin-text-area> 
+      <vaadin-text-area id="col11" label="Texto Libre" style="width:32.5em;height:39px"></vaadin-text-area> 
       <vaadin-text-field id="col12" class="small" label="Portes"></vaadin-text-field> 
      </div> 
      <div class="linCampos"> 
       <vaadin-text-field id="col6" label="Ag.T." maxlength="2" class="verySmall"></vaadin-text-field> 
       <vaadin-text-field id="col13" label="Transportista"></vaadin-text-field> 
       <vaadin-text-field id="col14" class="verySmall" label="F pago "></vaadin-text-field> 
-      <vaadin-text-field id="col15"></vaadin-text-field> 
+      <vaadin-text-field id="col15" ></vaadin-text-field> 
       <vaadin-text-field id="col16" class="big" label="Condiciones especiales de pago"></vaadin-text-field> 
      </div> 
      <div class="linCampos"> 
@@ -193,7 +193,7 @@ class PedidoProveedorForm extends PolymerElement {
       <vaadin-text-field id="col21" label="Suma Peso" class="verySmall"></vaadin-text-field> 
       <vaadin-text-field id="col22" class="verySmall" label="Para Cliente"></vaadin-text-field> 
       <vaadin-text-field id="col23" label="Nombre Cliente" class="big"></vaadin-text-field> 
-      <vaadin-text-field id="col24" label="Num Pedido Del Prov" class="Small"></vaadin-text-field> 
+      <vaadin-text-field id="col24" label="Num Pedido Del Prov" class="Small"></vaadin-text-field> <br>
       <vaadin-button id="vaadinButton" label="">
         ver Entrada 
       </vaadin-button> 
