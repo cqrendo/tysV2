@@ -63,3 +63,11 @@ vaadin-grid-cell-content {
 vaadin-text-field {
   align-self: auto;
 }
+
+	[part="brand"] {
+	    background-color: white;
+	    border-bottom: #284c96 10px solid;
+	    color: transparent !important;
+	    background-image: url("/images/logos/tys3.png");
+	}
+

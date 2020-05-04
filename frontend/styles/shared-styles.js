@@ -527,7 +527,14 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 	    color: #000040 !important;
 	    background: #f0f0f0 !important;
 	}
-	
+	[part="brand"] {
+	    padding: var(--lumo-space-l) var(--lumo-space-xl) var(--lumo-space-l) var(--lumo-space-l);
+	    background-color: white;
+	    border-bottom: #284c96 10px solid;
+	    color: transparent !important;
+	    background-image: url("/images/logos/tys3.png");
+	}
+
   </style> 
  </custom-style>`;
 

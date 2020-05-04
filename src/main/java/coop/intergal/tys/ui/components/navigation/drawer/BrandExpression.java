@@ -18,14 +18,15 @@ public class BrandExpression extends Div {
     public BrandExpression(String text) {
         setClassName(CLASS_NAME);
 
-        logo = new Image(UIUtils.IMG_PATH + "logos/18.png", "");
+        logo = new Image(UIUtils.IMG_PATH + "logos/tys1.png", "");
         logo.setAlt(text + " logo");
         logo.setClassName(CLASS_NAME + "__logo");
 
-        title = UIUtils.createH3Label(text);
-        title.addClassName(CLASS_NAME + "__title");
+//        title = UIUtils.createH3Label(text);
+//        title.addClassName(CLASS_NAME + "__title");
 
-        add(logo, title);
+//        add(logo, title);
+        add(logo);
     }
 
 }
