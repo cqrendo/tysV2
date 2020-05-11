@@ -48,6 +48,9 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String DEFAULT_PICK_DIALOG_WITHD = "1024px";
 	public static final String DEFAULT_PICK_DIALOG_HEIGHT = "800px";
 	public static final String DEFAULT_API_NAME = "monbus";
+	
+	public static final String STYLES_CSS = "./styles/tysstyle.css";
+	public static final String STYLES_FORM_ITEM_CSS= "./styles/tysstyle-form-item.css";
 
 	// Mutable for testing.
 	public static int NOTIFICATION_DURATION = 4000;

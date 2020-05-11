@@ -5,7 +5,9 @@ import '@vaadin/vaadin-split-layout/src/vaadin-split-layout.js';
 import '@vaadin/vaadin-split-layout/src/vaadin-split-layout.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 import { PolymerElement } from '@polymer/polymer/polymer-element.js';
-class DynamicGridDisplay extends PolymerElement {
+import {ThemableMixin} from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
+//class DynamicGridDisplay extends PolymerElement {
+class DynamicGridDisplay extends ThemableMixin(PolymerElement) {
   static get template() {
     return html`
    <style include="shared-styles">

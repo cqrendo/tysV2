@@ -155,9 +155,9 @@ public class PedidoProveedorQuery extends GenericDynamicQuery implements BeforeE
 //		UI.getCurrent().getPage().addHtmlImport("frontend://src/views/admin/products/dynamic-form.html");
 		if (bean != null)
 			binder.setBean(bean);
-		Element child = new Element ("div");
-		child.setText("XXX");
-		this.getElement().appendChild(child);
+//		Element child = new Element ("div");
+//		child.setText("XXX");
+//		this.getElement().appendChild(child);
 		queryButtonsBar.addSearchListener(e -> System.out.println("PedidoProveedorQuery.beforeEnter() BUSCAR>>>>"));
 	}
 
