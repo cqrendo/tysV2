@@ -389,6 +389,71 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 	:host([theme~="primary"]) {
     	background-color: #c6c6c6 !important;
     }
+    :host([theme~="titulomenu"]:hover)::before {
+		opacity: 0;
+    }
+    :host([theme~="entradamenu"]:hover)::before {
+		opacity: 0;
+    }
+    :host([theme~="entradamenu"]:hover) {
+		cursor: pointer;
+	}
+    :host([theme~="titulomenu"]) {
+        width: 100%;
+		background: transparent;
+		color: black !important;
+    }
+    :host([theme~="titulomenu"]) .vaadin-button-container {
+        justify-content: left !important;
+    	font-size: 20px;
+    }
+    :host([theme~="entradamenu"]) {
+		background: transparent;
+		height: 10px;
+		line-height: 10px;
+	}
+    :host([theme~="t-green"]) {
+		border-bottom: solid 7px darkgreen;
+    }
+    :host([theme~="e-green"]) {
+		border-left: 10px solid darkgreen;
+	}
+    :host([theme~="t-aqua"]) {
+		border-bottom: solid 7px aqua;
+    }
+    :host([theme~="e-aqua"]) {
+		border-left: 10px solid aqua;
+	}
+    :host([theme~="t-yellow"]) {
+		border-bottom: solid 7px #f3f41d;
+    }
+    :host([theme~="e-yellow"]) {
+		border-left: 10px solid #f3f41d;
+	}
+    :host([theme~="t-violet"]) {
+		border-bottom: solid 7px blueviolet;
+    }
+    :host([theme~="e-violet"]) {
+		border-left: 10px solid blueviolet;
+	}
+    :host([theme~="t-brown"]) {
+		border-bottom: solid 7px brown;
+    }
+    :host([theme~="e-brown"]) {
+		border-left: 10px solid brown;
+	}
+    :host([theme~="t-orange"]) {
+		border-bottom: solid 7px darkorange;
+    }
+    :host([theme~="e-orange"]) {
+		border-left: 10px solid darkorange;
+	}
+    :host([theme~="t-greenyellow"]) {
+		border-bottom: solid 7px greenyellow;
+    }
+    :host([theme~="e-greenyellow"]) {
+		border-left: 10px solid greenyellow;
+	}
     </style> 
   </template> 
  </dom-module>
