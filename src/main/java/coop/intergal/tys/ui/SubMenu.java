@@ -127,8 +127,13 @@ public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnt
 			String resourceName = rowMenu.getCol4();
 			if (resourceName.equals("null") || resourceName.length() == 0)
 			{
-				Label label = new Label(optionName);
-				vlButomsGroup1.add(label);
+
+				Button  titulo = new Button(optionName);
+				String losThemes = rowMenu.getRowJSon().get("theme").asText();
+				titulo.addThemeNames(losThemes);
+
+
+				vlButomsGroup1.add(titulo);
 				JsonNode rowNode = rowMenu.getRowJSon();
 				Iterator<JsonNode> subMenus = rowNode.get("List-menu").elements();
 				while (subMenus.hasNext())
@@ -136,18 +141,23 @@ public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnt
 					JsonNode rowSubMenu = subMenus.next();
 					String optionNameSubmenu = rowSubMenu.get("optionName").asText();
 					Button  button1 = new Button(optionNameSubmenu, evt -> processButon(evt,rowSubMenu ));
+					losThemes = rowSubMenu.get("theme").asText();
+					button1.addThemeNames(losThemes);
+					
 					vlButomsGroup1.add(button1);
 				}
 			}
 			else
 			{
 				Button  button1 = new Button(optionName, evt -> processButon(evt,rowMenu.getRowJSon() ));
+				String losThemes = rowMenu.getRowJSon().get("theme").asText();
+				button1.addThemeNames(losThemes);
 				vlButomsGroup1.add(button1);
 			}
 			
 		}
-		vlButomsGroup1.setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-		vlButomsGroup2.setDefaultHorizontalComponentAlignment(Alignment.CENTER);
+//		vlButomsGroup1.setDefaultHorizontalComponentAlignment(Alignment.CENTER);
+//		vlButomsGroup2.setDefaultHorizontalComponentAlignment(Alignment.CENTER);
 //		Button  button1 = new Button("boton 1", evt -> processButon(evt));
 //		Button  button2 = new Button("boton 2", evt -> processButon(evt));
 //		button1.getElement().setAttribute("theme", "Text");
