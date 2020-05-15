@@ -8,6 +8,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasElement;
 import com.vaadin.flow.component.UI;
@@ -33,6 +34,7 @@ import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.theme.lumo.Lumo;
 
 import coop.intergal.AppConst;
+import coop.intergal.espresso.presutec.utils.JSonClient;
 import coop.intergal.tys.ui.components.FlexBoxLayout;
 import coop.intergal.tys.ui.components.navigation.bar.AppBar;
 import coop.intergal.tys.ui.components.navigation.bar.TabBar;
@@ -42,9 +44,11 @@ import coop.intergal.tys.ui.components.navigation.drawer.NaviMenu;
 import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.tys.ui.util.css.FlexDirection;
 import coop.intergal.tys.ui.util.css.Overflow;
+import coop.intergal.tys.ui.views.GenericGridDetails;
 import coop.intergal.tys.ui.views.Home;
 import coop.intergal.ui.views.DynamicGridDisplay;
 import coop.intergal.ui.views.DynamicTreeDisplay;
+import static coop.intergal.AppConst.DEFAULT_API_NAME;
 
 @CssImport(value = "./styles/components/charts.css", themeFor = "vaadin-chart", include = "vaadin-chart-default-theme")
 @CssImport(value = "./styles/components/floating-action-button.css", themeFor = "vaadin-button")
@@ -60,7 +64,7 @@ import coop.intergal.ui.views.DynamicTreeDisplay;
 @CssImport(value = "./styles/styles.css", include = "lumo-badge")
 @Theme(value = Lumo.class, variant = Lumo.LIGHT)
 @JsModule("@vaadin/vaadin-lumo-styles/badge")
-@PWA(name = "MetaConfig", shortName = "MC", iconPath = "images/logo-18.png", backgroundColor = "#233348", themeColor = "#233348")
+@PWA(name = "tys", shortName = "tys", iconPath = "images/logo-18.png", backgroundColor = "#233348", themeColor = "#233348")
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
 
 public class MainLayout extends FlexBoxLayout
@@ -89,6 +93,8 @@ public class MainLayout extends FlexBoxLayout
     private boolean navigationTabs = false;
     private AppBar appBar;
 	private String apiname;
+	private String cache;
+
 
     public MainLayout() {
         VaadinSession.getCurrent()
@@ -118,6 +124,7 @@ public class MainLayout extends FlexBoxLayout
      */
     private void initStructure() {
         naviDrawer = new NaviDrawer();
+ //       naviDrawer.removeAll();
 
         viewContainer = new FlexBoxLayout();
         viewContainer.addClassName(CLASS_NAME + "__view-container");
@@ -142,6 +149,204 @@ public class MainLayout extends FlexBoxLayout
      */
     private void initNaviItems() {
         NaviMenu menu = naviDrawer.getMenu();
+        menu.removeAll();
+		try {
+			JsonNode rowsList = JSonClient.get("menu","APIname='"+DEFAULT_API_NAME+"'%20AND%20application='GFER'%20AND%20isFKidMenu%20is%20null",false,AppConst.PRE_CONF_PARAM_METADATA,500+"");
+			for (JsonNode eachRow : rowsList)  {
+				String optionName = eachRow.get("optionName").asText();
+				String resource = eachRow.get("resource").asText();
+				String params = eachRow.get("params").asText();
+				String queryFormClassName = eachRow.get("queryFormClassName").asText();
+				String displayFormClassName = eachRow.get("displayFormClassName").asText();
+				String idMenu00 = eachRow.get("idMenu").asText();
+				int countSubMenus= eachRow.get("countSubmenus").asInt();
+				if (countSubMenus > 0)
+				{
+					 
+			   		Map<String,List<String>> parameters0 = new HashMap<>();
+					parameters0.put("resource", Collections.singletonList(resource));
+					parameters0.put("resourceName", Collections.singletonList(resource));
+					parameters0.put("title", Collections.singletonList(optionName));
+					parameters0.put("params", Collections.singletonList(params));
+					parameters0.put("queryFormClassName" , Collections.singletonList(queryFormClassName));
+					parameters0.put("displayFormClassName" , Collections.singletonList(displayFormClassName));
+					
+					parameters0.put("filter",  Collections.singletonList("isFKidMenuEEQQ"+idMenu00));  // ("&filter=isFKidMenuEEQQ"oinly when calls to idMenu @@ TODO apply filter is exist to all options
+ 
+					 NaviItem submenu = menu.addNaviItem(VaadinIcon.ACCORDION_MENU, optionName,
+				                SubMenu.class, parameters0);
+//					 submenu.addClickListener(e->(System.out.println("MainLayout.initNaviItems()")));
+					
+					 String idMenu = eachRow.get("idMenu").asText();
+					 JsonNode rowsList1 = JSonClient.get("menu","isFKidMenu="+idMenu,false,AppConst.PRE_CONF_PARAM_METADATA,500+"");
+					 for (JsonNode eachRow1 : rowsList1)  {
+							String optionName1 = eachRow1.get("optionName").asText();
+							String resource1 = eachRow1.get("resource").asText();
+							String params1 = eachRow1.get("params").asText();
+							String queryFormClassName1 = eachRow1.get("queryFormClassName").asText();
+							String displayFormClassName1 = eachRow1.get("displayFormClassName").asText();
+
+							int countSubMenus1= eachRow1.get("countSubmenus").asInt();
+							if (countSubMenus1 > 0)
+							{
+								 NaviItem submenu1 = menu.addNaviItem(submenu, optionName1,
+							                null);
+						//		 submenu1.
+								 String idMenu1 = eachRow1.get("idMenu").asText();
+								 JsonNode rowsList2 = JSonClient.get("menu","isFKidMenu="+idMenu1,false,AppConst.PRE_CONF_PARAM_METADATA,500+"");
+								 for (JsonNode eachRow2 : rowsList2)  {
+										String optionName2 = eachRow2.get("optionName").asText();
+										String resource2 = eachRow2.get("resource").asText();
+										String params2 = eachRow2.get("params").asText();
+										String queryFormClassName2 = eachRow2.get("queryFormClassName").asText();
+										String displayFormClassName2 = eachRow2.get("displayFormClassName").asText();
+										
+										int countSubMenus2= eachRow2.get("countSubmenus").asInt();
+										if (countSubMenus2 > 0)
+										{
+											 NaviItem submenu2 = menu.addNaviItem(submenu1, optionName2,
+										                null);
+											 String idMenu2 = eachRow2.get("idMenu").asText();
+											 JsonNode rowsList3 = JSonClient.get("menu","isFKidMenu="+idMenu2,false,AppConst.PRE_CONF_PARAM_METADATA,500+"");
+											 for (JsonNode eachRow3 : rowsList3)  {
+													String optionName3 = eachRow3.get("optionName").asText();
+													String resource3 = eachRow3.get("resource").asText();
+													String params3 = eachRow3.get("params").asText();
+													String queryFormClassName3 = eachRow3.get("queryFormClassName").asText();
+													String displayFormClassName3 = eachRow3.get("displayFormClassName").asText();
+													
+													int countSubMenus3= eachRow3.get("countSubmenus").asInt();
+													if (countSubMenus3 > 0)
+													{
+														 NaviItem submenu3 = menu.addNaviItem(submenu2, optionName3,
+													                null);
+														 String idMenu3 = eachRow3.get("idMenu").asText();
+														 JsonNode rowsList4 = JSonClient.get("menu","isFKidMenu="+idMenu3,false,AppConst.PRE_CONF_PARAM,500+"");
+								//						 xxxx
+														 for (JsonNode eachRow4 : rowsList4)  {
+																String optionName4 = eachRow3.get("optionName").asText();
+																String resource4 = eachRow4.get("resource").asText();
+																String params4 = eachRow4.get("params").asText();
+																String queryFormClassName4 = eachRow4.get("queryFormClassName").asText();
+																String displayFormClassName4 = eachRow4.get("displayFormClassName").asText();
+																
+																int countSubMenus4= eachRow3.get("countSubmenus").asInt();
+																if (countSubMenus4 > 0)
+																{
+																	 NaviItem submenu4 = menu.addNaviItem(submenu3, optionName4,
+																                null);
+																	 String idMenu4 = eachRow4.get("idMenu").asText();
+																//	 JsonNode rowsList5 = JSonClient.get("menu","isFKidMenu="+idMenu,false,AppConst.PRE_CONF_PARAM,500+"");
+																	 
+																	 
+																}
+																else
+																{
+															   		Map<String,List<String>> parameters = new HashMap<>();
+																	parameters.put("resource", Collections.singletonList(resource4));
+																	parameters.put("resourceName", Collections.singletonList(resource4));
+																	parameters.put("title", Collections.singletonList(optionName4));
+																	parameters.put("params", Collections.singletonList(params4));
+																	parameters.put("queryFormClassName" , Collections.singletonList(queryFormClassName4));
+																	parameters.put("displayFormClassName" , Collections.singletonList(displayFormClassName4));
+
+																	
+																	if (cache != null)
+																		parameters.put("cache", Collections.singletonList(cache));
+																	else
+																		parameters.put("cache", Collections.singletonList("true"));
+																	menu.addNaviItem(submenu3, optionName4, DynamicGridDisplay.class, parameters);
+																}
+														 
+														 }
+														 submenu3.setSubItemsVisible(false);
+								//						 xxxx
+														 
+													}
+													else
+													{
+												   		Map<String,List<String>> parameters = new HashMap<>();
+														parameters.put("resourceName", Collections.singletonList(resource3));
+														parameters.put("title", Collections.singletonList(optionName3));
+														parameters.put("params", Collections.singletonList(params3));
+														parameters.put("queryFormClassName" , Collections.singletonList(queryFormClassName3));
+														parameters.put("displayFormClassName" , Collections.singletonList(displayFormClassName3));
+
+														if (cache != null)
+															parameters.put("cache", Collections.singletonList(cache));
+														else
+															parameters.put("cache", Collections.singletonList("true"));
+														menu.addNaviItem(submenu2, optionName3, DynamicGridDisplay.class, parameters);
+													}
+											 
+											 }
+											 submenu2.setSubItemsVisible(false);
+											 
+										}
+										else
+										{
+											Map<String,List<String>> parameters = new HashMap<>();
+											parameters.put("resourceName", Collections.singletonList(resource2));
+											parameters.put("title", Collections.singletonList(optionName2));
+											parameters.put("params", Collections.singletonList(params2));
+											parameters.put("queryFormClassName" , Collections.singletonList(queryFormClassName2));
+											parameters.put("displayFormClassName" , Collections.singletonList(displayFormClassName2));
+
+											if (cache != null)
+												parameters.put("cache", Collections.singletonList(cache));
+											menu.addNaviItem(submenu1, optionName2, DynamicGridDisplay.class,  parameters);
+										}	
+								 }
+								 submenu1.setSubItemsVisible(false);
+							}
+							else
+							{
+			Map<String,List<String>> parameters = new HashMap<>();
+								parameters.put("resourceName", Collections.singletonList(resource1));
+								parameters.put("title", Collections.singletonList(optionName1));
+								parameters.put("params", Collections.singletonList(params1));
+								parameters.put("queryFormClassName" , Collections.singletonList(queryFormClassName1));
+								parameters.put("displayFormClassName" , Collections.singletonList(displayFormClassName1));
+
+								if (cache != null)
+									parameters.put("cache", Collections.singletonList(cache));
+								menu.addNaviItem(submenu, optionName1, DynamicGridDisplay.class, parameters);
+							}
+					 
+					 }
+					 submenu.setSubItemsVisible(false);
+				}
+				else
+				{
+					Map<String,List<String>> parameters = new HashMap<>();
+					parameters.put("resourceName", Collections.singletonList(resource));
+					parameters.put("title", Collections.singletonList(optionName));
+					parameters.put("params", Collections.singletonList(params));
+					parameters.put("queryFormClassName" , Collections.singletonList(queryFormClassName));
+					parameters.put("displayFormClassName" , Collections.singletonList(displayFormClassName));
+
+					if (cache != null)
+						parameters.put("cache", Collections.singletonList(cache));
+					menu.addNaviItem(VaadinIcon.CIRCLE, optionName, DynamicGridDisplay.class, parameters); 
+				}
+			}		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//        menu.addNaviItem(VaadinIcon.HOME, "Home", Home.class);
+//        menu.addNaviItem(VaadinIcon.INSTITUTION, "Accounts", GenericGrid.class);
+//        menu.addNaviItem(VaadinIcon.CREDIT_CARD, "Payments", GenericGridDetails.class);
+//        menu.addNaviItem(VaadinIcon.CHART, "Statistics", Statistics.class);
+//
+//        NaviItem personnel = menu.addNaviItem(VaadinIcon.USERS, "Personnel",
+//                null);
+//        menu.addNaviItem(personnel, "Accountants", Accountants.class);
+//        menu.addNaviItem(personnel, "Managers", Managers.class);
+    }
+    private void initNaviItemsOld() {
+        NaviMenu menu = naviDrawer.getMenu();
+        menu.removeAll();
         Map<String,List<String>> parameters = new HashMap<>();
 		parameters.put("resourceName", Collections.singletonList("CR-FormTemplate"));
 		parameters.put("title", Collections.singletonList("Compras y Ventas"));
@@ -339,6 +544,11 @@ public class MainLayout extends FlexBoxLayout
 	    	apiname = parametersMap.get("apiname").get(0);
 	    else
 	    	apiname = AppConst.DEFAULT_API_NAME; 
+	    if ( parametersMap.get("cache") != null)
+	    {
+		    System.out.println("afterNavigation.....parametersMap.get(\"cache\")"+parametersMap.get("cache"));
+	    	cache = parametersMap.get("cache").get(0);
+	    }	
 	    
 	    initNaviItems();
 	}

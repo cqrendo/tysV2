@@ -10,6 +10,7 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 
 	
 	public static final String PRE_CONF_PARAM = "GferPrueba";//"GferJetty";
+	public static final String PRE_CONF_PARAM_METADATA = "metadata";
 	public static final Locale APP_LOCALE = new Locale("es","ES");
 
 	public static final String PAGE_ROOT = "";
@@ -47,7 +48,7 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String VIEWPORT = "width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes";
 	public static final String DEFAULT_PICK_DIALOG_WITHD = "1024px";
 	public static final String DEFAULT_PICK_DIALOG_HEIGHT = "800px";
-	public static final String DEFAULT_API_NAME = "monbus";
+	public static final String DEFAULT_API_NAME = "GFER";
 	
 	public static final String STYLES_CSS = "./styles/tysstyle.css";
 	public static final String STYLES_FORM_ITEM_CSS= "./styles/tysstyle-form-item.css";

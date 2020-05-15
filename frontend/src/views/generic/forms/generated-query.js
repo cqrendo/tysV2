@@ -10,10 +10,11 @@ import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '../../../components/query-buttons-bar.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+
 class GeneratedQuery extends PolymerElement {
   static get template() {
     return html`
-   <style>
+<style>
       :host {
 /*         height: 100%; */
         width: 100%;
@@ -37,8 +38,8 @@ class GeneratedQuery extends PolymerElement {
        
     	flex: auto ;
 /*	    overflow: auto;  */
- 	    --vaadin-form-item-label-width: 1em; 
-        --vaadin-form-item-label-spacing: 1em;
+/*	    --vaadin-form-item-label-width: 1em; */
+/*        --vaadin-form-item-label-spacing: 1em; */
         --vaadin-form-item-row-spacing: 1.25em; 
  	    }  
       
@@ -76,26 +77,26 @@ class GeneratedQuery extends PolymerElement {
 	clean{
 		style="padding-right:  0.75rem; margin-right: 0px;" 
 	}
-    </style> 
-   <h3 id="title"></h3>  
-   <vaadin-horizontal-layout theme="" style="width: 100%; height: 100%;"> 
-    <vaadin-form-layout id="form"></vaadin-form-layout> 
-    <!--  <vaadin-vertical-layout class="full"> --> 
-    <!--  <vaadin-form-item> --> 
-     <!-- </vaadin-form-item>  --> 
-    <!--  <br class="clean"> --> 
-    <!--  <vaadin-form-item> --> 
-    <!--  <vaadin-custom-field id="col25" label="Total" required error-message="Please fill in all fields"> --> 
-    <!--   <input type="decimal" id="input"> --> 
-    <!--   <select><option>Euro</option><option>Dollars</option><option>Pounds</option></select> --> 
-    <!--  </vaadin-custom-field> --> 
-    <!--  </vaadin-form-item> --> 
-    <!--  </vaadin-vertical-layout> --> 
-    <div class="linCampos" style="width: 5%; height: 10%;">
-     <query-buttons-bar id="queryButtonsBar"></query-buttons-bar> 
-    </div> 
-   </vaadin-horizontal-layout> 
-   <!-- <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;"></vaadin-horizontal-layout> --> 
+    </style>
+<h3 id="title"></h3>
+<vaadin-horizontal-layout theme="" style="width: 100%; height: 100%;">
+ <vaadin-form-layout id="form" style="flex-grow: 1;"></vaadin-form-layout>
+ <!--  <vaadin-vertical-layout class="full"> -->
+ <!--  <vaadin-form-item> -->
+ <!-- </vaadin-form-item>  -->
+ <!--  <br class="clean"> -->
+ <!--  <vaadin-form-item> -->
+ <!--  <vaadin-custom-field id="col25" label="Total" required error-message="Please fill in all fields"> -->
+ <!--   <input type="decimal" id="input"> -->
+ <!--   <select><option>Euro</option><option>Dollars</option><option>Pounds</option></select> -->
+ <!--  </vaadin-custom-field> -->
+ <!--  </vaadin-form-item> -->
+ <!--  </vaadin-vertical-layout> -->
+ <div class="linCampos" style="width: 5%; height: 10%;">
+  <query-buttons-bar id="queryButtonsBar"></query-buttons-bar>
+ </div>
+</vaadin-horizontal-layout>
+<!-- <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;"></vaadin-horizontal-layout> -->
 `;
   }
 

@@ -103,7 +103,8 @@ public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnt
 ////		presenter.setView(this);
 //	}
 
-	private void setupButtoms() {
+	private void setupButtons() {
+		vlButomsGroup1.removeAll();
 	
 //		DdbDataProvider dataProvider = new DdbDataProvider();
 //		dataProvider.setPreConfParam("GferPrueba");
@@ -117,12 +118,12 @@ public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnt
 //		grid.removeAllColumns();
 		int numberOFCols =rowsColList.size();//length;
 
-		Collection<DynamicDBean> menuList = RestData.getResourceData(0,0,"CR-menu", preConfParam, rowsColList, filter, false, false);
+		Collection<DynamicDBean> menuList = RestData.getResourceData(0,0,"CR-menu", AppConst.PRE_CONF_PARAM_METADATA , rowsColList, filter, false, false);
 		Iterator<DynamicDBean> itMenuList = menuList.iterator();
 		while (itMenuList.hasNext())
 		{
 			DynamicDBean rowMenu = itMenuList.next();
-			String optionName = rowMenu.getCol2().toString();
+			String optionName = rowMenu.getCol0().toString();
 			String resourceName = rowMenu.getCol4();
 			if (resourceName.equals("null") || resourceName.length() == 0)
 			{
@@ -213,12 +214,17 @@ private Object processButon(ClickEvent<Button> evt, JsonNode rowSubMenu) {
 
 	@Override
 	public void afterNavigation(AfterNavigationEvent event) {
+		QueryParameters queryParameters = event.getLocation().getQueryParameters();
+		filter = queryParameters.getParameters().get("filter").get(0);
+		filter=filter.replace("EEQQ", "=");
+		title=queryParameters.getParameters().get("title").get(0);
+
 		
 //		QueryParameters queryParameters = event.getLocation().getQueryParameters();
 //		filter = queryParameters.getParameters().get("filter").get(0);
 //		filter=filter.replace("EEQQ", "=");
 ////		title=queryParameters.getParameters().get("title").get(0);
-		setupButtoms();
+		setupButtons();
 		
 	}
 
