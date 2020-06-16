@@ -6,10 +6,10 @@ import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.orderedlayout.FlexLayout.FlexDirection;
 
 import coop.intergal.tys.ui.MainLayout;
 import coop.intergal.tys.ui.components.FlexBoxLayout;
-import coop.intergal.tys.ui.util.css.FlexDirection;
 
 /**
  * A view frame that establishes app design guidelines. It consists of four

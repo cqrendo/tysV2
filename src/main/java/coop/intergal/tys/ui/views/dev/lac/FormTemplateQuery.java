@@ -50,7 +50,7 @@ public class FormTemplateQuery extends GenericDynamicQuery implements BeforeEnte
 	}
 
 	private Object cleanQryForm() {
-		cleanForm(FormTemplateQuery.class, this, RESOURCE_NAME);
+		cleanForm(FormTemplateQuery.class, this, RESOURCE_NAME, false);
 		return null;
 	}
 

@@ -4,7 +4,6 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.CssImport;
 
 import coop.intergal.tys.ui.components.FlexBoxLayout;
-import coop.intergal.tys.ui.util.css.FlexDirection;
 
 @CssImport("styles/components/details-drawer.css")
 public class DetailsDrawer extends FlexBoxLayout {

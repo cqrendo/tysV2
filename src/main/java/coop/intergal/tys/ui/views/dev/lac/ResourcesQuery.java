@@ -41,7 +41,7 @@ public class ResourcesQuery extends GenericDynamicQuery {//implements BeforeEnte
 	}
 
 	private Object cleanQryForm() {
-		cleanForm(ResourcesQuery.class, this, RESOURCE_NAME);
+		cleanForm(ResourcesQuery.class, this, RESOURCE_NAME, false);
 		return null;
 	}
 

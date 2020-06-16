@@ -39,7 +39,7 @@ public class ArticulosQueryForPick extends GenericDynamicQuery {// implements Be
 	}
 
 	private Object cleanQryForm() {
-		cleanForm(ArticulosQueryForPick.class, this, RESOURCE_NAME);
+		cleanForm(ArticulosQueryForPick.class, this, RESOURCE_NAME, false);
 		return null;
 	}
 

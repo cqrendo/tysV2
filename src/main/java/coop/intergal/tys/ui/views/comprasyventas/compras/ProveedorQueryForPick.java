@@ -44,7 +44,7 @@ public class ProveedorQueryForPick extends GenericDynamicQuery {//implements Bef
 	}
 
 	private Object cleanQryForm() {
-		cleanForm(ProveedorQueryForPick.class, this, RESOURCE_NAME);
+		cleanForm(ProveedorQueryForPick.class, this, RESOURCE_NAME, false);
 		return null;
 	}
 

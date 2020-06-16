@@ -9,7 +9,6 @@ import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import coop.intergal.tys.ui.util.FontSize;
 import coop.intergal.tys.ui.util.TextColor;
 import coop.intergal.tys.ui.util.UIUtils;
-import coop.intergal.tys.ui.util.css.FlexDirection;
 import coop.intergal.tys.ui.util.css.WhiteSpace;
 
 @CssImport("styles/components/list-item.css")

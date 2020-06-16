@@ -1,5 +1,7 @@
 package coop.intergal.tys.ui;
 
+import static coop.intergal.AppConst.DEFAULT_API_NAME;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -42,13 +44,10 @@ import coop.intergal.tys.ui.components.navigation.drawer.NaviDrawer;
 import coop.intergal.tys.ui.components.navigation.drawer.NaviItem;
 import coop.intergal.tys.ui.components.navigation.drawer.NaviMenu;
 import coop.intergal.tys.ui.util.UIUtils;
-import coop.intergal.tys.ui.util.css.FlexDirection;
 import coop.intergal.tys.ui.util.css.Overflow;
-import coop.intergal.tys.ui.views.GenericGridDetails;
 import coop.intergal.tys.ui.views.Home;
 import coop.intergal.ui.views.DynamicGridDisplay;
 import coop.intergal.ui.views.DynamicTreeDisplay;
-import static coop.intergal.AppConst.DEFAULT_API_NAME;
 
 @CssImport(value = "./styles/components/charts.css", themeFor = "vaadin-chart", include = "vaadin-chart-default-theme")
 @CssImport(value = "./styles/components/floating-action-button.css", themeFor = "vaadin-button")

@@ -1,5 +1,9 @@
 package coop.intergal.tys.ui.views;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
@@ -15,8 +19,9 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.orderedlayout.FlexLayout.FlexDirection;
+import com.vaadin.flow.component.orderedlayout.FlexLayout.FlexWrap;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
@@ -24,7 +29,6 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 import coop.intergal.AppConst;
-import coop.intergal.tys.backend.BankAccount;
 import coop.intergal.tys.backend.DummyData;
 import coop.intergal.tys.ui.MainLayout;
 import coop.intergal.tys.ui.components.FlexBoxLayout;
@@ -39,15 +43,9 @@ import coop.intergal.tys.ui.util.LumoStyles;
 import coop.intergal.tys.ui.util.TextColor;
 import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.tys.ui.util.css.BorderRadius;
-import coop.intergal.tys.ui.util.css.FlexDirection;
-import coop.intergal.tys.ui.util.css.FlexWrap;
 import coop.intergal.tys.ui.util.css.WhiteSpace;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
 import coop.intergal.vaadin.rest.utils.RestData;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Iterator;
 
 @PageTitle("Account Details")
 @Route(value = "generic-details", layout = MainLayout.class)

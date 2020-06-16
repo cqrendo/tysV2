@@ -14,7 +14,6 @@ import coop.intergal.tys.ui.layout.size.Right;
 import coop.intergal.tys.ui.layout.size.Vertical;
 import coop.intergal.tys.ui.util.BoxShadowBorders;
 import coop.intergal.tys.ui.util.UIUtils;
-import coop.intergal.tys.ui.util.css.FlexDirection;
 
 public class DetailsDrawerHeader extends FlexBoxLayout {
 

@@ -75,9 +75,9 @@ public class FlexBoxLayout extends FlexLayout {
         }
     }
 
-    public void setFlexDirection(FlexDirection direction) {
-        getStyle().set(FLEX_DIRECTION, direction.getValue());
-    }
+//    public void setFlexDirection(FlexDirection direction) {
+//        getStyle().set(FLEX_DIRECTION, direction.getValue());
+//    }
 
     public void removeFlexDirection() {
         getStyle().remove(FLEX_DIRECTION);
@@ -89,9 +89,9 @@ public class FlexBoxLayout extends FlexLayout {
         }
     }
 
-    public void setFlexWrap(FlexWrap wrap) {
-        getStyle().set(FLEX_WRAP, wrap.getValue());
-    }
+//    public void setFlexWrap(FlexWrap wrap) {
+//        getStyle().set(FLEX_WRAP, wrap.getValue());
+//    }
 
     public void removeFlexWrap() {
         getStyle().remove(FLEX_WRAP);

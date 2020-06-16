@@ -1,5 +1,7 @@
 package coop.intergal.tys.ui.views;
 
+import java.time.LocalDate;
+
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
@@ -14,6 +16,8 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.orderedlayout.FlexLayout.FlexDirection;
+import com.vaadin.flow.component.orderedlayout.FlexLayout.FlexWrap;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.PageTitle;
@@ -34,11 +38,7 @@ import coop.intergal.tys.ui.util.LumoStyles;
 import coop.intergal.tys.ui.util.TextColor;
 import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.tys.ui.util.css.BorderRadius;
-import coop.intergal.tys.ui.util.css.FlexDirection;
-import coop.intergal.tys.ui.util.css.FlexWrap;
 import coop.intergal.tys.ui.util.css.WhiteSpace;
-
-import java.time.LocalDate;
 
 @PageTitle("Account Details")
 @Route(value = "account-details", layout = MainLayout.class)

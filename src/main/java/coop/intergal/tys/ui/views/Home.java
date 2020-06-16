@@ -4,6 +4,8 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.orderedlayout.FlexLayout.FlexDirection;
+import com.vaadin.flow.component.orderedlayout.FlexLayout.FlexWrap;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
@@ -13,8 +15,6 @@ import coop.intergal.tys.ui.layout.size.Horizontal;
 import coop.intergal.tys.ui.layout.size.Right;
 import coop.intergal.tys.ui.layout.size.Uniform;
 import coop.intergal.tys.ui.util.UIUtils;
-import coop.intergal.tys.ui.util.css.FlexDirection;
-import coop.intergal.tys.ui.util.css.FlexWrap;
 
 @PageTitle("Welcome")
 @Route(value = "", layout = MainLayout.class)

@@ -50,7 +50,7 @@ public class PedidoProveedorQuery extends GenericDynamicQuery implements BeforeE
 	}
 
 	private Object cleanQryForm() {
-		cleanForm(PedidoProveedorQuery.class, this, RESOURCE_NAME);
+		cleanForm(PedidoProveedorQuery.class, this, RESOURCE_NAME, false);
 		return null;
 	}
 
