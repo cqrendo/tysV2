@@ -19,7 +19,7 @@ class DynamicGridForPick extends PolymerElement {
 }
 </style> 
    <vaadin-split-layout orientation="vertical" style="height: 100%"> 
-    <div id="divQuery"></div> 
+    <div id="divQuery"  style="overflow: unset;"></div> 
     <div style="height: 100%"> 
      <vaadin-button id="acceptPick">
        Aceptar 
