@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
- <groupId>coop.intergal.metadata</groupId>
-    <artifactId>MetaConfig</artifactId>
-    <name>MetaConfig</name>
+ <groupId>coop.intergal.tys</groupId>
+    <artifactId>tys</artifactId>
+    <name>tys</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <parent>
@@ -181,6 +181,17 @@
    			<artifactId>exporter</artifactId>
    			<version>3.0.1</version>
 		</dependency>
+		<dependency>
+      <groupId>org.vaadin</groupId>
+      <artifactId>textfieldformatter</artifactId>
+      <version>5.2.0.pre</version>
+      <exclusions>
+      <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
  
         <!-- Spring -->
         <dependency>
