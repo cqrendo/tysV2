@@ -10,7 +10,7 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 
 	
 	public static final String PRE_CONF_PARAM = "GferPrueba";//"GferJetty";
-	public static final String PRE_CONF_PARAM_METADATA = "metadata";
+	public static final String PRE_CONF_PARAM_METADATA = "metadataIntergal01";
 	public static final Locale APP_LOCALE = new Locale("es","ES");
 
 	public static final String PAGE_ROOT = "";
