@@ -4,20 +4,21 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+import './sub-submenu.js';
+
 class SubMenu extends PolymerElement {
   static get template() {
     return html`
-   <vaadin-horizontal-layout> 
-    <vaadin-vertical-layout id="butomGroup1">  
-     <!--     Button 1  --> 
-     <!--   </vaadin-button> --> 
-    </vaadin-vertical-layout> 
-    <vaadin-vertical-layout id="butomGroup2"> 
-     <!--   <vaadin-button> --> 
-     <!--     Button 2  --> 
-     <!--   </vaadin-button> --> 
-    </vaadin-vertical-layout> 
-   </vaadin-horizontal-layout> 
+<style include="shared-styles">
+                :host {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+    				overflow-y: auto;
+                }
+            </style>
+<div id="dvTabs" style="width:100%;background:#d2d2d2;"></div>
+<div id="dvPages" style="width:100%;"></div>
 `;
   }
 

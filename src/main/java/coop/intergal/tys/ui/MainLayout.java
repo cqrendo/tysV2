@@ -93,6 +93,7 @@ public class MainLayout extends FlexBoxLayout
     private AppBar appBar;
 	private String apiname;
 	private String cache;
+	private NaviItem submenu;
 
 
     public MainLayout() {
@@ -158,6 +159,7 @@ public class MainLayout extends FlexBoxLayout
 				String queryFormClassName = eachRow.get("queryFormClassName").asText();
 				String displayFormClassName = eachRow.get("displayFormClassName").asText();
 				String idMenu00 = eachRow.get("idMenu").asText();
+				String esTab = eachRow.get("esTab").asText();
 				int countSubMenus= eachRow.get("countSubmenus").asInt();
 				if (countSubMenus > 0)
 				{
@@ -172,8 +174,15 @@ public class MainLayout extends FlexBoxLayout
 					
 					parameters0.put("filter",  Collections.singletonList("isFKidMenuEEQQ"+idMenu00));  // ("&filter=isFKidMenuEEQQ"oinly when calls to idMenu @@ TODO apply filter is exist to all options
  
-					 NaviItem submenu = menu.addNaviItem(VaadinIcon.ACCORDION_MENU, optionName,
-				                SubMenu.class, parameters0);
+					if (esTab.equals("1")) {
+						 submenu = menu.addNaviItem(VaadinIcon.ACCORDION_MENU, optionName,
+					                SubMenu.class, parameters0);
+					}
+					else {
+						 submenu = menu.addNaviItem(VaadinIcon.ACCORDION_MENU, optionName,
+					                SubSubmenu.class, parameters0);
+					}
+
 //					 submenu.addClickListener(e->(System.out.println("MainLayout.initNaviItems()")));
 					
 					 String idMenu = eachRow.get("idMenu").asText();
