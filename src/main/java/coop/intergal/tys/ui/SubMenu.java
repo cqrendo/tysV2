@@ -6,20 +6,25 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.html.Label;
-import com.vaadin.flow.component.orderedlayout.FlexComponent.Alignment;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.component.polymertemplate.TemplateParser;
+import com.vaadin.flow.component.tabs.Tab;
+import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.router.AfterNavigationEvent;
 import com.vaadin.flow.router.AfterNavigationObserver;
@@ -77,9 +82,6 @@ public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnt
 
 	@Id("butomGroup1")
 	private VerticalLayout vlButomsGroup1;
-  
-	@Id("butomGroup2")
-	private VerticalLayout vlButomsGroup2;
 
 //	private CrudEntityPresenter<DynamicDBean> presenter;
 
@@ -91,6 +93,14 @@ public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnt
 	private String resourceName;
 	private String filter;
 	private String title = AppConst.TITLE_MENU_PRINCIPAL;
+	private Tabs tabs = new Tabs(false);
+	private Tab tab1;
+	private Div page1;
+	private Div pages = new Div();
+	private String losThemes;
+	@Id("dvTabs")
+	private Div dvTabs;
+	private int flag = new Integer(0);
 
 //	@Autowired()
 //	public DynamicViewGrid(CrudEntityPresenter<DynamicDBean> presenter, CrudForm<DynamicDBean> form) {
@@ -105,6 +115,7 @@ public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnt
 
 	private void setupButtons() {
 		vlButomsGroup1.removeAll();
+		flag = 0;
 	
 //		DdbDataProvider dataProvider = new DdbDataProvider();
 //		dataProvider.setPreConfParam("GferPrueba");
@@ -118,33 +129,52 @@ public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnt
 //		grid.removeAllColumns();
 		int numberOFCols =rowsColList.size();//length;
 
-		Collection<DynamicDBean> menuList = RestData.getResourceData(0,0,"CR-menu", AppConst.PRE_CONF_PARAM_METADATA , rowsColList, filter, false, false);
+		
+		Collection<DynamicDBean> menuList = RestData.getResourceData(0,0,"CR-menu", AppConst.PRE_CONF_PARAM_METADATA, rowsColList, filter, false, false);
 		Iterator<DynamicDBean> itMenuList = menuList.iterator();
+		tabs.removeAll();
+		Map<Tab, Component> tabsToPages = new HashMap<>();
 		while (itMenuList.hasNext())
-		{
+		{	
+			Div div= new Div();
+			div.getStyle().set("display", "table");
+			div.getStyle().set("width", "100%");
 			DynamicDBean rowMenu = itMenuList.next();
 			String optionName = rowMenu.getCol0().toString();
 			String resourceName = rowMenu.getCol4();
 			if (resourceName.equals("null") || resourceName.length() == 0)
 			{
-
-				Button  titulo = new Button(optionName);
-				String losThemes = rowMenu.getRowJSon().get("theme").asText();
-				titulo.addThemeNames(losThemes);
-
-
-				vlButomsGroup1.add(titulo);
+				String esTab = rowMenu.getRowJSon().get("esTab").asText();
+				if (esTab.equals("1")) {
+					dvTabs.getStyle().set("display", "inherit");
+					tab1 = new Tab(optionName);
+					tabs.add(tab1);
+					page1 = new Div();
+					page1.getStyle().set("display", "table");
+					page1.getStyle().set("width", "100%");
+					pages.getStyle().set("width", "100%");
+					flag = 1;
+				}
+				if (esTab.equals("0")) {
+					dvTabs.getStyle().set("display", "none");
+					Button  titulo = new Button(optionName);
+					losThemes = rowMenu.getRowJSon().get("theme").asText();
+					titulo.addThemeNames(losThemes);
+					div.add(titulo);
+				}
 				JsonNode rowNode = rowMenu.getRowJSon();
 				Iterator<JsonNode> subMenus = rowNode.get("List-menu").elements();
 				while (subMenus.hasNext())
 				{
+					Paragraph div2 = new Paragraph();
+					div2.getStyle().set("margin", "0");
 					JsonNode rowSubMenu = subMenus.next();
 					String optionNameSubmenu = rowSubMenu.get("optionName").asText();
 					Button  button1 = new Button(optionNameSubmenu, evt -> processButon(evt,rowSubMenu ));
 					losThemes = rowSubMenu.get("theme").asText();
 					button1.addThemeNames(losThemes);
-					
-					vlButomsGroup1.add(button1);
+					div2.add(button1);
+					div.add(div2);
 				}
 			}
 			else
@@ -152,8 +182,23 @@ public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnt
 				Button  button1 = new Button(optionName, evt -> processButon(evt,rowMenu.getRowJSon() ));
 				String losThemes = rowMenu.getRowJSon().get("theme").asText();
 				button1.addThemeNames(losThemes);
-				vlButomsGroup1.add(button1);
+				div.add(button1);
 			}
+			if (flag==1) { 
+				page1.add(div);
+				page1.setVisible(false);
+				tabsToPages.put(tab1, page1);
+				tabs.add(tab1);
+				pages.add(page1);
+				tabs.addSelectedChangeListener(event -> {
+				    tabsToPages.values().forEach(page -> page.setVisible(false));
+				    Component selectedPage = tabsToPages.get(tabs.getSelectedTab());
+				    if (selectedPage != null) selectedPage.setVisible(true);
+				});
+				dvTabs.add(tabs);
+				vlButomsGroup1.add(pages);
+			}
+			else vlButomsGroup1.add(div);
 			
 		}
 //		vlButomsGroup1.setDefaultHorizontalComponentAlignment(Alignment.CENTER);
@@ -187,7 +232,7 @@ private Object processButon(ClickEvent<Button> evt, JsonNode rowSubMenu) {
 	
 	titleOption = titleOption.replace(" ", "%20");
 //	UI.getCurrent().getPage().executeJavaScript("window.open('http://localhost:8080/dymanic?resourceName="+resource+"&title="+titleOption+"', '_blank');") ;
-	UI.getCurrent().getPage().executeJavaScript("window.open('"+urlBase+"?resourceName="+resource+"&queryFormClassName="+queryFormClassName+"&displayFormClassName="+displayFormClassName+"&title="+titleOption+"', '_blank');") ;
+	UI.getCurrent().getPage().executeJs("window.open('"+urlBase+"?resourceName="+resource+"&queryFormClassName="+queryFormClassName+"&displayFormClassName="+displayFormClassName+"&title="+titleOption+"', '_blank');") ;
 	} catch (UnknownHostException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
