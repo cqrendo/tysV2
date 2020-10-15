@@ -15,10 +15,11 @@ class SubSubmenu extends PolymerElement {
             <style include="shared-styles">
                 :host {
                     display: block;
+                    width: 100%;
                     height: 100%;
                 }
             </style>
-   <vaadin-horizontal-layout style="column-count: 2;display: block;max-height:420px;"> 
+   <vaadin-horizontal-layout style="column-count:2;display: block;max-height:420px;height: 100%;"> 
     <vaadin-vertical-layout id="butomGroup1"></vaadin-vertical-layout> 
    </vaadin-horizontal-layout> 
 
