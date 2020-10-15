@@ -41,95 +41,51 @@ import coop.intergal.ui.utils.converters.CurrencyFormatter;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
 import coop.intergal.vaadin.rest.utils.RestData;
+import coop.intergal.tys.ui.SubSubmenu;
 
-//@Tag("dynamic-view-grid")
 @Tag("sub-menu")
 @JsModule("./src/sub-menu.js")
 @Route(value = AppConst.PAGE_SUBMENU, layout = MainLayout.class)
 //@PageTitle(AppConst.TITLE_MENU_PRINCIPAL)
 //@Secured(Role.ADMIN)
-public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnterObserver,AfterNavigationObserver, HasDynamicTitle {
-	private ArrayList<String[]> rowsColList; //= getRowsCnew String[] { "code_customer", "name_customer", "cif", "amountUnDisbursedPayments" };
-	private String preConfParam = "GferPrueba";
-	public ArrayList<String[]> getRowsColList() {
-		return rowsColList;
-	}
-
-	public void setRowsColList(ArrayList<String[]> rowsColList) {
-		this.rowsColList = rowsColList;
-	}	
-
-	public SubMenu() {
-		super();
-//		setupGrid();
-		
-	}
-
-	public SubMenu(TemplateParser parser, VaadinService service) {
-		super(parser, service);
-		// TODO Auto-generated constructor stub
-	}
-
-	public SubMenu(TemplateParser parser) {
-		super(parser);
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
+public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnterObserver, HasDynamicTitle {
+/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	@Id("butomGroup1")
-	private VerticalLayout vlButomsGroup1;
-
-//	private CrudEntityPresenter<DynamicDBean> presenter;
-
-	private final BeanValidationBinder<DynamicDBean> binder = new BeanValidationBinder<>(DynamicDBean.class);
-	
-
-	private CurrencyFormatter currencyFormatter = new CurrencyFormatter();
-
-	private String resourceName;
+	@Id("dvTabs")
+	private Div dvTabs;
+	@Id("dvPages")
+	private Div dvPages;
 	private String filter;
-	private String title = AppConst.TITLE_MENU_PRINCIPAL;
 	private Tabs tabs = new Tabs(false);
 	private Tab tab1;
 	private Div page1;
 	private Div pages = new Div();
-	private String losThemes;
-	@Id("dvTabs")
-	private Div dvTabs;
-	private int flag = new Integer(0);
+	private String title = AppConst.TITLE_MENU_PRINCIPAL;
+	private ArrayList<String[]> rowsColList; //= getRowsCnew String[] { "code_customer", "name_customer", "cif", "amountUnDisbursedPayments" };
+	private String filtertab;
+	public ArrayList<String[]> getRowsColList() {return rowsColList;}
+	public void setRowsColList(ArrayList<String[]> rowsColList) {this.rowsColList = rowsColList;}	
 
-//	@Autowired()
-//	public DynamicViewGrid(CrudEntityPresenter<DynamicDBean> presenter, CrudForm<DynamicDBean> form) {
-//		super(EntityUtil.getName(DynamicDBean.class), form);
-//		this.presenter = presenter;
-//		form.setBinder(binder);
-//
-//		setupEventListeners();
-//		setupGrid();
-////		presenter.setView(this);
-//	}
+	public SubMenu() {
+		super();
+	}
+	
+	@Override
+	public void beforeEnter(BeforeEnterEvent event) {
+		QueryParameters queryParameters = event.getLocation().getQueryParameters();
+		filter = queryParameters.getParameters().get("filter").get(0);
+		filter=filter.replace("EEQQ", "=");
+		title=queryParameters.getParameters().get("title").get(0);
+		setupButtons();
+	}
 
 	private void setupButtons() {
-		vlButomsGroup1.removeAll();
-		flag = 0;
-	
-//		DdbDataProvider dataProvider = new DdbDataProvider();
-//		dataProvider.setPreConfParam("GferPrueba");
-//		dataProvider.setResourceName(resourceName);
-//		String filter = "isFKidMenu=1";//null ;//"name_serial is not nul";
 		DdbDataBackEndProvider dataProvider = new DdbDataBackEndProvider();
 		dataProvider.setPreConfParam(AppConst.PRE_CONF_PARAM);
 		dataProvider.setResourceName("CR-menu");
-//		grid.addColumn(DynamicDBean::getCol1).setHeader("Product Name").setFlexGrow(10);
 		rowsColList = dataProvider.getRowsColList();
-//		grid.removeAllColumns();
-		int numberOFCols =rowsColList.size();//length;
-
-		
 		Collection<DynamicDBean> menuList = RestData.getResourceData(0,0,"CR-menu", AppConst.PRE_CONF_PARAM_METADATA, rowsColList, filter, false, false);
 		Iterator<DynamicDBean> itMenuList = menuList.iterator();
 		tabs.removeAll();
@@ -141,146 +97,28 @@ public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnt
 			div.getStyle().set("width", "100%");
 			DynamicDBean rowMenu = itMenuList.next();
 			String optionName = rowMenu.getCol0().toString();
-			String resourceName = rowMenu.getCol4();
-			if (resourceName.equals("null") || resourceName.length() == 0)
-			{
-				String esTab = rowMenu.getRowJSon().get("esTab").asText();
-				if (esTab.equals("1")) {
-					dvTabs.getStyle().set("display", "inherit");
-					tab1 = new Tab(optionName);
-					tabs.add(tab1);
-					page1 = new Div();
-					page1.getStyle().set("display", "table");
-					page1.getStyle().set("width", "100%");
-					pages.getStyle().set("width", "100%");
-					flag = 1;
-				}
-				if (esTab.equals("0")) {
-					dvTabs.getStyle().set("display", "none");
-					Button  titulo = new Button(optionName);
-					losThemes = rowMenu.getRowJSon().get("theme").asText();
-					titulo.addThemeNames(losThemes);
-					div.add(titulo);
-				}
-				JsonNode rowNode = rowMenu.getRowJSon();
-				Iterator<JsonNode> subMenus = rowNode.get("List-menu").elements();
-				while (subMenus.hasNext())
-				{
-					Paragraph div2 = new Paragraph();
-					div2.getStyle().set("margin", "0");
-					JsonNode rowSubMenu = subMenus.next();
-					String optionNameSubmenu = rowSubMenu.get("optionName").asText();
-					Button  button1 = new Button(optionNameSubmenu, evt -> processButon(evt,rowSubMenu ));
-					losThemes = rowSubMenu.get("theme").asText();
-					button1.addThemeNames(losThemes);
-					div2.add(button1);
-					div.add(div2);
-				}
-			}
-			else
-			{
-				Button  button1 = new Button(optionName, evt -> processButon(evt,rowMenu.getRowJSon() ));
-				String losThemes = rowMenu.getRowJSon().get("theme").asText();
-				button1.addThemeNames(losThemes);
-				div.add(button1);
-			}
-			if (flag==1) { 
-				page1.add(div);
-				page1.setVisible(false);
-				tabsToPages.put(tab1, page1);
-				tabs.add(tab1);
-				pages.add(page1);
-				tabs.addSelectedChangeListener(event -> {
-				    tabsToPages.values().forEach(page -> page.setVisible(false));
-				    Component selectedPage = tabsToPages.get(tabs.getSelectedTab());
-				    if (selectedPage != null) selectedPage.setVisible(true);
-				});
-				dvTabs.add(tabs);
-				vlButomsGroup1.add(pages);
-			}
-			else vlButomsGroup1.add(div);
-			
-		}
-//		vlButomsGroup1.setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-//		vlButomsGroup2.setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-//		Button  button1 = new Button("boton 1", evt -> processButon(evt));
-//		Button  button2 = new Button("boton 2", evt -> processButon(evt));
-//		button1.getElement().setAttribute("theme", "Text");
-		
-//		vlButomsGroup1.add(button1);
-//		vlButomsGroup2.add(button2);
-//		grid.setDataProvider(dataProvider);
-//		grid.addColumn(DynamicDBean::getCol1).setHeader("Product Name").setFlexGrow(10);
-//		rowsColList = dataProvider.getRowsColList();
-		
-//		grid.removeAllColumns();
-//		int numberOFCols =rowsColList.size();//length;
-	//       addColumn(Customer::getId, new NumberRenderer()).setCaption("Id");
-	}
-private Object processButon(ClickEvent<Button> evt, JsonNode rowSubMenu) {
-	
-//	String urlBase = UI.getCurrent().getRouter().getUrlBase(SubMenu.class);
-	String titleOption = rowSubMenu.get("optionName").asText();
-	try {
-		String urlBase = "../dymanic";
-		String hostName = InetAddress.getLocalHost().getHostName() ;
-		if (hostName.indexOf(".local") == -1) // to diferent when is running in local (Maven) or in remote (tys.war -> tomcat)
-			urlBase= "../tys/dymanic";
-	String resource = rowSubMenu.get("resource").asText();
-	String queryFormClassName = rowSubMenu.get("queryFormClassName").asText();
-	String displayFormClassName = rowSubMenu.get("displayFormClassName").asText();
-	
-	titleOption = titleOption.replace(" ", "%20");
-//	UI.getCurrent().getPage().executeJavaScript("window.open('http://localhost:8080/dymanic?resourceName="+resource+"&title="+titleOption+"', '_blank');") ;
-	UI.getCurrent().getPage().executeJs("window.open('"+urlBase+"?resourceName="+resource+"&queryFormClassName="+queryFormClassName+"&displayFormClassName="+displayFormClassName+"&title="+titleOption+"', '_blank');") ;
-	} catch (UnknownHostException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	return null;
-	// para abrir Resources LAC
-	// ../dymanic?resourceName=@resources&title=ResourcesLAC&queryFormClassName=comprasyventas.compras.PedidoProveedorQuery&displayFormClassName=comprasyventas.compras.PedidoProveedorForm
-	// http://localhost:8080/dymanic?resourceName=CR-resources&title=ResourcesLAC&queryFormClassName=dev.lac.ResourcesQuery&displayFormClassName=dev.lac.ResourcesForm
-	// http://localhost:8080/dymanic?resourceName=CR-FormTemplate&title=FormTemplate&queryFormClassName=dev.lac.FormTemplateQuery&displayFormClassName=dev.lac.FormTemplateForm
-}
-
-//	@Override
-//	protected CrudEntityPresenterREST<DynamicDBean> getPresenter() {
-//		return presenter;
-//	}
-
-//	@Override
-	protected String getBasePage() {
-		return PAGE_PRODUCTS;
-	}
-
-//	@Override
-	protected BeanValidationBinder<DynamicDBean> getBinder() {
-		return binder;
-	}
-
-
-
-//	@Override
-//	protected CrudEntityPresenter<DynamicDBean> getPresenter() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-
-	@Override
-	public void afterNavigation(AfterNavigationEvent event) {
-		QueryParameters queryParameters = event.getLocation().getQueryParameters();
-		filter = queryParameters.getParameters().get("filter").get(0);
-		filter=filter.replace("EEQQ", "=");
-		title=queryParameters.getParameters().get("title").get(0);
-
-		
-//		QueryParameters queryParameters = event.getLocation().getQueryParameters();
-//		filter = queryParameters.getParameters().get("filter").get(0);
-//		filter=filter.replace("EEQQ", "=");
-////		title=queryParameters.getParameters().get("title").get(0);
-		setupButtons();
-		
+			filtertab = "isFKidMenu="+rowMenu.getRowJSon().get("idMenu").asText();
+			dvTabs.getStyle().set("display", "inherit");
+			tab1 = new Tab(optionName);
+			tabs.add(tab1);
+			page1 = new Div();
+			page1.getStyle().set("display", "table");
+			page1.getStyle().set("width", "100%");
+			pages.getStyle().set("width", "100%");
+			SubSubmenu laPage = new SubSubmenu(filtertab);
+			page1.add(laPage);
+			page1.setVisible(false);
+			tabsToPages.put(tab1, page1);
+			tabs.add(tab1);
+			pages.add(page1);
+			tabs.addSelectedChangeListener(event -> {
+			    tabsToPages.values().forEach(page -> page.setVisible(false));
+			    Component selectedPage = tabsToPages.get(tabs.getSelectedTab());
+			    if (selectedPage != null) selectedPage.setVisible(true);
+			});
+			dvTabs.add(tabs);
+			dvPages.add(pages);
+		}		
 	}
 
 	@Override
@@ -288,26 +126,4 @@ private Object processButon(ClickEvent<Button> evt, JsonNode rowSubMenu) {
 		// TODO Auto-generated method stub
 		return title;
 	}
-
-//	@Override
-//	public void setParameter(BeforeEvent event, Long parameter) {
-//		title="par "+parameter;
-//		
-//	}
-
-	@Override
-	public void beforeEnter(BeforeEnterEvent event) {
-		QueryParameters queryParameters = event.getLocation().getQueryParameters();
-		filter = queryParameters.getParameters().get("filter").get(0);
-		filter=filter.replace("EEQQ", "=");
-		title=queryParameters.getParameters().get("title").get(0);
-		// TODO Auto-generated method stub
-		
-	}
-
-//	@Override
-//	protected CrudEntityPresenter<DynamicDBean> getPresenter() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 }

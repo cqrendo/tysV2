@@ -1,3 +1,5 @@
+defaultJavaCompanionFolder=src/main/java/coop/intergal/tys/ui
+defaultTemplateFolder=frontend/src
 eclipse.preferences.version=1
 serverAddress=192.168.8.108
 serverPort=53815
