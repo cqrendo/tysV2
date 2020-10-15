@@ -62,7 +62,7 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements AfterN
 	private VerticalLayout vlButomsGroup1;
 
 	private String losThemes;
-	private String filter;
+	private String filter = "";
 	private final BeanValidationBinder<DynamicDBean> binder = new BeanValidationBinder<>(DynamicDBean.class);
 	
 	private ArrayList<String[]> rowsColList; 
@@ -71,12 +71,15 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements AfterN
 
 	private String title = AppConst.TITLE_MENU_PRINCIPAL;
 
+	private int esTab = 0;
+
 	public SubSubmenu() {
 		super();
 	}
 
 	public SubSubmenu(String filter2) {
 		filter = filter2;
+		esTab  = 1;
 		setupButtons();
 	}
 	private void setupButtons() {
@@ -151,7 +154,7 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements AfterN
 
 	@Override
 	public void afterNavigation(AfterNavigationEvent event) {
-		if (filter == null) {
+		if (esTab == 0) {
 			QueryParameters queryParameters = event.getLocation().getQueryParameters();
 			filter = queryParameters.getParameters().get("filter").get(0);
 			filter=filter.replace("EEQQ", "=");
