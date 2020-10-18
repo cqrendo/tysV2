@@ -455,7 +455,7 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 		border-left: 10px solid greenyellow;
 	}
     :host([theme~="nuevacolumna"]) {
-		margin-bottom: 100%;
+		margin-bottom: 50%;
 	}
     :host([theme~="marginbottom30"]) {
 		margin-bottom: 30px;
