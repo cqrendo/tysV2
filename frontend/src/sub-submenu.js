@@ -19,7 +19,7 @@ class SubSubmenu extends PolymerElement {
                     height: 100%;
                 }
             </style>
-   <vaadin-horizontal-layout style="column-count:2;display: block;max-height:420px;height: 100%;"> 
+   <vaadin-horizontal-layout style="column-count:2;display: block;overflow:auto;height: 100%;width: 800px;"> 
     <vaadin-vertical-layout id="butomGroup1"></vaadin-vertical-layout> 
    </vaadin-horizontal-layout> 
 
