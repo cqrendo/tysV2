@@ -90,7 +90,7 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements AfterN
 		dataProvider.setResourceName("CR-menu");
 		rowsColList = dataProvider.getRowsColList();
 		
-		Collection<DynamicDBean> menuList = RestData.getResourceData(0,0,"CR-menu", AppConst.PRE_CONF_PARAM_METADATA, rowsColList, filter, false, false);
+		Collection<DynamicDBean> menuList = RestData.getResourceData(0,0,"CR-menu", AppConst.PRE_CONF_PARAM_METADATA, rowsColList, filter, false, false, null);
 		Iterator<DynamicDBean> itMenuList = menuList.iterator();
 		while (itMenuList.hasNext())
 		{	

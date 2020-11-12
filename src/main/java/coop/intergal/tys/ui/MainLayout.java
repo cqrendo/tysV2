@@ -26,6 +26,7 @@ import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Location;
 import com.vaadin.flow.router.QueryParameters;
+import com.vaadin.flow.router.RouteConfiguration;
 import com.vaadin.flow.router.RouterLayout;
 import com.vaadin.flow.server.ErrorHandler;
 import com.vaadin.flow.server.InitialPageSettings;
@@ -104,7 +105,19 @@ public class MainLayout extends FlexBoxLayout
                     Notification.show(
                             "We are sorry, but an internal error occurred");
                 });
-
+       	RouteConfiguration configuration = RouteConfiguration.forSessionScope();
+        if (AppConst.INCLUDE_MAIN_LAYOUT) {
+            if (configuration.getRoute(AppConst.PAGE_DYNAMIC).isPresent() == false)
+              {
+              configuration.setRoute(AppConst.PAGE_DYNAMIC, DynamicGridDisplay.class,
+                  this.getClass());  
+          //        Class.forName(AppConst.MAIN_LAYOUT_CLASS).asSubclass(RouterLayout.class));
+            //       MainLayout.class);
+              }
+          } else {
+            if (configuration.getRoute(AppConst.PAGE_DYNAMIC).isPresent() == false)
+              configuration.setRoute(AppConst.PAGE_DYNAMIC, DynamicGridDisplay.class);
+          }
         addClassName(CLASS_NAME);
         setFlexDirection(FlexDirection.COLUMN);
         setSizeFull();

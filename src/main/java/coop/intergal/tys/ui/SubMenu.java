@@ -86,7 +86,7 @@ public class SubMenu extends PolymerTemplate<TemplateModel> implements BeforeEnt
 		dataProvider.setPreConfParam(AppConst.PRE_CONF_PARAM);
 		dataProvider.setResourceName("CR-menu");
 		rowsColList = dataProvider.getRowsColList();
-		Collection<DynamicDBean> menuList = RestData.getResourceData(0,0,"CR-menu", AppConst.PRE_CONF_PARAM_METADATA, rowsColList, filter, false, false);
+		Collection<DynamicDBean> menuList = RestData.getResourceData(0,0,"CR-menu", AppConst.PRE_CONF_PARAM_METADATA, rowsColList, filter, false, false, null);
 		Iterator<DynamicDBean> itMenuList = menuList.iterator();
 		tabs.removeAll();
 		Map<Tab, Component> tabsToPages = new HashMap<>();

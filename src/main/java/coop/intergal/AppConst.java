@@ -57,6 +57,11 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String LOGIN_NAME = "LOGIN_NAME";
 	public static final String LOGIN_DESCRIPTION = "LOGIN_DESCRIPTION";
 	public static final int MAX_NUMBER_OF_FIELDS_PER_TABLE = 150;
+	public static final boolean INCLUDE_MAIN_LAYOUT = false;
+	public static final String LOGIN_FORGETPASS_CONTENT ="Contraseña olvidada";
+	public static final String LOGIN_FORGETPASS_ERROR = "LOGIN_FORGETPASS_ERROR";
+	public static final String LOGIN_FORGETPASS_NOTEMAIL = "LOGIN_FORGETPASS_NOTEMAIL";
+
 
 
 	// Mutable for testing.
