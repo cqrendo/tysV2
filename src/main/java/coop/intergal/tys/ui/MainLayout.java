@@ -97,7 +97,8 @@ public class MainLayout extends FlexBoxLayout
 	private NaviItem submenu;
 
 
-    public MainLayout() {
+    @SuppressWarnings("unchecked")
+	public MainLayout() {
         VaadinSession.getCurrent()
                 .setErrorHandler((ErrorHandler) errorEvent -> {
                     log.error("Uncaught UI exception",
