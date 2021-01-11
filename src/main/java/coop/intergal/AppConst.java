@@ -61,14 +61,14 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String LOGIN_FORGETPASS_CONTENT ="Contraseña olvidada";
 	public static final String LOGIN_FORGETPASS_ERROR = "LOGIN_FORGETPASS_ERROR";
 	public static final String LOGIN_FORGETPASS_NOTEMAIL = "LOGIN_FORGETPASS_NOTEMAIL";
-	public static final boolean DEBUG_GET_DATA_FROM_BACK_END = false;
+	public static final boolean DEBUG_GET_DATA_FROM_BACK_END = true;
 	
 	public static final String EMAIL_REMITENTE = "ampafacil.com@gmail.com";
 	public static final String EMAIL_CLAVE = "Susita123%";
 	public static final String EMAIL_HOST = "smtp.gmail.com";
 	public static final String EMAIL_PORT = "587";
 	public static final String LDAP_BASE = ",ou=anpas,dc=cloud";
-
+	public static final String COUNT_USED_BY_DB = "COUNT(*)";// depending on DB the result for count is different by example  "count(*)"; para mysql y COUNT(*) para Oracle //
 
 
 

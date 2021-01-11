@@ -1,0 +1,2400 @@
+     "{d}CR-ARTICULOS": {
+        "{f}CR-ARTICULOS.json": {
+          "name": "CR-ARTICULOS",
+          "description": "CLAVE_ARTICULO = 6570\nCLAVE_ARTICULO = 17182 or CLAVE_ARTICULO = 65619",
+          "siblingRank": 100,
+          "resourceType": "TableBased",
+          "prefix": "GFER",
+          "entity": "ARTICULOS",
+          "isCollection": true,
+          "filter": "",
+          "order": null,
+          "useSchemaAttributes": false,
+          "attributes": [
+            {
+              "name": "CLAVE_ARTICULO",
+              "attribute": "CLAVE_ARTICULO",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "name": "REF_PROVEEDOR",
+              "attribute": "REF_PROVEEDOR",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "name": "DESCRIPCION",
+              "attribute": "DESCRIPCION",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "name": "DIMENSIONES",
+              "attribute": "DIMENSIONES",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "name": "PROVEEDOR",
+              "attribute": "PROVEEDOR",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "name": "UNIDAD_MEDIDA",
+              "attribute": "UNIDAD_MEDIDA",
+              "description": null,
+              "isKey": false
+            },
+            {
+              "name": "PREFERENCIA_VENTA",
+              "attribute": "PREFERENCIA_VENTA",
+              "description": null,
+              "isKey": false
+            }
+          ]
+        },
+        "{f}get_event.js": null,
+        "{f}put_post_event.js": null,
+        "{f}extended_properties.js": null,
+        "{d}FK-ARTICULOS_CONTROL_STOCK": {
+          "{f}FK-ARTICULOS_CONTROL_STOCK.json": {
+            "name": "FK-ARTICULOS_CONTROL_STOCK",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER20",
+            "entity": "ARTICULOS_CONTROL_STOCK",
+            "join": "\"CLAVE_ARTICULO\"=[\"CLAVE_ARTICULO\"]",
+            "isCollection": false,
+            "isCombined": true,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "EXISTENCIAS_PROPIAS",
+                "attribute": "EXISTENCIAS_PROPIAS",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "UNIDADES_PDTES_RECIBIR",
+                "attribute": "UNIDADES_PDTES_RECIBIR",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "UNIDADESPDTESSERVIR",
+                "attribute": "UNIDADESPDTESSERVIR",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "CANTIDADAPEDIR",
+                "attribute": "CANTIDADAPEDIR",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "CANTIDADAPEDIRGALICIA",
+                "attribute": "CANTIDADAPEDIRGALICIA",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}FK-CAPITULOS": {
+          "{f}FK-CAPITULOS.json": {
+            "name": "FK-CAPITULOS",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "CAPITULOS",
+            "join": "\"CAPITULO\" = [\"CAPITULO\"]",
+            "isCollection": false,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": true
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}FK-GMVENTA": {
+          "{f}FK-GMVENTA.json": {
+            "name": "FK-GMVENTA",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "GRUPOSMARGENESVENTA",
+            "join": "\"CLAVE\" = [\"GRUPOMARGENES\"]",
+            "isCollection": false,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": true
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}FK-GRUPOSMARGENESVENTA": {
+          "{f}FK-GRUPOSMARGENESVENTA.json": {
+            "name": "FK-GRUPOSMARGENESVENTA",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "GRUPOSMARGENESVENTA",
+            "join": "\"CLAVE\" = [\"BORRADORMARGEN\"]",
+            "isCollection": false,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": true
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}FK-GRUPOS_DE_ARTICULOS": {
+          "{f}FK-GRUPOS_DE_ARTICULOS.json": {
+            "name": "FK-GRUPOS_DE_ARTICULOS",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "GRUPOS_DE_ARTICULOS",
+            "join": "\"CAPITULO\" = [\"CAPITULO\"]\n and \"GRUPO\" = [\"GRUPO\"]",
+            "isCollection": false,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": true
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}FK-GRUPOS_DE_DTOS_PROVEEDOR": {
+          "{f}FK-GRUPOS_DE_DTOS_PROVEEDOR.json": {
+            "name": "FK-GRUPOS_DE_DTOS_PROVEEDOR",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "GRUPOS_DE_DTOS_PROVEEDOR",
+            "join": "\"CLAVE\" = [\"GRUPO_DTOS_DEL_PROVEEDOR\"]",
+            "isCollection": false,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": true
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}FK-GRUPOS_DE_DTOS_PROVEEDOR-BORRADOR": {
+          "{f}FK-GRUPOS_DE_DTOS_PROVEEDOR-BORRADOR.json": {
+            "name": "FK-GRUPOS_DE_DTOS_PROVEEDOR-BORRADOR",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "GRUPOS_DE_DTOS_PROVEEDOR",
+            "join": "\"CLAVE\" = [\"BORRADOR_TABLA_DTOS\"]",
+            "isCollection": true,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": true
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}FK-PREFERENCIAVENTA": {
+          "{f}FK-PREFERENCIAVENTA.json": {
+            "name": "FK-PREFERENCIAVENTA",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "PREFERENCIAVENTA",
+            "join": "\"NPV\" = [\"PREFERENCIA_VENTA\"]",
+            "isCollection": false,
+            "isCombined": true,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "DESCRIPCION_NPV",
+                "attribute": "DESCRIPCION",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}FK-SUBGRUPOS_DE_ARTICULOS": {
+          "{f}FK-SUBGRUPOS_DE_ARTICULOS.json": {
+            "name": "FK-SUBGRUPOS_DE_ARTICULOS",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "SUBGRUPOS_DE_ARTICULOS",
+            "join": "\"CAPITULO\" = [\"CAPITULO\"]\n and \"GRUPO\" = [\"GRUPO\"]\n and \"SUBGRUPO\" = [\"SUBGRUPO\"]",
+            "isCollection": true,
+            "filter": null,
+            "order": null,
+            "useSchemaAttributes": true
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}LIST-ARTICULOSCONPROVALTERNATIVO": {
+          "{f}LIST-ARTICULOSCONPROVALTERNATIVO.json": {
+            "name": "LIST-ARTICULOSCONPROVALTERNATIVO",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "ARTICULOSCONPROVALTERNATIVO",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "CLAVEARTICULO=0",
+            "order": null,
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "Prov",
+                "attribute": "CLAVEPROVEEDOR",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Nombre",
+                "attribute": "NOMBREPROVEEDOR",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Precio",
+                "attribute": "PRECIO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dto",
+                "attribute": "DTO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "PrecioNeto",
+                "attribute": "PRECIONETO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Ean 13",
+                "attribute": "EAN13",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "ReferenciaProv",
+                "attribute": "REFERENCIAPROV",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "FechaUltCambioPrecio",
+                "attribute": "FECHAULTCAMBIOPRECIO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "IndicaCambioPrecio",
+                "attribute": "INDICACAMBIOPRECIO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "EmpresaParaCCS",
+                "attribute": "EMPRESAPARACCS",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "UxUca",
+                "attribute": "UXUCA",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}LIST-ARTICULOSCONTROLSTOCK": {
+          "{f}LIST-ARTICULOSCONTROLSTOCK.json": {
+            "name": "LIST-ARTICULOSCONTROLSTOCK",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER20",
+            "entity": "ARTICULOS_CONTROL_STOCK",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVE_ARTICULO\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "CLAVE_ARTICULO=0",
+            "order": null,
+            "useSchemaAttributes": true
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}LIST-ARTICULOSTRANSFORMADOS-_ORIGEN_": {
+          "{f}LIST-ARTICULOSTRANSFORMADOS-_ORIGEN_.json": {
+            "name": "LIST-ARTICULOSTRANSFORMADOS-_ORIGEN_",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "ARTICULOSTRANSFORMADOS",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"ARTICULOORIGEN\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "ARTICULOORIGEN=0",
+            "order": null,
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "Origen",
+                "attribute": "ARTICULOORIGEN",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Transformado",
+                "attribute": "ARTICULOTRANSFORMADO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Descripcion Transformado",
+                "attribute": "DESCRIPCIONTRANSFORMADO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dimensiones Transformado",
+                "attribute": "DIMENSIONESTRANSFORMADO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Usuario",
+                "attribute": "USUARIO",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}LIST-ARTICULOSTRANSFORMADOS-_TRANSF_": {
+          "{f}LIST-ARTICULOSTRANSFORMADOS-_TRANSF_.json": {
+            "name": "LIST-ARTICULOSTRANSFORMADOS-_TRANSF_",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "ARTICULOSTRANSFORMADOS",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"ARTICULOTRANSFORMADO\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "ARTICULOTRANSFORMADO=0",
+            "order": null,
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "Origen",
+                "attribute": "ARTICULOORIGEN",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Transformado",
+                "attribute": "ARTICULOTRANSFORMADO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Descripcion Origen",
+                "attribute": "DESCRIPCIONORIGEN",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dimensiones Origen",
+                "attribute": "DIMENSIONESORIGEN",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Usuario",
+                "attribute": "USUARIO",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}LIST-ARTICULO_SITUACION": {
+          "{f}LIST-ARTICULO_SITUACION.json": {
+            "name": "LIST-ARTICULO_SITUACION",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER20",
+            "entity": "ARTICULO_SITUACION",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVE_ARTICULO\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "CLAVE_ARTICULO=0",
+            "order": null,
+            "useSchemaAttributes": true
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null,
+          "{d}LIST-ARTICULOSMOV": {
+            "{f}LIST-ARTICULOSMOV.json": {
+              "name": "LIST-ARTICULOSMOV",
+              "description": null,
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER",
+              "entity": "ARTICULOSMOV",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \n\"ALMACEN\" = [\"CLAVE_ALMACEN\"]\n and \"CLAVE\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": null,
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "Entrada",
+                  "attribute": "FECHAENTRADA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Traspaso",
+                  "attribute": "FECHATRASPASO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Trasp. Salida",
+                  "attribute": "FECHATRASPASOSALIDA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Salida",
+                  "attribute": "FECHASALIDA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Dias",
+                  "attribute": "DIASCALCULO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "F. Calculo",
+                  "attribute": "FECHACALCULO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pen 1",
+                  "attribute": "PENALIZACION",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fec. Pen 1",
+                  "attribute": "FECHAPENALIZACION",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pen 2",
+                  "attribute": "PENALIZACION2",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fec. Pen 2",
+                  "attribute": "FECHAPENALIZACION2",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pen 3",
+                  "attribute": "PENALIZACION3",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fec. Pen 3",
+                  "attribute": "FECHAPENALIZACION3",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pen 4",
+                  "attribute": "PENALIZACION4",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fec. Pen 4",
+                  "attribute": "FECHAPENALIZACION4",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pen 5",
+                  "attribute": "PENALIZACION5",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fec. Pen 5",
+                  "attribute": "FECHAPENALIZAZION5",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pen 6",
+                  "attribute": "PENALIZACION6",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fec. Pen 6",
+                  "attribute": "FECHAPENALIZACION6",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pen 7",
+                  "attribute": "PENALIZACION7",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fec. Pen 7",
+                  "attribute": "FECHAPENALIZACION7",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pen 8",
+                  "attribute": "PENALIZACION8",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fec. Pen 8",
+                  "attribute": "FECHAPENALIZACION8",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Acu Penalizacion",
+                  "attribute": "ACUPENALIZACION",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fecha Ult. Mov.",
+                  "attribute": "FECHAULTMOV",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null
+          },
+          "{d}LIST-ARTISITUGALICIA-MANUALJOIN": {
+            "{f}LIST-ARTISITUGALICIA-MANUALJOIN.json": {
+              "name": "LIST-ARTISITUGALICIA-MANUALJOIN",
+              "description": "\"ClaveArticulo\" = [\"CLAVE_ARTICULO\"] AND (  \"AnoMes\"  <= [\"AnoMesGrafico\"] +1 OR \"AnoMes\" - 89 = [\"AnoMesGrafico\"] )\n\norder \"ANOMES\" desc\n'ANOMES' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "ARTISITUGALICIA",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "AnoMes",
+                  "attribute": "ANOMES",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "TotalSalidas",
+                  "attribute": "TOTALSALIDAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "TotalEntradas",
+                  "attribute": "TOTALENTRADAS",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null
+          },
+          "{d}LIST-ARTISITUGLOBAL-MANUALJOIN": {
+            "{f}LIST-ARTISITUGLOBAL-MANUALJOIN.json": {
+              "name": "LIST-ARTISITUGLOBAL-MANUALJOIN",
+              "description": "ClaveArticulo = [?CLAVE_ARTICULO] AND (  AnoMes  <= [?AnoMesGrafico] +1 OR AnoMes - 89 = [?AnoMesGrafico] )\n'ANOMES' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "ARTISITUGLOBAL",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "",
+              "useSchemaAttributes": true
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null
+          },
+          "{d}LIST-ARTISITUMENSUAL": {
+            "{f}LIST-ARTISITUMENSUAL.json": {
+              "name": "LIST-ARTISITUMENSUAL",
+              "description": "ANOMES  <= [ANOMESGRAFICO] +1 or ANOMES - 89 = [ANOMESGRAFICO]\n'ANOMES' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "ARTISITUMENSUAL",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEALMACEN\" = [\"CLAVE_ALMACEN\"]\n and \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": "",
+              "order": "",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "Ano Mes",
+                  "attribute": "ANOMES",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Salidas",
+                  "attribute": "SALIDAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Entradas",
+                  "attribute": "ENTRADAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "ValorSalidasCM",
+                  "attribute": "VALORSALIDASCM",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "ValorSalidasCUE",
+                  "attribute": "VALORSALIDASCUE",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "ValorSalidasPV",
+                  "attribute": "VALORSALIDASPV",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "ValorEntradas",
+                  "attribute": "VALORENTRADAS",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null
+          },
+          "{d}LIST-ARTISITUTODAGALICIA-MANUALJOIN": {
+            "{f}LIST-ARTISITUTODAGALICIA-MANUALJOIN.json": {
+              "name": "LIST-ARTISITUTODAGALICIA-MANUALJOIN",
+              "description": "ClaveArticulo = [?CLAVE_ARTICULO] AND (  AnoMes  <= [?AnoMesGrafico] +1 OR AnoMes - 89 = [?AnoMesGrafico] )\n\n'ANOMES' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "ARTISITUTODAGALICIA",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "ANOMES",
+                  "attribute": "ANOMES",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "TOTALSALIDAS",
+                  "attribute": "TOTALSALIDAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "TOTALENTRADAS",
+                  "attribute": "TOTALENTRADAS",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null
+          },
+          "{d}LIST-CORTESLIN": {
+            "{f}LIST-CORTESLIN.json": {
+              "name": "LIST-CORTESLIN",
+              "description": "\"DESCRIPCION\", \"DIMENSIONES\", \"LONGITUDCORTE\"\n'DESCRIPCION', 'DIMENSIONES', 'LONGITUDCORTE'",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER",
+              "entity": "CORTESLIN",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEALMACEN\" = [\"CLAVE_ALMACEN\"]\n and \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "Longitud Corte",
+                  "attribute": "LONGITUDCORTE",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Piezas Coratdas",
+                  "attribute": "PIEZASCORTADAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Peso Articulo",
+                  "attribute": "PESOTEORICOARTICULO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Peso Cortes",
+                  "attribute": "PESOTOTALCORTES",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fecha Ultima Modificacion",
+                  "attribute": "FECHAULTIMAMODIFICACION",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Usuario Ultima Modificacion",
+                  "attribute": "USUARIOULTIMAMODIFICACION",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fecha Alta",
+                  "attribute": "FECHAALTA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Usuario Alta",
+                  "attribute": "USUARIOALTA",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null
+          },
+          "{d}LIST-ENTRADAS_LINS": {
+            "{f}LIST-ENTRADAS_LINS.json": {
+              "name": "LIST-ENTRADAS_LINS",
+              "description": "\"FECHA\" desc, \"N_ALBARAN\" desc\n'FECHA' desc, 'N_ALBARAN' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "ENTRADAS_LIN",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVE_DE_ALMACEN_ALBARAN\" = [\"CLAVE_ALMACEN\"]\n and \"CLAVE_ARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "'FECHA' desc, 'N_ALBARAN' desc",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "AL",
+                  "attribute": "CLAVE_DE_ALMACEN_ALBARAN",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Albaran",
+                  "attribute": "N_ALBARAN",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fecha",
+                  "attribute": "FECHA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Prov",
+                  "attribute": "CLAVE_PROVEEDOR",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Cantidad",
+                  "attribute": "UNIDADES_RECIBIDAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Precio",
+                  "attribute": "PRECIO_COSTE",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Dto",
+                  "attribute": "DESCUENTO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pedido",
+                  "attribute": "N_PEDIDO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Lin. Ped.",
+                  "attribute": "LINEA_PEDIDO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Colada",
+                  "attribute": "COLADA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Lote",
+                  "attribute": "LOTEINTERNOCOLADA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Alb. Prov.",
+                  "attribute": "NUMERO_ALBARAN_DEL_PROVEEDOR",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Serie Factura",
+                  "attribute": "SERIE_FACTURA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Num Factura",
+                  "attribute": "INDICE_FACTURA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Clave OP",
+                  "attribute": "CLAVE_OPERACION",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null,
+            "{d}FK-PROVEEDORES": {
+              "{f}FK-PROVEEDORES.json": {
+                "name": "FK-PROVEEDORES",
+                "description": null,
+                "siblingRank": 100,
+                "resourceType": "TableBased",
+                "prefix": "GFER",
+                "entity": "PROVEEDORES",
+                "join": "\"CLAVE_PROVEEDOR\" = [\"CLAVE_PROVEEDOR\"]",
+                "isCollection": false,
+                "isCombined": true,
+                "filter": null,
+                "order": null,
+                "useSchemaAttributes": false,
+                "attributes": [
+                  {
+                    "name": "Nombre",
+                    "attribute": "XNOMBRE",
+                    "description": null,
+                    "isKey": false
+                  }
+                ]
+              },
+              "{f}get_event.js": null,
+              "{f}put_post_event.js": null,
+              "{f}extended_properties.js": null
+            }
+          },
+          "{d}LIST-PED_CLIENTE_LIN": {
+            "{f}LIST-PED_CLIENTE_LIN.json": {
+              "name": "LIST-PED_CLIENTE_LIN",
+              "description": "\"FECHA_PEDIDO\" desc, \"N_PEDIDO\" desc\n'FECHA_PEDIDO' desc, 'N_PEDIDO' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "PED_CLIENTE_LIN",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVE_ALMACEN\" = [\"CLAVE_ALMACEN\"]\n and \"CLAVE_ARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "Pedido",
+                  "attribute": "N_PEDIDO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fecha",
+                  "attribute": "FECHA_PEDIDO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Clave",
+                  "attribute": "CLAVE_CLIENTE",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Comprom.",
+                  "attribute": "UNIDADES_COMPROMETIDAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Servidas",
+                  "attribute": "UNIDADES_SERVIDAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pdte. Servir",
+                  "attribute": "CANTPDTESERVIR",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Precio",
+                  "attribute": "PRECIO_UNIDAD",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Reserv.",
+                  "attribute": "CANTRESERVADA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "CF",
+                  "attribute": "COMPLETOFORZADO",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null,
+            "{d}FK-PED_CLIENTE_CAB": {
+              "{f}FK-PED_CLIENTE_CAB.json": {
+                "name": "FK-PED_CLIENTE_CAB",
+                "description": null,
+                "siblingRank": 100,
+                "resourceType": "TableBased",
+                "prefix": "GFER20",
+                "entity": "PED_CLIENTE_CAB",
+                "join": "\"CLAVE_ALMACEN\" = [\"CLAVE_ALMACEN\"]\n and \"N_PEDIDO\" = [\"N_PEDIDO\"]",
+                "isCollection": true,
+                "filter": null,
+                "order": null,
+                "useSchemaAttributes": true
+              },
+              "{f}get_event.js": null,
+              "{f}put_post_event.js": null,
+              "{f}extended_properties.js": null,
+              "{d}FK-CLIENTES": {
+                "{f}FK-CLIENTES.json": {
+                  "name": "FK-CLIENTES",
+                  "description": null,
+                  "siblingRank": 100,
+                  "resourceType": "TableBased",
+                  "prefix": "GFER",
+                  "entity": "CLIENTES",
+                  "join": "\"CLAVE_CLIENTE\" = [\"CLAVE_CLIENTE\"]",
+                  "isCollection": false,
+                  "isCombined": true,
+                  "filter": null,
+                  "order": null,
+                  "useSchemaAttributes": false,
+                  "attributes": [
+                    {
+                      "name": "Nombre",
+                      "attribute": "XNOMBRE",
+                      "description": null,
+                      "isKey": false
+                    }
+                  ]
+                },
+                "{f}get_event.js": null,
+                "{f}put_post_event.js": null,
+                "{f}extended_properties.js": null
+              }
+            }
+          },
+          "{d}LIST-PED_PROVEED_LINS": {
+            "{f}LIST-PED_PROVEED_LINS.json": {
+              "name": "LIST-PED_PROVEED_LINS",
+              "description": "\"FECHA_PROPUESTA\" desc, \"N_PEDIDO\" desc\n'FECHA_PROPUESTA' desc, 'N_PEDIDO' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "PED_PROVEED_LIN",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVE_ALMACEN\" = [\"CLAVE_ALMACEN\"]\n and \"CLAVE_ARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "Pedido",
+                  "attribute": "N_PEDIDO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fecha",
+                  "attribute": "FECHA_PROPUESTA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Proveedor",
+                  "attribute": "CLAVE_PROVEEDOR",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pedidas",
+                  "attribute": "UNIDADES_PEDIDAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Recibidas",
+                  "attribute": "UNIDADES_RECIBIDAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pdte Recibir",
+                  "attribute": "UNIDADES_PDTES_RECIBIR",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fase",
+                  "attribute": "FASE",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Precio",
+                  "attribute": "COSTE_UNIDAD",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Cliente",
+                  "attribute": "NOMBRECLIENTE",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Destino Mercancia",
+                  "attribute": "DESTINOMERCANCIA",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null,
+            "{d}FK-PED_PROVEED_CAB": {
+              "{f}FK-PED_PROVEED_CAB.json": {
+                "name": "FK-PED_PROVEED_CAB",
+                "description": null,
+                "siblingRank": 100,
+                "resourceType": "TableBased",
+                "prefix": "GFER20",
+                "entity": "PED_PROVEED_CAB",
+                "join": "\"CLAVE_ALMACEN\" = [\"CLAVE_ALMACEN\"]\n and \"FASE\" = [\"FASE_CABEZERA\"]\n and \"N_PEDIDO\" = [\"N_PEDIDO\"]",
+                "isCollection": true,
+                "filter": null,
+                "order": null,
+                "useSchemaAttributes": true
+              },
+              "{f}get_event.js": null,
+              "{f}put_post_event.js": null,
+              "{f}extended_properties.js": null,
+              "{d}FK-PROVEEDORES": {
+                "{f}FK-PROVEEDORES.json": {
+                  "name": "FK-PROVEEDORES",
+                  "description": null,
+                  "siblingRank": 100,
+                  "resourceType": "TableBased",
+                  "prefix": "GFER",
+                  "entity": "PROVEEDORES",
+                  "join": "\"CLAVE_PROVEEDOR\" = [\"CLAVE_PROVEEDOR\"]",
+                  "isCollection": false,
+                  "isCombined": true,
+                  "filter": null,
+                  "order": null,
+                  "useSchemaAttributes": false,
+                  "attributes": [
+                    {
+                      "name": "Nombre",
+                      "attribute": "XNOMBRE",
+                      "description": null,
+                      "isKey": false
+                    }
+                  ]
+                },
+                "{f}get_event.js": null,
+                "{f}put_post_event.js": null,
+                "{f}extended_properties.js": null
+              }
+            }
+          },
+          "{d}LIST-PRESUPUESTOS_LIN": {
+            "{f}LIST-PRESUPUESTOS_LIN.json": {
+              "name": "LIST-PRESUPUESTOS_LIN",
+              "description": "\"FECHA\" desc, \"N_PRESUPUESTO\" desc\n'FECHA' desc, 'N_PRESUPUESTO' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "PRESUPUESTOS_LIN",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"ALMACEN\" = [\"CLAVE_ALMACEN\"]\n and \"CLAVE_ARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "Presup:",
+                  "attribute": "N_PRESUPUESTO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fecha",
+                  "attribute": "FECHA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Clave",
+                  "attribute": "CLAVE_CLIENTE",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Cantidad",
+                  "attribute": "CANTIDAD",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Precio",
+                  "attribute": "PRECIO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Dto",
+                  "attribute": "DESCUENTO",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null,
+            "{d}FK-PRESUPUESTOS_CAB": {
+              "{f}FK-PRESUPUESTOS_CAB.json": {
+                "name": "FK-PRESUPUESTOS_CAB",
+                "description": null,
+                "siblingRank": 100,
+                "resourceType": "TableBased",
+                "prefix": "GFER20",
+                "entity": "PRESUPUESTOS_CAB",
+                "join": "\"ALMACEN\" = [\"ALMACEN\"]\n and \"N_PRESUPUESTO\" = [\"N_PRESUPUESTO\"]",
+                "isCollection": true,
+                "filter": null,
+                "order": null,
+                "useSchemaAttributes": true
+              },
+              "{f}get_event.js": null,
+              "{f}put_post_event.js": null,
+              "{f}extended_properties.js": null,
+              "{d}FK-CLIENTES": {
+                "{f}FK-CLIENTES.json": {
+                  "name": "FK-CLIENTES",
+                  "description": null,
+                  "siblingRank": 100,
+                  "resourceType": "TableBased",
+                  "prefix": "GFER",
+                  "entity": "CLIENTES",
+                  "join": "\"CLAVE_CLIENTE\" = [\"CLAVE_CLIENTE\"]",
+                  "isCollection": false,
+                  "isCombined": true,
+                  "filter": null,
+                  "order": null,
+                  "useSchemaAttributes": false,
+                  "attributes": [
+                    {
+                      "name": "Nombre",
+                      "attribute": "XNOMBRE",
+                      "description": null,
+                      "isKey": false
+                    }
+                  ]
+                },
+                "{f}get_event.js": null,
+                "{f}put_post_event.js": null,
+                "{f}extended_properties.js": null
+              }
+            }
+          },
+          "{d}LIST-SALIDASTRASPASO": {
+            "{f}LIST-SALIDASTRASPASO.json": {
+              "name": "LIST-SALIDASTRASPASO",
+              "description": "\"NUM_ORDEN\" desc, \"FECHAALTACABECERA\" desc\n'NUM_ORDEN' desc, 'FECHAALTACABECERA' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "TRASP_ENTRE_ALM_LIN",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"ALMACEN_DESTINO\" = [\"CLAVE_ALMACEN\"]\n and \"CLAVE_ARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "Trasp",
+                  "attribute": "NUM_ORDEN",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "F. Propuesta",
+                  "attribute": "FECHA_ALTA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Cant Prop",
+                  "attribute": "CANTIDAD_PROPUESTA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "F. Entrada",
+                  "attribute": "FECHA_ENTRADA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Origen",
+                  "attribute": "ALMACEN_ORIGEN",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "F. Salida",
+                  "attribute": "FECHA_SALIDA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Cantidad",
+                  "attribute": "CANTIDAD_TRASPASADA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "En Transito",
+                  "attribute": "CANTENTRANSITO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Reserv.",
+                  "attribute": "CANTRESERVADA",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null
+          },
+          "{d}LIST-SALIDAS_LINS": {
+            "{f}LIST-SALIDAS_LINS.json": {
+              "name": "LIST-SALIDAS_LINS",
+              "description": "\"FECHA_ALBARAN\" desc, \"N_ALBARAN\" desc\n'FECHA_ALBARAN' desc, 'N_ALBARAN' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "SALIDAS_LIN",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVE_ALMACEN\" = [\"CLAVE_ALMACEN\"]\n and \"CLAVE_ARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "AL",
+                  "attribute": "CLAVE_ALMACEN",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Albaran",
+                  "attribute": "N_ALBARAN",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Fecha",
+                  "attribute": "FECHA_ALBARAN",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Cliente",
+                  "attribute": "CLAVE_CLIENTE",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Cantidad",
+                  "attribute": "UNIDADES_SERVIDAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Precio Venta",
+                  "attribute": "PRECIO_DE_VENTA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Dto",
+                  "attribute": "DESCUENTO_LIBRE",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pedido",
+                  "attribute": "N_PEDIDO_CLIENTE",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Lin. Ped.",
+                  "attribute": "LINEA_PEDIDO",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null,
+            "{d}FK-SALIDAS_CAB": {
+              "{f}FK-SALIDAS_CAB.json": {
+                "name": "FK-SALIDAS_CAB",
+                "description": null,
+                "siblingRank": 100,
+                "resourceType": "TableBased",
+                "prefix": "GFER20",
+                "entity": "SALIDAS_CAB",
+                "join": "\"CLAVE_ALMACEN\" = [\"CLAVE_ALMACEN\"]\n and \"FECHA_ALBARAN\" = [\"FECHA_ALBARAN\"]\n and \"N_ALBARAN\" = [\"N_ALBARAN\"]\n and \"SERIE_ALBARAN\" = [\"SERIE_ALBARAN\"]",
+                "isCollection": true,
+                "filter": null,
+                "order": null,
+                "useSchemaAttributes": true
+              },
+              "{f}get_event.js": null,
+              "{f}put_post_event.js": null,
+              "{f}extended_properties.js": null,
+              "{d}FK-CLIENTES": {
+                "{f}FK-CLIENTES.json": {
+                  "name": "FK-CLIENTES",
+                  "description": null,
+                  "siblingRank": 100,
+                  "resourceType": "TableBased",
+                  "prefix": "GFER",
+                  "entity": "CLIENTES",
+                  "join": "\"CLAVE_CLIENTE\" = [\"CLAVE_CLIENTE\"]",
+                  "isCollection": false,
+                  "isCombined": true,
+                  "filter": null,
+                  "order": null,
+                  "useSchemaAttributes": false,
+                  "attributes": [
+                    {
+                      "name": "Nombre",
+                      "attribute": "XNOMBRE",
+                      "description": null,
+                      "isKey": false
+                    }
+                  ]
+                },
+                "{f}get_event.js": null,
+                "{f}put_post_event.js": null,
+                "{f}extended_properties.js": null
+              }
+            }
+          },
+          "{d}LIST-STOCKDIARIOXALMA-MANUALJOIN": {
+            "{f}LIST-STOCKDIARIOXALMA-MANUALJOIN.json": {
+              "name": "LIST-STOCKDIARIOXALMA-MANUALJOIN",
+              "description": "\"FECHA\" desc\n'FECHA' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "STOCKDIARIOXALMA",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"] AND \"CLAVEALMACEN\" = [\"CLAVE_ALMACEN\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "Fecha",
+                  "attribute": "FECHA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "StockINI",
+                  "attribute": "STOCKINI",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Entradas",
+                  "attribute": "ENTRADAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Salidas",
+                  "attribute": "SALIDAS",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Stock",
+                  "attribute": "STOCK",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "EntradasTrasp.",
+                  "attribute": "ENTRADASTRASPASO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Salidas Trasp.",
+                  "attribute": "SALIDASTRAPASO",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null
+          },
+          "{d}LIST-TRASPASOSENTRADA": {
+            "{f}LIST-TRASPASOSENTRADA.json": {
+              "name": "LIST-TRASPASOSENTRADA",
+              "description": "\"NUM_ORDEN\" desc, \"FECHAALTACABECERA\" desc\n'NUM_ORDEN' desc, 'FECHAALTACABECERA' desc",
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER20",
+              "entity": "TRASP_ENTRE_ALM_LIN",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"ALMACEN_ORIGEN\" = [\"CLAVE_ALMACEN\"]\n and \"CLAVE_ARTICULO\" = [\"CLAVE_ARTICULO\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": "",
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "Trasp",
+                  "attribute": "NUM_ORDEN",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "F. Propuesta",
+                  "attribute": "FECHA_ALTA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Cant Prop",
+                  "attribute": "CANTIDAD_PROPUESTA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "F. Salida",
+                  "attribute": "FECHA_SALIDA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Destino",
+                  "attribute": "ALMACEN_DESTINO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "F. Entrada",
+                  "attribute": "FECHA_ENTRADA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Cantidad",
+                  "attribute": "CANTIDAD_TRASPASADA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "En Transito",
+                  "attribute": "CANTENTRANSITO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Reserv.",
+                  "attribute": "CANTRESERVADA",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null
+          },
+          "{d}LIST-UBICACION-MANUALJOIN": {
+            "{f}LIST-UBICACION-MANUALJOIN.json": {
+              "name": "LIST-UBICACION-MANUALJOIN",
+              "description": null,
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER",
+              "entity": "UBICACION",
+              "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CODARTICULO\" = [\"CLAVE_ARTICULO\"]  AND  \"ALMAUBICA\"  = [\"CLAVE_ALMACEN\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": null,
+              "useSchemaAttributes": false,
+              "attributes": [
+                {
+                  "name": "Zona",
+                  "attribute": "IDZONA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Calle",
+                  "attribute": "IDCALLE",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Cuerpo",
+                  "attribute": "IDCUERPO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Altura",
+                  "attribute": "IDALTURA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Hueco",
+                  "attribute": "IDHUECO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Ubica",
+                  "attribute": "ID",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Estado",
+                  "attribute": "ESTADO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Vacio",
+                  "attribute": "HUECOVACIO",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pref. Sal.",
+                  "attribute": "PREFERENCIASALIDA",
+                  "description": null,
+                  "isKey": false
+                },
+                {
+                  "name": "Pref. Ent.",
+                  "attribute": "PREFERENCIAENTRADA",
+                  "description": null,
+                  "isKey": false
+                }
+              ]
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null
+          }
+        },
+        "{d}LIST-COLECCION": {
+          "{f}LIST-COLECCION.json": {
+            "name": "LIST-COLECCION",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "COLECCION",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"ARTICULO\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "ARTICULO=0",
+            "order": null,
+            "useSchemaAttributes": true
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}LIST-CONSULTAPROVLIN": {
+          "{f}LIST-CONSULTAPROVLIN.json": {
+            "name": "LIST-CONSULTAPROVLIN",
+            "description": "\"NUMCONSULTA\" desc\n'NUMCONSULTA' desc",
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER20",
+            "entity": "CONSULTAPROVLIN",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "CLAVEARTICULO=0",
+            "order": "",
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "Num Consulta",
+                "attribute": "NUMCONSULTA",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Fecha",
+                "attribute": "FECHAALTA",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Cantidad",
+                "attribute": "CANTIDAD",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Coste1",
+                "attribute": "COSTE1",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dto1",
+                "attribute": "DTO1",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dias1",
+                "attribute": "DIAS1",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Coste2",
+                "attribute": "COSTE2",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dto2",
+                "attribute": "DTO2",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dias2",
+                "attribute": "DIAS2",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Coste3",
+                "attribute": "COSTE3",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dto3",
+                "attribute": "DTO3",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dias3",
+                "attribute": "DIAS3",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Coste4",
+                "attribute": "COSTE4",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dto4",
+                "attribute": "DTO4",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dias4",
+                "attribute": "DIAS4",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Coste5",
+                "attribute": "COSTE5",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dto5",
+                "attribute": "DTO5",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dias5",
+                "attribute": "DIAS5",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Observaciones",
+                "attribute": "OBSERVACIONES",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Nombre Cliente",
+                "attribute": "NOMBRECLIENTE",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}LIST-CONTROLSTOCKDIARIO-MJ": {
+          "{f}LIST-CONTROLSTOCKDIARIO-MJ.json": {
+            "name": "LIST-CONTROLSTOCKDIARIO-MJ",
+            "description": "\"FECHA\" desc\n'FECHA' desc",
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER20",
+            "entity": "CONTROLSTOCKDIARIO",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\"= [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "CLAVEARTICULO=0",
+            "order": "",
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "FECHA",
+                "attribute": "FECHA",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "ENTRADAS",
+                "attribute": "ENTRADAS",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "SALIDAS",
+                "attribute": "SALIDAS",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "STOCK",
+                "attribute": "STOCK",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "COSTEMEDIO",
+                "attribute": "COSTEMEDIO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "STOCKINI",
+                "attribute": "STOCKINI",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "COSTEUE",
+                "attribute": "COSTEUE",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "VALORENTRADAS",
+                "attribute": "VALORENTRADAS",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "VALORSALIDAS",
+                "attribute": "VALORSALIDAS",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "VALORMEDIOINI",
+                "attribute": "VALORMEDIOINI",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "VALORMEDIO",
+                "attribute": "VALORMEDIO",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}LIST-OFERTASPROVLIN": {
+          "{f}LIST-OFERTASPROVLIN.json": {
+            "name": "LIST-OFERTASPROVLIN",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "OFERTASPROVLIN",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "CLAVEARTICULO=0",
+            "order": null,
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "Oferta",
+                "attribute": "NUMOFERTA",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Prov.",
+                "attribute": "NUMPROV",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Texto",
+                "attribute": "TEXTO",
+                "description": null,
+                "isLookupKey": false,
+                "roleToParent": "OFERTASPROVCAB"
+              },
+              {
+                "name": "Precio1",
+                "attribute": "PRECIO1",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dto1",
+                "attribute": "DTO1",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Cant1",
+                "attribute": "CANT1",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}LIST-TARIFACLIENTELIN": {
+          "{f}LIST-TARIFACLIENTELIN.json": {
+            "name": "LIST-TARIFACLIENTELIN",
+            "description": null,
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "TARIFACLIENTELIN",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "CLAVEARTICULO=0",
+            "order": null,
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "Tarifa",
+                "attribute": "NUMTARIFA",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Nombre Tarifa",
+                "attribute": "DESCRIPCION",
+                "description": null,
+                "isLookupKey": false,
+                "roleToParent": "TARIFACLIENTECAB"
+              },
+              {
+                "name": "Precio",
+                "attribute": "PRECIO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dto Tarifa Cliente",
+                "attribute": "DTOTARIFACLI",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}LIST-TARIFAOFERTASLIN__SINCLIENTE": {
+          "{f}LIST-TARIFAOFERTASLIN__SINCLIENTE.json": {
+            "name": "LIST-TARIFAOFERTASLIN__SINCLIENTE",
+            "description": "NUMTARIFACLIENTE IS NULL ->poner en filter\n\"FECHAFIN\" desc ->order 'FECHAFIN' desc",
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "TARIFAOFERTASLIN",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "CLAVEARTICULO=0 AND NUMTARIFACLIENTE IS NULL",
+            "order": "",
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "AL",
+                "attribute": "ALMACEN",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Oferta",
+                "attribute": "NUMOFERTA",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Nombre Oferta",
+                "attribute": "TEXTO",
+                "description": null,
+                "isLookupKey": false,
+                "roleToParent": "TARIFAOFERTASCAB1"
+              },
+              {
+                "name": "Fecha Fin",
+                "attribute": "FECHAFIN",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Fecha Inicio",
+                "attribute": "FECHAINICIO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Precio",
+                "attribute": "PRECIO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dto",
+                "attribute": "DTOOFERTALIN",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Neto",
+                "attribute": "PRECIONETOSON",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "EnVigor",
+                "attribute": "EnVigor",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Canal",
+                "attribute": "TIPOCANAL",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Tipo",
+                "attribute": "TIPOTEMPORAL",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        },
+        "{d}LIST-TARIFAOFERTASLIN__TARIFACLIENTE": {
+          "{f}LIST-TARIFAOFERTASLIN__TARIFACLIENTE.json": {
+            "name": "LIST-TARIFAOFERTASLIN__TARIFACLIENTE",
+            "description": "NUMTARIFACLIENTE > 0 poner en filter\n\"NUMOFERTA\"-> order 'NUMOFERTA'",
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "TARIFAOFERTASLIN",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "CLAVEARTICULO = 0 AND NUMTARIFACLIENTE > 0",
+            "order": "",
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "Oferta",
+                "attribute": "NUMOFERTA",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Nombre Oferta",
+                "attribute": "TEXTO",
+                "description": null,
+                "isLookupKey": false,
+                "roleToParent": "TARIFAOFERTASCAB1"
+              },
+              {
+                "name": "Tarifa",
+                "attribute": "NUMTARIFACLIENTE",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Fecha Fin",
+                "attribute": "FECHAFIN",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Fecha Inicio",
+                "attribute": "FECHAINICIO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Precio",
+                "attribute": "PRECIO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Dto",
+                "attribute": "DTOOFERTALIN",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Neto",
+                "attribute": "PRECIONETOSON",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null,
+          "{d}FK-TARIFAOFERTASCAB1": {
+            "{f}FK-TARIFAOFERTASCAB1.json": {
+              "name": "FK-TARIFAOFERTASCAB1",
+              "description": null,
+              "siblingRank": 100,
+              "resourceType": "TableBased",
+              "prefix": "GFER",
+              "entity": "TARIFAOFERTASCAB",
+              "join": "\"NUMOFERTA\" = [\"NUMOFERTA\"]",
+              "isCollection": true,
+              "filter": null,
+              "order": null,
+              "useSchemaAttributes": true
+            },
+            "{f}get_event.js": null,
+            "{f}put_post_event.js": null,
+            "{f}extended_properties.js": null,
+            "{d}FK-TARIFACLIENTECAB1": {
+              "{f}FK-TARIFACLIENTECAB1.json": {
+                "name": "FK-TARIFACLIENTECAB1",
+                "description": null,
+                "siblingRank": 100,
+                "resourceType": "TableBased",
+                "prefix": "GFER",
+                "entity": "TARIFACLIENTECAB",
+                "join": "\"NUMTARIFA\" = [\"NUMTARIFACLIENTE\"]",
+                "isCollection": false,
+                "isCombined": true,
+                "filter": null,
+                "order": null,
+                "useSchemaAttributes": false,
+                "attributes": [
+                  {
+                    "name": "Nombre Tarifa",
+                    "attribute": "DESCRIPCION",
+                    "description": null,
+                    "isKey": false
+                  }
+                ]
+              },
+              "{f}get_event.js": null,
+              "{f}put_post_event.js": null,
+              "{f}extended_properties.js": null
+            }
+          }
+        },
+        "{d}LIST-TARIFAVENDEDORLIN": {
+          "{f}LIST-TARIFAVENDEDORLIN.json": {
+            "name": "LIST-TARIFAVENDEDORLIN",
+            "description": "\"TARIFAVEND\"\n'TARIFAVEND'",
+            "siblingRank": 100,
+            "resourceType": "TableBased",
+            "prefix": "GFER",
+            "entity": "TARIFAVENDEDORLIN",
+            "join": "\"EMPTYJOIN\"=[\"EMPTYJOIN\"] AND \"CLAVEARTICULO\" = [\"CLAVE_ARTICULO\"]",
+            "isCollection": true,
+            "filter": "CLAVEARTICULO=0",
+            "order": "",
+            "useSchemaAttributes": false,
+            "attributes": [
+              {
+                "name": "Oferta",
+                "attribute": "TARIFAVEND",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Nombre Oferta",
+                "attribute": "TEXTO",
+                "description": null,
+                "isLookupKey": false,
+                "roleToParent": "TVC"
+              },
+              {
+                "name": "Fecha Fin",
+                "attribute": "FECHAFIN",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Fecha Inicio",
+                "attribute": "FECHAINICIO",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Precio1",
+                "attribute": "PRECIO1",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Cant.1",
+                "attribute": "CANTIDAD1",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Precio2",
+                "attribute": "PRECIO2",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Cant.2",
+                "attribute": "CANTIDAD2",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Precio3",
+                "attribute": "PRECIO3",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "Cant.3",
+                "attribute": "CANTIDAD3",
+                "description": null,
+                "isKey": false
+              },
+              {
+                "name": "En Vigor",
+                "attribute": "EnVigor",
+                "description": null,
+                "isKey": false
+              }
+            ]
+          },
+          "{f}get_event.js": null,
+          "{f}put_post_event.js": null,
+          "{f}extended_properties.js": null
+        }
+      },
