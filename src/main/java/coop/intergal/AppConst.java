@@ -9,8 +9,8 @@ import java.util.Locale;
 public class AppConst {   // @@ TODO this class for now is copy and represents the default values, for generic utils class as converters, if you want to have different per project you must consider this 
 
 	
-	public static final String PRE_CONF_PARAM = "GferPrueba";//"GferJetty";
-	public static final String PRE_CONF_PARAM_METADATA = "metadataIntergalVPS";
+	public static final String PRE_CONF_PARAM = "GferLac0";//"GferJetty";
+	public static final String PRE_CONF_PARAM_METADATA = "metadataLac0";
 	public static final Locale APP_LOCALE = new Locale("es","ES");
 
 	public static final String PAGE_ROOT = "";
