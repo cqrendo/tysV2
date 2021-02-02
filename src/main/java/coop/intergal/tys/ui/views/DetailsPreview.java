@@ -110,7 +110,7 @@ private static final String RESOURCE_FIELD_TEMPLATE = "CR-FormTemplate.List-Fiel
     //		content.setPadding(Horizontal.RESPONSIVE_X, Top.RESPONSIVE_X);
 //    		content.setWidthFull();
 //    		content.setMaxWidth("1200px"); // if we want reposponsive we must uncomment this and previous, comment next
-    		content.setWidth("1160px");
+    		content.setWidth(AppConst.DEFAULT_WIDTH_FORM);
     		Div header = new Div(); 
     		header.setClassName("formTitle");
     		header.add(UIUtils.createH3Label(title));
