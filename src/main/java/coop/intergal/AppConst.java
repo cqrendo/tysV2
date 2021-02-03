@@ -71,6 +71,8 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String COUNT_USED_BY_DB = "COUNT(*)";// depending on DB the result for count is different by example  "count(*)"; para mysql y COUNT(*) para Oracle //
 	public static final String DEFAULT_WIDTH_FORM = "1360px";
 	public static final String DEFAULT_WIDTH_FORM_MONBUS = "1160px"; // change name for apply
+	public static final String DEFAULT_FIELD_HEIGHT = "70px";
+;
 
 
 
