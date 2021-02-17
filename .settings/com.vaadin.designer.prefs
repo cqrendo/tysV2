@@ -1,8 +1,8 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
 >>>>>>>=branch 'master' of git@gitlab.com\:cqrendo/tys-v2.git
-defaultJavaCompanionFolder=src/main/java/coop/intergal/tys/ui
-defaultTemplateFolder=frontend/src
+defaultJavaCompanionFolder=src/main/java/coop/intergal/tys/ui/views/comprasyventas/articulos
+defaultTemplateFolder=frontend/src/views/ComprasYVentas/Articulos
 eclipse.preferences.version=1
 serverAddress=192.168.1.25
 serverPort=53815

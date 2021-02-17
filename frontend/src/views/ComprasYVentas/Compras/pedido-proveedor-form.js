@@ -15,12 +15,12 @@ import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
 import '@vaadin/vaadin-dialog/src/vaadin-dialog.js';
 import '../../generic/layout/dynamic-grid-for-pick.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
-import '@polymer/iron-pages/iron-pages.js'; 
+import '@polymer/iron-pages/iron-pages.js';
 
 class PedidoProveedorForm extends PolymerElement {
   static get template() {
     return html`
-   <style>
+<style>
       :host {
 /*         height: 100%; */
         width: 100%;
@@ -136,101 +136,102 @@ class PedidoProveedorForm extends PolymerElement {
   border: 1px solid #ccc;
   border-top: none;
 }
-    </style> 
-   <h3 id="title" style="height:0px"></h3> 
-   <vaadin-tabs selected="{{page}}"> 
-    <vaadin-tab>
-      Pedido 
-    </vaadin-tab> 
-    <vaadin-tab>
-      Entrega Directa 
-    </vaadin-tab> 
-   </vaadin-tabs> 
-   <iron-pages selected="[[page]]">  
-    <page> 
-     <vaadin-form-layout id="form"></vaadin-form-layout> 
-     <div class="linCampos"> 
-      <vaadin-text-field id="col0" label="Num " maxlength="2" class="verySmall"></vaadin-text-field> 
-      <vaadin-text-field id="col1" label=" " maxlength="2" class="small"></vaadin-text-field> 
-      <vaadin-date-picker id="col2" label="Fecha"></vaadin-date-picker> 
-      <vaadin-text-field id="col3" label="Prov." class="verySmall"></vaadin-text-field> 
-      <vaadin-text-field id="col4" label="Nombre Proveedor" class="veryBig" readonly="true"></vaadin-text-field> 
-      <vaadin-text-field id="col27" label="P. Pago" class="verySmall"></vaadin-text-field> 
-      <vaadin-text-field id="col28" label="Fase" class="verySmall"></vaadin-text-field> 
-      <vaadin-text-field id="col5" label="Rappel" class="verySmall"></vaadin-text-field> 
-      <vaadin-text-field id="col7" class="verySmall" label="Comprador"></vaadin-text-field> 
-      <vaadin-text-field id="col8" label="Nombre Comprador" readonly="true"></vaadin-text-field> 
-     </div> 
-     <div class="lastColumn"> 
-      <vaadin-text-area id="col26" label="Lugar de Entrega" style="height:180px;width:264px "></vaadin-text-area> 
-     </div> 
-     <div class="linCampos"> 
-      <vaadin-text-field id="col9" label="Atencion De " maxlength="2" class="medium" style="width:12.7em"></vaadin-text-field> 
-      <vaadin-date-picker id="col10" label="Plazo Entrega"></vaadin-date-picker> 
-      <vaadin-text-area id="col11" label="Texto Libre" style="width:32.5em;height:39px"></vaadin-text-area> 
-      <vaadin-text-field id="col12" class="small" label="Portes"></vaadin-text-field> 
-     </div> 
-     <div class="linCampos"> 
-      <vaadin-text-field id="col6" label="Ag.T." maxlength="2" class="verySmall"></vaadin-text-field> 
-      <vaadin-text-field id="col13" label="Transportista"></vaadin-text-field> 
-      <vaadin-text-field id="col14" class="verySmall" label="F pago "></vaadin-text-field> 
-      <vaadin-text-field id="col15" ></vaadin-text-field> 
-      <vaadin-text-field id="col16" class="big" label="Condiciones especiales de pago"></vaadin-text-field> 
-     </div> 
-     <div class="linCampos"> 
-      <vaadin-text-field id="col17" class="verySmall" label="FPN"></vaadin-text-field> 
-      <vaadin-text-field id="col18" label="Forma Pago Negociada"></vaadin-text-field> 
-      <vaadin-text-field id="col19" class="big" label="Aviso para dpto Provedores (tys)"></vaadin-text-field> 
-      <vaadin-text-field id="col20" label="Num Ped Cliente"></vaadin-text-field> 
-      <vaadin-checkbox id="col31">
-        Entrega Directa 
-      </vaadin-checkbox> 
-     </div> 
-     <div class="lastColumn"> 
-      <vaadin-text-field id="col25" label="Total" class="Small"></vaadin-text-field> 
-     </div> 
-     <div class="linCampos"> 
-      <vaadin-text-field id="col21" label="Suma Peso" class="verySmall"></vaadin-text-field> 
-      <vaadin-text-field id="col22" class="verySmall" label="Para Cliente"></vaadin-text-field> 
-      <vaadin-text-field id="col23" label="Nombre Cliente" class="big"></vaadin-text-field> 
-      <vaadin-text-field id="col24" label="Num Pedido Del Prov" class="Small"></vaadin-text-field> <br>
-      <vaadin-button id="vaadinButton" label="">
-        ver Entrada 
-      </vaadin-button> 
-      <vaadin-button>
-        ver Consulta Prov 
-      </vaadin-button> 
-      <vaadin-button class="Small">
-        ver NoConformidad 
-      </vaadin-button> 
-      <!--  <vaadin-custom-field id="col25" label="Total" required error-message="Please fill in all fields"> --> 
-      <!--   <input type="decimal" id="input"> --> 
-      <!--   <select><option>Euro</option><option>Dollars</option><option>Pounds</option></select> --> 
-      <!--  </vaadin-custom-field> --> 
-     </div> 
-    </page> 
-    <page> 
-     <div class="linCampos"> 
-      <vaadin-text-field id="col32" label="ED Nombre" class="big"></vaadin-text-field> 
-      <vaadin-text-field id="col33" label="ED Atencion de" class="big"></vaadin-text-field> 
-     </div> 
-     <div class="linCampos"> 
-      <vaadin-text-field id="col34" label="ED Domicilio" class="big"></vaadin-text-field> 
-     </div> 
-     <div class="linCampos"> 
-      <vaadin-text-field id="col35" label="ED CodPostal"></vaadin-text-field> 
-      <vaadin-text-field id="col36" label="ED Localidad"></vaadin-text-field> 
-     </div> 
-     <div class="linCampos"> 
-      <vaadin-text-field id="col37" label="ED Provincia" class="big"></vaadin-text-field> 
-      <vaadin-text-field id="col38" label="ED Pais" class="big"></vaadin-text-field> 
-     </div> 
-     <div class="linCampos"> 
-      <vaadin-text-field id="col39" label="ED Aviso" class="big"></vaadin-text-field> 
-     </div> 
-    </page> 
-   </iron-pages> 
-   <vaadin-dialog id="dialogForPick"></vaadin-dialog> 
+    </style>
+<h3 id="title" style="height:0px"></h3>
+<vaadin-tabs selected="{{page}}">
+ <vaadin-tab selected>
+   Pedido 
+ </vaadin-tab>
+ <vaadin-tab>
+   Entrega Directa 
+ </vaadin-tab>
+</vaadin-tabs>
+<iron-pages selected="[[page]]">
+ <page>
+  <vaadin-form-layout id="form"></vaadin-form-layout>
+  <div class="linCampos">
+   <vaadin-text-field id="col0" label="Num " maxlength="2" class="verySmall"></vaadin-text-field>
+   <vaadin-text-field id="col1" label=" " maxlength="2" class="small"></vaadin-text-field>
+   <vaadin-date-picker id="col2" label="Fecha"></vaadin-date-picker>
+   <vaadin-text-field id="col3" label="Prov." class="verySmall"></vaadin-text-field>
+   <vaadin-text-field id="col4" label="Nombre Proveedor" class="veryBig" readonly="true"></vaadin-text-field>
+   <vaadin-text-field id="col27" label="P. Pago" class="verySmall"></vaadin-text-field>
+   <vaadin-text-field id="col28" label="Fase" class="verySmall"></vaadin-text-field>
+   <vaadin-text-field id="col5" label="Rappel" class="verySmall"></vaadin-text-field>
+   <vaadin-text-field id="col7" class="verySmall" label="Comprador"></vaadin-text-field>
+   <vaadin-text-field id="col8" label="Nombre Comprador" readonly="true"></vaadin-text-field>
+  </div>
+  <div class="lastColumn">
+   <vaadin-text-area id="col26" label="Lugar de Entrega" style="height:180px;width:264px "></vaadin-text-area>
+  </div>
+  <div class="linCampos">
+   <vaadin-text-field id="col9" label="Atencion De " maxlength="2" class="medium" style="width:12.7em"></vaadin-text-field>
+   <vaadin-date-picker id="col10" label="Plazo Entrega"></vaadin-date-picker>
+   <vaadin-text-area id="col11" label="Texto Libre" style="width:32.5em;height:39px"></vaadin-text-area>
+   <vaadin-text-field id="col12" class="small" label="Portes"></vaadin-text-field>
+  </div>
+  <div class="linCampos">
+   <vaadin-text-field id="col6" label="Ag.T." maxlength="2" class="verySmall"></vaadin-text-field>
+   <vaadin-text-field id="col13" label="Transportista"></vaadin-text-field>
+   <vaadin-text-field id="col14" class="verySmall" label="F pago "></vaadin-text-field>
+   <vaadin-text-field id="col15"></vaadin-text-field>
+   <vaadin-text-field id="col16" class="big" label="Condiciones especiales de pago"></vaadin-text-field>
+  </div>
+  <div class="linCampos">
+   <vaadin-text-field id="col17" class="verySmall" label="FPN"></vaadin-text-field>
+   <vaadin-text-field id="col18" label="Forma Pago Negociada"></vaadin-text-field>
+   <vaadin-text-field id="col19" class="big" label="Aviso para dpto Provedores (tys)"></vaadin-text-field>
+   <vaadin-text-field id="col20" label="Num Ped Cliente"></vaadin-text-field>
+   <vaadin-checkbox id="col31">
+     Entrega Directa 
+   </vaadin-checkbox>
+  </div>
+  <div class="lastColumn">
+   <vaadin-text-field id="col25" label="Total" class="Small"></vaadin-text-field>
+  </div>
+  <div class="linCampos">
+   <vaadin-text-field id="col21" label="Suma Peso" class="verySmall"></vaadin-text-field>
+   <vaadin-text-field id="col22" class="verySmall" label="Para Cliente"></vaadin-text-field>
+   <vaadin-text-field id="col23" label="Nombre Cliente" class="big"></vaadin-text-field>
+   <vaadin-text-field id="col24" label="Num Pedido Del Prov" class="Small"></vaadin-text-field>
+   <br>
+   <vaadin-button id="vaadinButton" label="">
+     ver Entrada 
+   </vaadin-button>
+   <vaadin-button>
+     ver Consulta Prov 
+   </vaadin-button>
+   <vaadin-button class="Small">
+     ver NoConformidad 
+   </vaadin-button>
+   <!--  <vaadin-custom-field id="col25" label="Total" required error-message="Please fill in all fields"> -->
+   <!--   <input type="decimal" id="input"> -->
+   <!--   <select><option>Euro</option><option>Dollars</option><option>Pounds</option></select> -->
+   <!--  </vaadin-custom-field> -->
+  </div>
+ </page>
+ <page>
+  <div class="linCampos">
+   <vaadin-text-field id="col32" label="ED Nombre" class="big"></vaadin-text-field>
+   <vaadin-text-field id="col33" label="ED Atencion de" class="big"></vaadin-text-field>
+  </div>
+  <div class="linCampos">
+   <vaadin-text-field id="col34" label="ED Domicilio" class="big"></vaadin-text-field>
+  </div>
+  <div class="linCampos">
+   <vaadin-text-field id="col35" label="ED CodPostal"></vaadin-text-field>
+   <vaadin-text-field id="col36" label="ED Localidad"></vaadin-text-field>
+  </div>
+  <div class="linCampos">
+   <vaadin-text-field id="col37" label="ED Provincia" class="big"></vaadin-text-field>
+   <vaadin-text-field id="col38" label="ED Pais" class="big"></vaadin-text-field>
+  </div>
+  <div class="linCampos">
+   <vaadin-text-field id="col39" label="ED Aviso" class="big"></vaadin-text-field>
+  </div>
+ </page>
+</iron-pages>
+<vaadin-dialog id="dialogForPick"></vaadin-dialog>
 `;
   }
 

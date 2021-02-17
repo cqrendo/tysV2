@@ -26,6 +26,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 
 import coop.intergal.AppConst;
+import coop.intergal.ui.components.EsDatePicker;
 import coop.intergal.ui.views.DynamicGridForPick;
 import coop.intergal.ui.views.GenericDynamicForm;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
@@ -59,7 +60,7 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	private TextField col1;
 
 	@Id("col2")
-	private DatePicker col2;
+	private EsDatePicker col2;
 	
 	@Id("col3")
 	private TextField col3;
@@ -83,7 +84,7 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	private TextField col9;
 	
 	@Id("col10")
-	private DatePicker col10;
+	private EsDatePicker col10;
 	
 
 	@Id("col12")
