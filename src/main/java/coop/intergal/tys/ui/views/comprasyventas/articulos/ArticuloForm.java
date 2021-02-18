@@ -41,8 +41,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private DynamicDBean bean;
 	@Id("dialogForPick")
 	private Dialog dialogForPick;
-	@Id("dvgrticuloSituacion")
-	private DynamicViewGrid dvgrticuloSituacion;
+//	@Id("dvgrticuloSituacion")
+//	private DynamicViewGrid dvgrticuloSituacion;
+//	Eliminado del fichero js: <dynamic-grid id="dvgrticuloSituacion"></dynamic-grid>
 	private DdbDataBackEndProvider dataProvider;
 
 	/**
@@ -68,9 +69,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		if (bean != null)
 		{
 			binder.setBean(bean);
-			dvgrticuloSituacion.setResourceName("CR-ARTICULOS.List-ARTICULO_SITUACION");
-			dvgrticuloSituacion.setFilter("CLAVE_ARTICULO="+bean.getCol0());
-			dvgrticuloSituacion.setupGrid(true,true);
+//			dvgrticuloSituacion.setResourceName("CR-ARTICULOS.List-ARTICULO_SITUACION");
+//			dvgrticuloSituacion.setFilter("CLAVE_ARTICULO="+bean.getCol0());
+//			dvgrticuloSituacion.setupGrid(true,true);
 		}
 
 		
@@ -93,9 +94,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		if (bean != null)
 		{
 			binder.setBean(bean);
-			dvgrticuloSituacion.setResourceName("CR-ARTICULOS.List-ARTICULO_SITUACION");
-			dvgrticuloSituacion.setFilter("CLAVE_ARTICULO="+bean.getCol0());
-			dvgrticuloSituacion.setupGrid(true,true);
+//			dvgrticuloSituacion.setResourceName("CR-ARTICULOS.List-ARTICULO_SITUACION");
+//			dvgrticuloSituacion.setFilter("CLAVE_ARTICULO="+bean.getCol0());
+//			dvgrticuloSituacion.setupGrid(true,true);
 		}
 //		binder.setBean(bean);
 	}

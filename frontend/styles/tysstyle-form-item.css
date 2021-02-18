@@ -60,3 +60,11 @@
 vaadin-form-item {
   --vaadin-form-item-label-width: 5em;
 }
+/*yolaqr  intentando que cuando el label tiene 2 líneas no crezca hacia abajo y lo centre. No lo logré
+[part="label"] {
+	display: inline-block;
+	vertical-align: top;
+	height: 30px;
+	color:green;
+}*/
+

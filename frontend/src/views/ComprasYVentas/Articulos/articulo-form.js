@@ -108,6 +108,28 @@ class ArticuloForm extends PolymerElement {
   border: 1px solid #ccc;
   border-top: none;
 }
+				.cel {
+        			display:inline-block;
+        			width: 100%;
+					min-width:320px;
+					max-width:50%;
+				    padding: 1em;
+				    text-align: center;
+				    color: lightgray;
+	            }
+  page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+  }
+fieldset {
+    color: #9a3261;
+    font-size: smaller;
+    border: 1px solid #9a3261;
+    width:100%;
+}
+
     </style>
 <h3 id="title" style="height:0px"></h3>
 <vaadin-form-layout id="form"></vaadin-form-layout>
@@ -115,8 +137,154 @@ class ArticuloForm extends PolymerElement {
  <vaadin-text-field id="col0" class="verySmall" label="Clave"></vaadin-text-field>
  <vaadin-text-field id="col1" label="Descripción" readonly="true"></vaadin-text-field>
 </div>
+<vaadin-board>
+  <vaadin-board-row>
+    <div class="cel" id="cell1">
+		<vaadin-tabs selected="{{page1}}">
+		  <vaadin-tab>Stock</vaadin-tab>
+		  <vaadin-tab>Valor Ini</vaadin-tab>
+		  <vaadin-tab>Costes</vaadin-tab>
+		  <vaadin-tab>Dtos.</vaadin-tab>
+		  <vaadin-tab>+ Datos</vaadin-tab>
+		  <vaadin-tab>Evol. diaria</vaadin-tab>
+		  <vaadin-tab>Var</vaadin-tab>
+		</vaadin-tabs>
+		
+		<iron-pages selected="[[page1]]">
+		  <page>
+        	<div style="width:100%; display:inline-flex;">
+        	  <fieldset style="width:49%;">
+        		<legend>Salidas</legend>
+        		<div id="divpage111"> </div>
+        	  </fieldset>	
+        	  <fieldset style="width:49%;">
+        		<legend>Stock</legend>
+        		<div id="divpage112"> </div>
+        	  </fieldset>	
+        	</div>
+          </page>
+		  <page>
+        	  <fieldset>
+        		<legend>Iniciales</legend>
+        		<div id="divpage12"> </div>
+        	  </fieldset>	
+          </page>
+		  <page>
+        	  <fieldset>
+        		<legend>Costes</legend>
+        		<div id="divpage13"> </div>
+        	  </fieldset>	
+          </page>
+		  <page>
+          </page>
+		  <page>
+        	  <fieldset>
+        		<div id="divpage15"> </div>
+        	  </fieldset>	
+          </page>
+		  <page>
+        	<div id="divpage25"> </div>
+          </page>
+		  <page>
+				<vaadin-tabs selected="{{page3}}" style="width:100%;">
+				  <vaadin-tab>Observaciones</vaadin-tab>
+				  <vaadin-tab>Aviso</vaadin-tab>
+				</vaadin-tabs>
+				<iron-pages selected="[[page3]]" style="width: 100%;">
+				  <page>
+		        	  <fieldset>
+		        		<div id="divpage31"> </div>
+		        	  </fieldset>	
+		          </page>
+				  <page>
+		        	  <fieldset>
+		        		<div id="divpage32"> </div>
+		        	  </fieldset>	
+		          </page>
+				</iron-pages>
+
+
+
+          </page>
+		</iron-pages>
+     </div>
+    <div class="cel" id="cell2">
+		<vaadin-tabs selected="{{page2}}">
+		  <vaadin-tab>Ent.</vaadin-tab>
+		  <vaadin-tab>Val Act</vaadin-tab>
+		  <vaadin-tab>Precios</vaadin-tab>
+		  <vaadin-tab>Pt</vaadin-tab>
+		  <vaadin-tab>Datos</vaadin-tab>
+		  <vaadin-tab>Alter</vaadin-tab>
+		</vaadin-tabs>
+		
+		<iron-pages selected="[[page2]]">
+		  <page>
+        	  <fieldset>
+        		<legend>Entradas</legend>
+        		<div id="divpage21"> </div>
+        	  </fieldset>	
+          </page>
+		  <page>
+        	  <fieldset>
+        		<legend>Actual</legend>
+        		<div id="divpage22"> </div>
+        	  </fieldset>	
+          </page>
+		  <page>
+        	  <fieldset>
+        		<legend>Precios</legend>
+        		<div id="divpage23"> </div>
+        	  </fieldset>	
+          </page>
+		  <page>
+        	  <fieldset>
+        		<legend>Precios Tienda</legend>
+        		<div id="divpage24"> </div>
+        	  </fieldset>	
+          </page>
+		  <page>
+
+
+
+
+				<vaadin-tabs selected="{{page4}}" style="width:100%;">
+				  <vaadin-tab>1</vaadin-tab>
+				  <vaadin-tab>2</vaadin-tab>
+				  <vaadin-tab>Alta</vaadin-tab>
+				</vaadin-tabs>
+				<iron-pages selected="[[page4]]" style="width: 100%;">
+				  <page>
+		        	  <fieldset>
+		        		<div id="divpage41"> </div>
+		        	  </fieldset>	
+		          </page>
+				  <page>
+		        	  <fieldset>
+		        		<div id="divpage42"> </div>
+		        	  </fieldset>	
+		          </page>
+				  <page>
+		        	  <fieldset>
+		        		<div id="divpage43"> </div>
+		        	  </fieldset>	
+		          </page>
+				</iron-pages>
+
+
+
+	
+          </page>
+		  <page>
+        	<div id="divpage25"> </div>
+          </page>
+		</iron-pages>
+     </div>
+  </vaadin-board-row>
+</vaadin-board>
+
 <vaadin-dialog id="dialogForPick"></vaadin-dialog>
-<dynamic-grid id="dvgrticuloSituacion"></dynamic-grid>
+
 `;
     }
 

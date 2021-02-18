@@ -312,8 +312,8 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 	}
 	:host {
 			position: relative;
-			top: 13px;
-	}
+			top: 4px;
+	} 
 	:host([has-label]) {
 	    padding: 0 !important;
 		top: 0;
@@ -355,10 +355,10 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 	    margin-top: 3px !important;
 	    margin-bottom: 7px !important;
 	}
-	:host {
+/*	:host {
 		position: relative;
 		top: 13px;
-	}
+	} */
 	:host([has-label]) {
 	    padding: 0 !important;
 	    top: 0;
