@@ -65,6 +65,10 @@ class FormTemplateForm extends PolymerElement {
                 width: var(--vaadin-text-field-default-width, 10em);
                 margin-left: 5px;
             }
+      vaadin-text-field.veryVerySmall{
+                width: var(--vaadin-text-field-default-width, 2em);
+                margin-left: 5px;
+            }
       vaadin-text-field.verySmall{
             width: var(--vaadin-text-field-default-width, 4em);  
 /*  				width : 4em;  */

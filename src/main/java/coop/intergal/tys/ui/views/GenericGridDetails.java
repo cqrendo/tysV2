@@ -1,5 +1,9 @@
 package coop.intergal.tys.ui.views;
 
+import static coop.intergal.AppConst.STYLES_CSS;
+import static coop.intergal.AppConst.STYLES_FORM_ITEM_CSS;
+import static coop.intergal.AppConst.STYLES_FORM_LAYOUT_ITEM_CSS;
+
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -58,8 +62,9 @@ import coop.intergal.vaadin.rest.utils.DynamicDBean;
 
 //@PageTitle("Payments")
 @Route(value = "gridDetails", layout = MainLayout.class)
-@CssImport(value = "./styles/monbusstyle.css")
-@CssImport(value = "./styles/monbusstyle-form-item.css", themeFor = "vaadin-form-item")
+@CssImport(value = STYLES_CSS, themeFor="dynamic-grid-display")
+@CssImport(value = STYLES_FORM_ITEM_CSS, themeFor = "vaadin-form-item")
+@CssImport(value = STYLES_FORM_LAYOUT_ITEM_CSS, themeFor = "vaadin-form-item")
 public class GenericGridDetails extends SplitViewFrame implements HasDynamicTitle, BeforeEnterObserver {//, AfterNavigationListener {
 
 	/**

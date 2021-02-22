@@ -52,6 +52,7 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	
 	public static final String STYLES_CSS = "./styles/tysstyle.css";
 	public static final String STYLES_FORM_ITEM_CSS= "./styles/tysstyle-form-item.css";
+	public static final String STYLES_FORM_LAYOUT_ITEM_CSS= "./styles/tysstyle-form-layout.css";
 	public static final String QUERY_FIELD_DEFAULT_SIZE = "25#25";
 	public static final String DEFAULT_CSS_STYLE_QRY_FIELD =  ".labelM";
 	public static final String LOGIN_NAME = "LOGIN_NAME";

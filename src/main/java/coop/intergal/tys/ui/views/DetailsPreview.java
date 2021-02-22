@@ -1,5 +1,9 @@
 package coop.intergal.tys.ui.views;
 
+import static coop.intergal.AppConst.STYLES_CSS;
+import static coop.intergal.AppConst.STYLES_FORM_ITEM_CSS;
+import static coop.intergal.AppConst.STYLES_FORM_LAYOUT_ITEM_CSS;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -50,9 +54,9 @@ import coop.intergal.vaadin.rest.utils.RestData;
 
 //@PageTitle("Payments")
 @Route(value = "DetailsPreview", layout = MainLayout.class)
-@CssImport(value = "./styles/monbusstyle.css")
-@CssImport(value = "./styles/monbusstyle-form-item.css", themeFor = "vaadin-form-item")
-@CssImport(value = "./styles/monbusstyle-form-layout.css", themeFor = "vaadin-form-layout")
+@CssImport(value = STYLES_CSS, themeFor="dynamic-grid-display")
+@CssImport(value = STYLES_FORM_ITEM_CSS, themeFor = "vaadin-form-item")
+@CssImport(value = STYLES_FORM_LAYOUT_ITEM_CSS, themeFor = "vaadin-form-item")
 public class DetailsPreview extends SplitViewFrame implements HasDynamicTitle, BeforeEnterObserver {//, AfterNavigationListener {
 
 	/**
