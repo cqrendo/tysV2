@@ -13,17 +13,7 @@ class ArticuloForm extends PolymerElement {
                 :host {
                     display: block;
                     height: 100%;
-                }
-      vaadin-form-item { 
-       
-    	flex: auto ;
-	    overflow: auto; 
- 	    --vaadin-form-item-label-width: 1em; 
-        --vaadin-form-item-label-spacing: 1em;
-        --vaadin-form-item-row-spacing: 1.25em; 
- 	    }  
-    
-          
+                }          
       vaadin-text-field.veryBig{
                 width: var(--vaadin-text-field-default-width, 28em);
                 margin-left: 5px;
