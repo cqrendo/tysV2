@@ -47,7 +47,7 @@ import coop.intergal.tys.ui.components.navigation.drawer.NaviMenu;
 import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.tys.ui.util.css.Overflow;
 import coop.intergal.tys.ui.views.Home;
-import coop.intergal.ui.views.DynamicGridDisplay;
+import coop.intergal.ui.views.DynamicQryGridDisplay;
 import coop.intergal.ui.views.DynamicTreeDisplay;
 
 @CssImport(value = "./styles/components/charts.css", themeFor = "vaadin-chart", include = "vaadin-chart-default-theme")
@@ -110,14 +110,14 @@ public class MainLayout extends FlexBoxLayout
         if (AppConst.INCLUDE_MAIN_LAYOUT) {
             if (configuration.getRoute(AppConst.PAGE_DYNAMIC).isPresent() == false)
               {
-              configuration.setRoute(AppConst.PAGE_DYNAMIC, DynamicGridDisplay.class,
+              configuration.setRoute(AppConst.PAGE_DYNAMIC, DynamicQryGridDisplay.class,
                   this.getClass());  
           //        Class.forName(AppConst.MAIN_LAYOUT_CLASS).asSubclass(RouterLayout.class));
             //       MainLayout.class);
               }
           } else {
             if (configuration.getRoute(AppConst.PAGE_DYNAMIC).isPresent() == false)
-              configuration.setRoute(AppConst.PAGE_DYNAMIC, DynamicGridDisplay.class);
+              configuration.setRoute(AppConst.PAGE_DYNAMIC, DynamicQryGridDisplay.class);
           }
         addClassName(CLASS_NAME);
         setFlexDirection(FlexDirection.COLUMN);
@@ -277,7 +277,7 @@ public class MainLayout extends FlexBoxLayout
 																		parameters.put("cache", Collections.singletonList(cache));
 																	else
 																		parameters.put("cache", Collections.singletonList("true"));
-																	menu.addNaviItem(submenu3, optionName4, DynamicGridDisplay.class, parameters);
+																	menu.addNaviItem(submenu3, optionName4, DynamicQryGridDisplay.class, parameters);
 																}
 														 
 														 }
@@ -298,7 +298,7 @@ public class MainLayout extends FlexBoxLayout
 															parameters.put("cache", Collections.singletonList(cache));
 														else
 															parameters.put("cache", Collections.singletonList("true"));
-														menu.addNaviItem(submenu2, optionName3, DynamicGridDisplay.class, parameters);
+														menu.addNaviItem(submenu2, optionName3, DynamicQryGridDisplay.class, parameters);
 													}
 											 
 											 }
@@ -316,7 +316,7 @@ public class MainLayout extends FlexBoxLayout
 
 											if (cache != null)
 												parameters.put("cache", Collections.singletonList(cache));
-											menu.addNaviItem(submenu1, optionName2, DynamicGridDisplay.class,  parameters);
+											menu.addNaviItem(submenu1, optionName2, DynamicQryGridDisplay.class,  parameters);
 										}	
 								 }
 								 submenu1.setSubItemsVisible(false);
@@ -332,7 +332,7 @@ public class MainLayout extends FlexBoxLayout
 
 								if (cache != null)
 									parameters.put("cache", Collections.singletonList(cache));
-								menu.addNaviItem(submenu, optionName1, DynamicGridDisplay.class, parameters);
+								menu.addNaviItem(submenu, optionName1, DynamicQryGridDisplay.class, parameters);
 							}
 					 
 					 }
@@ -349,7 +349,7 @@ public class MainLayout extends FlexBoxLayout
 
 					if (cache != null)
 						parameters.put("cache", Collections.singletonList(cache));
-					menu.addNaviItem(VaadinIcon.CIRCLE, optionName, DynamicGridDisplay.class, parameters); 
+					menu.addNaviItem(VaadinIcon.CIRCLE, optionName, DynamicQryGridDisplay.class, parameters); 
 				}
 			}		
 		} catch (Exception e) {

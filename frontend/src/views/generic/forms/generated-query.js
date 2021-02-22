@@ -32,17 +32,7 @@ class GeneratedQuery extends PolymerElement {
       }
        :host([focused].custom-style) [part="input-field"] {
         border-color: #aaa;
-      }
-	    
-       vaadin-form-item { 
-       
-    	flex: auto ;
-/*	    overflow: auto;  */
-/*	    --vaadin-form-item-label-width: 1em; */
-/*        --vaadin-form-item-label-spacing: 1em; */
-        --vaadin-form-item-row-spacing: 1.25em; 
- 	    }  
-      
+      }      
       vaadin-text-field.big{
                 width: var(--vaadin-text-field-default-width, 20em);
                 margin-left: 5px;
@@ -80,7 +70,7 @@ class GeneratedQuery extends PolymerElement {
     </style>
 <h3 id="title"></h3>
 <vaadin-horizontal-layout theme="" style="width: 100%; height: 100%;">
- <vaadin-form-layout id="form" style="flex-grow: 1;"></vaadin-form-layout>
+ <div id="form" ></div>
  <!--  <vaadin-vertical-layout class="full"> -->
  <!--  <vaadin-form-item> -->
  <!-- </vaadin-form-item>  -->
@@ -103,12 +93,12 @@ class GeneratedQuery extends PolymerElement {
   static get is() {
     return 'generated-query';
   }
-  ready() {
-    super.ready();
-    this.$.form.addEventListener('change', e => {
-      this.$.buttons.$.save.disabled = false;
-    });
-  }
+      static get properties() {
+        return {
+            // Declare your properties here.
+        };
+    }
+
 }
 window.customElements.define(GeneratedQuery.is, GeneratedQuery);
 
