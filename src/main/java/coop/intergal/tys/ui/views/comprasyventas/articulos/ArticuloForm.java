@@ -265,14 +265,36 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col125")
 	private TextField col125;
 
+	private DdbDataBackEndProvider dataProvider;
 	private DynamicDBean bean;
 	@Id("dialogForPick")
 	private Dialog dialogForPick;
-//	@Id("dvgrticuloSituacion")
-//	private DynamicViewGrid dvgrticuloSituacion;
-//	Eliminado del fichero js: <dynamic-grid id="dvgrticuloSituacion"></dynamic-grid>
-	private DdbDataBackEndProvider dataProvider;
-
+	@Id("dgAlter")
+	private DynamicViewGrid dgAlter;
+	@Id("dgColec")
+	private DynamicViewGrid dgColec;
+	@Id("dgCorte")
+	private DynamicViewGrid dgCorte;
+	@Id("dgFicha")
+	private DynamicViewGrid dgFicha;
+	@Id("dgOfProv")
+	private DynamicViewGrid dgOfProv;
+	@Id("dgEvol")
+	private DynamicViewGrid dgEvol;
+	@Id("dgConsProv")
+	private DynamicViewGrid dgConsProv;
+	@Id("dgOferta1")
+	private DynamicViewGrid dgOferta1;
+	@Id("dgOferta2")
+	private DynamicViewGrid dgOferta2;
+	@Id("dgTrans1")
+	private DynamicViewGrid dgTrans1;
+	@Id("dgTrans2")
+	private DynamicViewGrid dgTrans2;
+	@Id("dgTarif1")
+	private DynamicViewGrid dgTarif1;
+	@Id("dgTarif2")
+	private DynamicViewGrid dgTarif2;
 	/**
      * Creates a new ArticuloForm.
      */
@@ -295,10 +317,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	public void beforeEnter(BeforeEnterEvent event) {
 		if (bean != null)
 		{
-			binder.setBean(bean);
-//			dvgrticuloSituacion.setResourceName("CR-ARTICULOS.List-ARTICULO_SITUACION");
-//			dvgrticuloSituacion.setFilter("CLAVE_ARTICULO="+bean.getCol0());
-//			dvgrticuloSituacion.setupGrid(true,true);
+			setBean(bean);
 		}
 
 		
@@ -321,11 +340,58 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		if (bean != null)
 		{
 			binder.setBean(bean);
-//			dvgrticuloSituacion.setResourceName("CR-ARTICULOS.List-ARTICULO_SITUACION");
-//			dvgrticuloSituacion.setFilter("CLAVE_ARTICULO="+bean.getCol0());
-//			dvgrticuloSituacion.setupGrid(true,true);
+			dgAlter.setResourceName("CR-ARTICULOS.List-ARTICULOSCONPROVALTERNATIVO");
+			dgAlter.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgAlter.setupGrid(true,true);
+
+			dgColec.setResourceName("CR-ARTICULOS.List-COLECCION");
+			dgColec.setFilter("ARTICULO="+bean.getCol0());
+			dgColec.setupGrid(true,true);
+
+//			dgCorte.setResourceName("CR-ARTICULOS.List-COLECCION");
+//			dgCorte.setFilter("ARTICULO="+bean.getCol0());
+//			dgCorte.setupGrid(true,true);
+//
+//			dgFicha.setResourceName("CR-ARTICULOS.List-COLECCION");
+//			dgFicha.setFilter("ARTICULO="+bean.getCol0());
+//			dgFicha.setupGrid(true,true);
+			
+			dgOfProv.setResourceName("CR-ARTICULOS.List-OFERTASPROVLIN");
+			dgOfProv.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgOfProv.setupGrid(true,true);
+			
+//			dgEvol.setResourceName("CR-ARTICULOS.List-OFERTASPROVLIN");
+//			dgEvol.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgEvol.setupGrid(true,true);
+			
+//			dgConsProv.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
+//			dgConsProv.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgConsProv.setupGrid(true,true);
+//			
+//			dgOferta1.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
+//			dgOferta1.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgOferta1.setupGrid(true,true);
+//			
+//			dgOferta2.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
+//			dgOferta2.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgOferta2.setupGrid(true,true);
+//			
+//			dgTarif1.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
+//			dgTarif1.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgTarif1.setupGrid(true,true);
+//			
+//			dgTarif2.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
+//			dgTarif2.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgTarif2.setupGrid(true,true);
+//			
+//			dgTrans1.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
+//			dgTrans1.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgTrans1.setupGrid(true,true);
+//			
+//			dgTrans2.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
+//			dgTrans2.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgTrans2.setupGrid(true,true);
 		}
-//		binder.setBean(bean);
 	}
 }
 

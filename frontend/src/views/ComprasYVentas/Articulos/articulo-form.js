@@ -1,12 +1,12 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
-import '../../admin/products/dynamic-view-grid.js';
 import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
 import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '../../generic/dynamic-grid.js';
 
 class ArticuloForm extends PolymerElement {
 
@@ -476,41 +476,77 @@ fieldset {
    </div>
   </page>
   <page>
-   <div id="dvEvol"></div>
+   <div id="dvEvol" style="width: 100%;">
+    <dynamic-grid id="dgEvol"></dynamic-grid>
+   </div>
   </page>
   <page style="display: block;">
-      <vaadin-text-field id="col111" label="Observaciones 1" style="width: 45%;"></vaadin-text-field>
-      <vaadin-text-field id="col112" label="Observaciones 2" style="width: 45%;"></vaadin-text-field><br>
-      <vaadin-text-field id="col113" label="Observaciones 3"style="width: 45%;"></vaadin-text-field>
-      <vaadin-text-field id="col118" label="Aviso Presupuesto y Pedido"style="width: 45%;"></vaadin-text-field>
-    </page>
-    <page>
-    <div id="dvAlter"></div>
-    </page>
-    <page>
-    <div id="dvTarif"></div>
-    </page>
-    <page>
-    <div id="dvOferta"></div>
-    </page>
-    <page>
-    <div id="dvOfProv"></div>
-    </page>
-    <page>
-    <div id="dvConsProv"></div>
-    </page>
-    <page>
-    <div id="dvColec"></div>
-    </page>
-    <page>
-    <div id="dvTrans"></div>
-    </page>
-    <page>
-    <div id="dvCorte"></div>
-    </page>
-    <page>
-    <div id="dvFicha"></div>
-    </page>
+   <vaadin-text-field id="col111" label="Observaciones 1" style="width: 45%;"></vaadin-text-field>
+   <vaadin-text-field id="col112" label="Observaciones 2" style="width: 45%;"></vaadin-text-field>
+   <br>
+   <vaadin-text-field id="col113" label="Observaciones 3" style="width: 45%;"></vaadin-text-field>
+   <vaadin-text-field id="col118" label="Aviso Presupuesto y Pedido" style="width: 45%;"></vaadin-text-field>
+  </page>
+  <page>
+   <div id="dvAlter" style="width: 100%;">
+    <dynamic-grid id="dgAlter"></dynamic-grid>
+   </div>
+  </page>
+  <page>
+    <div id="dvTarif" style="width: 100%;">
+	   <div style="width: 49%;display: inline-block;">
+	    <dynamic-grid id="dgTarif1"></dynamic-grid>
+	   </div>
+	   <div style="width: 49%;display: inline-block;">
+	    <dynamic-grid id="dgTarif2"></dynamic-grid>
+	   </div>
+   </div>
+  </page>
+  <page>
+   <div id="dvOferta" style="width: 100%;">
+	   <div style="width: 49%;display: inline-block;">
+	    <dynamic-grid id="dgOferta1"></dynamic-grid>
+	   </div>
+	   <div style="width: 49%;display: inline-block;">
+	    <dynamic-grid id="dgOferta2"></dynamic-grid>
+	   </div>
+   </div>
+  </page>
+  <page>
+   <div id="dvOfProv" style="width: 100%;">
+    <dynamic-grid id="dgOfProv"></dynamic-grid>
+   </div>
+  </page>
+  <page>
+   <div id="dvConsProv" style="width: 100%;">
+    <dynamic-grid id="dgConsProv"></dynamic-grid>
+   </div>
+  </page>
+  <page>
+   <div id="dvColec" style="width: 100%;">
+    <dynamic-grid id="dgColec"></dynamic-grid>
+   </div>
+  </page>
+  <page>
+   <div id="dvTrans" style="width: 100%;">
+	   <div style="width: 49%;display: inline-block;">
+	    <dynamic-grid id="dgTrans1"></dynamic-grid>
+	   </div>
+	   <div style="width: 49%;display: inline-block;">
+	    <dynamic-grid id="dgTrans2"></dynamic-grid>
+	   </div>
+   </div>
+  </page>
+  <page>
+   <div id="dvCorte" style="width: 100%;">
+    <dynamic-grid id="dgCorte"></dynamic-grid>
+   </div>
+  </page>
+  <page>
+   <div id="dvFicha" style="width: 100%;">
+    <dynamic-grid id="dgFicha"></dynamic-grid>
+   </div>
+  </page>
  </iron-pages>
 </div>
 <vaadin-dialog id="dialogForPick"></vaadin-dialog>
