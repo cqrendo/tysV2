@@ -1,6 +1,3 @@
-=\=\=\=\=\=\=
-<<<<<<<=HEAD
->>>>>>>=branch 'master' of git@gitlab.com\:cqrendo/tys-v2.git
 defaultJavaCompanionFolder=src/main/java/coop/intergal/tys/ui/views/comprasyventas/articulos
 defaultTemplateFolder=frontend/src/views/ComprasYVentas/Articulos
 eclipse.preferences.version=1
