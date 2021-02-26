@@ -3,3 +3,4 @@
 /package-lock.json
 /package.json
 /.settings/
+/webpack.generated.js

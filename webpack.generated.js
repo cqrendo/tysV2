@@ -17,6 +17,8 @@ const frontendFolder = require('path').resolve(__dirname, 'frontend');
 const fileNameOfTheFlowGeneratedMainEntryPoint = require('path').resolve(__dirname, 'target/frontend/generated-flow-imports.js');
 const mavenOutputFolderForFlowBundledFiles = require('path').resolve(__dirname, 'target/classes/META-INF/VAADIN');
 
+const devmodeGizmoJS = '@vaadin/flow-frontend/VaadinDevmodeGizmo.js'
+
 // public path for resources, must match Flow VAADIN_BUILD
 const build = 'build';
 // public path for resources, must match the request used in flow to get the /build/stats.json file
@@ -29,42 +31,39 @@ const confFolder = `${mavenOutputFolderForFlowBundledFiles}/${config}`;
 const statsFile = `${confFolder}/stats.json`;
 // make sure that build folder exists before outputting anything
 const mkdirp = require('mkdirp');
-mkdirp(buildFolder);
-mkdirp(confFolder);
 
 const devMode = process.argv.find(v => v.indexOf('webpack-dev-server') >= 0);
-let stats;
 
-const watchDogPrefix = '--watchDogPort=';
-let watchDogPort = process.argv.find(v => v.indexOf(watchDogPrefix) >= 0);
-if (watchDogPort){
-    watchDogPort = watchDogPort.substr(watchDogPrefix.length);
-}
+!devMode && mkdirp(buildFolder);
+mkdirp(confFolder);
+
+let stats;
 
 const transpile = !devMode || process.argv.find(v => v.indexOf('--transpile-es5') >= 0);
 
-const net = require('net');
-
-function setupWatchDog(){
-    var client = new net.Socket();
-    client.connect(watchDogPort, 'localhost');
-
-    client.on('error', function(){
-        console.log("Watchdog connection error. Terminating webpack process...");
-        client.destroy();
-        process.exit(0);
+const watchDogPrefix = '--watchDogPort=';
+let watchDogPort = devMode && process.argv.find(v => v.indexOf(watchDogPrefix) >= 0);
+let client;
+if (watchDogPort) {
+  watchDogPort = watchDogPort.substr(watchDogPrefix.length);
+  const runWatchDog = () => {
+    client = new require('net').Socket();
+    client.setEncoding('utf8');
+    client.on('error', function () {
+      console.log("Watchdog connection error. Terminating webpack process...");
+      client.destroy();
+      process.exit(0);
+    });
+    client.on('close', function () {
+      client.destroy();
+      runWatchDog();
     });
 
-    client.on('close', function() {
-        client.destroy();
-        setupWatchDog();
-    });  
-}
+    client.connect(watchDogPort, 'localhost');
+  }
 
-if (watchDogPort){
-    setupWatchDog();
+  runWatchDog();
 }
-
 
 exports = {
   frontendFolder: `${frontendFolder}`,
@@ -76,7 +75,8 @@ module.exports = {
   mode: 'production',
   context: frontendFolder,
   entry: {
-    bundle: fileNameOfTheFlowGeneratedMainEntryPoint
+    bundle: fileNameOfTheFlowGeneratedMainEntryPoint,
+    ...(devMode && { gizmo: devmodeGizmoJS })
   },
 
   output: {
@@ -197,6 +197,14 @@ module.exports = {
           stats = customStats;
           done();
         }
+      });
+
+      compiler.hooks.done.tapAsync('FlowIdPlugin', (compilation, done) => {
+        // trigger live reload via server
+        if (client) {
+          client.write('reload\n');
+        }
+        done();
       });
     },
 

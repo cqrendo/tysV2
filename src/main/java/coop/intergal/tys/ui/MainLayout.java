@@ -49,6 +49,7 @@ import coop.intergal.tys.ui.util.css.Overflow;
 import coop.intergal.tys.ui.views.Home;
 import coop.intergal.ui.views.DynamicQryGridDisplay;
 import coop.intergal.ui.views.DynamicTreeDisplay;
+import coop.intergal.vaadin.ui.util.UtilSessionData;
 
 @CssImport(value = "./styles/components/charts.css", themeFor = "vaadin-chart", include = "vaadin-chart-default-theme")
 @CssImport(value = "./styles/components/floating-action-button.css", themeFor = "vaadin-button")
@@ -566,11 +567,16 @@ public class MainLayout extends FlexBoxLayout
 	    	apiname = parametersMap.get("apiname").get(0);
 	    else
 	    	apiname = AppConst.DEFAULT_API_NAME; 
-	    if ( parametersMap.get("cache") != null)
-	    {
-		    System.out.println("afterNavigation.....parametersMap.get(\"cache\")"+parametersMap.get("cache"));
+	    if ( parametersMap.get("cache") != null)	    	
 	    	cache = parametersMap.get("cache").get(0);
-	    }	
+	    else
+	    {
+	    	if (UtilSessionData.getCache())
+	    		cache = "true";
+	    	else
+	    		cache = "false";
+	    }		
+	    UtilSessionData.setCache(cache);
 	    
 	    initNaviItems();
 	}
