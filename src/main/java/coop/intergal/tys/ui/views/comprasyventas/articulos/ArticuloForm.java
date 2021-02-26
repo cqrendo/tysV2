@@ -273,8 +273,6 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private DynamicViewGrid dgAlter;
 	@Id("dgColec")
 	private DynamicViewGrid dgColec;
-	@Id("dgCorte")
-	private DynamicViewGrid dgCorte;
 	@Id("dgFicha")
 	private DynamicViewGrid dgFicha;
 	@Id("dgOfProv")
@@ -348,49 +346,45 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgColec.setFilter("ARTICULO="+bean.getCol0());
 			dgColec.setupGrid(true,true);
 
-//			dgCorte.setResourceName("CR-ARTICULOS.List-COLECCION");
-//			dgCorte.setFilter("ARTICULO="+bean.getCol0());
-//			dgCorte.setupGrid(true,true);
-//
-//			dgFicha.setResourceName("CR-ARTICULOS.List-COLECCION");
-//			dgFicha.setFilter("ARTICULO="+bean.getCol0());
-//			dgFicha.setupGrid(true,true);
+			dgFicha.setResourceName("CR-ARTICULOS.List-ARTICULOSDETALLE");
+			dgFicha.setFilter("CLAVE_ARTICULO="+bean.getCol0());
+			dgFicha.setupGrid(true,true);
 			
 			dgOfProv.setResourceName("CR-ARTICULOS.List-OFERTASPROVLIN");
 			dgOfProv.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgOfProv.setupGrid(true,true);
 			
-//			dgEvol.setResourceName("CR-ARTICULOS.List-OFERTASPROVLIN");
-//			dgEvol.setFilter("CLAVEARTICULO="+bean.getCol0());
-//			dgEvol.setupGrid(true,true);
+			dgEvol.setResourceName("CR-ARTICULOS.List-CONTROLSTOCKDIARIO-MJ");
+			dgEvol.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgEvol.setupGrid(true,true);
 			
-//			dgConsProv.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
-//			dgConsProv.setFilter("CLAVEARTICULO="+bean.getCol0());
-//			dgConsProv.setupGrid(true,true);
-//			
-//			dgOferta1.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
-//			dgOferta1.setFilter("CLAVEARTICULO="+bean.getCol0());
-//			dgOferta1.setupGrid(true,true);
-//			
-//			dgOferta2.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
-//			dgOferta2.setFilter("CLAVEARTICULO="+bean.getCol0());
-//			dgOferta2.setupGrid(true,true);
-//			
-//			dgTarif1.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
-//			dgTarif1.setFilter("CLAVEARTICULO="+bean.getCol0());
-//			dgTarif1.setupGrid(true,true);
-//			
-//			dgTarif2.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
-//			dgTarif2.setFilter("CLAVEARTICULO="+bean.getCol0());
-//			dgTarif2.setupGrid(true,true);
-//			
-//			dgTrans1.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
-//			dgTrans1.setFilter("CLAVEARTICULO="+bean.getCol0());
-//			dgTrans1.setupGrid(true,true);
-//			
-//			dgTrans2.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
-//			dgTrans2.setFilter("CLAVEARTICULO="+bean.getCol0());
-//			dgTrans2.setupGrid(true,true);
+			dgConsProv.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
+			dgConsProv.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgConsProv.setupGrid(true,true);
+			
+			dgOferta1.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__SINCLIENTE");
+			dgOferta1.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgOferta1.setupGrid(true,true);
+			
+			dgOferta2.setResourceName("CR-ARTICULOS.List-TARIFAVENDEDORLIN");
+			dgOferta2.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgOferta2.setupGrid(true,true);
+			
+			dgTarif1.setResourceName("CR-ARTICULOS.List-TARIFACLIENTELIN");
+			dgTarif1.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgTarif1.setupGrid(true,true);
+			
+			dgTarif2.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__TARIFACLIENTE");
+			dgTarif2.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgTarif2.setupGrid(true,true);
+			
+			dgTrans1.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS-_ORIGEN_");
+			dgTrans1.setFilter("ARTICULOORIGEN="+bean.getCol0());
+			dgTrans1.setupGrid(true,true);
+			
+			dgTrans2.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS__TRANSF");
+			dgTrans2.setFilter("ARTICULOTRANSFORMADO="+bean.getCol0());
+			dgTrans2.setupGrid(true,true);
 		}
 	}
 }

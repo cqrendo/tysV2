@@ -189,9 +189,6 @@ fieldset {
     Transformados 
   </vaadin-tab>
   <vaadin-tab>
-    Cortes 
-  </vaadin-tab>
-  <vaadin-tab>
     Ficha 
   </vaadin-tab>
  </vaadin-tabs>
@@ -211,7 +208,7 @@ fieldset {
      <div id="divpage112">
       <vaadin-text-field id="col42" label="Iniciales" readonly="true"></vaadin-text-field>
       <vaadin-text-field id="col13" label="Stock" readonly="true"></vaadin-text-field>
-      <vaadin-text-field id="col44" label="Máximo" readonly="true"></vaadin-text-field>
+      <vaadin-text-field id="col44" label="Mínimo" readonly="true"></vaadin-text-field>
      </div>
     </fieldset>
     <fieldset style="width:50%;">
@@ -295,7 +292,7 @@ fieldset {
         <vaadin-text-field id="col95" class="verySmall" label="Borrador"></vaadin-text-field>
        </div>
        <fieldset style="width:157px;display: inline-flex;">
-        <legend>Precios</legend>
+        <legend>Descuentos</legend>
         <vaadin-text-field id="col78" class="verySmall" label="Contable"></vaadin-text-field>&nbsp; 
         <vaadin-text-field id="col83" class="verySmall" label="Comercial"></vaadin-text-field>
        </fieldset>
@@ -535,11 +532,6 @@ fieldset {
 	   <div style="width: 49%;display: inline-block;">
 	    <dynamic-grid id="dgTrans2"></dynamic-grid>
 	   </div>
-   </div>
-  </page>
-  <page>
-   <div id="dvCorte" style="width: 100%;">
-    <dynamic-grid id="dgCorte"></dynamic-grid>
    </div>
   </page>
   <page>
