@@ -47,9 +47,9 @@ import coop.intergal.tys.ui.components.navigation.drawer.NaviMenu;
 import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.tys.ui.util.css.Overflow;
 import coop.intergal.tys.ui.views.Home;
+import coop.intergal.ui.utils.UtilSessionData;
 import coop.intergal.ui.views.DynamicQryGridDisplay;
 import coop.intergal.ui.views.DynamicTreeDisplay;
-import coop.intergal.vaadin.ui.util.UtilSessionData;
 
 @CssImport(value = "./styles/components/charts.css", themeFor = "vaadin-chart", include = "vaadin-chart-default-theme")
 @CssImport(value = "./styles/components/floating-action-button.css", themeFor = "vaadin-button")
