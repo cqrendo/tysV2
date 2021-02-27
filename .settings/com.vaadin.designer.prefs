@@ -1,5 +1,5 @@
 defaultJavaCompanionFolder=src/main/java/coop/intergal/tys/ui/views/comprasyventas/articulos
 defaultTemplateFolder=frontend/src/views/ComprasYVentas/Articulos
 eclipse.preferences.version=1
-serverAddress=192.168.8.100
+serverAddress=192.168.1.25
 serverPort=53815

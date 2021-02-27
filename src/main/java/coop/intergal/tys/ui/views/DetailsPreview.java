@@ -187,7 +187,7 @@ private static final String RESOURCE_FIELD_TEMPLATE = "CR-FormTemplate.List-Fiel
 		dataProvider.setPreConfParam(AppConst.PRE_CONF_PARAM);
 		dataProvider.setResourceName( resource);
 		dataProvider.setFilter(""); 
-		rowsFieldList = dataProvider.getRowsFieldList(false);
+		rowsFieldList = dataProvider.getRowsFieldList();
 //	    if (dynamicDBean != null)
 //			binder.setBean(dynamicDBean);
 

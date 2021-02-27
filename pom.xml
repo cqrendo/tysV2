@@ -247,6 +247,11 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-ldap</artifactId>
         </dependency>
+        <dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-devtools</artifactId>
+        	<optional>true</optional>
+    	</dependency>
         
         <!-- End Spring -->
         <!-- Add JAXB explicitly as the java.xml.bind module is not included

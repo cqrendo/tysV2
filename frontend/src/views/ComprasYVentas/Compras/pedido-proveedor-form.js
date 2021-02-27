@@ -15,7 +15,7 @@ import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
 import '@vaadin/vaadin-dialog/src/vaadin-dialog.js';
 import '../../generic/layout/dynamic-grid-for-pick.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
-import '@polymer/iron-pages/iron-pages.js';
+/*import '@polymer/iron-pages/iron-pages.js';*/
 
 class PedidoProveedorForm extends PolymerElement {
   static get template() {
