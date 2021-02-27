@@ -14,6 +14,7 @@ import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.component.polymertemplate.EventHandler;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.dialog.Dialog;
 
@@ -296,6 +297,14 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	/**
      * Creates a new ArticuloForm.
      */
+	   @EventHandler
+	    private void handleClickTabAlter() {
+	        System.out.println("Click Tab Alter");
+			dgAlter.setResourceName("CR-ARTICULOS.List-ARTICULOSCONPROVALTERNATIVO");
+			dgAlter.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgAlter.setupGrid(true,true);
+
+	    }
     public ArticuloForm() {
 		super();
 		dialogForPick.setWidth(AppConst.DEFAULT_PICK_DIALOG_WITHD);
@@ -338,9 +347,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		if (bean != null)
 		{
 			binder.setBean(bean);
-			dgAlter.setResourceName("CR-ARTICULOS.List-ARTICULOSCONPROVALTERNATIVO");
-			dgAlter.setFilter("CLAVEARTICULO="+bean.getCol0());
-			dgAlter.setupGrid(true,true);
+//			dgAlter.setResourceName("CR-ARTICULOS.List-ARTICULOSCONPROVALTERNATIVO");
+//			dgAlter.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgAlter.setupGrid(true,true);
 
 			dgColec.setResourceName("CR-ARTICULOS.List-COLECCION");
 			dgColec.setFilter("ARTICULO="+bean.getCol0());
