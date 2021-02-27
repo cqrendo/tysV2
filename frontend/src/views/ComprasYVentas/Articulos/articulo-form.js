@@ -167,7 +167,7 @@ fieldset {
   <vaadin-tab>
     Var 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabAlter">
     Alter 
   </vaadin-tab>
   <vaadin-tab>
