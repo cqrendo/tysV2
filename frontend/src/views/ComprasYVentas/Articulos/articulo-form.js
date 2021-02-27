@@ -167,7 +167,7 @@ fieldset {
   <vaadin-tab>
     Var 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabAlter">
     Alter 
   </vaadin-tab>
   <vaadin-tab>
@@ -370,12 +370,12 @@ fieldset {
         <span style="color:red;">Gal</span>
         <vaadin-text-field id="col67" class="verySmall"></vaadin-text-field>
         <vaadin-text-field id="col66" class="veryVerySmall"></vaadin-text-field>
-        <vaadin-text-field id="col68" class="veryVerySmall"></vaadin-text-field>
+        <vaadin-text-field id="col68" class="veryVerySmall3"></vaadin-text-field>
         <br>
         <span style="color:red;">Hos</span>
         <vaadin-text-field id="col72" class="verySmall"></vaadin-text-field>
         <vaadin-text-field id="col71" class="veryVerySmall"></vaadin-text-field>
-        <vaadin-text-field class="veryVerySmall"></vaadin-text-field>
+        <vaadin-text-field class="veryVerySmall3"></vaadin-text-field>
        </div>
       </fieldset>
       <vaadin-button>
