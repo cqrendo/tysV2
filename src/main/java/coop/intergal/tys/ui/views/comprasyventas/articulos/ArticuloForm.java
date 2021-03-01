@@ -298,13 +298,117 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
      * Creates a new ArticuloForm.
      */
 	   @EventHandler
+	    private void handleClickTabEvol() {
+	        System.out.println("Click Tab Evol");
+			dgEvol.setResourceName("CR-ARTICULOS.List-CONTROLSTOCKDIARIO-MJ");
+			dgEvol.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgEvol.getElement().getStyle().set("display", "block");
+			dgEvol.setButtonsRowVisible(false);
+			dgEvol.getGrid().setHeightByRows(true);
+			dgEvol.setupGrid(true,true);
+	    }
+	   @EventHandler
 	    private void handleClickTabAlter() {
 	        System.out.println("Click Tab Alter");
 			dgAlter.setResourceName("CR-ARTICULOS.List-ARTICULOSCONPROVALTERNATIVO");
 			dgAlter.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgAlter.getElement().getStyle().set("display", "block");
+			dgAlter.setButtonsRowVisible(false);
+			dgAlter.getGrid().setHeightByRows(true);
 			dgAlter.setupGrid(true,true);
-
 	    }
+	   @EventHandler
+	    private void handleClickTabTarif() {
+	        System.out.println("Click Tab Tar.Clie");
+			dgTarif1.setResourceName("CR-ARTICULOS.List-TARIFACLIENTELIN");
+			dgTarif1.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgTarif1.getElement().getStyle().set("display", "block");
+			dgTarif1.setButtonsRowVisible(false);
+			dgTarif1.getGrid().setHeightByRows(true);
+			dgTarif1.setupGrid(true,true);
+			
+			dgTarif2.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__TARIFACLIENTE");
+			dgTarif2.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgTarif2.getElement().getStyle().set("display", "block");
+			dgTarif2.setButtonsRowVisible(false);
+			dgTarif2.getGrid().setHeightByRows(true);
+			dgTarif2.setupGrid(true,true);
+	    }
+	   @EventHandler
+	    private void handleClickTabAlterOfertas() {
+	        System.out.println("Click Tab ofertas");
+			dgOferta1.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__SINCLIENTE");
+			dgOferta1.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgOferta1.getElement().getStyle().set("display", "block");
+			dgOferta1.setButtonsRowVisible(false);
+			dgOferta1.getGrid().setHeightByRows(true);
+			dgOferta1.setupGrid(true,true);
+			
+			dgOferta2.setResourceName("CR-ARTICULOS.List-TARIFAVENDEDORLIN");
+			dgOferta2.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgOferta2.getElement().getStyle().set("display", "block");
+			dgOferta2.setButtonsRowVisible(false);
+			dgOferta2.getGrid().setHeightByRows(true);
+			dgOferta2.setupGrid(true,true);
+	    }
+	   @EventHandler
+	    private void handleClickTabOfProv() {
+	        System.out.println("Click Tab Of.Prov");
+			dgOfProv.setResourceName("CR-ARTICULOS.List-OFERTASPROVLIN");
+			dgOfProv.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgOfProv.getElement().getStyle().set("display", "block");
+			dgOfProv.setButtonsRowVisible(false);
+			dgOfProv.getGrid().setHeightByRows(true);
+			dgOfProv.setupGrid(true,true);
+	    }
+	   @EventHandler
+	    private void handleClickTabConsProv() {
+	        System.out.println("Click Tab Cons.Prov");
+			dgConsProv.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
+			dgConsProv.setFilter("CLAVEARTICULO="+bean.getCol0());
+			dgConsProv.getElement().getStyle().set("display", "block");
+			dgConsProv.setButtonsRowVisible(false);
+			dgConsProv.getGrid().setHeightByRows(true);
+			dgConsProv.setupGrid(true,true);
+	    }
+	   @EventHandler
+	    private void handleClickTabColec() {
+	        System.out.println("Click Tab Coleccion");
+			dgColec.setResourceName("CR-ARTICULOS.List-COLECCION");
+			dgColec.setFilter("ARTICULO="+bean.getCol0());
+			dgColec.getElement().getStyle().set("display", "block");
+			dgColec.setButtonsRowVisible(false);
+			dgColec.getGrid().setHeightByRows(true);
+			dgColec.setupGrid(true,true);
+	    }
+	   @EventHandler
+	    private void handleClickTabTrans() {
+	        System.out.println("Click Tab Transformados");
+			dgTrans1.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS-_ORIGEN_");
+			dgTrans1.setFilter("ARTICULOORIGEN="+bean.getCol0());
+			dgTrans1.getElement().getStyle().set("display", "block");
+			dgTrans1.setButtonsRowVisible(false);
+			dgTrans1.getGrid().setHeightByRows(true);
+			dgTrans1.setupGrid(true,true);
+			
+			dgTrans2.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS__TRANSF");
+			dgTrans2.setFilter("ARTICULOTRANSFORMADO="+bean.getCol0());
+			dgTrans2.getElement().getStyle().set("display", "block");
+			dgTrans2.setButtonsRowVisible(false);
+			dgTrans2.getGrid().setHeightByRows(true);
+			dgTrans2.setupGrid(true,true);
+	    }
+	   @EventHandler
+	    private void handleClickTabFicha() {
+	        System.out.println("Click Tab Ficha");
+			dgFicha.setResourceName("CR-ARTICULOS.List-ARTICULOSDETALLE");
+			dgFicha.setFilter("CLAVE_ARTICULO="+bean.getCol0());
+			dgFicha.getElement().getStyle().set("display", "block");
+			dgFicha.setButtonsRowVisible(false);
+			dgFicha.getGrid().setHeightByRows(true);
+			dgFicha.setupGrid(true,true);
+	    }
+
     public ArticuloForm() {
 		super();
 		dialogForPick.setWidth(AppConst.DEFAULT_PICK_DIALOG_WITHD);
@@ -351,49 +455,49 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 //			dgAlter.setFilter("CLAVEARTICULO="+bean.getCol0());
 //			dgAlter.setupGrid(true,true);
 
-			dgColec.setResourceName("CR-ARTICULOS.List-COLECCION");
-			dgColec.setFilter("ARTICULO="+bean.getCol0());
-			dgColec.setupGrid(true,true);
+//			dgColec.setResourceName("CR-ARTICULOS.List-COLECCION");
+//			dgColec.setFilter("ARTICULO="+bean.getCol0());
+//			dgColec.setupGrid(true,true);
 
-			dgFicha.setResourceName("CR-ARTICULOS.List-ARTICULOSDETALLE");
-			dgFicha.setFilter("CLAVE_ARTICULO="+bean.getCol0());
-			dgFicha.setupGrid(true,true);
+//			dgFicha.setResourceName("CR-ARTICULOS.List-ARTICULOSDETALLE");
+//			dgFicha.setFilter("CLAVE_ARTICULO="+bean.getCol0());
+//			dgFicha.setupGrid(true,true);
 			
-			dgOfProv.setResourceName("CR-ARTICULOS.List-OFERTASPROVLIN");
-			dgOfProv.setFilter("CLAVEARTICULO="+bean.getCol0());
-			dgOfProv.setupGrid(true,true);
+//			dgOfProv.setResourceName("CR-ARTICULOS.List-OFERTASPROVLIN");
+//			dgOfProv.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgOfProv.setupGrid(true,true);
 			
-			dgEvol.setResourceName("CR-ARTICULOS.List-CONTROLSTOCKDIARIO-MJ");
-			dgEvol.setFilter("CLAVEARTICULO="+bean.getCol0());
-			dgEvol.setupGrid(true,true);
+//			dgEvol.setResourceName("CR-ARTICULOS.List-CONTROLSTOCKDIARIO-MJ");
+//			dgEvol.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgEvol.setupGrid(true,true);
 			
-			dgConsProv.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
-			dgConsProv.setFilter("CLAVEARTICULO="+bean.getCol0());
-			dgConsProv.setupGrid(true,true);
+//			dgConsProv.setResourceName("CR-ARTICULOS.List-CONSULTAPROVLIN");
+//			dgConsProv.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgConsProv.setupGrid(true,true);
 			
-			dgOferta1.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__SINCLIENTE");
-			dgOferta1.setFilter("CLAVEARTICULO="+bean.getCol0());
-			dgOferta1.setupGrid(true,true);
+//			dgOferta1.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__SINCLIENTE");
+//			dgOferta1.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgOferta1.setupGrid(true,true);
+//			
+//			dgOferta2.setResourceName("CR-ARTICULOS.List-TARIFAVENDEDORLIN");
+//			dgOferta2.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgOferta2.setupGrid(true,true);
 			
-			dgOferta2.setResourceName("CR-ARTICULOS.List-TARIFAVENDEDORLIN");
-			dgOferta2.setFilter("CLAVEARTICULO="+bean.getCol0());
-			dgOferta2.setupGrid(true,true);
+//			dgTarif1.setResourceName("CR-ARTICULOS.List-TARIFACLIENTELIN");
+//			dgTarif1.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgTarif1.setupGrid(true,true);
+//			
+//			dgTarif2.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__TARIFACLIENTE");
+//			dgTarif2.setFilter("CLAVEARTICULO="+bean.getCol0());
+//			dgTarif2.setupGrid(true,true);
 			
-			dgTarif1.setResourceName("CR-ARTICULOS.List-TARIFACLIENTELIN");
-			dgTarif1.setFilter("CLAVEARTICULO="+bean.getCol0());
-			dgTarif1.setupGrid(true,true);
-			
-			dgTarif2.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__TARIFACLIENTE");
-			dgTarif2.setFilter("CLAVEARTICULO="+bean.getCol0());
-			dgTarif2.setupGrid(true,true);
-			
-			dgTrans1.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS-_ORIGEN_");
-			dgTrans1.setFilter("ARTICULOORIGEN="+bean.getCol0());
-			dgTrans1.setupGrid(true,true);
-			
-			dgTrans2.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS__TRANSF");
-			dgTrans2.setFilter("ARTICULOTRANSFORMADO="+bean.getCol0());
-			dgTrans2.setupGrid(true,true);
+//			dgTrans1.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS-_ORIGEN_");
+//			dgTrans1.setFilter("ARTICULOORIGEN="+bean.getCol0());
+//			dgTrans1.setupGrid(true,true);
+//			
+//			dgTrans2.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS__TRANSF");
+//			dgTrans2.setFilter("ARTICULOTRANSFORMADO="+bean.getCol0());
+//			dgTrans2.setupGrid(true,true);
 		}
 	}
 }
