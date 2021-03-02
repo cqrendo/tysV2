@@ -161,7 +161,7 @@ fieldset {
   <vaadin-tab>
     Datos 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabEvol">
     Evol.Diaria 
   </vaadin-tab>
   <vaadin-tab>
@@ -170,25 +170,25 @@ fieldset {
   <vaadin-tab on-click="handleClickTabAlter">
     Alter 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabTarif">
     Tar.Clie 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabAlterOfertas">
     Ofertas 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabOfProv">
     Of.Prov 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabConsProv">
     Cons.Prov 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabColec">
     Colección 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabTrans">
     Transformados 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabFicha">
     Ficha 
   </vaadin-tab>
  </vaadin-tabs>
@@ -474,7 +474,7 @@ fieldset {
   </page>
   <page>
    <div id="dvEvol" style="width: 100%;">
-    <dynamic-grid id="dgEvol"></dynamic-grid>
+    <dynamic-grid id="dgEvol" style="display:none;"></dynamic-grid>
    </div>
   </page>
   <page style="display: block;">
@@ -486,57 +486,57 @@ fieldset {
   </page>
   <page>
    <div id="dvAlter" style="width: 100%;">
-    <dynamic-grid id="dgAlter"></dynamic-grid>
+    <dynamic-grid id="dgAlter" style="display:none;"></dynamic-grid>
    </div>
   </page>
   <page>
     <div id="dvTarif" style="width: 100%;">
 	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgTarif1"></dynamic-grid>
+	    <dynamic-grid id="dgTarif1" style="display:none;"></dynamic-grid>
 	   </div>
 	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgTarif2"></dynamic-grid>
+	    <dynamic-grid id="dgTarif2" style="display:none;"></dynamic-grid>
 	   </div>
    </div>
   </page>
   <page>
    <div id="dvOferta" style="width: 100%;">
 	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgOferta1"></dynamic-grid>
+	    <dynamic-grid id="dgOferta1" style="display:none;"></dynamic-grid>
 	   </div>
 	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgOferta2"></dynamic-grid>
+	    <dynamic-grid id="dgOferta2" style="display:none;"></dynamic-grid>
 	   </div>
    </div>
   </page>
   <page>
    <div id="dvOfProv" style="width: 100%;">
-    <dynamic-grid id="dgOfProv"></dynamic-grid>
+    <dynamic-grid id="dgOfProv" style="display:none;"></dynamic-grid>
    </div>
   </page>
   <page>
    <div id="dvConsProv" style="width: 100%;">
-    <dynamic-grid id="dgConsProv"></dynamic-grid>
+    <dynamic-grid id="dgConsProv" style="display:none;"></dynamic-grid>
    </div>
   </page>
   <page>
    <div id="dvColec" style="width: 100%;">
-    <dynamic-grid id="dgColec"></dynamic-grid>
+    <dynamic-grid id="dgColec" style="display:none;"></dynamic-grid>
    </div>
   </page>
   <page>
    <div id="dvTrans" style="width: 100%;">
 	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgTrans1"></dynamic-grid>
+	    <dynamic-grid id="dgTrans1" style="display:none;"></dynamic-grid>
 	   </div>
 	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgTrans2"></dynamic-grid>
+	    <dynamic-grid id="dgTrans2" style="display:none;"></dynamic-grid>
 	   </div>
    </div>
   </page>
   <page>
    <div id="dvFicha" style="width: 100%;">
-    <dynamic-grid id="dgFicha"></dynamic-grid>
+    <dynamic-grid id="dgFicha" style="display:none;"></dynamic-grid>
    </div>
   </page>
  </iron-pages>
