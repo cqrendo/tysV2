@@ -249,11 +249,11 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col116")
 	private TextField col116;
 	@Id("col117")
-	private ComboBox<String> col117;
+	private ComboBox<DynamicDBean> col117;
 	@Id("col118")
 	private TextField col118;
 	@Id("col119")
-	private ComboBox<String> col119;
+	private ComboBox<DynamicDBean> col119;
 	@Id("col120")
 	private TextField col120;
 	@Id("col121")
