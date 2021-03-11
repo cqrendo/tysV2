@@ -244,7 +244,7 @@ public class MainLayout extends FlexBoxLayout
 														 NaviItem submenu3 = menu.addNaviItem(submenu2, optionName3,
 													                null);
 														 String idMenu3 = eachRow3.get("idMenu").asText();
-														 JsonNode rowsList4 = JSonClient.get("menu","isFKidMenu="+idMenu3,false,AppConst.PRE_CONF_PARAM,500+"");
+														 JsonNode rowsList4 = JSonClient.get("menu","isFKidMenu="+idMenu3,false,AppConst.PRE_CONF_PARAM_METADATA,500+"");
 								//						 xxxx
 														 for (JsonNode eachRow4 : rowsList4)  {
 																String optionName4 = eachRow3.get("optionName").asText();
