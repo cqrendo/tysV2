@@ -2,11 +2,11 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
 import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
 import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '../../generic/dynamic-grid.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 class ArticuloForm extends PolymerElement {
 
@@ -139,16 +139,16 @@ fieldset {
 <h3 id="title" style="height:0px"></h3>
 <vaadin-form-layout id="form"></vaadin-form-layout>
 <div class="linCampos">
- <vaadin-text-field id="col0" class="verySmall" label="Clave" readonly="true"></vaadin-text-field>
- <vaadin-text-field id="col1" class="big" label="Descripción" readonly="true"></vaadin-text-field>
- <vaadin-text-field id="col2" label="Dimensiones" readonly="true"></vaadin-text-field>
- <vaadin-text-field id="col11" class="veryVerySmall" label="UM" readonly="true"></vaadin-text-field>
- <vaadin-text-field id="col12" class="verySmall" label="NPV" readonly="true"></vaadin-text-field>
- <vaadin-text-field id="col25" class="verySmall" label="Cod Ede" readonly="true"></vaadin-text-field>
- <vaadin-text-field id="col26" class="verySmall" label="SubCod Ede" readonly="true"></vaadin-text-field>
+ <vaadin-text-field id="col0" class="verySmall" label="Clave"></vaadin-text-field>
+ <vaadin-text-field id="col1" class="big" label="Descripción"></vaadin-text-field>
+ <vaadin-text-field id="col2" label="Dimensiones"></vaadin-text-field>
+ <vaadin-text-field id="col11" class="veryVerySmall" label="UM"></vaadin-text-field>
+ <vaadin-text-field id="col12" class="verySmall" label="NPV"></vaadin-text-field>
+ <vaadin-text-field id="col25" class="verySmall" label="Cod Ede"></vaadin-text-field>
+ <vaadin-text-field id="col26" class="verySmall" label="SubCod Ede"></vaadin-text-field>
 </div>
 <div class="cel" id="cell1">
- <vaadin-tabs selected="{{page1}}">
+ <vaadin-tabs selected="{{page1}}" id="tbTab1">
   <vaadin-tab>
     Stock 
   </vaadin-tab>
@@ -198,30 +198,30 @@ fieldset {
     <fieldset style="width:25%;">
      <legend>Salidas</legend>
      <div id="divpage111">
-      <vaadin-text-field id="col43" label="Pedidas" readonly="true"></vaadin-text-field>
+      <vaadin-text-field id="col43" label="Pedidas"></vaadin-text-field>
       <vaadin-text-field id="col15" label="Pdtes. servir"></vaadin-text-field>
-      <vaadin-text-field id="col50" label="Venta Media" readonly="true"></vaadin-text-field>
+      <vaadin-text-field id="col50" label="Venta Media"></vaadin-text-field>
      </div>
     </fieldset>
     <fieldset style="width:25%;">
      <legend>Stock</legend>
      <div id="divpage112">
-      <vaadin-text-field id="col42" label="Iniciales" readonly="true"></vaadin-text-field>
-      <vaadin-text-field id="col13" label="Stock" readonly="true"></vaadin-text-field>
-      <vaadin-text-field id="col44" label="Mínimo" readonly="true"></vaadin-text-field>
+      <vaadin-text-field id="col42" label="Iniciales"></vaadin-text-field>
+      <vaadin-text-field id="col13" label="Stock"></vaadin-text-field>
+      <vaadin-text-field id="col44" label="Mínimo"></vaadin-text-field>
      </div>
     </fieldset>
     <fieldset style="width:50%;">
      <legend>Entradas</legend>
      <div id="divpage21">
-      <vaadin-text-field id="col40" label="Propuestas" readonly="true"></vaadin-text-field>
-      <vaadin-text-field id="col16" label="Cantidad Neta a Pedir" readonly="true"></vaadin-text-field>
+      <vaadin-text-field id="col40" label="Propuestas"></vaadin-text-field>
+      <vaadin-text-field id="col16" label="Cantidad Neta a Pedir"></vaadin-text-field>
       <br>
-      <vaadin-text-field id="col41" label="Pedidas" readonly="true"></vaadin-text-field>
+      <vaadin-text-field id="col41" label="Pedidas"></vaadin-text-field>
       <vaadin-combo-box id="col117" label="Plazo Entrega"></vaadin-combo-box>
       <br>
-      <vaadin-text-field id="col14" label="Pdtes. Recibir" readonly="true"></vaadin-text-field>
-      <vaadin-text-field id="col51" label="Int. Pedido" readonly="true"></vaadin-text-field>
+      <vaadin-text-field id="col14" label="Pdtes. Recibir"></vaadin-text-field>
+      <vaadin-text-field id="col51" label="Int. Pedido"></vaadin-text-field>
      </div>
     </fieldset>
    </div>
@@ -231,21 +231,21 @@ fieldset {
     <fieldset style="width:50%;">
      <legend>Iniciales</legend>
      <div id="divpage12">
-      <vaadin-text-field id="col125" label="Cantidad" readonly="true"></vaadin-text-field>
-      <vaadin-text-field id="col47" label="Valor CM" readonly="true"></vaadin-text-field>
+      <vaadin-text-field id="col125" label="Cantidad"></vaadin-text-field>
+      <vaadin-text-field id="col47" label="Valor CM"></vaadin-text-field>
       <br>
-      <vaadin-text-field id="col45" label="Coste Medio" readonly="true"></vaadin-text-field>
-      <vaadin-text-field id="col46" label="CUE" readonly="true"></vaadin-text-field>
+      <vaadin-text-field id="col45" label="Coste Medio"></vaadin-text-field>
+      <vaadin-text-field id="col46" label="CUE"></vaadin-text-field>
      </div>
     </fieldset>
     <fieldset style="width:50%;">
      <legend>Actual</legend>
      <div id="divpage22">
-      <vaadin-text-field id="col13" label="Cantidad" readonly="true"></vaadin-text-field>
-      <vaadin-text-field id="col48" label="Valor CM" readonly="true"></vaadin-text-field>
+      <vaadin-text-field id="col13" label="Cantidad"></vaadin-text-field>
+      <vaadin-text-field id="col48" label="Valor CM"></vaadin-text-field>
       <br>
-      <vaadin-text-field id="col49" label="Coste Medio" readonly="true"></vaadin-text-field>
-      <vaadin-text-field id="col39" label="CUE" readonly="true"></vaadin-text-field>
+      <vaadin-text-field id="col49" label="Coste Medio"></vaadin-text-field>
+      <vaadin-text-field id="col39" label="CUE"></vaadin-text-field>
      </div>
     </fieldset>
    </div>
@@ -255,10 +255,10 @@ fieldset {
     <fieldset style="min-width:300px">
      <legend>Costes</legend>
      <div id="divpage13">
-      <vaadin-text-field id="col79" label="Tarifa" readonly="true" class="small"></vaadin-text-field>
-      <vaadin-text-field id="col81" label="Comercial" readonly="true" class="small"></vaadin-text-field>
+      <vaadin-text-field id="col79" label="Tarifa" class="small"></vaadin-text-field>
+      <vaadin-text-field id="col81" label="Comercial" class="small"></vaadin-text-field>
       <br>
-      <vaadin-text-field id="col94" label="Borrador" readonly="true" class="small"></vaadin-text-field>
+      <vaadin-text-field id="col94" label="Borrador" class="small"></vaadin-text-field>
       <div style="width:128px;display: inline-flex;top: -15px;position: relative;font-weight: 500;font-size: 11px;color: #000040;">
        <div style="display: inline-block;width: 50%;line-height: 4px;">
         <span>C. Especial</span>
@@ -272,14 +272,14 @@ fieldset {
        </div>
       </div>
       <br>
-      <vaadin-text-field id="col97" label="Compra" readonly="true" class="small"></vaadin-text-field>
-      <vaadin-text-field id="col100" label="Comerc. 2" readonly="true" class="small"></vaadin-text-field>
+      <vaadin-text-field id="col97" label="Compra" class="small"></vaadin-text-field>
+      <vaadin-text-field id="col100" label="Comerc. 2" class="small"></vaadin-text-field>
       <br>
-      <vaadin-text-field id="col80" label="Contable" readonly="true" class="small"></vaadin-text-field>
-      <vaadin-text-field id="col98" label="Reciclaje" readonly="true" class="small"></vaadin-text-field>
+      <vaadin-text-field id="col80" label="Contable" class="small"></vaadin-text-field>
+      <vaadin-text-field id="col98" label="Reciclaje" class="small"></vaadin-text-field>
       <br>
-      <vaadin-text-field id="col82" label="Mod Trf Man" readonly="true" class="small"></vaadin-text-field>
-      <vaadin-text-field id="col103" label="Mod Trf Auto" readonly="true" class="small"></vaadin-text-field>
+      <vaadin-text-field id="col82" label="Mod Trf Man" class="small"></vaadin-text-field>
+      <vaadin-text-field id="col103" label="Mod Trf Auto" class="small"></vaadin-text-field>
      </div>
     </fieldset>
     <fieldset style="min-width:330px;">
@@ -378,7 +378,7 @@ fieldset {
         <vaadin-text-field class="veryVerySmall3"></vaadin-text-field>
        </div>
       </fieldset>
-      <vaadin-button>
+      <vaadin-button id="btDetalle">
         + detalle 
       </vaadin-button>
      </div>
@@ -392,7 +392,7 @@ fieldset {
       <div>
        <vaadin-text-field id="col10" class="small" label="Ref. Proveedor"></vaadin-text-field>
        <vaadin-text-field id="col21" class="small" label="EAN 13"></vaadin-text-field>
-       <vaadin-button theme="icon" aria-label="Add new">
+       <vaadin-button theme="icon" aria-label="Add new" id="btEan">
         <iron-icon icon="lumo:plus"></iron-icon>
        </vaadin-button>
        <vaadin-text-field id="col20" class="veryVerySmall" label="Clase"></vaadin-text-field>
@@ -411,7 +411,7 @@ fieldset {
       <div>
        <vaadin-text-field id="col7" class="veryVerySmall3" label="Prov"></vaadin-text-field>
        <vaadin-text-field id="col120" class="verySmall" label="Cta.P.Tar"></vaadin-text-field>
-       <vaadin-button style="margin-right:20px;">
+       <vaadin-button style="margin-right:20px;" id="btProv">
          Prov 
        </vaadin-button>
        <vaadin-text-field id="col121" class="verySmall" label="Comprador"></vaadin-text-field>
@@ -473,7 +473,7 @@ fieldset {
    </div>
   </page>
   <page>
-   <div id="dvEvol" style="width: 100%;">
+   <div id="dvEvol" style="width: 100%;max-height:250px;">
     <dynamic-grid id="dgEvol" style="display:none;"></dynamic-grid>
    </div>
   </page>
@@ -482,60 +482,66 @@ fieldset {
    <vaadin-text-field id="col112" label="Observaciones 2" style="width: 45%;"></vaadin-text-field>
    <br>
    <vaadin-text-field id="col113" label="Observaciones 3" style="width: 45%;"></vaadin-text-field>
-   <vaadin-text-field id="col118" label="Aviso Presupuesto y Pedido" style="width: 45%;"></vaadin-text-field>
+   <vaadin-text-field id="col118" label="Aviso Presupuesto y Pedido" style="width: 45%;"></vaadin-text-field><br>
+    <vaadin-button id="btArtSus">
+      Artículos Sustitutivos 
+    </vaadin-button>
+    <vaadin-button id="btProvAlter">
+      Proveedores Alternativos 
+    </vaadin-button>
   </page>
   <page>
-   <div id="dvAlter" style="width: 100%;">
+   <div id="dvAlter" style="width: 100%;max-height:250px;">
     <dynamic-grid id="dgAlter" style="display:none;"></dynamic-grid>
    </div>
   </page>
   <page>
-    <div id="dvTarif" style="width: 100%;">
-	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgTarif1" style="display:none;"></dynamic-grid>
-	   </div>
-	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgTarif2" style="display:none;"></dynamic-grid>
-	   </div>
+   <div id="dvTarif" style="width: 100%;max-height:250px;">
+    <div style="width: 49%;display: inline-block;">
+     <dynamic-grid id="dgTarif1" style="display:none;"></dynamic-grid>
+    </div>
+    <div style="width: 49%;display: inline-block;">
+     <dynamic-grid id="dgTarif2" style="display:none;"></dynamic-grid>
+    </div>
    </div>
   </page>
   <page>
-   <div id="dvOferta" style="width: 100%;">
-	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgOferta1" style="display:none;"></dynamic-grid>
-	   </div>
-	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgOferta2" style="display:none;"></dynamic-grid>
-	   </div>
+   <div id="dvOferta" style="width: 100%;max-height:250px;">
+    <div style="width: 49%;display: inline-block;">
+     <dynamic-grid id="dgOferta1" style="display:none;"></dynamic-grid>
+    </div>
+    <div style="width: 49%;display: inline-block;max-height:250px;">
+     <dynamic-grid id="dgOferta2" style="display:none;"></dynamic-grid>
+    </div>
    </div>
   </page>
   <page>
-   <div id="dvOfProv" style="width: 100%;">
+   <div id="dvOfProv" style="width: 100%;max-height:250px;">
     <dynamic-grid id="dgOfProv" style="display:none;"></dynamic-grid>
    </div>
   </page>
   <page>
-   <div id="dvConsProv" style="width: 100%;">
+   <div id="dvConsProv" style="width: 100%;max-height:250px;">
     <dynamic-grid id="dgConsProv" style="display:none;"></dynamic-grid>
    </div>
   </page>
   <page>
-   <div id="dvColec" style="width: 100%;">
+   <div id="dvColec" style="width: 100%;max-height:250px;">
     <dynamic-grid id="dgColec" style="display:none;"></dynamic-grid>
    </div>
   </page>
   <page>
-   <div id="dvTrans" style="width: 100%;">
-	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgTrans1" style="display:none;"></dynamic-grid>
-	   </div>
-	   <div style="width: 49%;display: inline-block;">
-	    <dynamic-grid id="dgTrans2" style="display:none;"></dynamic-grid>
-	   </div>
+   <div id="dvTrans" style="width: 100%;max-height:250px;">
+    <div style="width: 49%;display: inline-block;">
+     <dynamic-grid id="dgTrans1" style="display:none;"></dynamic-grid>
+    </div>
+    <div style="width: 49%;display: inline-block;">
+     <dynamic-grid id="dgTrans2" style="display:none;"></dynamic-grid>
+    </div>
    </div>
   </page>
   <page>
-   <div id="dvFicha" style="width: 100%;">
+   <div id="dvFicha" style="width: 100%;max-height:250px;">
     <dynamic-grid id="dgFicha" style="display:none;"></dynamic-grid>
    </div>
   </page>

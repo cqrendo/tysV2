@@ -23,6 +23,7 @@ import coop.intergal.ui.views.DynamicViewGrid;
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the articulo-form template.
@@ -61,14 +62,14 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private TextField col11;
 	@Id("col12")
 	private TextField col12;
-	@Id("col14")
-	private TextField col14;
-	@Id("col16")
-	private TextField col16;
 	@Id("col13")
 	private TextField col13;
+	@Id("col14")
+	private TextField col14;
 	@Id("col15")
 	private TextField col15;
+	@Id("col16")
+	private TextField col16;
 	@Id("col19")
 	private TextField col19;
 	@Id("col20")
@@ -125,10 +126,10 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private TextField col52;
 	@Id("col53")
 	private TextField col53;
-	@Id("col55")
-	private TextField col55;
 	@Id("col54")
 	private EsDatePicker col54;
+	@Id("col55")
+	private TextField col55;
 	@Id("col56")
 	private TextField col56;
 	@Id("col57")
@@ -156,7 +157,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col68")
 	private TextField col68;
 	@Id("col69")
-	private ComboBox<String> col69;
+	private ComboBox<DynamicDBean> col69;
 	@Id("col70")
 	private TextField col70;
 	@Id("col71")
@@ -294,6 +295,16 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private DynamicViewGrid dgTarif1;
 	@Id("dgTarif2")
 	private DynamicViewGrid dgTarif2;
+	@Id("btDetalle")
+	private Button btDetalle;
+	@Id("btProv")
+	private Button btProv;
+	@Id("btEan")
+	private Button btEan;
+	@Id("btArtSus")
+	private Button btArtSus;
+	@Id("btProvAlter")
+	private Button btProvAlter;
 	/**
      * Creates a new ArticuloForm.
      */

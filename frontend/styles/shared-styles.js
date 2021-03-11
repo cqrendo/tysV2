@@ -279,6 +279,10 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 	:host(:not([theme~="no-row-borders"])) [part="row"]:last-child [part~="header-cell"] {
     	border: #c9cdd1 1px solid;
 	}
+	:host([height-by-rows]) #items,
+    :host([height-by-rows]) #outerscroller {
+        overflow: hidden;
+    }
     </style> 
   </template> 
  </dom-module>
@@ -515,7 +519,16 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
     </style> 
   </template> 
  </dom-module>	 
-
+<dom-module id="grid-height-by-rows-scrollbar-fix" theme-for="vaadin-grid">
+  <template>
+    <style>
+      :host([height-by-rows]) #items,
+      :host([height-by-rows]) #outerscroller {
+        overflow: hidden;
+      }
+    </style>
+  </template>
+</dom-module>
  <custom-style> 
   <style>
     @keyframes v-progress-start {
