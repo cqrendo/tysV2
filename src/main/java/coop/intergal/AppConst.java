@@ -9,7 +9,7 @@ import java.util.Locale;
 public class AppConst {   // @@ TODO this class for now is copy and represents the default values, for generic utils class as converters, if you want to have different per project you must consider this 
 
 	
-	public static final String PRE_CONF_PARAM = "GferLac0";//"GferJetty";
+	public static final String PRE_CONF_PARAM = "TYSLac0";//"GferJetty";
 	public static final String PRE_CONF_PARAM_METADATA = "metadataLac0";
 	public static final Locale APP_LOCALE = new Locale("es","ES");
 
@@ -73,6 +73,9 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String DEFAULT_WIDTH_FORM = "1360px";
 	public static final String DEFAULT_WIDTH_FORM_MONBUS = "1160px"; // change name for apply
 	public static final String DEFAULT_FIELD_HEIGHT = "70px";
+	public static final String CURRENT_YEAR = "21";
+	public static final String TAGS_LIST = "company;user";
+	
 ;
 
 

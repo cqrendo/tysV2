@@ -11,11 +11,13 @@ import org.springframework.context.annotation.Scope;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.checkbox.Checkbox;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
@@ -63,7 +65,7 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	private EsDatePicker col2;
 	
 	@Id("col3")
-	private TextField col3;
+	private IntegerField col3;
 	
 	@Id("col4")
 	private TextField col4;
@@ -72,10 +74,10 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	private TextField col5;
 
 	@Id("col6")
-	private TextField col6;
+	private IntegerField col6;
 	
 	@Id("col7")
-	private TextField col7;
+	private IntegerField col7;
 	
 	@Id("col8")
 	private TextField col8;
@@ -88,7 +90,7 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	
 
 	@Id("col12")
-	private TextField col12;
+	private ComboBox<DynamicDBean>  col12;
 	
 	@Id("col13")
 	private TextField col13;
@@ -112,13 +114,13 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	private TextField col19;
 	
 	@Id("col20")
-	private TextField col20;
+	private IntegerField col20;
 	
 	@Id("col21")
 	private TextField col21;
 	
 	@Id("col22")
-	private TextField col22;
+	private IntegerField col22;
 	
 	@Id("col23")
 	private TextField col23;

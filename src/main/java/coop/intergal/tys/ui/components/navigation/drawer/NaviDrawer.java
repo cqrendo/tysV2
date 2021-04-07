@@ -7,6 +7,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.textfield.TextField;
@@ -48,13 +49,13 @@ public class NaviDrawer extends Div
         close();
     }
 
-    public NaviDrawer() {
+    public NaviDrawer(Label title) {
         setClassName(CLASS_NAME);
 
         initScrim();
         initMainContent();
 
-        initHeader();
+        initHeader(title);
         initSearch();
 
         initScrollableArea();
@@ -77,8 +78,8 @@ public class NaviDrawer extends Div
         add(mainContent);
     }
 
-    private void initHeader() {
-        mainContent.add(new BrandExpression("tgt"));
+    private void initHeader(Label title) {
+        mainContent.add(new BrandExpression("tgt", title));
     }
 
     private void initSearch() {

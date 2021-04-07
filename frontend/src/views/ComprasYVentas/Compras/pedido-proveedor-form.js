@@ -2,6 +2,7 @@ import { PolymerElement } from '@polymer/polymer/polymer-element.js';
 import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '../../../components/form-buttons-bar.js';
+import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
 import '@vaadin/vaadin-form-layout/src/vaadin-form-item.js';
 import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
 import '../../generic/crud-view.js';
@@ -15,7 +16,8 @@ import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
 import '@vaadin/vaadin-dialog/src/vaadin-dialog.js';
 import '../../generic/layout/dynamic-grid-for-pick.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
-/*import '@polymer/iron-pages/iron-pages.js';*/
+import '@polymer/iron-pages/iron-pages.js';
+import '@vaadin/vaadin-text-field/src/vaadin-integer-field.js';
 
 class PedidoProveedorForm extends PolymerElement {
   static get template() {
@@ -50,25 +52,25 @@ class PedidoProveedorForm extends PolymerElement {
  	    }  
     
           
-      vaadin-text-field.veryBig{
+      .veryBig{
                 width: var(--vaadin-text-field-default-width, 28em);
                 margin-left: 5px;
       }
       
-      vaadin-text-field.big{
+      .big{
                 width: var(--vaadin-text-field-default-width, 20em);
                 margin-left: 5px;
       }
-      vaadin-text-field.medium{
+      .medium{
                 width: var(--vaadin-text-field-default-width, 10em);
                 margin-left: 5px;
             }
-      vaadin-text-field.verySmall{
+      .verySmall{
             width: var(--vaadin-text-field-default-width, 4em);  
 /*  				width : 4em;  */
  				margin-left: 5px;
              }  
-      vaadin-text-field.small{
+      .small{
                 width: var(--vaadin-text-field-default-width, 8em);
                 margin-left: 5px;
             }  
@@ -153,12 +155,12 @@ class PedidoProveedorForm extends PolymerElement {
    <vaadin-text-field id="col0" label="Num " maxlength="2" class="verySmall"></vaadin-text-field>
    <vaadin-text-field id="col1" label=" " maxlength="2" class="small"></vaadin-text-field>
    <vaadin-date-picker id="col2" label="Fecha"></vaadin-date-picker>
-   <vaadin-text-field id="col3" label="Prov." class="verySmall"></vaadin-text-field>
-   <vaadin-text-field id="col4" label="Nombre Proveedor" class="veryBig" readonly="true"></vaadin-text-field>
+   <vaadin-integer-field id="col3" label="Prov." class="verySmall"></vaadin-integer-field>
+   <vaadin-text-field id="col4" label="Nombre Proveedor" class="big" readonly="true"></vaadin-text-field>
    <vaadin-text-field id="col27" label="P. Pago" class="verySmall"></vaadin-text-field>
    <vaadin-text-field id="col28" label="Fase" class="verySmall"></vaadin-text-field>
    <vaadin-text-field id="col5" label="Rappel" class="verySmall"></vaadin-text-field>
-   <vaadin-text-field id="col7" class="verySmall" label="Comprador"></vaadin-text-field>
+   <vaadin-integer-field id="col7" class="verySmall" label="Comprador"></vaadin-integer-field>
    <vaadin-text-field id="col8" label="Nombre Comprador" readonly="true"></vaadin-text-field>
   </div>
   <div class="lastColumn">
@@ -168,20 +170,20 @@ class PedidoProveedorForm extends PolymerElement {
    <vaadin-text-field id="col9" label="Atencion De " maxlength="2" class="medium" style="width:12.7em"></vaadin-text-field>
    <vaadin-date-picker id="col10" label="Plazo Entrega"></vaadin-date-picker>
    <vaadin-text-area id="col11" label="Texto Libre" style="width:32.5em;height:39px"></vaadin-text-area>
-   <vaadin-text-field id="col12" class="small" label="Portes"></vaadin-text-field>
+   <vaadin-combo-box id="col12" class="small" label="Portes"></vaadin-combo-box>
   </div>
   <div class="linCampos">
-   <vaadin-text-field id="col6" label="Ag.T." maxlength="2" class="verySmall"></vaadin-text-field>
-   <vaadin-text-field id="col13" label="Transportista"></vaadin-text-field>
+   <vaadin-integer-field id="col6" label="Ag.T." maxlength="2" class="verySmall"></vaadin-integer-field>
+   <vaadin-text-field id="col13" label="Transportista" readonly="true"></vaadin-text-field>
    <vaadin-text-field id="col14" class="verySmall" label="F pago "></vaadin-text-field>
-   <vaadin-text-field id="col15"></vaadin-text-field>
+   <vaadin-text-field id="col15" label=" "></vaadin-text-field>
    <vaadin-text-field id="col16" class="big" label="Condiciones especiales de pago"></vaadin-text-field>
   </div>
   <div class="linCampos">
    <vaadin-text-field id="col17" class="verySmall" label="FPN"></vaadin-text-field>
    <vaadin-text-field id="col18" label="Forma Pago Negociada"></vaadin-text-field>
    <vaadin-text-field id="col19" class="big" label="Aviso para dpto Provedores (tys)"></vaadin-text-field>
-   <vaadin-text-field id="col20" label="Num Ped Cliente"></vaadin-text-field>
+   <vaadin-integer-field id="col20" label="Num Ped Cliente"></vaadin-integer-field>
    <vaadin-checkbox id="col31">
      Entrega Directa 
    </vaadin-checkbox>
@@ -191,7 +193,7 @@ class PedidoProveedorForm extends PolymerElement {
   </div>
   <div class="linCampos">
    <vaadin-text-field id="col21" label="Suma Peso" class="verySmall"></vaadin-text-field>
-   <vaadin-text-field id="col22" class="verySmall" label="Para Cliente"></vaadin-text-field>
+   <vaadin-integer-field id="col22" class="verySmall" label="Para Cliente"></vaadin-integer-field>
    <vaadin-text-field id="col23" label="Nombre Cliente" class="big"></vaadin-text-field>
    <vaadin-text-field id="col24" label="Num Pedido Del Prov" class="Small"></vaadin-text-field>
    <br>

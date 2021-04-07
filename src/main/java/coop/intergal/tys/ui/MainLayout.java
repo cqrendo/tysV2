@@ -2,6 +2,8 @@ package coop.intergal.tys.ui;
 
 import static coop.intergal.AppConst.DEFAULT_API_NAME;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +19,7 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.page.Viewport;
@@ -43,7 +46,8 @@ import coop.intergal.tys.ui.components.navigation.bar.AppBar;
 import coop.intergal.tys.ui.components.navigation.bar.TabBar;
 import coop.intergal.tys.ui.components.navigation.drawer.NaviDrawer;
 import coop.intergal.tys.ui.components.navigation.drawer.NaviItem;
-import coop.intergal.tys.ui.components.navigation.drawer.NaviMenu; 
+import coop.intergal.tys.ui.components.navigation.drawer.NaviMenu;
+import coop.intergal.tys.ui.util.LumoStyles;
 import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.tys.ui.util.css.Overflow;
 import coop.intergal.tys.ui.views.Home;
@@ -96,10 +100,21 @@ public class MainLayout extends FlexBoxLayout
 	private String apiname;
 	private String cache;
 	private NaviItem submenu;
+	private Label titleLogo = new Label("Empresa sin escoger");
 
 
-    @SuppressWarnings("unchecked")
+    public Label getTitleLogo() {
+		return titleLogo;
+	}
+
+	public void setTitleLogo(String titleLogo) {
+		
+		this.titleLogo.setText(titleLogo);
+	}
+
+	@SuppressWarnings("unchecked")
 	public MainLayout() {
+		titleLogo.addClassName(LumoStyles.Heading.H3);
         VaadinSession.getCurrent()
                 .setErrorHandler((ErrorHandler) errorEvent -> {
                     log.error("Uncaught UI exception",
@@ -137,8 +152,9 @@ public class MainLayout extends FlexBoxLayout
     /**
      * Initialise the required components and containers.
      */
-    private void initStructure() {
-        naviDrawer = new NaviDrawer();
+    public void initStructure() {
+ //       Label title = new Label("cc");
+		naviDrawer = new NaviDrawer(titleLogo);
  //       naviDrawer.removeAll();
 
         viewContainer = new FlexBoxLayout();
@@ -367,7 +383,8 @@ public class MainLayout extends FlexBoxLayout
 //        menu.addNaviItem(personnel, "Accountants", Accountants.class);
 //        menu.addNaviItem(personnel, "Managers", Managers.class);
     }
-    private void initNaviItemsOld() {
+
+	private void initNaviItemsOld() {
         NaviMenu menu = naviDrawer.getMenu();
         menu.removeAll();
         Map<String,List<String>> parameters = new HashMap<>();
@@ -509,46 +526,46 @@ public class MainLayout extends FlexBoxLayout
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
 
-        if (navigationTabs) {
-            afterNavigationWithTabs(event);
-        } else {
-            afterNavigationWithoutTabs(event);
-        }
+//        if (navigationTabs) {
+//            afterNavigationWithTabs(event);
+//        } else {
+//            afterNavigationWithoutTabs(event);
+//        }
     }
 
-    private void afterNavigationWithTabs(AfterNavigationEvent e) {
-        NaviItem active = getActiveItem(e);
-        if (active == null) {
-            if (tabBar.getTabCount() == 0) {
-                tabBar.addClosableTab("", Home.class);
-            }
-        } else {
-            if (tabBar.getTabCount() > 0) {
-                tabBar.updateSelectedTab(active.getText(),
-                        active.getNavigationTarget());
-            } else {
-                tabBar.addClosableTab(active.getText(),
-                        active.getNavigationTarget());
-            }
-        }
-        appBar.getMenuIcon().setVisible(false);
-    }
+//    private void afterNavigationWithTabs(AfterNavigationEvent e) {
+//        NaviItem active = getActiveItem(e);
+//        if (active == null) {
+//            if (tabBar.getTabCount() == 0) {
+//                tabBar.addClosableTab("", Home.class);
+//            }
+//        } else {
+//            if (tabBar.getTabCount() > 0) {
+//                tabBar.updateSelectedTab(active.getText(),
+//                        active.getNavigationTarget());
+//            } else {
+//                tabBar.addClosableTab(active.getText(),
+//                        active.getNavigationTarget());
+//            }
+//        }
+//        appBar.getMenuIcon().setVisible(false);
+//    }
 
-    private NaviItem getActiveItem(AfterNavigationEvent e) {
-        for (NaviItem item : naviDrawer.getMenu().getNaviItems()) {
-            if (item.isHighlighted(e)) {
-                return item;
-            }
-        }
-        return null;
-    }
+//    private NaviItem getActiveItem(AfterNavigationEvent e) {
+//        for (NaviItem item : naviDrawer.getMenu().getNaviItems()) {
+//            if (item.isHighlighted(e)) {
+//                return item;
+//            }
+//        }
+//        return null;
+//    }
 
-    private void afterNavigationWithoutTabs(AfterNavigationEvent e) {
-        NaviItem active = getActiveItem(e);
-        if (active != null) {
-            getAppBar().setTitle(active.getText());
-        }
-    }
+//    private void afterNavigationWithoutTabs(AfterNavigationEvent e) {
+//        NaviItem active = getActiveItem(e);
+//        if (active != null) {
+//            getAppBar().setTitle(active.getText());
+//        }
+//    }
 
 	@Override
 	public void beforeEnter(BeforeEnterEvent event) {
@@ -578,7 +595,8 @@ public class MainLayout extends FlexBoxLayout
 	    }		
 	    UtilSessionData.setCache(cache);
 	    
-	    initNaviItems();
+	    if (naviDrawer.getMenu() == null || naviDrawer.getMenu().getNaviItems().isEmpty())
+	    	initNaviItems();
 	}
 
 }

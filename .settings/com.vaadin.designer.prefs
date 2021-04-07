@@ -1,9 +1,8 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=e5b2e224ae744accb015f376583a92d345c0947e
 defaultJavaCompanionFolder=src/main/java/coop/intergal/tys/ui/views/comprasyventas/articulos
 defaultTemplateFolder=frontend/src/views/ComprasYVentas/Articulos
 eclipse.preferences.version=1
-<<<<<<< HEAD
-serverAddress=192.168.1.100
-=======
 serverAddress=192.168.1.25
->>>>>>> e5b2e224ae744accb015f376583a92d345c0947e
 serverPort=53815

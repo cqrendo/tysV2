@@ -47,6 +47,7 @@ import coop.intergal.tys.ui.util.FontSize;
 import coop.intergal.tys.ui.util.LumoStyles;
 import coop.intergal.tys.ui.util.TextColor;
 import coop.intergal.tys.ui.util.UIUtils;
+import coop.intergal.ui.utils.UtilSessionData;
 import coop.intergal.ui.utils.converters.CurrencyFormatter;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
@@ -184,7 +185,7 @@ private static final String RESOURCE_FIELD_TEMPLATE = "CR-FormTemplate.List-Fiel
     private Component createDetails() {
 //		this.binder = new Binder<DynamicDBean>(DynamicDBean.class);
    		dataProvider = new DdbDataBackEndProvider();
-		dataProvider.setPreConfParam(AppConst.PRE_CONF_PARAM);
+		dataProvider.setPreConfParam(UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM);
 		dataProvider.setResourceName( resource);
 		dataProvider.setFilter(""); 
 		rowsFieldList = dataProvider.getRowsFieldList();
@@ -378,7 +379,7 @@ private static final String RESOURCE_FIELD_TEMPLATE = "CR-FormTemplate.List-Fiel
 		Binder<DynamicDBean> binder = new Binder<DynamicDBean>(DynamicDBean.class);
 		
 		String filter =  "tableName='"+resource+"'%20AND%20FieldNameInUI='"+id.get()+"'";
-		DynamicDBean dynamicDBean = RestData.getOneRow(RESOURCE_FIELD_TEMPLATE,filter, AppConst.PRE_CONF_PARAM, null);
+		DynamicDBean dynamicDBean = RestData.getOneRow(RESOURCE_FIELD_TEMPLATE,filter, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
 		beansToSaveAndRefresh.clear();	
 		beansToSaveAndRefresh.put(dynamicDBean.getResourceName(), dynamicDBean);
 

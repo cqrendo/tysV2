@@ -84,8 +84,8 @@ public class NaviItem extends Div {
             routerLink.setClassName(CLASS_NAME + "__link");
 	
             routerLink.setQueryParameters(queryParameters);
- //           routerLink.setHighlightCondition(HighlightConditions.sameLocation());
-            routerLink.setHighlightCondition(sameLocation());
+            routerLink.setHighlightCondition(HighlightConditions.sameLocation());
+ //           routerLink.setHighlightCondition(sameLocation());
             this.link = routerLink;
 
         } else {

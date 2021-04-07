@@ -3,6 +3,8 @@ package coop.intergal.tys.ui;
 import com.vaadin.flow.templatemodel.TemplateModel;
 
 import coop.intergal.AppConst;
+import coop.intergal.tys.ui.components.FlexBoxLayout;
+import coop.intergal.ui.utils.UtilSessionData;
 import coop.intergal.ui.utils.converters.CurrencyFormatter;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
@@ -10,8 +12,10 @@ import coop.intergal.vaadin.rest.utils.RestData;
 
 import static coop.intergal.AppConst.PAGE_PRODUCTS;
 
+import java.io.UnsupportedEncodingException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -52,7 +56,7 @@ import com.vaadin.flow.server.VaadinService;
 @Tag("sub-submenu")
 @JsModule("./src/sub-submenu.js")
 @Route(value = "ssubmenu", layout = MainLayout.class)
-public class SubSubmenu extends PolymerTemplate<TemplateModel> implements AfterNavigationObserver, HasDynamicTitle {
+public class SubSubmenu extends PolymerTemplate<TemplateModel> implements BeforeEnterObserver, HasDynamicTitle {//AfterNavigationObserver, HasDynamicTitle {
 	/**
 	 * 
 	 */
@@ -83,10 +87,11 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements AfterN
 		setupButtons();
 	}
 	private void setupButtons() {
+		System.out.println("SubSubmenu.setupButtons() " + filter);
 		vlButomsGroup1.removeAll();
 		
 		DdbDataBackEndProvider dataProvider = new DdbDataBackEndProvider();
-		dataProvider.setPreConfParam(AppConst.PRE_CONF_PARAM);
+		dataProvider.setPreConfParam(UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM);
 		dataProvider.setResourceName("CR-menu");
 		rowsColList = dataProvider.getRowsColList();
 		
@@ -143,7 +148,7 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements AfterN
 		String queryFormClassName = rowSubMenu.get("queryFormClassName").asText();
 		String displayFormClassName = rowSubMenu.get("displayFormClassName").asText();
 		
-		titleOption = titleOption.replace(" ", "%20");
+//		titleOption = titleOption.replace(" ", "%20");
 		UI.getCurrent().getPage().executeJs("window.open('"+urlBase+"?resourceName="+resource+"&queryFormClassName="+queryFormClassName+"&displayFormClassName="+displayFormClassName+"&title="+titleOption+"', '_blank');") ;
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
@@ -151,9 +156,22 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements AfterN
 		}
 		return null;
 	}
+//    private String componTitle(String optionName) {
+//		String title = optionName+" ("+UtilSessionData.getCompanyYear()+")";
+//		try {
+//			title = java.net.URLDecoder.decode(title, StandardCharsets.UTF_8.name());
+//		} catch (UnsupportedEncodingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return  title;
+//	}
 
+//	@Override
+//	public void afterNavigation(AfterNavigationEvent event) {
 	@Override
-	public void afterNavigation(AfterNavigationEvent event) {
+	public void beforeEnter(BeforeEnterEvent event) {
+	
 		if (esTab == 0) {
 			QueryParameters queryParameters = event.getLocation().getQueryParameters();
 			filter = queryParameters.getParameters().get("filter").get(0);
@@ -165,7 +183,18 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements AfterN
 
 	@Override
 	public String getPageTitle() {
-		// TODO Auto-generated method stub
-		return title;
+		try {
+			title = java.net.URLDecoder.decode(title, StandardCharsets.UTF_8.name());
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        FlexBoxLayout p1 = (FlexBoxLayout) this.getParent().get();
+        Component p2 = p1.getParent().get();
+        Component p3 = p2.getParent().get();
+        MainLayout mL = (MainLayout) p3.getParent().get();
+        mL.getAppBar().setTitle(title);
+		return UtilSessionData.addCompanyToTitle(title);
 	}
+ 
 }

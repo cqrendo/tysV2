@@ -1,5 +1,9 @@
 package coop.intergal.tys.ui.components.navigation.bar;
 
+import static coop.intergal.tys.ui.util.UIUtils.IMG_PATH;
+
+import java.util.ArrayList;
+
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.HasValue;
@@ -19,7 +23,6 @@ import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.shared.Registration;
 
-import coop.intergal.AppConst;
 import coop.intergal.tys.ui.MainLayout;
 import coop.intergal.tys.ui.components.FlexBoxLayout;
 import coop.intergal.tys.ui.components.navigation.tab.NaviTab;
@@ -29,14 +32,15 @@ import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.tys.ui.views.Home;
 import coop.intergal.ui.utils.TranslateResource;
 
-import static coop.intergal.tys.ui.util.UIUtils.IMG_PATH;
-
-import java.util.ArrayList;
-
 @CssImport("styles/components/app-bar.css")
 public class AppBar extends FlexBoxLayout {
 
-    private String CLASS_NAME = "app-bar";
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private String CLASS_NAME = "app-bar";
 
     private FlexBoxLayout container;
 
@@ -139,7 +143,7 @@ public class AppBar extends FlexBoxLayout {
 		contextMenu.addItem("Settings",
 				e -> Notification.show("Not implemented yet.", 3000,
 						Notification.Position.BOTTOM_CENTER));
-		contextMenu.addItem(TranslateResource.getFieldLocale("LOGOUT", AppConst.PRE_CONF_PARAM), event -> {
+		contextMenu.addItem(TranslateResource.getFieldLocale("LOGOUT"), event -> {
             // Redirect this page immediately
 			UI.getCurrent().getPage().executeJs("location.assign('logout')");
             // Close the session

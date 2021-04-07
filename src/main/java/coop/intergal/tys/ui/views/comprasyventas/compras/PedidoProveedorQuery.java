@@ -23,6 +23,7 @@ import com.vaadin.flow.spring.annotation.SpringComponent;
 
 import coop.intergal.AppConst;
 import coop.intergal.ui.components.QueryButtonsBar;
+import coop.intergal.ui.utils.UtilSessionData;
 import coop.intergal.ui.views.DynamicViewGrid;
 import coop.intergal.ui.views.GenericDynamicQuery;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
@@ -44,7 +45,7 @@ public class PedidoProveedorQuery extends GenericDynamicQuery implements BeforeE
 
 	public PedidoProveedorQuery() {
 		super();
-		super.preConfParam = AppConst.PRE_CONF_PARAM;
+		super.preConfParam = UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM;
 		queryButtonsBar.addSearchListener(e -> createFilterFromQryForm());
 		queryButtonsBar.addClearSearchListener(e -> cleanQryForm());//System.out.println("PedidoProveedorQuery.beforeEnter() BUSCAR>>>>"));
 	}

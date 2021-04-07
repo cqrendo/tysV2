@@ -56,6 +56,7 @@ import coop.intergal.tys.ui.util.TextColor;
 import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.tys.ui.util.css.BoxSizing;
 import coop.intergal.ui.utils.TranslateResource;
+import coop.intergal.ui.utils.UtilSessionData;
 import coop.intergal.ui.utils.converters.CurrencyFormatter;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
@@ -128,7 +129,7 @@ public class GenericGridDetails extends SplitViewFrame implements HasDynamicTitl
 //        dataProvider = DataProvider.ofCollection(DummyData.getPayments());
 //    	System.out.println("GenericGridDetails.createGrid()........." + ComponentUtil.getData(UI.getCurrent(), "resource"));
     		dataProvider = new DdbDataBackEndProvider();
-    		dataProvider.setPreConfParam(AppConst.PRE_CONF_PARAM);
+    		dataProvider.setPreConfParam(UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM);
     		dataProvider.setResourceName( resource);
     		dataProvider.setFilter("");
     		grid = new Grid<DynamicDBean>();
