@@ -395,7 +395,7 @@ fieldset {
        <vaadin-button theme="icon" aria-label="Add new" id="btEan">
         <iron-icon icon="lumo:plus"></iron-icon>
        </vaadin-button>
-       <vaadin-text-field id="col20" class="veryVerySmall" label="Clase"></vaadin-text-field>
+       <vaadin-combo-box id="col20" class="veryVerySmall" label="Clase"></vaadin-combo-box>
        <vaadin-text-field id="col105" class="veryVerySmall" label="IVA"></vaadin-text-field>
        <vaadin-text-field id="col27" class="veryVerySmall" label="Dest."></vaadin-text-field>
       </div>

@@ -7,7 +7,7 @@ import { PolymerElement } from '@polymer/polymer/polymer-element.js';
 import {ThemableMixin} from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 
 //class DynamicGridDisplay extends PolymerElement {
-class DynamicQryGridDisplay extends ThemableMixin(PolymerElement) {
+class DynamicDisplaySubgrid extends ThemableMixin(PolymerElement) {
   static get template() {
     return html`
 <style include="shared-styles">
@@ -22,11 +22,7 @@ class DynamicQryGridDisplay extends ThemableMixin(PolymerElement) {
 	 
 }
 </style>
-<vaadin-split-layout orientation="vertical" id="querySplitGrid">
- <div id="divQuery" style="flex:none"></div>
  <div>
-  <vaadin-split-layout id="gridSplitDisplay" style="height: 99%;">
-   <dynamic-grid id="grid"></dynamic-grid>
    <div id="divDisplayAndSubgrids">
     <vaadin-split-layout orientation="vertical" id="displaySplitSubGrid">
      <div>
@@ -36,14 +32,12 @@ class DynamicQryGridDisplay extends ThemableMixin(PolymerElement) {
      <div id="divSubGrid"></div>
     </vaadin-split-layout>
    </div>
-  </vaadin-split-layout>
  </div>
-</vaadin-split-layout>
 `;
   }
 
   static get is() {
-      return 'dynamic-qry-grid-display';
+      return 'dynamic-display-subgrid';
   }
   static get properties() {
       return {
@@ -51,5 +45,5 @@ class DynamicQryGridDisplay extends ThemableMixin(PolymerElement) {
       };
   }
 }
-customElements.define(DynamicQryGridDisplay.is, DynamicQryGridDisplay);
+customElements.define(DynamicDisplaySubgrid.is, DynamicDisplaySubgrid);
 

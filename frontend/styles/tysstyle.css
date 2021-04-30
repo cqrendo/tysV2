@@ -6,3 +6,6 @@
 	background-color: darkblue;
 	color: white;
 }
+.onlyButtons {
+	overflow: hidden;
+}
