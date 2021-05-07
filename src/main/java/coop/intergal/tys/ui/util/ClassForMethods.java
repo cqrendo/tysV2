@@ -29,6 +29,37 @@ public class ClassForMethods extends GenericClassForMethods{
 //				System.out.println("ClassForMethods.refreshOpenPopups() Dialog ID" + dialog.getId());
 //				}
 //			}
+		
+//		Object searchid = null;
+//		for (Component child : UI.getCurrent().getChildren().collect(Collectors.toList()))
+//		{
+//			String id = child.getId().get();
+//			
+//			if (id.equals(searchid))
+//				break;
+//			else
+//			{
+//				for (Component child2 :child.getChildren().collect(Collectors.toList()))
+//				{
+//					id = child2.getId().get();
+//					
+//					if (id.equals(searchid))
+//						break;
+//					else
+//					{
+//						for (Component child3:child.getChildren().collect(Collectors.toList()))
+//						{
+//							id = child2.getId().get();
+//							
+//							if (id.equals(searchid))
+//								break;
+//							else
+//							{
+//					//			and so on..
+//							}		
+//					}	
+//			}
+//		}
 		for (Component child : UI.getCurrent().getChildren().filter(c->c instanceof Dialog).collect(Collectors.toList())) {
 			Dialog dialog = (Dialog) child;
 			String paramsInId = dialog.getId().get(); // format ResourceNama@DFC@"displayFormClassNamePopup);

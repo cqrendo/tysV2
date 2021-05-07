@@ -73,7 +73,7 @@ class GeneratedQuery extends PolymerElement {
   <query-buttons-bar id="queryButtonsBar"></query-buttons-bar>
  </div>
  <h3 id="title"></h3>
-<div id="form" style="width: 100%; height: 100%;"></div>
+<vaadin-form-layout id="form" style="width: 100%; height: 100%;"></vaadin-form-layout>
  <!--  <vaadin-vertical-layout class="full"> -->
  <!--  <vaadin-form-item> -->
  <!-- </vaadin-form-item>  -->
