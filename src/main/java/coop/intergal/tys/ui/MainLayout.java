@@ -114,6 +114,7 @@ public class MainLayout extends FlexBoxLayout
 
 	@SuppressWarnings("unchecked")
 	public MainLayout() {
+		this.setId("MainLayout");
 		titleLogo.addClassName(LumoStyles.Heading.H3);
         VaadinSession.getCurrent()
                 .setErrorHandler((ErrorHandler) errorEvent -> {
@@ -178,7 +179,7 @@ public class MainLayout extends FlexBoxLayout
     /**
      * Initialise the navigation items.
      */
-    private void initNaviItems() {
+    public void initNaviItems() {
         NaviMenu menu = naviDrawer.getMenu();
         menu.removeAll();
 		try {
@@ -593,10 +594,12 @@ public class MainLayout extends FlexBoxLayout
 	    	else
 	    		cache = "false";
 	    }		
-	    UtilSessionData.setCache(cache);
-	    
-	    if (naviDrawer.getMenu() == null || naviDrawer.getMenu().getNaviItems().isEmpty())
-	    	initNaviItems();
+	    UtilSessionData.setCache(cache); // initNaviItems() -> is call from Home
+//	    if (UtilSessionData.getCompanyYear() != null && UtilSessionData.getCompanyYear().isEmpty() == false) // not menu until company is choose
+//	    {
+//	    	if (naviDrawer.getMenu() == null || naviDrawer.getMenu().getNaviItems().isEmpty())
+//	    		initNaviItems();
+//	    }	
 	}
 
 }

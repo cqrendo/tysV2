@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Html;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Div;
@@ -23,6 +24,7 @@ import coop.intergal.tys.ui.layout.size.Uniform;
 import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.ui.security.SecurityUtils;
 import coop.intergal.ui.utils.CheckMemory;
+import coop.intergal.ui.utils.UiComponentsUtils;
 import coop.intergal.ui.utils.UtilSessionData;
 
 @PageTitle("Inicio")
@@ -55,9 +57,12 @@ public class Home extends ViewFrame {
 
         comboBox.setItems("GFER","TYSH");
         comboBox.setClearButtonVisible(true);
+        
+		MainLayout mL = (MainLayout) UiComponentsUtils.findComponent(UI.getCurrent(), "MainLayout");
 
         Div value = new Div();
-        if (actualCompany != null && actualCompany.isEmpty() == false)
+        
+        if (actualCompany != null && actualCompany.isEmpty() == false && mL != null)
         {
         	comboBox.setValue(actualCompany);
         	value.setText("Seleccionado: " + actualCompany);
@@ -93,13 +98,21 @@ public class Home extends ViewFrame {
     }
 
 	private void setLateralTitle(String companyYear) {
-		if (this.getParent().isPresent())
-		{
-			FlexBoxLayout p1 = (FlexBoxLayout) this.getParent().get();
-			Component p2 = p1.getParent().get();
-			Component p3 = p2.getParent().get();
-			MainLayout mL = (MainLayout) p3.getParent().get();
+		MainLayout mL = (MainLayout) UiComponentsUtils.findComponent(UI.getCurrent(), "MainLayout");
+////		if (this.getParent().isPresent())
+//		{
+//			FlexBoxLayout p1 = (FlexBoxLayout) this.getParent().get();
+//			Component p2 = p1.getParent().get();
+//			Component p3 = p2.getParent().get();
+//			MainLayout mL = (MainLayout) p3.getParent().get();
+		if (mL != null)
+		{	
 			mL.setTitleLogo(companyYear);
+			mL.initNaviItems();
+		}
+		else
+		{
+			
 		}
 	}
 
