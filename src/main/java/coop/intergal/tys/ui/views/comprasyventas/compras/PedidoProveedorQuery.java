@@ -9,13 +9,11 @@ import java.util.Date;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 
-import com.vaadin.flow.component.HasText;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
@@ -23,7 +21,7 @@ import com.vaadin.flow.spring.annotation.SpringComponent;
 
 import coop.intergal.AppConst;
 import coop.intergal.ui.components.QueryButtonsBar;
-import coop.intergal.ui.utils.UtilSessionData;
+import coop.intergal.ui.util.UtilSessionData;
 import coop.intergal.ui.views.DynamicViewGrid;
 import coop.intergal.ui.views.GenericDynamicQuery;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;

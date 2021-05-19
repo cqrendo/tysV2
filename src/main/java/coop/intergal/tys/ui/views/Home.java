@@ -25,7 +25,7 @@ import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.ui.security.SecurityUtils;
 import coop.intergal.ui.utils.CheckMemory;
 import coop.intergal.ui.utils.UiComponentsUtils;
-import coop.intergal.ui.utils.UtilSessionData;
+import coop.intergal.ui.util.UtilSessionData;
 
 @PageTitle("Inicio")
 @Route(value = "", layout = MainLayout.class)

@@ -47,7 +47,7 @@ import coop.intergal.tys.ui.util.FontSize;
 import coop.intergal.tys.ui.util.LumoStyles;
 import coop.intergal.tys.ui.util.TextColor;
 import coop.intergal.tys.ui.util.UIUtils;
-import coop.intergal.ui.utils.UtilSessionData;
+import coop.intergal.ui.util.UtilSessionData;
 import coop.intergal.ui.utils.converters.CurrencyFormatter;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;

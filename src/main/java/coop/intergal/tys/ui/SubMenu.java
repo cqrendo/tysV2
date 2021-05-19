@@ -25,7 +25,7 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 
 import coop.intergal.AppConst;
 import coop.intergal.tys.ui.components.FlexBoxLayout;
-import coop.intergal.ui.utils.UtilSessionData;
+import coop.intergal.ui.util.UtilSessionData;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
 import coop.intergal.vaadin.rest.utils.RestData;

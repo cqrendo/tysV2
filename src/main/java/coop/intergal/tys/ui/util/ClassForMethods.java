@@ -9,7 +9,7 @@ import com.vaadin.flow.component.dialog.Dialog;
 import coop.intergal.AppConst;
 import coop.intergal.ui.util.GenericClassForMethods;
 import coop.intergal.ui.utils.ProcessParams;
-import coop.intergal.ui.utils.UtilSessionData;
+import coop.intergal.ui.util.UtilSessionData;
 import coop.intergal.ui.views.DynamicViewGrid;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
 import coop.intergal.vaadin.rest.utils.RestData;

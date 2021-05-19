@@ -51,7 +51,7 @@ import coop.intergal.tys.ui.util.LumoStyles;
 import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.tys.ui.util.css.Overflow;
 import coop.intergal.tys.ui.views.Home;
-import coop.intergal.ui.utils.UtilSessionData;
+import coop.intergal.ui.util.UtilSessionData;
 import coop.intergal.ui.views.DynamicQryGridDisplay;
 import coop.intergal.ui.views.DynamicTreeDisplay;
 

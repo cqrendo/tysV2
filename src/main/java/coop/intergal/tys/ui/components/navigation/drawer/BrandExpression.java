@@ -7,7 +7,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 
 import coop.intergal.tys.ui.util.UIUtils;
-import coop.intergal.ui.utils.UtilSessionData;
+import coop.intergal.ui.util.UtilSessionData;
 
 @CssImport("styles/components/brand-expression.css")
 public class BrandExpression extends Div {

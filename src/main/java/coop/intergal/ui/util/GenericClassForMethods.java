@@ -4,16 +4,26 @@ import static coop.intergal.AppConst.PACKAGE_VIEWS;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
+import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.grid.GridSortOrder;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.data.provider.DataProvider;
+import com.vaadin.flow.data.provider.Query;
+import com.vaadin.flow.data.provider.QuerySortOrder;
+import com.vaadin.flow.function.SerializableComparator;
 
 import coop.intergal.AppConst;
 import coop.intergal.espresso.presutec.utils.JSonClient;
 import coop.intergal.ui.utils.ProcessParams;
-import coop.intergal.ui.utils.UtilSessionData;
 import coop.intergal.ui.views.DynamicViewGrid;
 import coop.intergal.vaadin.rest.utils.DataService;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
@@ -135,5 +145,89 @@ public class GenericClassForMethods {
 		return null;
 	}
 
+	public Object processButtonForProcess(String idButton, DynamicDBean bean, Div divSubGrid, DynamicViewGrid grid)
+	{
+		int idxIdProcess = idButton.indexOf("@IDP");
+		if (idxIdProcess == -1)
+		{
+			DataService.get().showError("Id de proceso sin indicar, se debe de especificar en el formato nombreopcion#IDPnumero");
+			return null; 
+		}
+		try {
+			String idMProcess = idButton.substring(idxIdProcess+4);
+			String filter = "idProcess="+idMProcess;
+			JsonNode rowsList;
+			rowsList = JSonClient.get("CR-Process",filter,false,AppConst.PRE_CONF_PARAM_METADATA,1+"");
+			for (JsonNode rowProcess : rowsList)  
+				{	
+				System.out.println("GenericClassForMethods.processButtonForProcess() "+ rowProcess.get("name").asText());
+				JsonNode rowsSteps = rowProcess.get("List-ProcessStep");
+				for (JsonNode rowStep : rowsSteps) 
+					{
+					System.out.println("GenericClassForMethods.processButtonForProcess() STEP "+ rowStep.get("name").asText());	
+					String inputResourceForReadData = rowStep.get("inputResourceForReadData").asText();
+					String inputResourceForAskData = rowStep.get("inputResourceForAskData").asText();
+					DynamicDBean rowOfInputData = null;
+//					if (inputResourceForAskData.isEmpty() == false  )
+//						rowOfInputData = askInputData(inputResourceForAskData, grid);
+					processInput(grid, inputResourceForReadData, rowOfInputData);
+					JsonNode rowsStepOuput = rowStep.get("List-ProcessStepOutput");
+					for (JsonNode rowStepOuput : rowsStepOuput) 
+						{
+						System.out.println("GenericClassForMethods.processButtonForProcess() STEP OUTPUT "+ rowStepOuput.get("resource").asText());
+						}
+					}
+				}
+		} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		}
 
+		return null; 
+	}
+	private void processInput(DynamicViewGrid grid, String inputResourceForReadData, DynamicDBean rowOfInputData) {
+		Stream<DynamicDBean> rowsStream = ((DataProvider<DynamicDBean, String>) grid.getGrid().getDataProvider()).fetch(createQuery(grid.getGrid()));
+//		grid.getGrid().getSelectedItems();j
+		Iterator<DynamicDBean> rows = rowsStream.iterator();
+		DynamicDBean row = null;
+		while (rows.hasNext()) {
+			row = rows.next();
+			System.out.println("GenericClassForMethods.processInput() EACH Row in grid " + row.getCol0() + " "+  row.getRowJSon().asText() );
+		}
+			
+		
+		
+	}
+	private DynamicDBean askInputData(String inputResourceForAskData, DynamicViewGrid grid) {
+		DynamicDBean rowtoShow = RestData.getOneRow(inputResourceForAskData, null, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM);
+		String layoutClassName=null;
+		String displayFormClassName = null;
+		String filterForPopup = null ;
+		showDialog(rowtoShow, inputResourceForAskData, layoutClassName, displayFormClassName, grid, filterForPopup);
+		return null;
+		
+	}
+
+    /*
+     * This method is needed if using Vaadin 14, which does not have DataView API yet
+     */
+    private Query<DynamicDBean, String> createQuery(Grid<DynamicDBean> grid) {
+        List<GridSortOrder<DynamicDBean>> gridSort = grid.getSortOrder();
+        List<QuerySortOrder> sortOrder = gridSort
+            .stream()
+            .map(order -> order.getSorted().getSortOrder(order.getDirection()))
+            .flatMap(orders -> orders)
+            .collect(Collectors.toList());
+
+        BinaryOperator<SerializableComparator<DynamicDBean>> operator = (comparator1, comparator2) -> {
+            return comparator1.thenComparing(comparator2)::compare;
+        };
+        SerializableComparator<DynamicDBean> inMemorySorter = gridSort
+            .stream()
+            .map(order -> order.getSorted().getComparator(order.getDirection()))
+            .reduce(operator)
+            .orElse(null);
+
+        return new Query<DynamicDBean, String>(0, Integer.MAX_VALUE, sortOrder, inMemorySorter, null);
+    }
 }

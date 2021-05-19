@@ -17,7 +17,7 @@ import com.vaadin.flow.spring.annotation.SpringComponent;
 
 import coop.intergal.AppConst;
 import coop.intergal.ui.components.QueryButtonsBar;
-import coop.intergal.ui.utils.UtilSessionData;
+import coop.intergal.ui.util.UtilSessionData;
 import coop.intergal.ui.views.DynamicViewGrid;
 import coop.intergal.ui.views.GenericDynamicQuery;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
