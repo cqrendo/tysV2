@@ -75,12 +75,12 @@ public class ClassForMethods extends GenericClassForMethods{
 //			String filter = "CLAVE_ARTICULO="+dB.getRowJSon().get("CLAVEARTICULO");
 			if (layoutClassName.indexOf("DynamicViewGrid") > -1) // when is a grid list is send the origin row to filter the list in the target 0'9o
 			{
-				dVGrid.showBeaninPopup(dB, resourceName,layoutClassName, displayFormClassNamePopup, dialog, filterForPopup);
+				dVGrid.showBeaninPopup(dB, resourceName,layoutClassName, displayFormClassNamePopup, dialog, filterForPopup, null);
 			}
 			else // when is a Display is send the target row to be show as target
 			{
 				DynamicDBean rowtoShow = RestData.getOneRow(resourceName, filter, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM);
-				dVGrid.showBeaninPopup(rowtoShow, resourceName,layoutClassName, displayFormClassNamePopup, dialog, filterForPopup);
+				dVGrid.showBeaninPopup(rowtoShow, resourceName,layoutClassName, displayFormClassNamePopup, dialog, filterForPopup, null);
 			}
 
 

@@ -6,6 +6,7 @@ import coop.intergal.AppConst;
 import coop.intergal.tys.ui.components.FlexBoxLayout;
 import coop.intergal.ui.util.UtilSessionData;
 import coop.intergal.ui.utils.converters.CurrencyFormatter;
+import coop.intergal.vaadin.rest.utils.DataService;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
 import coop.intergal.vaadin.rest.utils.RestData;
@@ -38,6 +39,7 @@ import com.vaadin.flow.component.polymertemplate.TemplateParser;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
+import com.vaadin.flow.data.provider.DataProvider;
 import com.vaadin.flow.router.AfterNavigationEvent;
 import com.vaadin.flow.router.AfterNavigationObserver;
 import com.vaadin.flow.router.BeforeEnterEvent;
@@ -89,7 +91,11 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 	private void setupButtons() {
 		System.out.println("SubSubmenu.setupButtons() " + filter);
 		vlButomsGroup1.removeAll();
-		
+	    if (UtilSessionData.getCompanyYear() == null || UtilSessionData.getCompanyYear().isEmpty() == true) // not menu until company is choose
+	    {
+	    	DataService.get().showError("Debe de selecionar una Empresa, pulsar en el logo lateral");
+	    	return;
+	    }
 		DdbDataBackEndProvider dataProvider = new DdbDataBackEndProvider();
 		dataProvider.setPreConfParam(UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM);
 		dataProvider.setResourceName("CR-menu");
