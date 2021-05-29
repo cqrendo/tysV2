@@ -134,76 +134,57 @@ fieldset {
     border: 1px solid #9a3261;
     width:100%;
 }
+/* Style las lineas de las gráficas */
+vaadin-chart {
+    --vaadin-charts-color-0: blue;
+    --vaadin-charts-color-1: green;
+}
 
     </style>
 <h3 id="title" style="height:0px"></h3>
 <vaadin-form-layout id="form"></vaadin-form-layout>
-<div class="linCampos" style="width: 900px; margin: var(--lumo-space-s);">
+<div class="linCampos" style="width: 100%; margin: var(--lumo-space-s);">
  <vaadin-text-field id="col0" class="big" label="Descripción"></vaadin-text-field>
  <vaadin-text-field id="col1" label="Dimensiones" class="medium"></vaadin-text-field>
  <vaadin-text-field id="col3" class="verySmall6" label="CM"></vaadin-text-field>
  <vaadin-text-field id="col2" class="verySmall6" label="CUE"></vaadin-text-field>
 </div>
-<div class="cel" id="cell1" style="width: 900px;">
- <div style="display:inline-block; width: 36%;">
+<div class="cel" id="cell1" style="width: 1000px;">
+ <div style="display:inline-block; width: 667px;height:454px;float:left;">
   <vaadin-tabs selected="{{page1}}" id="tbTab1">
-   <vaadin-tab>
-     Alma 
-   </vaadin-tab>
-   <vaadin-tab>
-     Global 
-   </vaadin-tab>
-   <vaadin-tab>
-     Galicia (G) 
-   </vaadin-tab>
-   <vaadin-tab>
-     Galicia (T) 
-   </vaadin-tab>
+   <vaadin-tab>Almac.</vaadin-tab>
+   <vaadin-tab>Global</vaadin-tab>
+   <vaadin-tab>Galicia (G)</vaadin-tab>
+   <vaadin-tab>Galicia (T)</vaadin-tab>
   </vaadin-tabs>
   <iron-pages selected="[[page1]]">
    <page>
-    <div style="width: 100%;max-height:150px;">
-     <dynamic-grid id="grid01" style="display:none; max-height: 150px;"></dynamic-grid>
-    </div>
+<div id="char1"></div>
    </page>
    <page>
-    <div style="width: 100%;max-height:250px;">
-     <dynamic-grid id="grid02" style="display:none; max-height: 150px;"></dynamic-grid>
-    </div>
+<div id="char2"></div>
    </page>
    <page>
-    <div style="width: 100%;max-height:250px;">
-     <dynamic-grid id="grid03" style="display:none; max-height: 150px;"></dynamic-grid>
-    </div>
+<div id="char3"></div>
    </page>
    <page>
-    <div style="width: 100%;max-height:250px;">
-     <dynamic-grid id="grid04" style="display:; max-height: 150px;"></dynamic-grid>
-    </div>
+<div id="char4"></div>
    </page>
   </iron-pages>
  </div>
- <div style="width:30%; display:inline-block; width: 29%;">
-  <dynamic-grid id="dgSituacion" style="max-height: 150px;"></dynamic-grid>
+ <div style="width:300px; display:inline-block;float:left;">
+  <dynamic-grid id="dgSituacion" style="max-height: 250px;margin: 0 20px;"></dynamic-grid>
  </div>
- <div style="display:inline-block; width: 33%;">
-  <vaadin-tabs selected="{{page11}}" id="tbTab11">
-   <vaadin-tab>
-     Alma 
-   </vaadin-tab>
-   <vaadin-tab>
-     Global 
-   </vaadin-tab>
-   <vaadin-tab>
-     Galicia (G) 
-   </vaadin-tab>
-   <vaadin-tab>
-     Galicia (T) 
-   </vaadin-tab>
+ <div style="display:inline-block; width: 300px;float:left;min-height: 240px;">
+  <vaadin-tabs selected="{{page5}}" id="tbTab2">
+   <vaadin-tab>Almac.</vaadin-tab>
+   <vaadin-tab>Global</vaadin-tab>
+   <vaadin-tab>Gal.(G)</vaadin-tab>
+   <vaadin-tab>Gal.(T)</vaadin-tab>
   </vaadin-tabs>
-  <iron-pages selected="[[page1]]">
+  <iron-pages selected="[[page5]]">
    <page>
-    <div style="width:100%;max-height:250px;">
+    <div style="width:200px;">
      <vaadin-text-field id="col" class="verySmall6" label="Desde(AAAAMM)"></vaadin-text-field>
      <vaadin-text-field id="col" class="verySmall6" label="Hasta(AAAAMM)"></vaadin-text-field>
      <vaadin-text-field id="col" label="Meses Cálculo VeM"></vaadin-text-field>
@@ -214,34 +195,34 @@ fieldset {
     </div>
    </page>
    <page>
-    <div style="width:100%;max-height:250px;">
-     <vaadin-text-field id="col" class="verySmall6" label="Venta Media"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Pdte. Recibir"></vaadin-text-field>
+    <div style="width:200px;">
+     <vaadin-text-field id="col5" class="verySmall6" label="Venta Media"></vaadin-text-field>
+     <vaadin-text-field id="col6" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
+     <vaadin-text-field id="col7" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>
+     <vaadin-text-field id="col4" class="verySmall6" label="Pdte. Recibir"></vaadin-text-field>
     </div>
    </page>
    <page>
-    <div style="width:100%;max-height:250px;">
-     <vaadin-text-field id="col" class="verySmall6" label="Venta Media"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Pdte. Recibir"></vaadin-text-field>
+    <div style="width:200px;">
+     <vaadin-text-field id="col8" class="verySmall6" label="Venta Media"></vaadin-text-field>
+     <vaadin-text-field id="col9" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
+     <vaadin-text-field id="col10" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>
+     <vaadin-text-field id="col11" class="verySmall6" label="Pdte. Recibir"></vaadin-text-field>
     </div>
    </page>
    <page>
-    <div style="width:100%;max-height:250px;">
-     <vaadin-text-field id="col" class="verySmall6" label="Venta Media"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Pdte. Recibir"></vaadin-text-field>
+    <div style="width:200px;">
+     <vaadin-text-field id="col12" class="verySmall6" label="Venta Media"></vaadin-text-field>
+     <vaadin-text-field id="col13" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
+     <vaadin-text-field id="col14" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>
+     <vaadin-text-field id="col15" class="verySmall6" label="Pdte. Recibir"></vaadin-text-field>
     </div>
    </page>
   </iron-pages>
  </div>
- <dynamic-grid id="dgProvLin" style="display:; max-height: 150px;"></dynamic-grid>
- <dynamic-grid id="dgProvAlt" style="display:; max-height: 150px;"></dynamic-grid>
 </div>
+ <dynamic-grid id="dgProvLin" style="max-height: 150px;clear:both;"></dynamic-grid>
+ <dynamic-grid id="dgProvAlt" style="max-height: 150px;"></dynamic-grid>
 `;
     }
 

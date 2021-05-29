@@ -93,7 +93,7 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 		vlButomsGroup1.removeAll();
 	    if (UtilSessionData.getCompanyYear() == null || UtilSessionData.getCompanyYear().isEmpty() == true) // not menu until company is choose
 	    {
-	    	DataService.get().showError("Debe de selecionar una Empresa, pulsar en el logo lateral");
+	    	DataService.get().showError("Primero debe seleccionar la Empresa, pulse en el logo.");
 	    	return;
 	    }
 		DdbDataBackEndProvider dataProvider = new DdbDataBackEndProvider();
