@@ -152,23 +152,31 @@ vaadin-chart {
 <div class="cel" id="cell1" style="width: 1000px;">
  <div style="display:inline-block; width: 667px;height:454px;float:left;">
   <vaadin-tabs selected="{{page1}}" id="tbTab1">
-   <vaadin-tab>Almac.</vaadin-tab>
-   <vaadin-tab>Global</vaadin-tab>
-   <vaadin-tab>Galicia (G)</vaadin-tab>
-   <vaadin-tab>Galicia (T)</vaadin-tab>
+   <vaadin-tab>
+     Almac. 
+   </vaadin-tab>
+   <vaadin-tab>
+     Global 
+   </vaadin-tab>
+   <vaadin-tab>
+     Galicia (G) 
+   </vaadin-tab>
+   <vaadin-tab>
+     Galicia (T) 
+   </vaadin-tab>
   </vaadin-tabs>
   <iron-pages selected="[[page1]]">
    <page>
-<div id="char1"></div>
+    <div id="char1"></div>
    </page>
    <page>
-<div id="char2"></div>
+    <div id="char2"></div>
    </page>
    <page>
-<div id="char3"></div>
+    <div id="char3"></div>
    </page>
    <page>
-<div id="char4"></div>
+    <div id="char4"></div>
    </page>
   </iron-pages>
  </div>
@@ -176,22 +184,31 @@ vaadin-chart {
   <dynamic-grid id="dgSituacion" style="max-height: 250px;margin: 0 20px;"></dynamic-grid>
  </div>
  <div style="display:inline-block; width: 300px;float:left;min-height: 240px;">
+  <span style="color: #000040;font-weight:500;font-size: 12px">Total</span>
   <vaadin-tabs selected="{{page5}}" id="tbTab2">
-   <vaadin-tab>Almac.</vaadin-tab>
-   <vaadin-tab>Global</vaadin-tab>
-   <vaadin-tab>Gal.(G)</vaadin-tab>
-   <vaadin-tab>Gal.(T)</vaadin-tab>
+   <vaadin-tab>
+     Almac. 
+   </vaadin-tab>
+   <vaadin-tab>
+     Global 
+   </vaadin-tab>
+   <vaadin-tab>
+     Gal.(G) 
+   </vaadin-tab>
+   <vaadin-tab>
+     Gal.(T) 
+   </vaadin-tab>
   </vaadin-tabs>
   <iron-pages selected="[[page5]]">
    <page>
     <div style="width:200px;">
-     <vaadin-text-field id="col" class="verySmall6" label="Desde(AAAAMM)"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Hasta(AAAAMM)"></vaadin-text-field>
-     <vaadin-text-field id="col" label="Meses Cálculo VeM"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Venta Media"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Total Salidas VeM"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="TAM"></vaadin-text-field>
-     <vaadin-text-field id="col" class="verySmall6" label="Pdte. Recibir"></vaadin-text-field>
+     <vaadin-text-field id="alm3" class="verySmall6" label="Desde(AAAAMM)" readonly=""></vaadin-text-field>
+     <vaadin-text-field id="alm4" class="verySmall6" label="Hasta(AAAAMM)" readonly=""></vaadin-text-field>
+     <vaadin-text-field id="alm5" label="Meses Cálculo VeM" readonly=""></vaadin-text-field>
+     <vaadin-text-field id="alm6" class="verySmall6" label="Venta Media" readonly=""></vaadin-text-field>
+     <vaadin-text-field id="alm7" class="verySmall6" label="Total Salidas VeM" readonly=""></vaadin-text-field>
+     <vaadin-text-field id="alm9" class="verySmall6" label="TAM" readonly=""></vaadin-text-field>
+     <vaadin-text-field id="alm8" class="verySmall6" label="Pdte. Recibir" readonly=""></vaadin-text-field>
     </div>
    </page>
    <page>
@@ -221,8 +238,8 @@ vaadin-chart {
   </iron-pages>
  </div>
 </div>
- <dynamic-grid id="dgProvLin" style="max-height: 150px;clear:both;"></dynamic-grid>
- <dynamic-grid id="dgProvAlt" style="max-height: 150px;"></dynamic-grid>
+<dynamic-grid id="dgProvLin" style="max-height: 150px;clear:both;"></dynamic-grid>
+<dynamic-grid id="dgProvAlt" style="max-height: 150px;"></dynamic-grid>
 `;
     }
 

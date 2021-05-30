@@ -112,6 +112,26 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 	private Div char3;
 	@Id("char4")
 	private Div char4;
+	private String almacenInicial = "20";
+	private String claveArticulo;
+	private DynamicDBean beanAlm = new DynamicDBean();
+	private String preconf = "GFER21TYSLac0";
+	@Id("alm8")
+	private TextField alm8;
+	@Id("alm9")
+	private TextField alm9;
+	@Id("alm7")
+	private TextField alm7;
+	@Id("alm6")
+	private TextField alm6;
+	@Id("alm5")
+	private TextField alm5;
+	@Id("alm4")
+	private TextField alm4;
+	@Id("alm3")
+	private TextField alm3;
+	private String desde;
+	private String hasta;
 	
 	/**
      * Creates a new HistogramaForm.
@@ -129,10 +149,6 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 
     public HistogramaForm() {
 		super();
-		montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, ChartType.BAR);
-		montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGLOBAL__MJ","TOTALSALIDAS","TOTALENTRADAS", char2, ChartType.AREASPLINE);
-		montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char3, ChartType.AREA);
-		montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUTODAGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char4, ChartType.BAR);
     }
 
 	/**
@@ -144,13 +160,22 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 
 	@Override
 	public void beforeEnter(BeforeEnterEvent event) {
-		if (bean != null)
-		{
-			setBean(bean);
-		}
-
-		
+//		dgSituacion.getGrid().addSelectionListener(e -> {
+//			DynamicDBean selectedRow = null;
+//			if (e.getFirstSelectedItem().isPresent())
+//				selectedRow =(DynamicDBean)e.getFirstSelectedItem().get();
+//				System.out.println("Registro seleccionado " + selectedRow.getCol0());
+//				cambiaAlmacen(selectedRow.getCol0()); 
+//			});
 	}
+	
+
+	private void cambiaAlmacen(String alm) {
+		almacenInicial=alm;
+		calculaAlmacen();
+		montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, ChartType.BAR, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial );
+	}
+
 	public void setBinder(Binder<DynamicDBean> binder2) {
 		super.binder = binder2;
 		bindFields(HistogramaForm.class, this);
@@ -185,21 +210,49 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 			dgSituacion.setButtonsRowVisible(false);
 			dgSituacion.getGrid().setHeightByRows(true);
 			dgSituacion.setupGrid();
+			dgSituacion.getGrid().addSelectionListener(e -> {
+				DynamicDBean selectedRow = null;
+				if (e.getFirstSelectedItem().isPresent())
+					selectedRow =(DynamicDBean)e.getFirstSelectedItem().get();
+					System.out.println("Registro seleccionado " + selectedRow.getCol0());
+					cambiaAlmacen(selectedRow.getCol0()); 
+				});
+			
+			claveArticulo = bean.getCol16();
+			calculaAlmacen();
+
+			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, ChartType.BAR, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial);
+			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGLOBAL__MJ","TOTALSALIDAS","TOTALENTRADAS", char2, ChartType.AREASPLINE, "CLAVEARTICULO="+claveArticulo, "");
+			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char3, ChartType.AREA, "CLAVEARTICULO="+claveArticulo, "");
+			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUTODAGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char4, ChartType.BAR, "CLAVEARTICULO="+claveArticulo, "");
 		}
 	}
 
-    private void montaChar(String recurso, String salen, String entran, Div elDiv, ChartType bar) {
+    private void calculaAlmacen() {
+		beanAlm = RestData.getOneRow("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION", "CLAVE_ARTICULO="+claveArticulo+"%20AND%20CLAVE_ALMACEN="+almacenInicial, preconf, null);
+		if (beanAlm != null) {
+			desde = beanAlm.getCol3();
+			hasta = beanAlm.getCol4();
+			alm3.setValue(desde); 
+			alm4.setValue(hasta); 
+			alm5.setValue(beanAlm.getCol5()); 
+			alm6.setValue(beanAlm.getCol6()); 
+			alm7.setValue(beanAlm.getCol7()); 
+			alm8.setValue(beanAlm.getCol8()); 
+			alm9.setValue(beanAlm.getCol9()); 
+		}
+	}
+
+	private void montaChar(String recurso, String salen, String entran, Div elDiv, ChartType bar, String filter, String titulo) {
+		elDiv.removeAll();
     	Chart chart = new Chart(bar);
-        Configuration configuration = chart.getConfiguration();
-//        chart.getConfiguration().getChart().setType(bar);
+        Configuration configuration = new Configuration();
+        configuration = chart.getConfiguration();
+        configuration.setSubTitle(titulo);
  
         ListSeries salidas = new ListSeries("Salidas");
         ListSeries entradas = new ListSeries("Entradas");
-        
-//        PlotOptionsLine entradasOptionsLine = new PlotOptionsLine();
-//        entradasOptionsLine.setColor(new SolidColor("#d62031"));
-//        entradas.setPlotOptions(entradasOptionsLine);
-        
+                
         XAxis x = new XAxis();
         
     	ArrayList<String[]> rowsColList = new ArrayList<String[]>(); 	
@@ -230,9 +283,9 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
     	fieldArr[5] = "";
 		rowsColList.add(fieldArr);
         
-        String filter = "CLAVEARTICULO=3146";//+bean.getCol16();
-		Collection<DynamicDBean> collect = RestData.getResourceData(0, 300, recurso, "GFER21TYSLac0", rowsColList, filter, false, false, null);   
-//		Collection<DynamicDBean> collect = RestData.getResourceData(0, 300, "CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL", AppConst.PRE_CONF_PARAM, rowsColList, filter, false, false, null);   
+//		filter = filter + "%20AND%20ANOMES>="+desde+"%20AND%20ANOMES<="+hasta;
+		System.out.println("filter histograma " + filter);
+		Collection<DynamicDBean> collect = RestData.getResourceData(0, 300, recurso, preconf, rowsColList, filter, false, false, null);   
         Iterator<DynamicDBean> itAnos = collect.iterator();
         while (itAnos.hasNext()){
         	DynamicDBean beanEntradas = itAnos.next();
