@@ -136,10 +136,13 @@ fieldset {
 }
 /* Style las lineas de las gráficas */
 vaadin-chart {
-    --vaadin-charts-color-0: blue;
-    --vaadin-charts-color-1: green;
+    --vaadin-charts-color-0: #eae047;
+    --vaadin-charts-color-1: #5791ec;
 }
-
+.char {
+	width: 667px:
+	height:454px;
+}
     </style>
 <h3 id="title" style="height:0px"></h3>
 <vaadin-form-layout id="form"></vaadin-form-layout>
@@ -153,30 +156,38 @@ vaadin-chart {
  <div style="display:inline-block; width: 667px;height:454px;float:left;">
   <vaadin-tabs selected="{{page1}}" id="tbTab1">
    <vaadin-tab>
-     Almac. 
+     Almacén
    </vaadin-tab>
-   <vaadin-tab>
+   <vaadin-tab on-click="handleClickTab2">
      Global 
    </vaadin-tab>
-   <vaadin-tab>
+   <vaadin-tab on-click="handleClickTab3">
      Galicia (G) 
    </vaadin-tab>
-   <vaadin-tab>
+   <vaadin-tab on-click="handleClickTab4">
      Galicia (T) 
    </vaadin-tab>
   </vaadin-tabs>
   <iron-pages selected="[[page1]]">
    <page>
-    <div id="char1"></div>
+    <div class="char">
+     <div id="char1"></div>
+    </div>
    </page>
    <page>
-    <div id="char2"></div>
+    <div class="char">
+     <div id="char2"></div>
+    </div>
    </page>
    <page>
-    <div id="char3"></div>
+    <div class="char">
+     <div id="char3"></div>
+    </div>
    </page>
    <page>
-    <div id="char4"></div>
+    <div class="char">
+     <div id="char4"></div>
+    </div>
    </page>
   </iron-pages>
  </div>
@@ -185,30 +196,27 @@ vaadin-chart {
  </div>
  <div style="display:inline-block; width: 300px;float:left;min-height: 240px;">
   <span style="color: #000040;font-weight:500;font-size: 12px">Total</span>
-  <vaadin-tabs selected="{{page5}}" id="tbTab2">
+  <vaadin-tabs selected="{{page1}}" id="tbTab2">
    <vaadin-tab>
      Almac. 
    </vaadin-tab>
-   <vaadin-tab>
+   <vaadin-tab on-click="handleClickTab2">
      Global 
    </vaadin-tab>
-   <vaadin-tab>
+   <vaadin-tab on-click="handleClickTab3">
      Gal.(G) 
    </vaadin-tab>
-   <vaadin-tab>
+   <vaadin-tab on-click="handleClickTab4">
      Gal.(T) 
    </vaadin-tab>
   </vaadin-tabs>
-  <iron-pages selected="[[page5]]">
+  <iron-pages selected="[[page1]]">
    <page>
     <div style="width:200px;">
-     <vaadin-text-field id="alm3" class="verySmall6" label="Desde(AAAAMM)" readonly=""></vaadin-text-field>
-     <vaadin-text-field id="alm4" class="verySmall6" label="Hasta(AAAAMM)" readonly=""></vaadin-text-field>
-     <vaadin-text-field id="alm5" label="Meses Cálculo VeM" readonly=""></vaadin-text-field>
-     <vaadin-text-field id="alm6" class="verySmall6" label="Venta Media" readonly=""></vaadin-text-field>
-     <vaadin-text-field id="alm7" class="verySmall6" label="Total Salidas VeM" readonly=""></vaadin-text-field>
-     <vaadin-text-field id="alm9" class="verySmall6" label="TAM" readonly=""></vaadin-text-field>
-     <vaadin-text-field id="alm8" class="verySmall6" label="Pdte. Recibir" readonly=""></vaadin-text-field>
+     <vaadin-text-field id="alm6" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
+     <vaadin-text-field id="alm7" class="verySmall6" label="Total Salidas VeM" readonly></vaadin-text-field>
+     <vaadin-text-field id="alm9" class="verySmall6" label="TAM" readonly></vaadin-text-field>
+     <vaadin-text-field id="alm8" class="verySmall6" label="Pdte. Recibir" readonly></vaadin-text-field>
     </div>
    </page>
    <page>
@@ -236,6 +244,12 @@ vaadin-chart {
     </div>
    </page>
   </iron-pages>
+<div style="font-size:11px;font-weight:500;color: #535353;">
+  Meses Cálculo VeM: <b><span id="alm5"></span></b>
+  <br>Desde: <b><span id="alm3"></span></b> hasta: <b><span id="alm4"></span></b>
+  <br>(AAAAMM)
+
+</div>
  </div>
 </div>
 <dynamic-grid id="dgProvLin" style="max-height: 150px;clear:both;"></dynamic-grid>

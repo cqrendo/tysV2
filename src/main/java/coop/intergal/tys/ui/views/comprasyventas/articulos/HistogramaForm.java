@@ -1,52 +1,38 @@
 package coop.intergal.tys.ui.views.comprasyventas.articulos;
 
-import com.vaadin.flow.templatemodel.TemplateModel;
-
-import coop.intergal.AppConst;
-import coop.intergal.ui.views.GenericDynamicForm;
-import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
-import coop.intergal.vaadin.rest.utils.DynamicDBean;
-import coop.intergal.vaadin.rest.utils.RestData;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.component.polymertemplate.EventHandler;
-import com.vaadin.flow.component.polymertemplate.Id;
-import com.vaadin.flow.component.dialog.Dialog;
-
-import coop.intergal.ui.components.EsDatePicker;
-import coop.intergal.ui.utils.TranslateResource;
-import coop.intergal.ui.views.DynamicViewGrid;
-import com.vaadin.flow.component.checkbox.Checkbox;
-import com.vaadin.flow.component.combobox.ComboBox;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.Div;
-
 import com.vaadin.flow.component.charts.Chart;
 import com.vaadin.flow.component.charts.model.AxisTitle;
 import com.vaadin.flow.component.charts.model.ChartType;
 import com.vaadin.flow.component.charts.model.Configuration;
 import com.vaadin.flow.component.charts.model.DataLabels;
-import com.vaadin.flow.component.charts.model.DataSeries;
-import com.vaadin.flow.component.charts.model.DataSeriesItem;
 import com.vaadin.flow.component.charts.model.ListSeries;
-import com.vaadin.flow.component.charts.model.Tooltip;
 import com.vaadin.flow.component.charts.model.PlotOptionsBar;
-import com.vaadin.flow.component.charts.model.PlotOptionsLine;
+import com.vaadin.flow.component.charts.model.Tooltip;
 import com.vaadin.flow.component.charts.model.VerticalAlign;
 import com.vaadin.flow.component.charts.model.XAxis;
 import com.vaadin.flow.component.charts.model.YAxis;
-import com.vaadin.flow.component.charts.model.style.SolidColor;
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.polymertemplate.EventHandler;
+import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.data.binder.Binder;
+import com.vaadin.flow.router.BeforeEnterEvent;
+import com.vaadin.flow.router.BeforeEnterObserver;
+import com.vaadin.flow.router.Route;
+import com.vaadin.flow.templatemodel.TemplateModel;
+
+import coop.intergal.ui.views.DynamicViewGrid;
+import coop.intergal.ui.views.GenericDynamicForm;
+import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
+import coop.intergal.vaadin.rest.utils.DynamicDBean;
+import coop.intergal.vaadin.rest.utils.RestData;
 
 
 /**
@@ -125,27 +111,34 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 	@Id("alm6")
 	private TextField alm6;
 	@Id("alm5")
-	private TextField alm5;
+	private Span alm5;
 	@Id("alm4")
-	private TextField alm4;
+	private Span alm4;
 	@Id("alm3")
-	private TextField alm3;
+	private Span alm3;
 	private String desde;
 	private String hasta;
 	
 	/**
      * Creates a new HistogramaForm.
      */
-//	   @EventHandler
-//	    private void handleClickTabEvol() {
-//	        System.out.println("Click Tab Evol");
-//			dgEvol.setResourceName("CR-ARTICULOS.List-CONTROLSTOCKDIARIO-MJ");
-//			dgEvol.setFilter("CLAVEARTICULO="+bean.getCol0());
-//			dgEvol.getElement().getStyle().set("display", "block");
-//			dgEvol.setButtonsRowVisible(false);
-//			dgEvol.getGrid().setHeightByRows(true);
-//			dgEvol.setupGrid(true,true);
-//	    }
+	   @EventHandler
+	    private void handleClickTab2() {
+	        System.out.println("handleClickTab2");
+			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGLOBAL__MJ","TOTALSALIDAS","TOTALENTRADAS", char2, "CLAVEARTICULO="+claveArticulo, "Global");
+	    }
+
+	   @EventHandler
+	    private void handleClickTab3() {
+	        System.out.println("handleClickTab2");
+			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char3, "CLAVEARTICULO="+claveArticulo, "Galicia (G)");
+	    }
+
+	   @EventHandler
+	    private void handleClickTab4() {
+	        System.out.println("handleClickTab2");
+			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUTODAGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char4, "CLAVEARTICULO="+claveArticulo, "Galicia (T)");
+	    }
 
     public HistogramaForm() {
 		super();
@@ -160,20 +153,13 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 
 	@Override
 	public void beforeEnter(BeforeEnterEvent event) {
-//		dgSituacion.getGrid().addSelectionListener(e -> {
-//			DynamicDBean selectedRow = null;
-//			if (e.getFirstSelectedItem().isPresent())
-//				selectedRow =(DynamicDBean)e.getFirstSelectedItem().get();
-//				System.out.println("Registro seleccionado " + selectedRow.getCol0());
-//				cambiaAlmacen(selectedRow.getCol0()); 
-//			});
 	}
 	
 
 	private void cambiaAlmacen(String alm) {
 		almacenInicial=alm;
 		calculaAlmacen();
-		montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, ChartType.BAR, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial );
+		montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial );
 	}
 
 	public void setBinder(Binder<DynamicDBean> binder2) {
@@ -221,10 +207,7 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 			claveArticulo = bean.getCol16();
 			calculaAlmacen();
 
-			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, ChartType.BAR, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial);
-			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGLOBAL__MJ","TOTALSALIDAS","TOTALENTRADAS", char2, ChartType.AREASPLINE, "CLAVEARTICULO="+claveArticulo, "");
-			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char3, ChartType.AREA, "CLAVEARTICULO="+claveArticulo, "");
-			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUTODAGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char4, ChartType.BAR, "CLAVEARTICULO="+claveArticulo, "");
+			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial);
 		}
 	}
 
@@ -233,9 +216,9 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 		if (beanAlm != null) {
 			desde = beanAlm.getCol3();
 			hasta = beanAlm.getCol4();
-			alm3.setValue(desde); 
-			alm4.setValue(hasta); 
-			alm5.setValue(beanAlm.getCol5()); 
+			alm3.setText(desde); 
+			alm4.setText(hasta); 
+			alm5.setText(beanAlm.getCol5()); 
 			alm6.setValue(beanAlm.getCol6()); 
 			alm7.setValue(beanAlm.getCol7()); 
 			alm8.setValue(beanAlm.getCol8()); 
@@ -243,9 +226,9 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 		}
 	}
 
-	private void montaChar(String recurso, String salen, String entran, Div elDiv, ChartType bar, String filter, String titulo) {
+	private void montaChar(String recurso, String salen, String entran, Div elDiv, String filter, String titulo) {
 		elDiv.removeAll();
-    	Chart chart = new Chart(bar);
+    	Chart chart = new Chart(ChartType.BAR);
         Configuration configuration = new Configuration();
         configuration = chart.getConfiguration();
         configuration.setSubTitle(titulo);
@@ -283,8 +266,8 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
     	fieldArr[5] = "";
 		rowsColList.add(fieldArr);
         
-//		filter = filter + "%20AND%20ANOMES>="+desde+"%20AND%20ANOMES<="+hasta;
-		System.out.println("filter histograma " + filter);
+		filter = filter + "%20AND%20ANOMES%3e%3d"+desde+"%20AND%20ANOMES%3c%3d"+hasta;
+//		System.out.println("filter histograma " + filter);
 		Collection<DynamicDBean> collect = RestData.getResourceData(0, 300, recurso, preconf, rowsColList, filter, false, false, null);   
         Iterator<DynamicDBean> itAnos = collect.iterator();
         while (itAnos.hasNext()){
@@ -320,10 +303,6 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
         configuration.setPlotOptions(plotOptions);
 
         elDiv.add(chart);
-
 	}
-	
-	
-	
 }
 
