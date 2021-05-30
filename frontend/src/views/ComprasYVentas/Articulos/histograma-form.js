@@ -191,11 +191,8 @@ vaadin-chart {
    </page>
   </iron-pages>
  </div>
- <div style="width:300px; display:inline-block;float:left;">
-  <dynamic-grid id="dgSituacion" style="max-height: 250px;margin: 0 20px;"></dynamic-grid>
- </div>
- <div style="display:inline-block; width: 300px;float:left;min-height: 240px;">
-  <span style="color: #000040;font-weight:500;font-size: 12px">Total</span>
+ <div style="display:inline-block; width: 300px;float:left;">
+<div style="height:400px;">
   <vaadin-tabs selected="{{page1}}" id="tbTab2">
    <vaadin-tab>
      Almac. 
@@ -218,6 +215,9 @@ vaadin-chart {
      <vaadin-text-field id="alm9" class="verySmall6" label="TAM" readonly></vaadin-text-field>
      <vaadin-text-field id="alm8" class="verySmall6" label="Pdte. Recibir" readonly></vaadin-text-field>
     </div>
+    <div style="width:300px; display:inline-block;">
+     <dynamic-grid id="dgSituacion" style="max-height: 250px;margin: 0 20px;"></dynamic-grid>
+   </div>
    </page>
    <page>
     <div style="width:200px;">
@@ -244,11 +244,10 @@ vaadin-chart {
     </div>
    </page>
   </iron-pages>
-<div style="font-size:11px;font-weight:500;color: #535353;">
+</div>
+<div style="font-size:11px;font-weight:500;color: #535353;border: 1px solid lightgray;">
   Meses Cálculo VeM: <b><span id="alm5"></span></b>
-  <br>Desde: <b><span id="alm3"></span></b> hasta: <b><span id="alm4"></span></b>
-  <br>(AAAAMM)
-
+  <br>Desde: <b><span id="alm3"></span></b> hasta: <b><span id="alm4"></span></b>(AAAAMM)
 </div>
  </div>
 </div>
