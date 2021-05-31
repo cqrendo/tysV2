@@ -28,6 +28,8 @@ import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.templatemodel.TemplateModel;
 
+import coop.intergal.AppConst;
+import coop.intergal.ui.util.UtilSessionData;
 import coop.intergal.ui.views.DynamicViewGrid;
 import coop.intergal.ui.views.GenericDynamicForm;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
@@ -101,7 +103,6 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 	private String almacenInicial = "20";
 	private String claveArticulo;
 	private DynamicDBean beanAlm = new DynamicDBean();
-	private String preconf = "GFER21TYSLac0";
 	@Id("alm8")
 	private TextField alm8;
 	@Id("alm9")
@@ -147,7 +148,7 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 	/**
      * This model binds properties between ArticuloForm and articulo-form
      */
-    public interface ArticuloFormModel extends TemplateModel {
+    public interface HistogramaFormModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
 
@@ -197,11 +198,14 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 			dgSituacion.getGrid().setHeightByRows(true);
 			dgSituacion.setupGrid();
 			dgSituacion.getGrid().addSelectionListener(e -> {
-				DynamicDBean selectedRow = null;
-				if (e.getFirstSelectedItem().isPresent())
+			DynamicDBean selectedRow = null;
+			if (e.getFirstSelectedItem().isPresent())
 					selectedRow =(DynamicDBean)e.getFirstSelectedItem().get();
-					System.out.println("Registro seleccionado " + selectedRow.getCol0());
-					cambiaAlmacen(selectedRow.getCol0()); 
+					if (selectedRow != null)
+						{
+						System.out.println("Registro seleccionado " + selectedRow.getCol0());
+						cambiaAlmacen(selectedRow.getCol0()); 
+						}
 				});
 			
 			claveArticulo = bean.getCol16();
@@ -212,10 +216,10 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 	}
 
     private void calculaAlmacen() {
-		beanAlm = RestData.getOneRow("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION", "CLAVE_ARTICULO="+claveArticulo+"%20AND%20CLAVE_ALMACEN="+almacenInicial, preconf, null);
+		beanAlm = RestData.getOneRow("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION", "CLAVE_ARTICULO="+claveArticulo+"%20AND%20CLAVE_ALMACEN="+almacenInicial, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
 		if (beanAlm != null) {
-			desde = beanAlm.getCol3();
-			hasta = beanAlm.getCol4();
+			desde = "202001";//beanAlm.getCol3();
+			hasta = "202112";//beanAlm.getCol4();
 			alm3.setText(desde); 
 			alm4.setText(hasta); 
 			alm5.setText(beanAlm.getCol5()); 
@@ -268,7 +272,7 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
         
 		filter = filter + "%20AND%20ANOMES%3e%3d"+desde+"%20AND%20ANOMES%3c%3d"+hasta;
 //		System.out.println("filter histograma " + filter);
-		Collection<DynamicDBean> collect = RestData.getResourceData(0, 300, recurso, preconf, rowsColList, filter, false, false, null);   
+		Collection<DynamicDBean> collect = RestData.getResourceData(0, 300, recurso, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, rowsColList, filter, false, false, null);   
         Iterator<DynamicDBean> itAnos = collect.iterator();
         while (itAnos.hasNext()){
         	DynamicDBean beanEntradas = itAnos.next();
