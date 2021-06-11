@@ -128,6 +128,9 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 					Button  button1 = new Button(optionNameSubmenu, evt -> processButon(evt,rowSubMenu ));
 					losThemes = rowSubMenu.get("theme").asText();
 					button1.addThemeNames(losThemes);
+					String microHelp = rowSubMenu.get("microHelp").asText();
+					if (microHelp != null && microHelp.equals("null") == false)
+						button1.getElement().setAttribute("title",microHelp); 
 					div2.add(button1);
 					div.add(div2);
 				}
@@ -136,7 +139,9 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 			{
 				Button  button1 = new Button(optionName, evt -> processButon(evt,rowMenu.getRowJSon() ));
 				String losThemes = rowMenu.getRowJSon().get("theme").asText();
+				String microHelp = rowMenu.getRowJSon().get("microHelp").asText();
 				button1.addThemeNames(losThemes);
+				button1.getElement().setAttribute("title",microHelp); 
 				div.add(button1);
 			}
 			vlButomsGroup1.add(div);	

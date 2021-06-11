@@ -10,7 +10,6 @@ import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '../../../components/query-buttons-bar.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
-import '@polymer/iron-pages/iron-pages.js';
 class PedidoProveedorQuery extends PolymerElement {
   static get template() {
     return html`
