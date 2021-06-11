@@ -155,7 +155,7 @@ vaadin-chart {
 <div class="cel" id="cell1" style="width: 1000px;">
  <div style="display:inline-block; width: 667px;height:454px;float:left;">
   <vaadin-tabs selected="{{page1}}" id="tbTab1">
-   <vaadin-tab>
+   <vaadin-tab on-click="handleClickTab1">
      Almacén
    </vaadin-tab>
    <vaadin-tab on-click="handleClickTab2">
@@ -194,7 +194,7 @@ vaadin-chart {
  <div style="display:inline-block; width: 300px;float:left;">
 <div style="height:400px;">
   <vaadin-tabs selected="{{page1}}" id="tbTab2">
-   <vaadin-tab>
+   <vaadin-tab on-click="handleClickTab1">
      Almac. 
    </vaadin-tab>
    <vaadin-tab on-click="handleClickTab2">
@@ -215,9 +215,6 @@ vaadin-chart {
      <vaadin-text-field id="alm9" class="verySmall6" label="TAM" readonly></vaadin-text-field>
      <vaadin-text-field id="alm8" class="verySmall6" label="Pdte. Recibir" readonly></vaadin-text-field>
     </div>
-    <div style="width:300px; display:inline-block;">
-     <dynamic-grid id="dgSituacion" style="max-height: 250px;margin: 0 20px;"></dynamic-grid>
-   </div>
    </page>
    <page>
     <div style="width:200px;">
@@ -244,6 +241,9 @@ vaadin-chart {
     </div>
    </page>
   </iron-pages>
+    <div style="width:300px; display:inline-block;">
+     <dynamic-grid id="dgSituacion" style="max-height: 250px;margin: 0 20px;"></dynamic-grid>
+   </div>
 </div>
 <div style="font-size:11px;font-weight:500;color: #535353;border: 1px solid lightgray;">
   Meses Cálculo VeM: <b><span id="alm5"></span></b>

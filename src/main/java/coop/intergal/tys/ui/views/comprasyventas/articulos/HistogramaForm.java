@@ -124,6 +124,12 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
      * Creates a new HistogramaForm.
      */
 	   @EventHandler
+	    private void handleClickTab1() {
+	        System.out.println("handleClickTab1");
+			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial);
+	    }
+
+	   @EventHandler
 	    private void handleClickTab2() {
 	        System.out.println("handleClickTab2");
 			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGLOBAL__MJ","TOTALSALIDAS","TOTALENTRADAS", char2, "CLAVEARTICULO="+claveArticulo, "Global");
@@ -218,8 +224,9 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
     private void calculaAlmacen() {
 		beanAlm = RestData.getOneRow("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION", "CLAVE_ARTICULO="+claveArticulo+"%20AND%20CLAVE_ALMACEN="+almacenInicial, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
 		if (beanAlm != null) {
-			desde = "202001";//beanAlm.getCol3();
-			hasta = "202112";//beanAlm.getCol4();
+			int a = Integer.parseInt(AppConst.CURRENT_YEAR)-1;
+			desde = "20"+a+"01";//beanAlm.getCol3();
+			hasta = beanAlm.getCol4();
 			alm3.setText(desde); 
 			alm4.setText(hasta); 
 			alm5.setText(beanAlm.getCol5()); 
