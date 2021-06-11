@@ -9,7 +9,7 @@ import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.splitlayout.SplitLayout.Orientation;
 import com.vaadin.flow.component.textfield.TextField;
 
-public class dummy extends Div  {
+public class dummy  extends Div  {
 
 	  public dummy() {
 
