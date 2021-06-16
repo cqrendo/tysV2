@@ -251,8 +251,8 @@ vaadin-chart {
 </div>
  </div>
 </div>
-<dynamic-grid id="dgProvLin" style="max-height: 150px;clear:both;"></dynamic-grid>
-<dynamic-grid id="dgProvAlt" style="max-height: 150px;"></dynamic-grid>
+<dynamic-grid id="dgProvLin" style=""></dynamic-grid>
+<dynamic-grid id="dgProvAlt" style=""></dynamic-grid>
 `;
     }
 
