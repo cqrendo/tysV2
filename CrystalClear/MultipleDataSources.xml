@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataSourceConfigurations>
+  <DataSourceConfiguration name="JS Articulo_sitruacion">
+    <property name="supportsOrderBy" value="true"/>
+    <property name="catalog" value=""/>
+    <property name="escapeEverything" value="false"/>
+    <property name="driverLibrary" value=""/>
+    <property name="savePassword" value="false"/>
+    <property name="quotesLowerCase" value="false"/>
+    <property name="url" value=""/>
+    <property name="identifierQuoteString" value=""/>
+    <property name="allowedUserGroups" value=""/>
+    <property name="aliasToken" value=" "/>
+    <property name="file" value="http://lac0.intergal.coop:8081/rest/default/GFER21/v1/GFER21:ARTICULO_SITUACION?auth=Vt3qo5vXaY7W9HgkFenf:1&amp;pagesize=2000"/>
+    <property name="supportsSQL92" value="true"/>
+    <property name="databaseClassName" value="com.inet.report.database.xml.JsonDataFactory"/>
+    <property name="driverClassName" value=""/>
+    <property name="supportsParenthesesForJoin" value="true"/>
+    <property name="supportsWhere" value="true"/>
+    <property name="user" value=""/>
+  </DataSourceConfiguration>
+  <DataSourceConfiguration name="JS Articulos">
+    <property name="supportsOrderBy" value="true"/>
+    <property name="catalog" value=""/>
+    <property name="escapeEverything" value="false"/>
+    <property name="driverLibrary" value=""/>
+    <property name="savePassword" value="false"/>
+    <property name="quotesLowerCase" value="false"/>
+    <property name="url" value=""/>
+    <property name="identifierQuoteString" value=""/>
+    <property name="allowedUserGroups" value=""/>
+    <property name="aliasToken" value=" "/>
+    <property name="file" value="http://lac0.intergal.coop:8081/rest/default/GFER21/v1/GFER:ARTICULOS?auth=Vt3qo5vXaY7W9HgkFenf:1&amp;pagesize=2000"/>
+    <property name="supportsSQL92" value="true"/>
+    <property name="databaseClassName" value="com.inet.report.database.xml.JsonDataFactory"/>
+    <property name="driverClassName" value=""/>
+    <property name="supportsParenthesesForJoin" value="true"/>
+    <property name="supportsWhere" value="true"/>
+    <property name="user" value=""/>
+  </DataSourceConfiguration>
+  <DataSourceConfiguration name="JS PropuestaPedidoCAB">
+    <property name="supportsOrderBy" value="true"/>
+    <property name="catalog" value=""/>
+    <property name="escapeEverything" value="false"/>
+    <property name="driverLibrary" value=""/>
+    <property name="savePassword" value="false"/>
+    <property name="quotesLowerCase" value="false"/>
+    <property name="url" value=""/>
+    <property name="identifierQuoteString" value=""/>
+    <property name="allowedUserGroups" value=""/>
+    <property name="aliasToken" value=" "/>
+    <property name="file" value="http://lac0.intergal.coop:8081/rest/default/GFER21/v1/GFER21:PROPUESTAPEDIDOCAB?auth=Vt3qo5vXaY7W9HgkFenf:1&amp;pagesize=2000"/>
+    <property name="supportsSQL92" value="true"/>
+    <property name="databaseClassName" value="com.inet.report.database.xml.JsonDataFactory"/>
+    <property name="driverClassName" value=""/>
+    <property name="supportsParenthesesForJoin" value="true"/>
+    <property name="supportsWhere" value="true"/>
+    <property name="user" value=""/>
+  </DataSourceConfiguration>
+  <DataSourceConfiguration name="JS PropuestaPedidoLIN">
+    <property name="supportsOrderBy" value="true"/>
+    <property name="catalog" value=""/>
+    <property name="escapeEverything" value="false"/>
+    <property name="driverLibrary" value=""/>
+    <property name="savePassword" value="false"/>
+    <property name="quotesLowerCase" value="false"/>
+    <property name="url" value=""/>
+    <property name="identifierQuoteString" value=""/>
+    <property name="allowedUserGroups" value=""/>
+    <property name="aliasToken" value=" "/>
+    <property name="file" value="http://lac0.intergal.coop:8081/rest/default/GFER21/v1/GFER21:PROPUESTAPEDIDOLIN?auth=Vt3qo5vXaY7W9HgkFenf:1&amp;pagesize=2000"/>
+    <property name="supportsSQL92" value="true"/>
+    <property name="databaseClassName" value="com.inet.report.database.xml.JsonDataFactory"/>
+    <property name="driverClassName" value=""/>
+    <property name="supportsParenthesesForJoin" value="true"/>
+    <property name="supportsWhere" value="true"/>
+    <property name="user" value=""/>
+  </DataSourceConfiguration>
+  <DataSourceConfiguration name="JS Proveedores">
+    <property name="supportsOrderBy" value="true"/>
+    <property name="catalog" value=""/>
+    <property name="escapeEverything" value="false"/>
+    <property name="driverLibrary" value=""/>
+    <property name="savePassword" value="false"/>
+    <property name="quotesLowerCase" value="false"/>
+    <property name="url" value=""/>
+    <property name="identifierQuoteString" value=""/>
+    <property name="allowedUserGroups" value=""/>
+    <property name="aliasToken" value=" "/>
+    <property name="file" value="http://lac0.intergal.coop:8081/rest/default/GFER21/v1/GFER:PROVEEDORES?auth=Vt3qo5vXaY7W9HgkFenf:1&amp;pagesize=2000"/>
+    <property name="supportsSQL92" value="true"/>
+    <property name="databaseClassName" value="com.inet.report.database.xml.JsonDataFactory"/>
+    <property name="driverClassName" value=""/>
+    <property name="supportsParenthesesForJoin" value="true"/>
+    <property name="supportsWhere" value="true"/>
+    <property name="user" value=""/>
+  </DataSourceConfiguration>
+</DataSourceConfigurations>
