@@ -7,6 +7,7 @@ import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '../../generic/dynamic-grid.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@polymer/iron-pages/iron-pages.js';
 
 class ArticuloForm extends PolymerElement {
 
@@ -76,7 +77,7 @@ class ArticuloForm extends PolymerElement {
   	
 /* 		} */
 	clean{
-		padding-right:  0.75rem; margin-right: 0px;"
+		padding-right:  0.75rem; margin-right: 0px;
 	}
 	/* Style the tab */
 .tab {

@@ -7,6 +7,7 @@ import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
 import '../../generic/dynamic-grid.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@polymer/iron-pages/iron-pages.js';
 
 class HistogramaForm extends PolymerElement {
 

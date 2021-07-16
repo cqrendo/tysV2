@@ -11,6 +11,12 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	
 	public static final String PRE_CONF_PARAM = "TYSLac0";//"GferJetty";
 	public static final String PRE_CONF_PARAM_METADATA = "metadataLac0";
+	public static final String CLEAR_REPORT_SERVER = "http://lac0.intergal.coop:9000/";
+//	public static final String PRE_CONF_PARAM_METADATA = "metadataVMTYS";
+//	public static final String PRE_CONF_PARAM = "VMTYS";//
+//	public static final String CLEAR_REPORT_SERVER = "http://192.168.100.05:9000/";
+
+
 	public static final Locale APP_LOCALE = new Locale("es","ES");
 
 	public static final String PAGE_ROOT = "";
@@ -79,8 +85,9 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final double DEFAULT_SPLIT_POS_GRID_DISPLAY = 5;
 	public static final double DEFAULT_SPLIT_POS_DISPLAY_SUBGRID = 50;
 	public static final String CLASS_FOR_METHODS = "coop.intergal.tys.ui.util.ClassForMethods";
+	public static final String VALUE_TRUE_FOR_BOOLEANS = "1"; // Depends on database by Example ORACLE = 1, MySQL = true
+	public static final String VALUE_FALSE_FOR_BOOLEANS = "0";
 	
-;
 
 
 

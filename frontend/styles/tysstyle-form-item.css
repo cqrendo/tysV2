@@ -60,6 +60,20 @@
 :host(.labelXXXXL) {
 	--vaadin-form-item-label-width: 25em;
 }
+:host(.titleInForm) {
+	--vaadin-form-item-label-width: 65em;
+	text-align: center;
+	--lumo-font-size-s: 19px;
+	background: green;
+	--lumo-secondary-text-color: white;
+}	
+:host(.colorGreen) {	
+
+--lumo-secondary-text-color: green;
+
+}
+
+
 vaadin-form-item {
   --vaadin-form-item-label-width: 5em;
 }

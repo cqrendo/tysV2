@@ -17,6 +17,7 @@ import '@vaadin/vaadin-dialog/src/vaadin-dialog.js';
 import '../../generic/layout/dynamic-grid-for-pick.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 import '@vaadin/vaadin-text-field/src/vaadin-integer-field.js';
+import '@polymer/iron-pages/iron-pages.js';
 
 class PedidoProveedorForm extends PolymerElement {
   static get template() {
@@ -99,7 +100,7 @@ class PedidoProveedorForm extends PolymerElement {
   	
 /* 		} */
 	clean{
-		padding-right:  0.75rem; margin-right: 0px;"
+		padding-right:  0.75rem; margin-right: 0px;
 	}
 	/* Style the tab */
 .tab {
