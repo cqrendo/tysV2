@@ -23,7 +23,6 @@ class DynamicGrid extends PolymerElement {
     </style>
  <vaadin-horizontal-layout>
 <div id="divExporter">
- ..
 </div>
 <div id="itemButtons">
  <vaadin-button id="newRow" theme="raised primary">
