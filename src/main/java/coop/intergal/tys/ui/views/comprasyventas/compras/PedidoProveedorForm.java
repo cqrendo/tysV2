@@ -56,10 +56,10 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 //	private FormButtonsBar buttons;
 
 	@Id("col0")
-	private TextField col0;
+	private IntegerField col0;
 
 	@Id("col1")
-	private TextField col1;
+	private IntegerField col1;
 
 	@Id("col2")
 	private EsDatePicker col2;

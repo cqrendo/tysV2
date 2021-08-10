@@ -89,7 +89,7 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 		setupButtons();
 	}
 	private void setupButtons() {
-		System.out.println("SubSubmenu.setupButtons() " + filter);
+		System.out.println("SubSubmenu.setupButtons() cambio " + filter);
 		vlButomsGroup1.removeAll();
 	    if (UtilSessionData.getCompanyYear() == null || UtilSessionData.getCompanyYear().isEmpty() == true) // not menu until company is choose
 	    {
@@ -153,7 +153,7 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 		try {
 			String urlBase = "../dymanic";
 			String hostName = InetAddress.getLocalHost().getHostName() ;
-			if (hostName.indexOf(".local") == -1) // to diferent when is running in local (Maven) or in remote (tys.war -> tomcat)
+			if (hostName.indexOf(".local") == -1 && hostName.indexOf("FC-NB-MLOPEZ") == -1) // to diferent when is running in local (Maven) or in remote (tys.war -> tomcat)
 				urlBase= "../tys/dymanic";
 		String resource = rowSubMenu.get("resource").asText();
 		String queryFormClassName = rowSubMenu.get("queryFormClassName").asText();
