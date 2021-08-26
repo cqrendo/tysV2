@@ -22,10 +22,10 @@
  :host(.alignRight) {
      text-align-last: right; 
  }
-/* :host(.labelright) { */
-/* 	text-align: right;  */
-/* 	margin-right: 10px; */
-/*	}  */
+ :host(.labelright) {
+	text-align: right; 
+	margin-right: 10px;
+	}
 
 :host(.lineHeight2) {
 	height:70px;

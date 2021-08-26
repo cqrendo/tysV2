@@ -77,7 +77,7 @@ class HistogramaForm extends PolymerElement {
   	
 /* 		} */
 	clean{
-		padding-right:  0.75rem; margin-right: 0px;"
+		padding-right:  0.75rem; margin-right: 0px;
 	}
 	/* Style the tab */
 .tab {
@@ -141,7 +141,7 @@ vaadin-chart {
     --vaadin-charts-color-1: #5791ec;
 }
 .char {
-	width: 667px:
+	width: 667px;
 	height:454px;
 }
     </style>

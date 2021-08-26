@@ -38,17 +38,25 @@ public class NaviDrawer extends Div
     @Override
     protected void onAttach(AttachEvent attachEvent) {
         super.onAttach(attachEvent);
-        UI ui = attachEvent.getUI();
-        ui.getPage().executeJavaScript("window.addSwipeAway($0,$1,$2,$3)",
-                mainContent.getElement(), this, "onSwipeAway",
-                scrim.getElement());
+//        getElement().executeJs("this.$server.swipeAwayWorkaround()");
+//    }
+    getUI().get().getPage().addJavaScript("frontend://swipe-away.js");
+    UI.getCurrent().getPage().executeJs("window.addSwipeAway($0,$1,$2,$3)",
+    mainContent.getElement(), this, "onSwipeAway",
+    scrim.getElement());
     }
-
     @ClientCallable
     public void onSwipeAway(JsonObject data) {
         close();
     }
-
+    
+    @ClientCallable
+    public void swipeAwayWorkaround()
+    {
+        UI.getCurrent().getPage().executeJs("window.addSwipeAway($0,$1,$2,$3)", 
+                mainContent.getElement(), this, "onSwipeAway",
+                        scrim.getElement());
+    }
     public NaviDrawer(Label title) {
         setClassName(CLASS_NAME);
 
@@ -151,7 +159,7 @@ public class NaviDrawer extends Div
         // iOS 12.2 sometimes fails to animate the menu away.
         // It should be gone after 240ms
         // This will make sure it disappears even when the browser fails.
-        getUI().get().getPage().executeJavaScript(
+        UI.getCurrent().getPage().executeJs(
                 "var originalStyle = getComputedStyle($0).transitionProperty;" //
                         + "setTimeout(function() {$0.style.transitionProperty='padding'; requestAnimationFrame(function() {$0.style.transitionProperty=originalStyle})}, 250);",
                 mainContent.getElement());
@@ -164,6 +172,17 @@ public class NaviDrawer extends Div
     @Override
     public void afterNavigation(AfterNavigationEvent afterNavigationEvent) {
         close();
+    }
+
+    protected void onAttachOLD(AttachEvent attachEvent) {
+        super.onAttach(attachEvent);
+//        UI ui = attachEvent.getUI();
+//  @@ to avoid -> (TypeError) : window.addSwipeAway is not a function     
+        //ui.getPage().executeJavaScript("window.addSwipeAway($0,$1,$2,$3)",
+        UI.getCurrent().getPage().executeJs("window.addSwipeAway($0,$1,$2,$3)", 
+        mainContent.getElement(), this, "onSwipeAway",
+                scrim.getElement());
+        getElement().executeJs("this.$server.swipeAwayWorkaround()");
     }
 
 }
