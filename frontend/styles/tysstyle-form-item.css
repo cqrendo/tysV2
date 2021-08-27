@@ -22,10 +22,10 @@
  :host(.alignRight) {
      text-align-last: right; 
  }
-/*  :host(.labelright) { */
-/* 	text-align: right;  */
-/* 	margin-right: 10px; */
-/* 	} */
+ :host(.labelright) {
+	text-align: right; 
+	margin-right: 10px;
+	}
 
 :host(.lineHeight2) {
 	height:70px;
@@ -76,11 +76,6 @@
 
 vaadin-form-item {
   --vaadin-form-item-label-width: 5em;
-}
-
-.labelright {
-	text-align: right;
-	margin-right: 10px; 
 }
 /*yolaqr  intentando que cuando el label tiene 2 líneas no crezca hacia abajo y lo centre. No lo logré
 [part="label"] {
