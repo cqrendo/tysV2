@@ -2,6 +2,7 @@
   "dependencies": {
     "@polymer/iron-icon": "3.0.1",
     "@polymer/iron-list": "3.1.0",
+    "@polymer/iron-pages": "^3.0.1",
     "@polymer/polymer": "3.2.0",
     "@vaadin/vaadin-accordion": "1.2.0",
     "@vaadin/vaadin-app-layout": "2.2.0",
@@ -138,6 +139,6 @@
       "webpack-dev-server": "3.11.0",
       "webpack-merge": "4.2.2"
     },
-    "hash": "2853b4bba47d975a3e0af76769c2b0a0fffc6939ac3796eed3c944374aa1dc9a"
+    "hash": "6df7e855d8e9a2598ae6d0901a90b9b2aed7eef85ad729091e0400a3fc9c1a3e"
   }
 }
