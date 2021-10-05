@@ -10,8 +10,9 @@ import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 import '../../../components/query-buttons-bar.js';
+import {ThemableMixin} from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 
-class GeneratedQuery extends PolymerElement {
+class GeneratedQuery extends ThemableMixin(PolymerElement) {
   static get template() {
     return html`
 <style>
@@ -65,7 +66,7 @@ class GeneratedQuery extends PolymerElement {
   	
 /* 		} */
 	clean{
-		style="padding-right:  0.75rem; margin-right: 0px;" 
+		style:"padding-right:  0.75rem; margin-right: 0px;" 
 	}
     </style>
 <vaadin-horizontal-layout theme="" style="width: 100%; height: 100%;">

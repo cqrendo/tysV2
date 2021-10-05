@@ -119,6 +119,15 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 	private Span alm3;
 	private String desde;
 	private String hasta;
+	private Div divSubGrid;
+	   public Div getDivSubGrid() {
+			return divSubGrid;
+		}
+
+		public void setDivSubGrid(Div divSubGrid) {
+			this.divSubGrid = divSubGrid;
+		}
+
 	
 	/**
      * Creates a new HistogramaForm.

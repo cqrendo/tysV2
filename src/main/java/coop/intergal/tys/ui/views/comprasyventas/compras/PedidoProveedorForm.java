@@ -14,7 +14,9 @@ import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.textfield.IntegerField;
@@ -39,6 +41,7 @@ import coop.intergal.vaadin.rest.utils.DynamicDBean;
 @SpringComponent
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @Route(value = "displayPedidoProveedor")
+@NpmPackage(value = "@polymer/iron-pages", version = "3.0.1")  // when the view uses iron-pages, can be also be indicated in package.json file, but if is delete and regenerate will be loose
 //public class DynamicForm extends PolymerTemplate<TemplateModel> implements BeforeEnterObserver, CrudForm<DynamicDBean> {
 public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnterObserver {//, CrudForm<DynamicDBean> {
 	
@@ -135,7 +138,7 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	private TextField col27;
 	
 	@Id("col28")
-	private TextField col28;
+	private IntegerField col28;
 
 
 	
@@ -187,6 +190,17 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	private Dialog dialogForPick;
 
 	private DdbDataBackEndProvider dataProvider;
+
+	private Div divSubGrid;
+	
+    public Div getDivSubGrid() {
+		return divSubGrid;
+	}
+
+	public void setDivSubGrid(Div divSubGrid) {
+		this.divSubGrid = divSubGrid;
+	}
+
 	
 	public PedidoProveedorForm() {
 		super();

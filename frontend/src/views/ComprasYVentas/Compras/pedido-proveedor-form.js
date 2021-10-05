@@ -158,7 +158,7 @@ class PedidoProveedorForm extends PolymerElement {
    <vaadin-integer-field id="col3" label="Prov." class="verySmall"></vaadin-integer-field>
    <vaadin-text-field id="col4" label="Nombre Proveedor" class="big" readonly="true"></vaadin-text-field>
    <vaadin-text-field id="col27" label="P. Pago" class="verySmall"></vaadin-text-field>
-   <vaadin-text-field id="col28" label="Fase" class="verySmall"></vaadin-text-field>
+   <vaadin-integer-field id="col28" label="Fase" class="verySmall"></vaadin-integer-field>
    <vaadin-text-field id="col5" label="Rappel" class="verySmall"></vaadin-text-field>
    <vaadin-integer-field id="col7" class="verySmall" label="Comprador"></vaadin-integer-field>
    <vaadin-text-field id="col8" label="Nombre Comprador" readonly="true"></vaadin-text-field>

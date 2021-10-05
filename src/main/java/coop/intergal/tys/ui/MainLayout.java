@@ -33,7 +33,7 @@ import com.vaadin.flow.router.RouteConfiguration;
 import com.vaadin.flow.router.RouterLayout;
 import com.vaadin.flow.server.ErrorHandler;
 import com.vaadin.flow.server.InitialPageSettings;
-import com.vaadin.flow.server.PWA;
+//import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.server.PageConfigurator;
 import com.vaadin.flow.server.VaadinSession;
 import com.vaadin.flow.theme.Theme;
@@ -69,7 +69,7 @@ import coop.intergal.ui.views.DynamicTreeDisplay;
 @CssImport(value = "./styles/styles.css", include = "lumo-badge")
 @Theme(value = Lumo.class, variant = Lumo.LIGHT)
 @JsModule("@vaadin/vaadin-lumo-styles/badge")
-@PWA(name = "tys", shortName = "tys", iconPath = "images/logo-18.png", backgroundColor = "#233348", themeColor = "#233348")
+//@PWA(name = "tys", shortName = "tys", iconPath = "images/logo-18.png", backgroundColor = "#233348", themeColor = "#233348")
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
 
 public class MainLayout extends FlexBoxLayout

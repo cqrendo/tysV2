@@ -17,6 +17,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.component.polymertemplate.EventHandler;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.html.Div;
 
 import coop.intergal.ui.components.EsDatePicker;
 import coop.intergal.ui.views.DynamicViewGrid;
@@ -305,6 +306,15 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private Button btArtSus;
 	@Id("btProvAlter")
 	private Button btProvAlter;
+	private Div divSubGrid;
+	   public Div getDivSubGrid() {
+			return divSubGrid;
+		}
+
+		public void setDivSubGrid(Div divSubGrid) {
+			this.divSubGrid = divSubGrid;
+		}
+
 	/**
      * Creates a new ArticuloForm.
      */
