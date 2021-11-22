@@ -35,6 +35,8 @@ import coop.intergal.ui.views.DynamicGridForPick;
 import coop.intergal.ui.views.GenericDynamicForm;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.html.Span;
 
 @Tag("tablas-descuentos")
 @JsModule("./src/views/master/tablas-descuentos.js")
@@ -67,6 +69,108 @@ public class TablasDescuentos extends GenericDynamicForm implements BeforeEnterO
 	private DdbDataBackEndProvider dataProvider;
 
 	private Div divSubGrid;
+
+	@Id("col1")
+	private TextField col1;
+
+	@Id("col0")
+	private TextField col0;
+
+	@Id("col16")
+	private TextField col16;
+
+	@Id("col13")
+	private TextField col13;
+
+	@Id("col14")
+	private TextField col14;
+
+	@Id("col15")
+	private TextField col15;
+
+	@Id("col2")
+	private TextField col2;
+
+	@Id("col3")
+	private TextField col3;
+
+	@Id("col4")
+	private TextField col4;
+
+	@Id("col5")
+	private TextField col5;
+
+	@Id("col6")
+	private TextField col6;
+
+	@Id("col7")
+	private TextField col7;
+
+	@Id("col8")
+	private TextField col8;
+
+	@Id("col9")
+	private TextField col9;
+
+	@Id("col10")
+	private TextField col10;
+
+	@Id("col11")
+	private TextField col11;
+
+	@Id("col32")
+	private TextField col32;
+
+	@Id("col33")
+	private TextField col33;
+
+	@Id("col31")
+	private TextField col31;
+
+	@Id("span")
+	private Span span;
+
+	@Id("span1")
+	private Span span1;
+
+	@Id("span2")
+	private Span span2;
+
+	@Id("span3")
+	private Span span3;
+
+	@Id("col19")
+	private TextField col19;
+
+	@Id("col20")
+	private TextField col20;
+
+	@Id("col21")
+	private TextField col21;
+
+	@Id("col22")
+	private TextField col22;
+
+	@Id("col23")
+	private TextField col23;
+
+	@Id("col24")
+	private TextField col24;
+
+	@Id("col25")
+	private TextField col25;
+
+	@Id("col26")
+	private TextField col26;
+
+	@Id("col27")
+	private TextField col27;
+
+	@Id("col28")
+	private TextField col28;
+
+	@Id("col29")
+	private TextField col29;
 
 	
     public Div getDivSubGrid() {

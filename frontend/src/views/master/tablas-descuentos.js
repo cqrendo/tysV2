@@ -1,7 +1,7 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 class TablasDescuentos extends PolymerElement {
 
@@ -132,137 +132,90 @@ fieldset {
 
     </style>
 <div style="width: 100%; height: 100%;">
- <div>
-  <vaadin-text-field label="Clave" class="verySmall"></vaadin-text-field>
-  <vaadin-text-field label="Proveedor" class="small"></vaadin-text-field>
-  <vaadin-text-field label="Descripción" class="big"></vaadin-text-field>
-  <div style="display:inline-block;width:130px">
-   <vaadin-text-field label="Patrón" class="small" style="display:block;"></vaadin-text-field>
-   <span style="display:block; width: 100%;">Span</span>
-   <span style="width: 100%;">Span</span>
-  </div>
-  <vaadin-text-field label="Fec.Últ.Act.Borrador" class="medium"></vaadin-text-field>
-  <vaadin-button style="float:right;">
-   <iron-icon icon="lumo:edit" slot="prefix"></iron-icon> Edit 
-  </vaadin-button>
- </div>
  <fieldset>
-  <legend>Descuentos</legend>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
+  <legend>Tablas Descuentos</legend>
+  <div id="swedrfghjuik">
+   <vaadin-text-field label="Clave" class="verySmall" id="col0"></vaadin-text-field>
+   <vaadin-text-field label="Proveedor" class="small" id="col16"></vaadin-text-field>
+   <vaadin-text-field label="Descripción" class="big" id="col13"></vaadin-text-field>
+   <div style="display:inline-block;width:130px">
+    <vaadin-text-field label="Patrón" class="small" style="display:block;" id="col14"></vaadin-text-field>
+    <span style="display:block; width: 100%;" id="span2">Span</span>
+    <span style="width: 100%;" id="span3">Span</span>
+   </div>
+   <vaadin-text-field label="Fec.Últ.Act.Borrador" class="medium" id="col15"></vaadin-text-field>
+   <vaadin-button style="float:right;">
+    <iron-icon icon="lumo:plus" slot="prefix"></iron-icon>Insertar Borrador 
+   </vaadin-button>
   </div>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-  </div>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-  </div>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-  </div>
+  <fieldset>
+   <legend>Descuentos</legend>
+   <div style="width: 120px; display:inline-block;">
+    <vaadin-text-field class="verySmall" id="col1" label="A1"></vaadin-text-field>
+    <vaadin-text-field class="verySmall" id="col2" label="A2"></vaadin-text-field>
+    <vaadin-text-field class="verySmall" id="col3" label="A3"></vaadin-text-field>
+    <vaadin-text-field class="verySmall" id="col4" label="A4"></vaadin-text-field>
+   </div>
+   <div style="width: 120px; display:inline-block;">
+    <vaadin-text-field class="verySmall" id="col5" label="B1"></vaadin-text-field>
+    <vaadin-text-field class="verySmall" id="col6" label="B2"></vaadin-text-field>
+    <vaadin-text-field class="verySmall" id="col7" label="B3"></vaadin-text-field>
+   </div>
+   <div style="width: 120px; display:inline-block;">
+    <vaadin-text-field class="verySmall" id="col8" label="C1"></vaadin-text-field>
+    <vaadin-text-field class="verySmall" id="col9" label="C2"></vaadin-text-field>
+   </div>
+   <div style="width: 120px; display:inline-block;">
+    <vaadin-text-field class="verySmall" id="col10" label="IncD1"></vaadin-text-field>
+    <vaadin-text-field class="verySmall" id="col11" label="IncD2"></vaadin-text-field>
+   </div>
+  </fieldset>
  </fieldset>
  <div>
   <fieldset>
    <legend>Borrador</legend>
-   <div style="width: 120px; display:inline-block;">
-    <vaadin-text-field label="Clave" class="verySmall"></vaadin-text-field>
+   <div style="display:inline-block;">
+    <vaadin-text-field label="Clave" class="verySmall" id="col33"></vaadin-text-field>
+    <vaadin-text-field label="Descripción" class="big" id="col31"></vaadin-text-field>
+    <div style="display:inline-block;width:130px">
+     <vaadin-text-field label="Patrón" class="small" style="display:block;" id="col32"></vaadin-text-field>
+     <span style="display:block; width: 100%;" id="span1">A B C D</span>
+     <span style="width: 100%;" id="span">12341231212</span>
+    </div>
    </div>
-   <div style="width: 120px; display:inline-block;">
+   <fieldset style="width: 120px; display:inline-block;float:right;">
+    <legend>Artículos</legend>
     <vaadin-button>
-     <iron-icon icon="lumo:edit" slot="prefix"></iron-icon> Edit 
+     <iron-icon icon="lumo:plus" slot="prefix"></iron-icon>Insertar Tabla Dtos. Borrador 
     </vaadin-button>
     <vaadin-button>
-     <iron-icon icon="lumo:edit" slot="prefix"></iron-icon> Edit 
+     <iron-icon icon="lumo:cross" slot="prefix"></iron-icon>Quitar Tabla Dtos. Borrador 
     </vaadin-button>
-    <vaadin-text-field label="Descripción" class="big"></vaadin-text-field>
-    <vaadin-text-field label="Patrón" class="small"></vaadin-text-field>
-   </div>
+   </fieldset>
+   <fieldset>
+    <legend>Descuentos</legend>
+    <div style="width: 120px; display:inline-block;">
+     <vaadin-text-field class="verySmall" id="col19" label="A1"></vaadin-text-field>
+     <vaadin-text-field class="verySmall" id="col20" label="A2"></vaadin-text-field>
+     <vaadin-text-field class="verySmall" id="col21" label="A3"></vaadin-text-field>
+     <vaadin-text-field class="verySmall" id="col22" label="A4"></vaadin-text-field>
+    </div>
+    <div style="width: 120px; display:inline-block;">
+     <vaadin-text-field class="verySmall" id="col23" label="B1"></vaadin-text-field>
+     <vaadin-text-field class="verySmall" id="col24" label="B2"></vaadin-text-field>
+     <vaadin-text-field class="verySmall" id="col25" label="B3"></vaadin-text-field>
+    </div>
+    <div style="width: 120px; display:inline-block;">
+     <vaadin-text-field class="verySmall" id="col26" label="C1"></vaadin-text-field>
+     <vaadin-text-field class="verySmall" id="col27" label="C2"></vaadin-text-field>
+    </div>
+    <div style="width: 120px; display:inline-block;">
+     <vaadin-text-field class="verySmall" id="col28" label="IncD1"></vaadin-text-field>
+     <vaadin-text-field class="verySmall" id="col29" label="IncD2"></vaadin-text-field>
+    </div>
+   </fieldset>
   </fieldset>
  </div>
-</div>
-<div style="width: 100%; height: 100%;">
- <div>
-  <vaadin-text-field label="Clave" class="verySmall"></vaadin-text-field>
-  <vaadin-text-field label="Proveedor" class="small"></vaadin-text-field>
-  <vaadin-text-field label="Descripción" class="big"></vaadin-text-field>
-  <div style="display:inline-block;width:130px">
-   <vaadin-text-field label="Patrón" class="small" style="display:block;"></vaadin-text-field>
-   <span style="display:block; width: 100%;">Span</span>
-   <span style="width: 100%;">Span</span>
-  </div>
-  <vaadin-text-field label="Fec.Ú
-lt.Act.Borrador" class="medium"></vaadin-text-field>
-  <vaadin-button style="float:right;">
-   <iron-icon icon="lumo:edit" slot="prefix"></iron-icon> Edit 
-  </vaadin-button>
- </div>
- <fieldset>
-  <legend>Descuentos</legend>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-  </div>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-  </div>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-  </div>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-  </div>
- </fieldset>
-</div>
-<div style="width: 100%; height: 100%;">
- <div>
-  <vaadin-text-field label="Clave" class="verySmall"></vaadin-text-field>
-  <vaadin-text-field label="Proveedor" class="small"></vaadin-text-field>
-  <vaadin-text-field label="Descripción" class="big"></vaadin-text-field>
-  <div style="display:inline-block;width:130px">
-   <vaadin-text-field label="Patrón" class="small" style="display:block;"></vaadin-text-field>
-   <span style="display:block; width: 100%;">Span</span>
-   <span style="width: 100%;">Span</span>
-  </div>
-  <vaadin-text-field label="Fec.Ult.Act.Borrador" class="medium"></vaadin-text-field>
-  <vaadin-button style="float:right;">
-   <iron-icon icon="lumo:edit" slot="prefix"></iron-icon> Edit 
-  </vaadin-button>
- </div>
- <fieldset>
-  <legend>Descuentos</legend>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-  </div>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-  </div>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-  </div>
-  <div style="width: 120px; display:inline-block;">
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-   <vaadin-text-field class="verySmall"></vaadin-text-field>
-  </div>
- </fieldset>
 </div>
 `;
     }
