@@ -31,7 +31,9 @@ import com.vaadin.flow.spring.annotation.SpringComponent;
 
 import coop.intergal.AppConst;
 import coop.intergal.ui.components.EsDatePicker;
+import coop.intergal.ui.components.FormButtonsBar;
 import coop.intergal.ui.views.DynamicGridForPick;
+import coop.intergal.ui.views.DynamicViewGrid;
 import coop.intergal.ui.views.GenericDynamicForm;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
@@ -153,8 +155,12 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	@Id("col26")
 	private TextArea col26;
 	
-	@Id("vaadinButton")
-	private Button vaadinButton;
+	@Id("b1")
+	private Button b1;
+	
+	@Id("b2")
+	private Button b2;
+
 
 	@Id("col11")
 	private TextArea col11;
@@ -188,11 +194,20 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 
 	@Id("dialogForPick")
 	private Dialog dialogForPick;
+	
+	private FormButtonsBar buttonsForm;
+	public FormButtonsBar getButtonsForm() {
+		return buttonsForm;
+	}
+
+	public void setButtonsForm(FormButtonsBar buttonsForm) {
+		this.buttonsForm = buttonsForm;
+		super.setButtonsForm(buttonsForm);
+	}
 
 	private DdbDataBackEndProvider dataProvider;
 
-	private Div divSubGrid;
-	
+	private Div divSubGrid;	
     public Div getDivSubGrid() {
 		return divSubGrid;
 	}
@@ -201,6 +216,15 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 		this.divSubGrid = divSubGrid;
 	}
 
+	private DynamicViewGrid dVGrid;
+	public DynamicViewGrid getDVGrid() {
+		return dVGrid;
+	}
+
+	public void setDVGrid(DynamicViewGrid dVGrid) {
+		this.dVGrid = dVGrid;
+		super.setDVGrid(dVGrid);
+	}
 	
 	public PedidoProveedorForm() {
 		super();
@@ -211,6 +235,8 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 //	@Override
 	public void setBinder(Binder<DynamicDBean> binder2) {
 		super.binder = binder2;
+		if (bean != null)
+			binder.setBean(bean);
 		bindFields(PedidoProveedorForm.class, this);
 		super.setDialogForPick(dialogForPick);
 //		Element child = new Element ("div");
@@ -262,7 +288,7 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 
 	public void setBean(DynamicDBean bean) {
 		this.bean = bean;
-		binder.setBean(bean);
+//		binder.setBean(bean);
 	}
 	public DdbDataBackEndProvider getDataProvider() {
 		return dataProvider;

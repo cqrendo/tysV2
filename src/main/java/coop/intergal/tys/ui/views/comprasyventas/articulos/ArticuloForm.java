@@ -306,8 +306,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private Button btArtSus;
 	@Id("btProvAlter")
 	private Button btProvAlter;
-	private Div divSubGrid;
-	   public Div getDivSubGrid() {
+
+		private Div divSubGrid;	
+	    public Div getDivSubGrid() {
 			return divSubGrid;
 		}
 
@@ -315,6 +316,15 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			this.divSubGrid = divSubGrid;
 		}
 
+		private DynamicViewGrid dVGrid;
+		public DynamicViewGrid getDVGrid() {
+			return dVGrid;
+		}
+
+		public void setDVGrid(DynamicViewGrid dVGrid) {
+			this.dVGrid = dVGrid;
+			super.setDVGrid(dVGrid);
+		}
 	/**
      * Creates a new ArticuloForm.
      */
@@ -456,6 +466,8 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	}
 	public void setBinder(Binder<DynamicDBean> binder2) {
 		super.binder = binder2;
+		if (bean != null)
+			binder.setBean(bean);
 		bindFields(ArticuloForm.class, this);
 		super.setDialogForPick(dialogForPick);
 	}
@@ -469,9 +481,10 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	public void setBean(DynamicDBean bean) {
 		System.out.println("ArticuloForm.setBean()");
 		this.bean = bean;
-		if (bean != null)
-		{
-			binder.setBean(bean);
+//		if (bean != null)
+//		{
+//			binder.setBean(bean);
+		
 //			dgAlter.setResourceName("CR-ARTICULOS.List-ARTICULOSCONPROVALTERNATIVO");
 //			dgAlter.setFilter("CLAVEARTICULO="+bean.getCol0());
 //			dgAlter.setupGrid(true,true);
@@ -519,7 +532,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 //			dgTrans2.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS__TRANSF");
 //			dgTrans2.setFilter("ARTICULOTRANSFORMADO="+bean.getCol0());
 //			dgTrans2.setupGrid(true,true);
-		}
+//		}
 	}
 }
 

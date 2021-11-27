@@ -14,6 +14,7 @@ class DynamicGridDisplay extends ThemableMixin(PolymerElement) {
 :host {
 /* 	display: block; */
 	flex-grow:1; 
+    display: block !important;
 /*	height: 1000px; */  
 /*	width: 100%; */
 /* 		 display: flex;  */

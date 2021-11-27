@@ -128,6 +128,15 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 			this.divSubGrid = divSubGrid;
 		}
 
+		private DynamicViewGrid dVGrid;
+		public DynamicViewGrid getDVGrid() {
+			return dVGrid;
+		}
+
+		public void setDVGrid(DynamicViewGrid dVGrid) {
+			this.dVGrid = dVGrid;
+			super.setDVGrid(dVGrid);
+		}
 	
 	/**
      * Creates a new HistogramaForm.
@@ -155,6 +164,9 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 	        System.out.println("handleClickTab2");
 			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUTODAGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char4, "CLAVEARTICULO="+claveArticulo, "Galicia (T)");
 	    }
+	   
+	   
+	   
 
     public HistogramaForm() {
 		super();

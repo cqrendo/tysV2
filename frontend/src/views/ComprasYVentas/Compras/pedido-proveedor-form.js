@@ -197,10 +197,10 @@ class PedidoProveedorForm extends PolymerElement {
    <vaadin-text-field id="col23" label="Nombre Cliente" class="big"></vaadin-text-field>
    <vaadin-text-field id="col24" label="Num Pedido Del Prov" class="Small"></vaadin-text-field>
    <br>
-   <vaadin-button id="vaadinButton" label="">
+   <vaadin-button id="b1" label="">
      ver Entrada 
    </vaadin-button>
-   <vaadin-button>
+   <vaadin-button id="b2" label="">
      ver Consulta Prov 
    </vaadin-button>
    <vaadin-button class="Small">
