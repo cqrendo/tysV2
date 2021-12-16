@@ -161,6 +161,8 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	@Id("b2")
 	private Button b2;
 
+	@Id("b3")
+	private Button b3;
 
 	@Id("col11")
 	private TextArea col11;

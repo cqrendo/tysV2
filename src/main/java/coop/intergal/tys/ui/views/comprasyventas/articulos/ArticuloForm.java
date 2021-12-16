@@ -317,6 +317,8 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		}
 
 		private DynamicViewGrid dVGrid;
+		@Id("b1")
+		private Button b1;
 		public DynamicViewGrid getDVGrid() {
 			return dVGrid;
 		}

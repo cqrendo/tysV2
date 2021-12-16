@@ -483,13 +483,14 @@ fieldset {
    <vaadin-text-field id="col112" label="Observaciones 2" style="width: 45%;"></vaadin-text-field>
    <br>
    <vaadin-text-field id="col113" label="Observaciones 3" style="width: 45%;"></vaadin-text-field>
-   <vaadin-text-field id="col118" label="Aviso Presupuesto y Pedido" style="width: 45%;"></vaadin-text-field><br>
-    <vaadin-button id="btArtSus">
-      Artículos Sustitutivos 
-    </vaadin-button>
-    <vaadin-button id="btProvAlter">
-      Proveedores Alternativos 
-    </vaadin-button>
+   <vaadin-text-field id="col118" label="Aviso Presupuesto y Pedido" style="width: 45%;"></vaadin-text-field>
+   <br>
+   <vaadin-button id="btArtSus">
+     Artículos Sustitutivos 
+   </vaadin-button>
+   <vaadin-button id="btProvAlter">
+     Proveedores Alternativos 
+   </vaadin-button>
   </page>
   <page>
    <div id="dvAlter" style="width: 100%;max-height:250px;">
@@ -547,6 +548,9 @@ fieldset {
    </div>
   </page>
  </iron-pages>
+</div>
+<div id="extButtons">
+ <vaadin-button aria-label="Pasar a pedido" id="b1"></vaadin-button>
 </div>
 <vaadin-dialog id="dialogForPick"></vaadin-dialog>
 `;

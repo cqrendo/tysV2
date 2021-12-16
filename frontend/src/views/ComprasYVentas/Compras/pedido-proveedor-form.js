@@ -203,7 +203,7 @@ class PedidoProveedorForm extends PolymerElement {
    <vaadin-button id="b2" label="">
      ver Consulta Prov 
    </vaadin-button>
-   <vaadin-button class="Small">
+   <vaadin-button id="b3" class="Small">
      ver NoConformidad 
    </vaadin-button>
    <!--  <vaadin-custom-field id="col25" label="Total" required error-message="Please fill in all fields"> -->

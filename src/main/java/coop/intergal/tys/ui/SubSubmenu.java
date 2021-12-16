@@ -158,9 +158,10 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 		String resource = rowSubMenu.get("resource").asText();
 		String queryFormClassName = rowSubMenu.get("queryFormClassName").asText();
 		String displayFormClassName = rowSubMenu.get("displayFormClassName").asText();
+		String idMenu = rowSubMenu.get("idMenu").asText();
 		
 //		titleOption = titleOption.replace(" ", "%20");
-		UI.getCurrent().getPage().executeJs("window.open('"+urlBase+"?resourceName="+resource+"&queryFormClassName="+queryFormClassName+"&displayFormClassName="+displayFormClassName+"&title="+titleOption+"', '_blank');") ;
+		UI.getCurrent().getPage().executeJs("window.open('"+urlBase+"?resourceName="+resource+"&queryFormClassName="+queryFormClassName+"&displayFormClassName="+displayFormClassName+"&title="+titleOption+"&idMenu="+idMenu+"', '_blank');") ;
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
