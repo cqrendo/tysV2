@@ -140,13 +140,13 @@ fieldset {
 <h3 id="title" style="height:0px"></h3>
 <vaadin-form-layout id="form"></vaadin-form-layout>
 <div class="linCampos">
- <vaadin-text-field id="col0" class="verySmall" label="Clave"></vaadin-text-field>
+<vaadin-integer-field id="col0" class="verySmall" label="Clave"></vaadin-integer-field>
  <vaadin-text-field id="col1" class="big" label="Descripción"></vaadin-text-field>
  <vaadin-text-field id="col2" label="Dimensiones"></vaadin-text-field>
  <vaadin-text-field id="col11" class="veryVerySmall" label="UM"></vaadin-text-field>
- <vaadin-text-field id="col12" class="verySmall" label="NPV"></vaadin-text-field>
- <vaadin-text-field id="col25" class="verySmall" label="Cod Ede"></vaadin-text-field>
- <vaadin-text-field id="col26" class="verySmall" label="SubCod Ede"></vaadin-text-field>
+ <vaadin-integer-field id="col12" class="verySmall" label="NPV"></vaadin-integer-field>
+ <vaadin-integer-field id="col25" class="verySmall" label="Cod Ede"></vaadin-integer-field>
+ <vaadin-integer-field id="col26" class="verySmall" label="SubCod Ede"></vaadin-integer-field>
 </div>
 <div class="cel" id="cell1">
  <vaadin-tabs selected="{{page1}}" id="tbTab1">
