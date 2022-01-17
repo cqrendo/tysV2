@@ -9,6 +9,7 @@ import coop.intergal.vaadin.rest.utils.DynamicDBean;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.BeforeEnterEvent;
@@ -42,7 +43,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id("col0")
-	private TextField col0;
+	private IntegerField col0;
 	@Id("col1")
 	private TextField col1;
 	@Id("col2")
@@ -62,7 +63,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col11")
 	private TextField col11;
 	@Id("col12")
-	private TextField col12;
+	private IntegerField col12;
 	@Id("col13")
 	private TextField col13;
 	@Id("col14")
@@ -84,9 +85,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col24")
 	private TextField col24;
 	@Id("col25")
-	private TextField col25;
+	private IntegerField col25;
 	@Id("col26")
-	private TextField col26;
+	private IntegerField col26;
 	@Id("col27")
 	private TextField col27;
 	@Id("col28")

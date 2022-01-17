@@ -3,8 +3,10 @@ package coop.intergal.tys.ui.views;
 import java.util.Optional;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Div;
@@ -12,6 +14,10 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexLayout.FlexDirection;
 import com.vaadin.flow.component.orderedlayout.FlexLayout.FlexWrap;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.splitlayout.SplitLayout;
+import com.vaadin.flow.component.splitlayout.SplitLayout.Orientation;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
@@ -31,7 +37,10 @@ import coop.intergal.ui.util.UtilSessionData;
 @Route(value = "", layout = MainLayout.class)
 public class Home extends ViewFrame {
 
-    public Home() {
+    private SplitLayout splitLayout;
+	private int position;
+
+	public Home() {
         setId("home");
         setViewContent(createContent());
     }
@@ -94,8 +103,44 @@ public class Home extends ViewFrame {
         content.setMargin(Horizontal.AUTO);
         content.setMaxWidth("840px");
         content.setPadding(Uniform.RESPONSIVE_L);
+      
+//        splitLayout = new SplitLayout(new VerticalLayout(new Label("test")), new VerticalLayout(new Button("Adjust", e->{
+//        	
+//			splitLayout.setSplitterPosition(position);
+//        	position -= 10;
+//        	})));
+//        	splitLayout.setWidth("600px");
+//        	splitLayout.setOrientation(Orientation.VERTICAL);
+//        	content.add(splitLayout);
+//        	
+        	Label left = new Label("left");
+        	Label left2 = new Label("left2");
+        	Label left3 = new Label("left3");
+        	 Label right = new Label("right");
+        	HorizontalLayout hl = new HorizontalLayout(right);
+        	VerticalLayout vl = new VerticalLayout(left);
+        	vl.setWidth("100px");
+        	vl.add(left2);
+        	vl.add(left3);
+        	hl.add(vl);
+            left.getElement().getStyle().set("background","red");
+           
+            right .getElement().getStyle().set("background","green");
+             splitLayout = new SplitLayout(hl, vl);//new VerticalLayout(right));
+             
+              splitLayout.setWidthFull();
+              splitLayout.setSplitterPosition(0);
+              content.add(splitLayout, new Button("+", e->{
+                position += 10;
+                splitLayout.setSplitterPosition(position);
+               }), new Button("-", e->{
+                 position -= 10;
+                 splitLayout.setSplitterPosition(position);
+                }));
+              
         return content;
     }
+
 
 	private void setLateralTitle(String companyYear) {
 		MainLayout mL = (MainLayout) UiComponentsUtils.findComponent(UI.getCurrent(), "MainLayout");
