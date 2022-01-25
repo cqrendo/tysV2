@@ -20,7 +20,7 @@ class DynamicDisplayForAskData extends PolymerElement {
 </style> 
     <div id="divDisplay"  style="overflow: unset;"></div> 
     <div style="height: 100%"> 
-     <vaadin-button id="acceptDataAndContinue">
+     <vaadin-button id="acceptDataAndContinue"  style="display: none;">
        Confirmar y continuar 
      </vaadin-button> 
     </div> 
