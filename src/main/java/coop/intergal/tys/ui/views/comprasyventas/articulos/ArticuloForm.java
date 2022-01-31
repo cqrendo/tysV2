@@ -334,7 +334,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	   @EventHandler
 	    private void handleClickTabEvol() {
 	        System.out.println("Click Tab Evol");
-			dgEvol.setResourceName("CR-ARTICULOS.List-CONTROLSTOCKDIARIO-MJ");
+			dgEvol.setResourceName("CR-ARTICULOS.List-CONTROLSTOCKDIARIO__MJ");
 			dgEvol.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgEvol.getElement().getStyle().set("display", "block");
 			dgEvol.setButtonsRowVisible(false);
@@ -418,7 +418,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	   @EventHandler
 	    private void handleClickTabTrans() {
 	        System.out.println("Click Tab Transformados");
-			dgTrans1.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS-_ORIGEN_");
+			dgTrans1.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS__ORIGEN");
 			dgTrans1.setFilter("ARTICULOORIGEN="+bean.getCol0());
 			dgTrans1.getElement().getStyle().set("display", "block");
 			dgTrans1.setButtonsRowVisible(false);
