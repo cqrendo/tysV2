@@ -192,6 +192,8 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 
 	public void setBinder(Binder<DynamicDBean> binder2) {
 		super.binder = binder2;
+		if (bean != null)
+			binder.setBean(bean);
 		bindFields(HistogramaForm.class, this);
 	}
 	public DdbDataBackEndProvider getDataProvider() {
@@ -206,7 +208,7 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 		this.bean = bean;
 		if (bean != null)
 		{
-			binder.setBean(bean);
+	//		binder.setBean(bean);
 			dgProvAlt.setResourceName("CR-ARTICULOS__Histograma.Grid-ARTICULOSCONPROVALTERNATIVO");
 			dgProvAlt.setFilter("CLAVEARTICULO="+bean.getCol16());
 			dgProvAlt.setButtonsRowVisible(false);
