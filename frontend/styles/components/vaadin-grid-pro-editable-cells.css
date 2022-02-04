@@ -1,7 +1,7 @@
 :host(.editable-custom-effect) [part~="editable-cell"]:hover,
 :host(.editable-custom-effect) [part~="editable-cell"]:focus {
   background: var(--lumo-contrast-10pct);
-  background-color: #b1ffb7;
+  background-color: #b1ffb7; 
 }
 
 :host(.editable-custom-effect) [part~="editable-cell"] {
