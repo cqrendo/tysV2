@@ -146,7 +146,6 @@ vaadin-chart {
 }
     </style>
 <h3 id="title" style="height:0px"></h3>
-<vaadin-form-layout id="form"></vaadin-form-layout>
 <div class="linCampos" style="width: 100%; margin: var(--lumo-space-s);">
  <vaadin-text-field id="col0" class="big" label="Descripción"></vaadin-text-field>
  <vaadin-text-field id="col1" label="Dimensiones" class="medium"></vaadin-text-field>
@@ -212,7 +211,7 @@ vaadin-chart {
    <page>
     <div style="width:200px;">
      <vaadin-text-field id="alm6" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
-     <vaadin-text-field id="alm7" class="verySmall6" label="Total Salidas VeM" readonly></vaadin-text-field>
+     <vaadin-text-field id="alm7" class="verySmall6" label="Total Salidas VM" readonly></vaadin-text-field>
      <vaadin-text-field id="alm9" class="verySmall6" label="TAM" readonly></vaadin-text-field>
      <vaadin-text-field id="alm8" class="verySmall6" label="Pdte. Recibir" readonly></vaadin-text-field>
     </div>

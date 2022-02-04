@@ -47,6 +47,10 @@ class HistogramaEvolMesForm extends PolymerElement {
             width: var(--vaadin-text-field-default-width, 6em);  
  				margin-left: 5px;
              }  
+      vaadin-text-field.verySmall7{
+            width: var(--vaadin-text-field-default-width, 7em);  
+ 				margin-left: 5px;
+             }  
       vaadin-text-field.small{
                 width: var(--vaadin-text-field-default-width, 8em);
                 margin-left: 5px;
@@ -146,18 +150,31 @@ vaadin-chart {
 }
     </style>
 <h3 id="title" style="height:0px"></h3>
-<vaadin-form-layout id="form"></vaadin-form-layout>
-<div class="linCampos" style="width: 100%; margin: var(--lumo-space-s);">
- <vaadin-text-field id="col0" class="big" label="Descripción"></vaadin-text-field>
- <vaadin-text-field id="col1" label="Dimensiones" class="medium"></vaadin-text-field>
- <vaadin-text-field id="col3" class="verySmall6" label="CM"></vaadin-text-field>
- <vaadin-text-field id="col2" class="verySmall6" label="CUE"></vaadin-text-field>
-</div>
+<fieldset style="width: 560px; margin: var(--lumo-space-s); display:inline-block;">
+ <legend>Cálculo General</legend>
+ <div class="linCampos">
+  <vaadin-text-field id="ev13" class="verySmall7" label="Desde (AAAAMM)"></vaadin-text-field>
+  <vaadin-text-field id="ev14" label="Hasta (AAAAMM)" class="verySmall7"></vaadin-text-field>
+  <vaadin-checkbox id="ckev15">
+    Rango automático 
+  </vaadin-checkbox>
+  <vaadin-button id="btActualizar">
+    ACTUALIZAR 
+  </vaadin-button>
+ </div>
+</fieldset>
+<fieldset style="width: 300px; margin: var(--lumo-space-s); display:inline-block; ">
+ <legend>Cálculo x rango</legend>
+ <div class="linCampos">
+  <vaadin-text-field id="col34" class="verySmall7" label="Desde (AAAAMM)"></vaadin-text-field>
+  <vaadin-text-field id="col35" label="Hasta (AAAAMM)" class="verySmall7"></vaadin-text-field>
+ </div>
+</fieldset>
 <div class="cel" id="cell1" style="width: 1000px;">
  <div style="display:inline-block; width: 667px;height:454px;float:left;">
   <vaadin-tabs selected="{{page1}}" id="tbTab1">
    <vaadin-tab on-click="handleClickTab1">
-     Almacén
+     Almacén 
    </vaadin-tab>
    <vaadin-tab on-click="handleClickTab2">
      Global 
@@ -193,67 +210,111 @@ vaadin-chart {
   </iron-pages>
  </div>
  <div style="display:inline-block; width: 300px;float:left;">
-<div style="height:400px;">
-  <vaadin-tabs selected="{{page1}}" id="tbTab2">
-   <vaadin-tab on-click="handleClickTab1">
-     Almac. 
-   </vaadin-tab>
-   <vaadin-tab on-click="handleClickTab2">
-     Global 
-   </vaadin-tab>
-   <vaadin-tab on-click="handleClickTab3">
-     Gal.(G) 
-   </vaadin-tab>
-   <vaadin-tab on-click="handleClickTab4">
-     Gal.(T) 
-   </vaadin-tab>
-  </vaadin-tabs>
-  <iron-pages selected="[[page1]]">
-   <page>
-    <div style="width:200px;">
-     <vaadin-text-field id="alm6" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
-     <vaadin-text-field id="alm7" class="verySmall6" label="Total Salidas VeM" readonly></vaadin-text-field>
-     <vaadin-text-field id="alm9" class="verySmall6" label="TAM" readonly></vaadin-text-field>
-     <vaadin-text-field id="alm8" class="verySmall6" label="Pdte. Recibir" readonly></vaadin-text-field>
-    </div>
-   </page>
-   <page>
-    <div style="width:200px;">
-     <vaadin-text-field id="col5" class="verySmall6" label="Venta Media"></vaadin-text-field>
-     <vaadin-text-field id="col6" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
-     <vaadin-text-field id="col7" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>
-     <vaadin-text-field id="col4" class="verySmall6" label="Pdte. Recibir"></vaadin-text-field>
-    </div>
-   </page>
-   <page>
-    <div style="width:200px;">
-     <vaadin-text-field id="col8" class="verySmall6" label="Venta Media"></vaadin-text-field>
-     <vaadin-text-field id="col9" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
-     <vaadin-text-field id="col10" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>
-     <vaadin-text-field id="col11" class="verySmall6" label="Pdte. Recibir"></vaadin-text-field>
-    </div>
-   </page>
-   <page>
-    <div style="width:200px;">
-     <vaadin-text-field id="col12" class="verySmall6" label="Venta Media"></vaadin-text-field>
-     <vaadin-text-field id="col13" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
-     <vaadin-text-field id="col14" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>
-     <vaadin-text-field id="col15" class="verySmall6" label="Pdte. Recibir"></vaadin-text-field>
-    </div>
-   </page>
-  </iron-pages>
-    <div style="width:300px; display:inline-block;">
-     <dynamic-grid id="dgSituacion" style="max-height: 250px;margin: 0 20px;"></dynamic-grid>
-   </div>
-</div>
-<div style="font-size:11px;font-weight:500;color: #535353;border: 1px solid lightgray;">
-  Meses Cálculo VeM: <b><span id="alm5"></span></b>
-  <br>Desde: <b><span id="alm3"></span></b> hasta: <b><span id="alm4"></span></b>(AAAAMM)
-</div>
+  <div style="height:400px;">
+   <vaadin-tabs selected="{{page1}}" id="tbTab2">
+    <vaadin-tab on-click="handleClickTab1">
+      Almac. 
+    </vaadin-tab>
+    <vaadin-tab on-click="handleClickTab2">
+      Global 
+    </vaadin-tab>
+    <vaadin-tab on-click="handleClickTab3">
+      Gal.(G) 
+    </vaadin-tab>
+    <vaadin-tab on-click="handleClickTab4">
+      Gal.(T) 
+    </vaadin-tab>
+   </vaadin-tabs>
+   <iron-pages selected="[[page1]]">
+    <page>
+     <fieldset>
+      <legend>Almacén</legend>
+      <div style="width:200px;">
+       <vaadin-text-field id="alm17" class="verySmall6" label="Meses Calc VM" readonly></vaadin-text-field>
+       <vaadin-text-field id="alm18" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
+       <vaadin-text-field id="alm19" class="verySmall6" label="Total Sal VM" readonly></vaadin-text-field>
+       <vaadin-text-field id="alm20" class="verySmall6" label="TAM" readonly></vaadin-text-field>
+       <vaadin-text-field id="alm7" class="verySmall6" label="Stock Min" readonly></vaadin-text-field>
+       <vaadin-text-field id="alm21" class="verySmall6" label="Cant a pedir" readonly></vaadin-text-field>
+       <vaadin-text-field id="alm3" class="verySmall6" label="Pdtes Servir" readonly></vaadin-text-field>
+       <vaadin-text-field id="alm10" class="verySmall6" label="Pdtes recibir" readonly></vaadin-text-field>
+       <vaadin-text-field id="alm40" class="verySmall6" label="Cant Colec" readonly></vaadin-text-field>
+       <vaadin-text-field id="alm41" class="verySmall6" label="Ped x Colec" readonly></vaadin-text-field>
+       <vaadin-text-field id="alm42" class="verySmall6" label="Stock x Clase" readonly></vaadin-text-field>
+      </div>
+     </fieldset>
+     <fieldset>
+      <legend>Cálculo x Rango</legend>
+      <div style="width:200px;">
+       <vaadin-text-field id="alm37" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
+       <vaadin-text-field id="alm38" class="verySmall6" label="Total Salidas" readonly></vaadin-text-field>
+      </div>
+     </fieldset>
+    </page>
+    <page>
+     <fieldset>
+      <legend>Global</legend>
+      <div style="width:200px;">
+       <vaadin-text-field id="col11" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
+       <vaadin-text-field id="col12" class="verySmall6" label="Stock Min" readonly></vaadin-text-field>
+       <vaadin-text-field id="col13" class="verySmall6" label="Cant a pedir" readonly></vaadin-text-field>
+       <vaadin-text-field id="col14" class="verySmall6" label="TAM" readonly></vaadin-text-field>
+       <vaadin-text-field id="col3" class="verySmall6" label="Pdtes Servir" readonly></vaadin-text-field>
+       <vaadin-text-field id="col2" class="verySmall6" label="Pdtes Recibir" readonly></vaadin-text-field>
+       <vaadin-text-field id="col5" class="verySmall6" label="Stock" readonly></vaadin-text-field>
+      </div>
+     </fieldset>
+     <fieldset>
+      <legend>Cálculo x Rango</legend>
+      <div style="width:200px;">
+       <vaadin-text-field id="col15" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
+      </div>
+     </fieldset>
+    </page>
+    <page>
+     <fieldset>
+      <legend>Galicia (G)</legend>
+      <div style="width:200px;">
+       <vaadin-text-field id="col20" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
+       <vaadin-text-field id="col21" class="verySmall6" label="Stock Min" readonly></vaadin-text-field>
+       <vaadin-text-field id="col22" class="verySmall6" label="Cant a pedir" readonly></vaadin-text-field>
+       <vaadin-text-field id="col23" class="verySmall6" label="TAM" readonly></vaadin-text-field>
+       <vaadin-text-field id="col50" class="verySmall6" label="Pdtes Servir" readonly></vaadin-text-field>
+       <vaadin-text-field id="col49" class="verySmall6" label="Pdtes Recibir" readonly></vaadin-text-field>
+       <vaadin-text-field id="col48" class="verySmall6" label="Stock" readonly></vaadin-text-field>
+      </div>
+     </fieldset>
+     <fieldset>
+      <legend>Cálculo x Rango</legend>
+      <div style="width:200px;">
+       <vaadin-text-field id="col27" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
+      </div>
+     </fieldset>
+    </page>
+    <page>
+     <fieldset>
+      <legend>Galicia (T)</legend>
+      <div style="width:200px;">
+       <vaadin-text-field id="col29" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
+       <vaadin-text-field id="col30" class="verySmall6" label="Stock Min" readonly></vaadin-text-field>
+       <vaadin-text-field id="col31" class="verySmall6" label="Cant a pedir" readonly></vaadin-text-field>
+       <vaadin-text-field id="col32" class="verySmall6" label="TAM" readonly></vaadin-text-field>
+       <vaadin-text-field id="col39" class="verySmall6" label="Pdtes Servir" readonly></vaadin-text-field>
+       <vaadin-text-field id="col38" class="verySmall6" label="Pdtes Recibir" readonly></vaadin-text-field>
+       <vaadin-text-field id="col37" class="verySmall6" label="Stock" readonly></vaadin-text-field>
+      </div>
+     </fieldset>
+     <fieldset>
+      <legend>Cálculo x Rango</legend>
+      <div style="width:200px;">
+       <vaadin-text-field id="col36" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
+      </div>
+     </fieldset>
+    </page>
+   </iron-pages>
+  </div>
  </div>
 </div>
-<dynamic-grid id="dgProvLin" style=""></dynamic-grid>
-<dynamic-grid id="dgProvAlt" style=""></dynamic-grid>
 `;
     }
 
