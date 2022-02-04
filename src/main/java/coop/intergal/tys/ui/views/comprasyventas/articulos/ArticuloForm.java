@@ -338,7 +338,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgEvol.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgEvol.getElement().getStyle().set("display", "block");
 			dgEvol.setButtonsRowVisible(false);
-			dgEvol.getGrid().setHeightByRows(true);
+			dgEvol.getGrid().setAllRowsVisible(true);
 			dgEvol.setupGrid(true,true);
 	    }
 	   @EventHandler
@@ -348,7 +348,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgAlter.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgAlter.getElement().getStyle().set("display", "block");
 			dgAlter.setButtonsRowVisible(false);
-			dgAlter.getGrid().setHeightByRows(true);
+			dgAlter.getGrid().setAllRowsVisible(true);
 			dgAlter.setupGrid(true,true);
 	    }
 	   @EventHandler
@@ -358,14 +358,14 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgTarif1.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgTarif1.getElement().getStyle().set("display", "block");
 			dgTarif1.setButtonsRowVisible(false);
-			dgTarif1.getGrid().setHeightByRows(true);
+			dgTarif1.getGrid().setAllRowsVisible(true);
 			dgTarif1.setupGrid(true,true);
 			
 			dgTarif2.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__TARIFACLIENTE");
 			dgTarif2.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgTarif2.getElement().getStyle().set("display", "block");
 			dgTarif2.setButtonsRowVisible(false);
-			dgTarif2.getGrid().setHeightByRows(true);
+			dgTarif2.getGrid().setAllRowsVisible(true);
 			dgTarif2.setupGrid(true,true);
 	    }
 	   @EventHandler
@@ -375,14 +375,14 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgOferta1.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgOferta1.getElement().getStyle().set("display", "block");
 			dgOferta1.setButtonsRowVisible(false);
-			dgOferta1.getGrid().setHeightByRows(true);
+			dgOferta1.getGrid().setAllRowsVisible(true);
 			dgOferta1.setupGrid(true,true);
 			
 			dgOferta2.setResourceName("CR-ARTICULOS.List-TARIFAVENDEDORLIN");
 			dgOferta2.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgOferta2.getElement().getStyle().set("display", "block");
 			dgOferta2.setButtonsRowVisible(false);
-			dgOferta2.getGrid().setHeightByRows(true);
+			dgOferta2.getGrid().setAllRowsVisible(true);
 			dgOferta2.setupGrid(true,true);
 	    }
 	   @EventHandler
@@ -392,7 +392,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgOfProv.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgOfProv.getElement().getStyle().set("display", "block");
 			dgOfProv.setButtonsRowVisible(false);
-			dgOfProv.getGrid().setHeightByRows(true);
+			dgOfProv.getGrid().setAllRowsVisible(true);
 			dgOfProv.setupGrid(true,true);
 	    }
 	   @EventHandler
@@ -402,7 +402,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgConsProv.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgConsProv.getElement().getStyle().set("display", "block");
 			dgConsProv.setButtonsRowVisible(false);
-			dgConsProv.getGrid().setHeightByRows(true);
+			dgConsProv.getGrid().setAllRowsVisible(true);
 			dgConsProv.setupGrid(true,true);
 	    }
 	   @EventHandler
@@ -412,7 +412,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgColec.setFilter("ARTICULO="+bean.getCol0());
 			dgColec.getElement().getStyle().set("display", "block");
 			dgColec.setButtonsRowVisible(false);
-			dgColec.getGrid().setHeightByRows(true);
+			dgColec.getGrid().setAllRowsVisible(true);
 			dgColec.setupGrid(true,true);
 	    }
 	   @EventHandler
@@ -422,14 +422,14 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgTrans1.setFilter("ARTICULOORIGEN="+bean.getCol0());
 			dgTrans1.getElement().getStyle().set("display", "block");
 			dgTrans1.setButtonsRowVisible(false);
-			dgTrans1.getGrid().setHeightByRows(true);
+			dgTrans1.getGrid().setAllRowsVisible(true);
 			dgTrans1.setupGrid(true,true);
 			
 			dgTrans2.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS__TRANSF");
 			dgTrans2.setFilter("ARTICULOTRANSFORMADO="+bean.getCol0());
 			dgTrans2.getElement().getStyle().set("display", "block");
 			dgTrans2.setButtonsRowVisible(false);
-			dgTrans2.getGrid().setHeightByRows(true);
+			dgTrans2.getGrid().setAllRowsVisible(true);
 			dgTrans2.setupGrid(true,true);
 	    }
 	   @EventHandler
@@ -439,7 +439,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgFicha.setFilter("CLAVE_ARTICULO="+bean.getCol0());
 			dgFicha.getElement().getStyle().set("display", "block");
 			dgFicha.setButtonsRowVisible(false);
-			dgFicha.getGrid().setHeightByRows(true);
+			dgFicha.getGrid().setAllRowsVisible(true);
 			dgFicha.setupGrid(true,true);
 	    }
 
@@ -447,8 +447,6 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		super();
 		dialogForPick.setWidth(AppConst.DEFAULT_PICK_DIALOG_WITHD);
 		dialogForPick.setHeight(AppConst.DEFAULT_PICK_DIALOG_HEIGHT);
-
-        // You can initialise any data required for the connected UI components here.
     }
 
     /**

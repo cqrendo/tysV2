@@ -41,6 +41,10 @@ class TablasDescuentos extends PolymerElement {
             width: var(--vaadin-text-field-default-width, 5em);  
  				margin-left: 5px;
              }  
+      vaadin-text-field.verySmall6{
+            width: var(--vaadin-text-field-default-width, 6em);  
+ 				margin-left: 5px;
+             }  
       vaadin-text-field.small{
                 width: var(--vaadin-text-field-default-width, 8em);
                 margin-left: 5px;
@@ -139,9 +143,9 @@ fieldset {
    <vaadin-text-field label="Proveedor" class="small" id="col16"></vaadin-text-field>
    <vaadin-text-field label="Descripción" class="big" id="col13"></vaadin-text-field>
    <div style="display:inline-block;width:130px">
-    <vaadin-text-field label="Patrón" class="small" style="display:block;" id="col14"></vaadin-text-field>
-    <span style="display:block; width: 100%;" id="span2">Span</span>
-    <span style="width: 100%;" id="span3">Span</span>
+    <vaadin-text-field label="Patrón" class="verySmall6" style="display:block;" id="col14"></vaadin-text-field>
+    <span style="display:block; width: 100%; padding: 0 0 0 3px;" id="span1">A......B...C..D.</span>
+    <span style="width: 100%; padding: 0 0 0 4px;" id="span">12341231212</span>
    </div>
    <vaadin-text-field label="Fec.Últ.Act.Borrador" class="medium" id="col15"></vaadin-text-field>
    <vaadin-button style="float:right;">
@@ -177,10 +181,10 @@ fieldset {
    <div style="display:inline-block;">
     <vaadin-text-field label="Clave" class="verySmall" id="col33"></vaadin-text-field>
     <vaadin-text-field label="Descripción" class="big" id="col31"></vaadin-text-field>
-    <div style="display:inline-block;width:130px">
-     <vaadin-text-field label="Patrón" class="small" style="display:block;" id="col32"></vaadin-text-field>
-     <span style="display:block; width: 100%;" id="span1">A B C D</span>
-     <span style="width: 100%;" id="span">12341231212</span>
+    <div style="display:inline-block;width:120px">
+     <vaadin-text-field label="Patrón" class="verySmall6" style="display:block;" id="col32"></vaadin-text-field>
+     <span style="display:block; width: 100%; padding: 0 0 0 3px;" id="span1">A......B...C..D.</span>
+     <span style="width: 100%; padding: 0 0 0 4px;" id="span">12341231212</span>
     </div>
    </div>
    <fieldset style="width: 120px; display:inline-block;float:right;">

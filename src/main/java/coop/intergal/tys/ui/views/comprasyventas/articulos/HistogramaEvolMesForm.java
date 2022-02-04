@@ -43,10 +43,10 @@ import coop.intergal.vaadin.rest.utils.RestData;
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("histograma-form")
-@JsModule("./src/views/ComprasYVentas/Articulos/histograma-form.js")
-@Route(value = "histogramaArticulo")
-public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObserver{
+@Tag("histograma-evol-mes-form")
+@JsModule("./src/views/ComprasYVentas/Articulos/histograma-evol-mes-form.js")
+@Route(value = "histogramaArticuloEvol")
+public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeEnterObserver{
 
     /**
 	 * 
@@ -139,7 +139,7 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 		}
 	
 	/**
-     * Creates a new HistogramaForm.
+     * Creates a new HistogramaEvolMesForm.
      */
 	   @EventHandler
 	    private void handleClickTab1() {
@@ -168,14 +168,14 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 	   
 	   
 
-    public HistogramaForm() {
+    public HistogramaEvolMesForm() {
 		super();
     }
 
 	/**
      * This model binds properties between ArticuloForm and articulo-form
      */
-    public interface HistogramaFormModel extends TemplateModel {
+    public interface HistogramaEvolMesFormModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
 
@@ -194,7 +194,7 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 		super.binder = binder2;
 		if (bean != null)
 			binder.setBean(bean);
-		bindFields(HistogramaForm.class, this);
+		bindFields(HistogramaEvolMesForm.class, this);
 	}
 	public DdbDataBackEndProvider getDataProvider() {
 		return dataProvider;
@@ -204,7 +204,7 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 	}
 
 	public void setBean(DynamicDBean bean) {
-		System.out.println("HistogramaForm.setBean()");
+		System.out.println("HistogramaEvolMesForm.setBean()");
 		this.bean = bean;
 		if (bean != null)
 		{
