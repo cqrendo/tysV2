@@ -9,18 +9,11 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.checkbox.Checkbox;
-import com.vaadin.flow.component.combobox.ComboBox;
-import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dependency.NpmPackage;
-import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.polymertemplate.Id;
-import com.vaadin.flow.component.textfield.IntegerField;
-import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.dom.Element;
@@ -29,19 +22,16 @@ import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 
-import coop.intergal.AppConst;
-import coop.intergal.ui.components.EsDatePicker;
 import coop.intergal.ui.views.DynamicGridForPick;
 import coop.intergal.ui.views.GenericDynamicForm;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
-import com.vaadin.flow.component.html.Span;
 
 @Tag("tablas-descuentos")
 @JsModule("./src/views/master/tablas-descuentos.js")
 @SpringComponent
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-@Route(value = "tablasDescuentos")
+@Route(value = "displayTablasDescuentos")
 @NpmPackage(value = "@polymer/iron-pages", version = "3.0.1")  // when the view uses iron-pages, can be also be indicated in package.json file, but if is delete and regenerate will be loose
 //public class DynamicForm extends PolymerTemplate<TemplateModel> implements BeforeEnterObserver, CrudForm<DynamicDBean> {
 public class TablasDescuentos extends GenericDynamicForm implements BeforeEnterObserver {//, CrudForm<DynamicDBean> {
@@ -51,6 +41,7 @@ public class TablasDescuentos extends GenericDynamicForm implements BeforeEnterO
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 
 	//public class DynamicForm extends	Component implements BeforeEnterObserver, CrudForm<DynamicDBean> {
 
