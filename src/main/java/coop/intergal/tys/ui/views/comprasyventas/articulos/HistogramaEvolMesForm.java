@@ -35,6 +35,9 @@ import coop.intergal.ui.views.GenericDynamicForm;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
 import coop.intergal.vaadin.rest.utils.RestData;
+import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.checkbox.Checkbox;
+import com.vaadin.flow.component.button.Button;
 
 
 /**
@@ -52,28 +55,12 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@Id("col0")
-	private TextField col0;
-	@Id("col1")
-	private TextField col1;
 	@Id("col2")
 	private TextField col2;
 	@Id("col3")
 	private TextField col3;
-	@Id("col4")
-	private TextField col4;
 	@Id("col5")
 	private TextField col5;
-	@Id("col6")
-	private TextField col6;
-	@Id("col7")
-	private TextField col7;
-	@Id("col8")
-	private TextField col8;
-	@Id("col9")
-	private TextField col9;
-	@Id("col10")
-	private TextField col10;
 	@Id("col11")
 	private TextField col11;
 	@Id("col12")
@@ -84,14 +71,68 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 	private TextField col14;
 	@Id("col15")
 	private TextField col15;
-	private DdbDataBackEndProvider dataProvider;
-	private DynamicDBean bean;
-	@Id("dgSituacion")
-	private DynamicViewGrid dgSituacion;
-	@Id("dgProvLin")
-	private DynamicViewGrid dgProvLin;
-	@Id("dgProvAlt")
-	private DynamicViewGrid dgProvAlt;
+	@Id("col20")
+	private TextField col20;
+	@Id("col21")
+	private TextField col21;
+	@Id("col22")
+	private TextField col22;
+	@Id("col23")
+	private TextField col23;
+	@Id("col27")
+	private TextField col27;
+	@Id("col29")
+	private TextField col29;
+	@Id("col30")
+	private TextField col30;
+	@Id("col31")
+	private TextField col31;
+	@Id("col32")
+	private TextField col32;
+	@Id("col34")
+	private TextField col34;
+	@Id("col35")
+	private TextField col35;
+	@Id("col36")
+	private TextField col36;
+	@Id("col37")
+	private TextField col37;
+	@Id("col38")
+	private TextField col38;
+	@Id("col39")
+	private TextField col39;
+	@Id("col48")
+	private TextField col48;
+	@Id("col49")
+	private TextField col49;
+	@Id("col50")
+	private TextField col50;
+	@Id("alm3")
+	private TextField alm3;
+	@Id("alm7")
+	private TextField alm7;
+	@Id("alm10")
+	private TextField alm10;
+	@Id("alm17")
+	private TextField alm17;
+	@Id("alm18")
+	private TextField alm18;
+	@Id("alm19")
+	private TextField alm19;
+	@Id("alm20")
+	private TextField alm20;
+	@Id("alm21")
+	private TextField alm21;
+	@Id("alm37")
+	private TextField alm37;
+	@Id("alm38")
+	private TextField alm38;
+	@Id("alm40")
+	private TextField alm40;
+	@Id("alm41")
+	private TextField alm41;
+	@Id("alm42")
+	private TextField alm42;
 	@Id("char1")
 	private Div char1;
 	@Id("char2")
@@ -100,43 +141,38 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 	private Div char3;
 	@Id("char4")
 	private Div char4;
-	private String almacenInicial = "20";
+	@Id("ev13")
+	private TextField ev13;
+	@Id("ev14")
+	private TextField ev14;
+	@Id("ckev15")
+	private Checkbox ckev15;
+	@Id("btActualizar")
+	private Button btActualizar;
+	
+	private String almacenInicial;
 	private String claveArticulo;
+	private DdbDataBackEndProvider dataProvider;
+	private DynamicDBean bean;
 	private DynamicDBean beanAlm = new DynamicDBean();
-	@Id("alm8")
-	private TextField alm8;
-	@Id("alm9")
-	private TextField alm9;
-	@Id("alm7")
-	private TextField alm7;
-	@Id("alm6")
-	private TextField alm6;
-	@Id("alm5")
-	private Span alm5;
-	@Id("alm4")
-	private Span alm4;
-	@Id("alm3")
-	private Span alm3;
+	private DynamicDBean beanGen = new DynamicDBean();
 	private String desde;
 	private String hasta;
 	private Div divSubGrid;
-	   public Div getDivSubGrid() {
-			return divSubGrid;
-		}
-
-		public void setDivSubGrid(Div divSubGrid) {
-			this.divSubGrid = divSubGrid;
-		}
-
-		private DynamicViewGrid dVGrid;
-		public DynamicViewGrid getDVGrid() {
-			return dVGrid;
-		}
-
-		public void setDVGrid(DynamicViewGrid dVGrid) {
-			this.dVGrid = dVGrid;
-			super.setDVGrid(dVGrid);
-		}
+	public Div getDivSubGrid() {
+		return divSubGrid;
+	}
+	public void setDivSubGrid(Div divSubGrid) {
+		this.divSubGrid = divSubGrid;
+	}
+	private DynamicViewGrid dVGrid;
+	public DynamicViewGrid getDVGrid() {
+		return dVGrid;
+	}
+	public void setDVGrid(DynamicViewGrid dVGrid) {
+		this.dVGrid = dVGrid;
+		super.setDVGrid(dVGrid);
+	}
 	
 	/**
      * Creates a new HistogramaEvolMesForm.
@@ -144,29 +180,30 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 	   @EventHandler
 	    private void handleClickTab1() {
 	        System.out.println("handleClickTab1");
-			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial);
+//			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial);
+			montaChar("CR-ARTICULOS.0List-FormExt__ARTICULO_SITUACION.00List-FormExt__ARTICULO_SITUACION__EvolMes.01List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial);
 	    }
 
 	   @EventHandler
 	    private void handleClickTab2() {
 	        System.out.println("handleClickTab2");
-			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGLOBAL__MJ","TOTALSALIDAS","TOTALENTRADAS", char2, "CLAVEARTICULO="+claveArticulo, "Global");
+//			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGLOBAL__MJ","TOTALSALIDAS","TOTALENTRADAS", char2, "CLAVEARTICULO="+claveArticulo, "Global");
+			montaChar("CR-ARTICULOS.0List-FormExt__ARTICULO_SITUACION.00List-FormExt__ARTICULO_SITUACION__EvolMes.02List-ARTISITUGLOBAL__MJ","TOTALSALIDAS","TOTALENTRADAS", char2, "CLAVEARTICULO="+claveArticulo, "Global");
 	    }
 
 	   @EventHandler
 	    private void handleClickTab3() {
 	        System.out.println("handleClickTab2");
-			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char3, "CLAVEARTICULO="+claveArticulo, "Galicia (G)");
+//			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char3, "CLAVEARTICULO="+claveArticulo, "Galicia (G)");
+			montaChar("CR-ARTICULOS.0List-FormExt__ARTICULO_SITUACION.00List-FormExt__ARTICULO_SITUACION__EvolMes.03List-ARTISITUGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char3, "CLAVEARTICULO="+claveArticulo, "Galicia (G)");
 	    }
 
 	   @EventHandler
 	    private void handleClickTab4() {
 	        System.out.println("handleClickTab2");
-			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUTODAGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char4, "CLAVEARTICULO="+claveArticulo, "Galicia (T)");
+//			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUTODAGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char4, "CLAVEARTICULO="+claveArticulo, "Galicia (T)");
+			montaChar("CR-ARTICULOS.0List-FormExt__ARTICULO_SITUACION.00List-FormExt__ARTICULO_SITUACION__EvolMes.04List-ARTISITUTODAGALICIA__MJ","TOTALSALIDAS","TOTALENTRADAS", char4, "CLAVEARTICULO="+claveArticulo, "Galicia (T)");
 	    }
-	   
-	   
-	   
 
     public HistogramaEvolMesForm() {
 		super();
@@ -181,13 +218,6 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 
 	@Override
 	public void beforeEnter(BeforeEnterEvent event) {
-	}
-	
-
-	private void cambiaAlmacen(String alm) {
-		almacenInicial=alm;
-		calculaAlmacen();
-		montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial );
 	}
 
 	public void setBinder(Binder<DynamicDBean> binder2) {
@@ -208,55 +238,37 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 		this.bean = bean;
 		if (bean != null)
 		{
-	//		binder.setBean(bean);
-			dgProvAlt.setResourceName("CR-ARTICULOS__Histograma.Grid-ARTICULOSCONPROVALTERNATIVO");
-			dgProvAlt.setFilter("CLAVEARTICULO="+bean.getCol16());
-			dgProvAlt.setButtonsRowVisible(false);
-			dgProvAlt.getGrid().setAllRowsVisible(true);
-			dgProvAlt.setupGrid();
-
-			dgProvLin.setResourceName("CR-ARTICULOS__Histograma.Grid-OFERTASPROVLIN");
-			dgProvLin.setFilter("CLAVEARTICULO="+bean.getCol16());
-			dgProvLin.setButtonsRowVisible(false);
-			dgProvLin.getGrid().setAllRowsVisible(true);
-			dgProvLin.setupGrid();
-
-			dgSituacion.setResourceName("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION");
-			dgSituacion.setFilter("CLAVE_ARTICULO="+bean.getCol16());
-			dgSituacion.setButtonsRowVisible(false);
-			dgSituacion.getGrid().setAllRowsVisible(true);
-			dgSituacion.setupGrid();
-			dgSituacion.getGrid().addSelectionListener(e -> {
-			DynamicDBean selectedRow = null;
-			if (e.getFirstSelectedItem().isPresent())
-					selectedRow =(DynamicDBean)e.getFirstSelectedItem().get();
-					if (selectedRow != null)
-						{
-						System.out.println("Registro seleccionado " + selectedRow.getCol0());
-						cambiaAlmacen(selectedRow.getCol0()); 
-						}
-				});
-			
-			claveArticulo = bean.getCol16();
+			claveArticulo = bean.getCol0();
+			almacenInicial = bean.getCol1();
 			calculaAlmacen();
-
-			montaChar("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION.List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial);
+			montaChar("CR-ARTICULOS.0List-FormExt__ARTICULO_SITUACION.00List-FormExt__ARTICULO_SITUACION__EvolMes.01List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial);
 		}
 	}
 
     private void calculaAlmacen() {
-		beanAlm = RestData.getOneRow("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION", "CLAVE_ARTICULO="+claveArticulo+"%20AND%20CLAVE_ALMACEN="+almacenInicial, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
+//		beanAlm = RestData.getOneRow("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION", "CLAVE_ARTICULO="+claveArticulo+"%20AND%20CLAVE_ALMACEN="+almacenInicial, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
+		beanAlm = RestData.getOneRow("CR-ARTICULOS.0List-FormExt__ARTICULO_SITUACION", "CLAVE_ARTICULO="+claveArticulo+"%20AND%20CLAVE_ALMACEN="+almacenInicial, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
 		if (beanAlm != null) {
-			int a = Integer.parseInt(AppConst.CURRENT_YEAR)-1;
-			desde = "20"+a+"01";//beanAlm.getCol3();
-			hasta = beanAlm.getCol4();
-			alm3.setText(desde); 
-			alm4.setText(hasta); 
-			alm5.setText(beanAlm.getCol5()); 
-			alm6.setValue(beanAlm.getCol6()); 
+			alm3.setValue(beanAlm.getCol3()); 
 			alm7.setValue(beanAlm.getCol7()); 
-			alm8.setValue(beanAlm.getCol8()); 
-			alm9.setValue(beanAlm.getCol9()); 
+			alm10.setValue(beanAlm.getCol10());
+			alm17.setValue(beanAlm.getCol17());
+			alm18.setValue(beanAlm.getCol18());
+			alm19.setValue(beanAlm.getCol19());
+			alm20.setValue(beanAlm.getCol20());
+			alm21.setValue(beanAlm.getCol21());
+			alm37.setValue(beanAlm.getCol37());
+			alm38.setValue(beanAlm.getCol38());
+			alm40.setValue(beanAlm.getCol40());
+			alm41.setValue(beanAlm.getCol41());
+			alm42.setValue(beanAlm.getCol42());
+		}
+		beanGen = RestData.getOneRow("CR-ARTICULOS.0List-FormExt__ARTICULO_SITUACION.00List-FormExt__ARTICULO_SITUACION__EvolMes", "CLAVE_ARTICULO="+claveArticulo+"%20AND%20CLAVE_ALMACEN="+almacenInicial, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
+		if (beanGen != null) {
+			ev13.setValue(beanGen.getCol5()); 
+			ev14.setValue(beanGen.getCol6()); 
+			if (beanGen.getCol6().equals("1"))ckev15.setValue(true);
+			else ckev15.setValue(false);
 		}
 	}
 

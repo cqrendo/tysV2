@@ -212,13 +212,13 @@ public class HistogramaForm extends GenericDynamicForm implements BeforeEnterObs
 			dgProvAlt.setResourceName("CR-ARTICULOS__Histograma.Grid-ARTICULOSCONPROVALTERNATIVO");
 			dgProvAlt.setFilter("CLAVEARTICULO="+bean.getCol16());
 			dgProvAlt.setButtonsRowVisible(false);
-			dgProvAlt.getGrid().setAllRowsVisible(true);
+			dgProvAlt.getGrid().setHeightByRows(true);
 			dgProvAlt.setupGrid();
 
 			dgProvLin.setResourceName("CR-ARTICULOS__Histograma.Grid-OFERTASPROVLIN");
 			dgProvLin.setFilter("CLAVEARTICULO="+bean.getCol16());
 			dgProvLin.setButtonsRowVisible(false);
-			dgProvLin.getGrid().setAllRowsVisible(true);
+			dgProvLin.getGrid().setHeightByRows(true);
 			dgProvLin.setupGrid();
 
 			dgSituacion.setResourceName("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION");
