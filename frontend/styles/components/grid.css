@@ -6,4 +6,8 @@
   :host([theme~="mobile"]:not([theme~="no-border"])) {
     border: none;
   }
+  .editable {
+    background-color: #b1ffb7;
+}
+  
 }
