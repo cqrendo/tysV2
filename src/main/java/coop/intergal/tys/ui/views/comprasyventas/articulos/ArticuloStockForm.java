@@ -1,26 +1,13 @@
 package coop.intergal.tys.ui.views.comprasyventas.articulos;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 
 import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.checkbox.Checkbox;
-import com.vaadin.flow.component.combobox.ComboBox;
-import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dependency.NpmPackage;
-import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.polymertemplate.Id;
-import com.vaadin.flow.component.textfield.IntegerField;
-import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.dom.Element;
@@ -29,11 +16,6 @@ import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 
-import coop.intergal.AppConst;
-import coop.intergal.ui.components.EsDatePicker;
-import coop.intergal.ui.components.FormButtonsBar;
-import coop.intergal.ui.views.DynamicGridForPick;
-import coop.intergal.ui.views.DynamicViewGrid;
 import coop.intergal.ui.views.GenericDynamicForm;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
@@ -60,9 +42,9 @@ public class ArticuloStockForm extends GenericDynamicForm implements BeforeEnter
 //	@Id("buttons")
 //	private FormButtonsBar buttons;
 	@Id("col2")
-	private EsDatePicker col2;	
+	private TextField col2;	
 	@Id("col3")
-	private IntegerField col3;
+	private TextField col3;
 	@Id("col4")
 	private TextField col4;
 	@Id("col5")
@@ -88,11 +70,21 @@ public class ArticuloStockForm extends GenericDynamicForm implements BeforeEnter
 //		private BeanValidationBinder<DynamicDBean> binder;
 
 	private DynamicDBean bean;
+	public DynamicDBean getBean() {
+		return bean;
+	}
 
-
+	public void setBean(DynamicDBean bean) {
+		this.bean = bean;
+	}
 	private DdbDataBackEndProvider dataProvider;
+	public DdbDataBackEndProvider getDataProvider() {
+		return dataProvider;
+	}
+	public void setDataProvider(DdbDataBackEndProvider dataProvider) {
+		this.dataProvider = dataProvider;
+	}
 
-	
 	public ArticuloStockForm() {
 	}
 
@@ -134,18 +126,5 @@ public class ArticuloStockForm extends GenericDynamicForm implements BeforeEnter
 		Element child = new Element ("div");
 		child.setText("XXX");
 		this.getElement().appendChild(child);
-	}
-	public DynamicDBean getBean() {
-		return bean;
-	}
-
-	public void setBean(DynamicDBean bean) {
-		this.bean = bean;
-	}
-	public DdbDataBackEndProvider getDataProvider() {
-		return dataProvider;
-	}
-	public void setDataProvider(DdbDataBackEndProvider dataProvider) {
-		this.dataProvider = dataProvider;
 	}
 }

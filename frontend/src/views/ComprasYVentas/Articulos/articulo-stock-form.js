@@ -26,6 +26,7 @@ class ArticuloStockForm extends PolymerElement {
       :host {
 /*         height: 100%; */
         width: 100%;
+    	display:flex;
 /*         margin: 5px; */
         
       }
@@ -139,7 +140,7 @@ class ArticuloStockForm extends PolymerElement {
   border-top: none;
 }
     </style>
-<h3 id="title" style="height:0px">Stock</h3>
+<h3 id="title" style="height:0px"></h3>
      <fieldset style="display:inline-block;">
       <legend>Entradas</legend>
       <div style="width:200px;">
@@ -152,7 +153,7 @@ class ArticuloStockForm extends PolymerElement {
      <fieldset style="display:inline-block;">
       <legend>Salidas</legend>
       <div style="width:200px;">
-       <vaadin-text-field id="col3" class="verySmall6" label="Pedtes. Servir" readonly></vaadin-text-field>
+       <vaadin-text-field id="col3" class="verySmall6" label="Pdtes. Servir" readonly></vaadin-text-field>
        <vaadin-text-field id="col13" class="verySmall6" label="Pedidas Cliente" readonly></vaadin-text-field>
        <vaadin-text-field id="col4" class="verySmall6" label="Traslado" readonly></vaadin-text-field>
       </div>
@@ -174,20 +175,12 @@ class ArticuloStockForm extends PolymerElement {
   static get is() {
     return 'articulo-stock-form';
   }
-  ready() {
-    super.ready();
-    this.$.form.addEventListener('change', e => {
-      this.$.buttons.$.save.disabled = false;
-    });
-  }
+  
+    static get properties() {
+        return {
+            // Declare your properties here.
+        };
+    }
 }
-window.customElements.define(ArticuloStockForm.is, ArticuloStockForm);
-function openTab(evt, tabName)
-{var i, tabcontent, tablinks;tabcontent = document.getElementsByClassName("tabcontent");
-for (i = 0; i < tabcontent.length; i++) 
-{tabcontent[i].style.display = "none";}
-tablinks = document.getElementsByClassName("tablinks");
-for (i = 0; i < tablinks.length; i++) 
-{tablinks[i].className = tablinks[i].className.replace(" active", "");}
-document.getElementById(tabName).style.display = "block";evt.currentTarget.className += " active";}
 
+customElements.define(ArticuloStockForm.is, ArticuloStockForm);

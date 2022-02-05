@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 import com.vaadin.flow.component.Tag;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.charts.Chart;
 import com.vaadin.flow.component.charts.model.AxisTitle;
 import com.vaadin.flow.component.charts.model.ChartType;
@@ -16,9 +17,9 @@ import com.vaadin.flow.component.charts.model.Tooltip;
 import com.vaadin.flow.component.charts.model.VerticalAlign;
 import com.vaadin.flow.component.charts.model.XAxis;
 import com.vaadin.flow.component.charts.model.YAxis;
+import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.polymertemplate.EventHandler;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.textfield.TextField;
@@ -35,9 +36,6 @@ import coop.intergal.ui.views.GenericDynamicForm;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
 import coop.intergal.vaadin.rest.utils.RestData;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.checkbox.Checkbox;
-import com.vaadin.flow.component.button.Button;
 
 
 /**
@@ -55,58 +53,54 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@Id("col2")
-	private TextField col2;
-	@Id("col3")
-	private TextField col3;
-	@Id("col5")
-	private TextField col5;
-	@Id("col11")
-	private TextField col11;
-	@Id("col12")
-	private TextField col12;
-	@Id("col13")
-	private TextField col13;
-	@Id("col14")
-	private TextField col14;
-	@Id("col15")
-	private TextField col15;
-	@Id("col20")
-	private TextField col20;
-	@Id("col21")
-	private TextField col21;
-	@Id("col22")
-	private TextField col22;
-	@Id("col23")
-	private TextField col23;
-	@Id("col27")
-	private TextField col27;
-	@Id("col29")
-	private TextField col29;
-	@Id("col30")
-	private TextField col30;
-	@Id("col31")
-	private TextField col31;
-	@Id("col32")
-	private TextField col32;
-	@Id("col34")
-	private TextField col34;
-	@Id("col35")
-	private TextField col35;
-	@Id("col36")
-	private TextField col36;
-	@Id("col37")
-	private TextField col37;
-	@Id("col38")
-	private TextField col38;
-	@Id("col39")
-	private TextField col39;
-	@Id("col48")
-	private TextField col48;
-	@Id("col49")
-	private TextField col49;
-	@Id("col50")
-	private TextField col50;
+	@Id("cols2")
+	private TextField cols2;
+	@Id("cols3")
+	private TextField cols3;
+	@Id("cols5")
+	private TextField cols5;
+	@Id("cols11")
+	private TextField cols11;
+	@Id("cols12")
+	private TextField cols12;
+	@Id("cols13")
+	private TextField cols13;
+	@Id("cols14")
+	private TextField cols14;
+	@Id("cols15")
+	private TextField cols15;
+	@Id("cols20")
+	private TextField cols20;
+	@Id("cols21")
+	private TextField cols21;
+	@Id("cols22")
+	private TextField cols22;
+	@Id("cols23")
+	private TextField cols23;
+	@Id("cols27")
+	private TextField cols27;
+	@Id("cols29")
+	private TextField cols29;
+	@Id("cols30")
+	private TextField cols30;
+	@Id("cols31")
+	private TextField cols31;
+	@Id("cols32")
+	private TextField cols32;
+	@Id("cols36")
+	private TextField cols36;
+	@Id("cols37")
+	private TextField cols37;
+	@Id("cols38")
+	private TextField cols38;
+	@Id("cols39")
+	private TextField cols39;
+	@Id("cols48")
+	private TextField cols48;
+	@Id("cols49")
+	private TextField cols49;
+	@Id("cols50")
+	private TextField cols50;
 	@Id("alm3")
 	private TextField alm3;
 	@Id("alm7")
@@ -123,6 +117,12 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 	private TextField alm20;
 	@Id("alm21")
 	private TextField alm21;
+	@Id("alm34")
+	private TextField alm34;
+	@Id("alm35")
+	private TextField alm35;
+	@Id("alm36")
+	private TextField alm36;
 	@Id("alm37")
 	private TextField alm37;
 	@Id("alm38")
@@ -141,12 +141,12 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 	private Div char3;
 	@Id("char4")
 	private Div char4;
-	@Id("ev13")
-	private TextField ev13;
-	@Id("ev14")
-	private TextField ev14;
-	@Id("ckev15")
-	private Checkbox ckev15;
+	@Id("col13")
+	private TextField col13;
+	@Id("col14")
+	private TextField col14;
+	@Id("col15")
+	private Checkbox col15;
 	@Id("btActualizar")
 	private Button btActualizar;
 	
@@ -238,8 +238,8 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 		this.bean = bean;
 		if (bean != null)
 		{
-			claveArticulo = bean.getCol0();
-			almacenInicial = bean.getCol1();
+			claveArticulo = bean.getCol51();
+			almacenInicial = bean.getCol52();
 			calculaAlmacen();
 			montaChar("CR-ARTICULOS.0List-FormExt__ARTICULO_SITUACION.00List-FormExt__ARTICULO_SITUACION__EvolMes.01List-ARTISITUMENSUAL","SALIDAS","ENTRADAS", char1, "CLAVEARTICULO="+claveArticulo+"%20AND%20CLAVEALMACEN="+almacenInicial, "Almacén "+almacenInicial);
 		}
@@ -249,6 +249,9 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 //		beanAlm = RestData.getOneRow("CR-ARTICULOS__Histograma.Grid-ARTICULO_SITUACION", "CLAVE_ARTICULO="+claveArticulo+"%20AND%20CLAVE_ALMACEN="+almacenInicial, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
 		beanAlm = RestData.getOneRow("CR-ARTICULOS.0List-FormExt__ARTICULO_SITUACION", "CLAVE_ARTICULO="+claveArticulo+"%20AND%20CLAVE_ALMACEN="+almacenInicial, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
 		if (beanAlm != null) {
+			int a = Integer.parseInt(AppConst.CURRENT_YEAR)-1;
+			desde = "20"+a+"01";//beanAlm.getCol14();
+			hasta = beanAlm.getCol15();
 			alm3.setValue(beanAlm.getCol3()); 
 			alm7.setValue(beanAlm.getCol7()); 
 			alm10.setValue(beanAlm.getCol10());
@@ -257,18 +260,47 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 			alm19.setValue(beanAlm.getCol19());
 			alm20.setValue(beanAlm.getCol20());
 			alm21.setValue(beanAlm.getCol21());
+			alm34.setValue(beanAlm.getCol34());
+			alm35.setValue(beanAlm.getCol35());
+			alm36.setValue(beanAlm.getCol36());
 			alm37.setValue(beanAlm.getCol37());
 			alm38.setValue(beanAlm.getCol38());
 			alm40.setValue(beanAlm.getCol40());
 			alm41.setValue(beanAlm.getCol41());
 			alm42.setValue(beanAlm.getCol42());
 		}
-		beanGen = RestData.getOneRow("CR-ARTICULOS.0List-FormExt__ARTICULO_SITUACION.00List-FormExt__ARTICULO_SITUACION__EvolMes", "CLAVE_ARTICULO="+claveArticulo+"%20AND%20CLAVE_ALMACEN="+almacenInicial, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
+		beanGen = RestData.getOneRow("CR-ARTICULOS.List-ARTICULOS_CONTROL_STOCK", "CLAVE_ARTICULO="+claveArticulo, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
 		if (beanGen != null) {
-			ev13.setValue(beanGen.getCol5()); 
-			ev14.setValue(beanGen.getCol6()); 
-			if (beanGen.getCol6().equals("1"))ckev15.setValue(true);
-			else ckev15.setValue(false);
+			col13.setValue(bean.getCol13()); 
+			col14.setValue(bean.getCol14()); 
+			if (bean.getCol15().equals("1"))
+				col15.setValue(true);
+			else 
+				col15.setValue(false);
+			cols2.setValue(beanGen.getCol2());
+			cols3.setValue(beanGen.getCol3());
+			cols5.setValue(beanGen.getCol5());
+			cols11.setValue(beanGen.getCol11());
+			cols12.setValue(beanGen.getCol12());
+			cols13.setValue(beanGen.getCol13());
+			cols14.setValue(beanGen.getCol14());
+			cols15.setValue(beanGen.getCol15());
+			cols20.setValue(beanGen.getCol20());
+			cols21.setValue(beanGen.getCol21());
+			cols22.setValue(beanGen.getCol22());
+			cols23.setValue(beanGen.getCol23());
+			cols27.setValue(beanGen.getCol27());
+			cols29.setValue(beanGen.getCol29());
+			cols30.setValue(beanGen.getCol30());
+			cols31.setValue(beanGen.getCol31());
+			cols32.setValue(beanGen.getCol32());
+			cols36.setValue(beanGen.getCol36());
+			cols37.setValue(beanGen.getCol37());
+			cols38.setValue(beanGen.getCol38());
+			cols39.setValue(beanGen.getCol39());
+			cols48.setValue(beanGen.getCol48());
+			cols49.setValue(beanGen.getCol49());
+			cols50.setValue(beanGen.getCol50());
 		}
 	}
 
