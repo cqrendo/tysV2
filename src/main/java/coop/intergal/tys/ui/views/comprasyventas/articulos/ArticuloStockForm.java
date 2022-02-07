@@ -41,30 +41,30 @@ public class ArticuloStockForm extends GenericDynamicForm implements BeforeEnter
 	
 //	@Id("buttons")
 //	private FormButtonsBar buttons;
+	@Id("col0")
+	private TextField col0;	
+	@Id("col1")
+	private TextField col1;
 	@Id("col2")
-	private TextField col2;	
+	private TextField col2;
 	@Id("col3")
 	private TextField col3;
 	@Id("col4")
 	private TextField col4;
 	@Id("col5")
 	private TextField col5;
+	@Id("col6")
+	private TextField  col6;
 	@Id("col7")
-	private TextField col7;
+	private TextField  col7;	
+	@Id("col8")
+	private TextField col8;
+	@Id("col9")
+	private TextField col9;
 	@Id("col10")
 	private TextField col10;
-	@Id("col11")
-	private TextField  col11;
-	@Id("col12")
-	private TextField  col12;	
-	@Id("col13")
-	private TextField col13;
-	@Id("col18")
-	private TextField col18;
-	@Id("col21")
-	private TextField col21;
-	@Id("col25")
-	private TextField col25;
+	@Id("co11")
+	private TextField col11;
 
 	
 //		private BeanValidationBinder<DynamicDBean> binder;
