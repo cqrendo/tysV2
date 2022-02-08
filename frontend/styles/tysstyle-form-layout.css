@@ -1,4 +1,7 @@
 
+:host(.formMargin0) {
+	margin-top: 0px;
+}
 :host(.formMargin50) {
 	margin-top: 10px;
 }
@@ -23,7 +26,9 @@
 :host(.formMargin400) {
 	margin-top: 370px;
 }
-
+:host(.formMarginL0) {
+	margin-left: 0px;
+}
 :host(.formMarginL50) {
 	margin-left: 50px;
 }

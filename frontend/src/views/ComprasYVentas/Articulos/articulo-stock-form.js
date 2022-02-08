@@ -146,14 +146,14 @@ class ArticuloStockForm extends PolymerElement {
  <div style="width:200px;">
   <vaadin-text-field id="col0" class="verySmall6" label="Propuestas" readonly></vaadin-text-field>
   <vaadin-text-field id="col1" class="verySmall6" label="Pedidas" readonly></vaadin-text-field>
-  <vaadin-text-field id="col22" class="verySmall6" label="Pdtes. Recibir" readonly></vaadin-text-field>
-  <vaadin-text-field id="col31" class="verySmall6" label="Traslado" readonly></vaadin-text-field>
+  <vaadin-text-field id="col2" class="verySmall6" label="Pdtes. Recibir" readonly></vaadin-text-field>
+  <vaadin-text-field id="col3" class="verySmall6" label="Traslado" readonly></vaadin-text-field>
  </div>
 </fieldset>
 <fieldset style="display:inline-block;">
  <legend>Salidas</legend>
  <div style="width:200px;">
-  <vaadin-text-field id="col41" class="verySmall6" label="Pdtes. Servir" readonly></vaadin-text-field>
+  <vaadin-text-field id="col4" class="verySmall6" label="Pdtes. Servir" readonly></vaadin-text-field>
   <vaadin-text-field id="col5" class="verySmall6" label="Pedidas Cliente" readonly></vaadin-text-field>
   <vaadin-text-field id="col6" class="verySmall6" label="Traslado" readonly></vaadin-text-field>
  </div>
@@ -161,7 +161,7 @@ class ArticuloStockForm extends PolymerElement {
 <fieldset style="display:inline-block;">
  <legend>Stock</legend>
  <div style="width:200px;">
-  <vaadin-text-field id="co7" class="verySmall6" label="Iniciales" readonly></vaadin-text-field>
+  <vaadin-text-field id="col7" class="verySmall6" label="Iniciales" readonly></vaadin-text-field>
   <vaadin-text-field id="col8" class="verySmall6" label="Stock Actual" readonly></vaadin-text-field>
   <vaadin-text-field id="col9" class="verySmall6" label="Mínimo" readonly></vaadin-text-field>
   <vaadin-text-field id="col10" class="verySmall6" label="VM" readonly></vaadin-text-field>
