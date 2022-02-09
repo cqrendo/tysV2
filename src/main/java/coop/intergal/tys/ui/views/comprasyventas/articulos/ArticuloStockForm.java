@@ -63,7 +63,7 @@ public class ArticuloStockForm extends GenericDynamicForm implements BeforeEnter
 	private TextField col9;
 	@Id("col10")
 	private TextField col10;
-	@Id("co11")
+	@Id("col11")
 	private TextField col11;
 
 	
