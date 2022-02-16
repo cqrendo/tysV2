@@ -10,6 +10,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexLayout.FlexDirection;
@@ -47,8 +48,14 @@ public class Home extends ViewFrame {
 
     private Component createContent() {
         Html intro = new Html("<p>Usuario conectado: "+ SecurityUtils.getUsername()+ " en el ejercicio: " + AppConst.CURRENT_YEAR +"</p>");
+        Image logofondo = new Image();
+        logofondo.setSrc("images/logos/logoTys.png");
+   //     avatar.setClassName(CLASS_NAME + "__avatar");
+        
+   //     logofondo.setAlt("User menu");
 
-        Html fondo = new Html("<img src=\"http://www.torresysaez.com/wp-content/uploads/2017/07/5.png\"</img>");
+  //      Html fondo = new Html("<img src=\"images/logos/logoTys.png\"</img>");
+ //       Html fondo = new Html("<img src=\"http://www.torresysaez.com/wp-content/uploads/2017/07/5.png\"</img>");
 //        Html fondo = new Html("<p class=\"zn-bgSource-image\" style=\"background-image:url(http://www.torresysaez.com/wp-content/uploads/2017/07/Hierros-1.jpg);background-repeat:no-repeat;background-position:center center;background-size:cover;background-attachment:scroll\"></p>");
 
         Html features = new Html("<p>The app comes with multiple list views to edit master-detail data. " +
@@ -98,7 +105,7 @@ public class Home extends ViewFrame {
         links.setFlexWrap(FlexWrap.WRAP);
         links.setSpacing(Right.S);
 
-        FlexBoxLayout content = new FlexBoxLayout(intro, comboBox, value, fondo);
+        FlexBoxLayout content = new FlexBoxLayout(intro, comboBox, value, logofondo);
         content.setFlexDirection(FlexDirection.COLUMN);
         content.setMargin(Horizontal.AUTO);
         content.setMaxWidth("840px");
@@ -113,30 +120,30 @@ public class Home extends ViewFrame {
 //        	splitLayout.setOrientation(Orientation.VERTICAL);
 //        	content.add(splitLayout);
 //        	
-        	Label left = new Label("left");
-        	Label left2 = new Label("left2");
-        	Label left3 = new Label("left3");
-        	 Label right = new Label("right");
-        	HorizontalLayout hl = new HorizontalLayout(right);
-        	VerticalLayout vl = new VerticalLayout(left);
-        	vl.setWidth("100px");
-        	vl.add(left2);
-        	vl.add(left3);
-        	hl.add(vl);
-            left.getElement().getStyle().set("background","red");
-           
-            right .getElement().getStyle().set("background","green");
-             splitLayout = new SplitLayout(hl, vl);//new VerticalLayout(right));
-             
-              splitLayout.setWidthFull();
-              splitLayout.setSplitterPosition(0);
-              content.add(splitLayout, new Button("+", e->{
-                position += 10;
-                splitLayout.setSplitterPosition(position);
-               }), new Button("-", e->{
-                 position -= 10;
-                 splitLayout.setSplitterPosition(position);
-                }));
+//        	Label left = new Label("left");
+//        	Label left2 = new Label("left2");
+//        	Label left3 = new Label("left3");
+//        	 Label right = new Label("right");
+//        	HorizontalLayout hl = new HorizontalLayout(right);
+//        	VerticalLayout vl = new VerticalLayout(left);
+//        	vl.setWidth("100px");
+//        	vl.add(left2);
+//        	vl.add(left3);
+//        	hl.add(vl);
+//            left.getElement().getStyle().set("background","red");
+//           
+//            right .getElement().getStyle().set("background","green");
+//             splitLayout = new SplitLayout(hl, vl);//new VerticalLayout(right));
+//             
+//              splitLayout.setWidthFull();
+//              splitLayout.setSplitterPosition(0);
+//              content.add(splitLayout, new Button("+", e->{
+//                position += 10;
+//                splitLayout.setSplitterPosition(position);
+//               }), new Button("-", e->{
+//                 position -= 10;
+//                 splitLayout.setSplitterPosition(position);
+//                }));
               
         return content;
     }

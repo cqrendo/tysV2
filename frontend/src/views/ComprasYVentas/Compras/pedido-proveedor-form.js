@@ -163,12 +163,14 @@ class PedidoProveedorForm extends PolymerElement {
    <vaadin-integer-field id="col7" class="verySmall" label="Comprador"></vaadin-integer-field>
    <vaadin-text-field id="col8" label="Nombre Comprador" readonly="true"></vaadin-text-field>
   </div>
-  <div class="lastColumn">
-   <vaadin-text-area id="col26" label="Lugar de Entrega" style="height:180px;width:264px "></vaadin-text-area>
+  <div class="lastColumn" style="width: 300px;">
+   <vaadin-text-area id="col26" label="Lugar de Entrega" style="height:180px; width:264px; height: 90px;"></vaadin-text-area>
+   <vaadin-text-area id="col51" style="width: 264px; height: 90px;" label="Comentario Interno"></vaadin-text-area>
   </div>
   <div class="linCampos">
    <vaadin-text-field id="col9" label="Atencion De " maxlength="2" class="medium" style="width:12.7em"></vaadin-text-field>
    <vaadin-date-picker id="col10" label="Plazo Entrega"></vaadin-date-picker>
+   <vaadin-date-picker id="col50" label="Plazo Entrega Interno"></vaadin-date-picker>
    <vaadin-text-area id="col11" label="Texto Libre" style="width:32.5em;height:39px"></vaadin-text-area>
    <vaadin-combo-box id="col12" class="small" label="Portes"></vaadin-combo-box>
   </div>
@@ -184,7 +186,7 @@ class PedidoProveedorForm extends PolymerElement {
    <vaadin-text-field id="col18" label="Forma Pago Negociada"></vaadin-text-field>
    <vaadin-text-field id="col19" class="big" label="Aviso para dpto Provedores (tys)"></vaadin-text-field>
    <vaadin-integer-field id="col20" label="Num Ped Cliente"></vaadin-integer-field>
-   <vaadin-checkbox id="col31">
+   <vaadin-checkbox id="col31" label="">
      Entrega Directa 
    </vaadin-checkbox>
   </div>
@@ -196,6 +198,8 @@ class PedidoProveedorForm extends PolymerElement {
    <vaadin-integer-field id="col22" class="verySmall" label="Para Cliente" clear-button-visible></vaadin-integer-field>
    <vaadin-text-field id="col23" label="Nombre Cliente" class="big"></vaadin-text-field>
    <vaadin-text-field id="col24" label="Num Pedido Del Prov" class="Small"></vaadin-text-field>
+   <vaadin-text-field id="col53" label="Minimo Portes"></vaadin-text-field>
+   <vaadin-text-field id="col58" label="Pedido mínimo"></vaadin-text-field>
    <br>
    <vaadin-button id="b1" label="">
      ver Entrada 

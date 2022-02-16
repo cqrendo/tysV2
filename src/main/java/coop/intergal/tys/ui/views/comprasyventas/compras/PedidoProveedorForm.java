@@ -219,6 +219,18 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	}
 
 	private DynamicViewGrid dVGrid;
+
+	@Id("col50")
+	private EsDatePicker col50;
+
+	@Id("col53")
+	private TextField col53;
+
+	@Id("col58")
+	private TextField col58;
+
+	@Id("col51")
+	private TextArea col51;
 	public DynamicViewGrid getDVGrid() {
 		return dVGrid;
 	}

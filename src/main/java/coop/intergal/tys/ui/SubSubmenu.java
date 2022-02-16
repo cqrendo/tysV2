@@ -101,7 +101,7 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 		dataProvider.setResourceName("CR-menu");
 		rowsColList = dataProvider.getRowsColList();
 		
-		Collection<DynamicDBean> menuList = RestData.getResourceData(0,0,"CR-menu", AppConst.PRE_CONF_PARAM_METADATA, rowsColList, filter, false, false, null);
+		Collection<DynamicDBean> menuList = RestData.getResourceData(0,0,"CR-menu", AppConst.PRE_CONF_PARAM_METADATA, rowsColList, filter, UtilSessionData.getCache(), false, null);
 		Iterator<DynamicDBean> itMenuList = menuList.iterator();
 		while (itMenuList.hasNext())
 		{	
@@ -154,7 +154,7 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 			String urlBase = "../dymanic";
 			String hostName = InetAddress.getLocalHost().getHostName() ;
 			if (hostName.indexOf(".local") == -1 && hostName.indexOf("FC-NB-MLOPEZ") == -1) // to diferent when is running in local (Maven) or in remote (tys.war -> tomcat)
-				urlBase= "../tys/dymanic";
+				urlBase= "../tys"+AppConst.CURRENT_YEAR+"/dymanic";
 		String resource = rowSubMenu.get("resource").asText();
 		String queryFormClassName = rowSubMenu.get("queryFormClassName").asText();
 		String displayFormClassName = rowSubMenu.get("displayFormClassName").asText();

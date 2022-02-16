@@ -16,7 +16,7 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 //	public static final String PRE_CONF_PARAM = "VMTYS";//
 //	public static final String CLEAR_REPORT_SERVER = "http://192.168.100.05:9000/";
 
-
+	public static final String CURRENT_YEAR = "22";
 	public static final Locale APP_LOCALE = new Locale("es","ES");
 
 	public static final String PAGE_ROOT = "";
@@ -79,7 +79,7 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String DEFAULT_WIDTH_FORM = "1360px";
 	public static final String DEFAULT_WIDTH_FORM_MONBUS = "1160px"; // change name for apply
 	public static final String DEFAULT_FIELD_HEIGHT = "70px";
-	public static final String CURRENT_YEAR = "21";
+	
 	public static final String TAGS_LIST = "company;user;row";
 	public static final double DEFAULT_SPLIT_POS_QUERY_GRID = 200;
 	public static final double DEFAULT_SPLIT_POS_GRID_DISPLAY = 5;
@@ -90,6 +90,7 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String FORMAT_FOR_DATETIME_FOR_JOIN = "TO_TIMESTAMP_TZ%28'#value#','YYYY-MM-DD%22T%22hh24:mi:ss'%29"; // is use in Oracle for JOIN as the parent data includes T by example 2021-01-13T17:26:36 , left empty for Mysql
 	public static final String FORMAT_FOR_DATETIME = "TO_TIMESTAMP_TZ%28'#value#','YYYY-MM-DD hh24:mi:ss'%29"; // is use in Oracle (when you write a date with time in Query Form you don't use T  left empty for Mysql
 	public static final String FORMAT_FOR_SHORTDATETIME = "TO_TIMESTAMP_TZ%28'#value#','YYYY-MM-DD'%29"; // is use in Oracle, left empty for Mysql
+	public static final String RESOURCES_WITH_USER = "CR-PED_PROVEED_CAB";
 
 //	public static final String FORMAT_FOR_DATETIME = "TO_TIMESTAMP_TZ('#value#','YYYY-MM-DD\"T\"hh24:mi:ss')"; // is use in Oracle, left empty for Mysql
 	
