@@ -5,6 +5,7 @@ import '@vaadin/vaadin-split-layout/src/vaadin-split-layout.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 import { PolymerElement } from '@polymer/polymer/polymer-element.js';
 import {ThemableMixin} from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
+import {afterNextRender} from '@polymer/polymer/lib/utils/render-status.js';
 
 //class DynamicGridDisplay extends PolymerElement {
 class DynamicQryGrid extends ThemableMixin(PolymerElement) {
@@ -27,6 +28,20 @@ class DynamicQryGrid extends ThemableMixin(PolymerElement) {
    <dynamic-grid id="grid"></dynamic-grid>
  </div>
 `;
+  }
+    constructor() {
+    super();
+    // When possible, use afterNextRender to defer non-critical
+    // work until after first paint.
+    // it set the inicial height depending on divQuery height 
+    afterNextRender(this, function() {
+      var elmnt =  this.$.divQuery;
+      var vheight = elmnt.offsetHeight+15;
+  //    alert(" ...afterRender -> " +vheight);
+      var c = 'calc(100% - '+vheight+'px)';
+      this.$.divGrid.style.setProperty('height', c);
+  
+    });
   }
 
   static get is() {

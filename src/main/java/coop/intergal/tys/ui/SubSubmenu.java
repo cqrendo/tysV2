@@ -150,11 +150,20 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 	
 	private Object processButon(ClickEvent<Button> evt, JsonNode rowSubMenu) {
 		String titleOption = rowSubMenu.get("optionName").asText();
+		String layoutPage = rowSubMenu.get("layoutPage").asText();
+		if (layoutPage == null || layoutPage.isEmpty() || layoutPage.equals("null") )
+			layoutPage = AppConst.PAGE_DYNAMIC_QGD;
+		else if (layoutPage.equals("PAGE_DYNAMIC_QGD"))
+			layoutPage = AppConst.PAGE_DYNAMIC_QGD;
+		else if (layoutPage.equals("PAGE_DYNAMIC_QG"))
+			layoutPage = AppConst.PAGE_DYNAMIC_QG;
+		else
+			DataService.get().showError("valor invalido para layoutPage, debe de ser (PAGE_DYNAMIC_QG o PAGE_DYNAMIC_QGD");
 		try {
-			String urlBase = "../dymanic";
+			String urlBase = "../"+layoutPage;
 			String hostName = InetAddress.getLocalHost().getHostName() ;
 			if (hostName.indexOf(".local") == -1 && hostName.indexOf("FC-NB-MLOPEZ") == -1) // to diferent when is running in local (Maven) or in remote (tys.war -> tomcat)
-				urlBase= "../tys"+AppConst.CURRENT_YEAR+"/dymanic";
+				urlBase= "../tys"+AppConst.CURRENT_YEAR+"/"+layoutPage;
 		String resource = rowSubMenu.get("resource").asText();
 		String queryFormClassName = rowSubMenu.get("queryFormClassName").asText();
 		String displayFormClassName = rowSubMenu.get("displayFormClassName").asText();

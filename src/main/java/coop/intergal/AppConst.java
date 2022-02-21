@@ -26,7 +26,8 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String PAGE_DASHBOARD = "dashboard";
 	public static final String PAGE_USERS = "users";
 	public static final String PAGE_PRODUCTS = "products";
-	public static final String PAGE_DYNAMIC = "dymanic";
+	public static final String PAGE_DYNAMIC_QGD	="dynamicQGD";
+	public static final String PAGE_DYNAMIC_QG	="dynamicQG";
 	public static final String PAGE_DYNAMIC_TREE = "dymanicTree";
 	public static final String PAGE_LOGOUT = "logout";
 	public static final String PAGE_DEFAULT = PAGE_STOREFRONT;

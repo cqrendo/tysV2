@@ -53,6 +53,7 @@ import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.tys.ui.util.css.Overflow;
 import coop.intergal.tys.ui.views.Home;
 import coop.intergal.ui.util.UtilSessionData;
+import coop.intergal.ui.views.DynamicQryGrid;
 import coop.intergal.ui.views.DynamicQryGridDisplay;
 import coop.intergal.ui.views.DynamicTreeDisplay;
 
@@ -124,20 +125,29 @@ public class MainLayout extends FlexBoxLayout
                     Notification.show(
                             "We are sorry, but an internal error occurred");
                 });
-       	RouteConfiguration configuration = RouteConfiguration.forSessionScope();
-        if (AppConst.INCLUDE_MAIN_LAYOUT) {
-            if (configuration.getRoute(AppConst.PAGE_DYNAMIC).isPresent() == false)
-              {
-              configuration.setRoute(AppConst.PAGE_DYNAMIC, DynamicQryGridDisplay.class,
-                  this.getClass());  
-          //        Class.forName(AppConst.MAIN_LAYOUT_CLASS).asSubclass(RouterLayout.class));
-            //       MainLayout.class);
-              }
-          } else {
-            if (configuration.getRoute(AppConst.PAGE_DYNAMIC).isPresent() == false)
-              configuration.setRoute(AppConst.PAGE_DYNAMIC, DynamicQryGridDisplay.class);
-          }
-        addClassName(CLASS_NAME);
+      	RouteConfiguration configuration = RouteConfiguration.forSessionScope();
+    	if (AppConst.INCLUDE_MAIN_LAYOUT) {
+    		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_QGD).isPresent() == false)
+    			{
+					configuration.setRoute(AppConst.PAGE_DYNAMIC_QGD, DynamicQryGridDisplay.class,
+							this.getClass());	
+			//				Class.forName(AppConst.MAIN_LAYOUT_CLASS).asSubclass(RouterLayout.class));
+				// 			MainLayout.class);
+    			}
+    		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_QG).isPresent() == false)
+			{
+				configuration.setRoute(AppConst.PAGE_DYNAMIC_QG, DynamicQryGrid.class,
+						this.getClass());	
+		//				Class.forName(AppConst.MAIN_LAYOUT_CLASS).asSubclass(RouterLayout.class));
+			// 			MainLayout.class);
+			}
+    	} else {
+    		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_QGD).isPresent() == false)
+    			configuration.setRoute(AppConst.PAGE_DYNAMIC_QGD, DynamicQryGridDisplay.class);
+    		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_QG).isPresent() == false)
+    			configuration.setRoute(AppConst.PAGE_DYNAMIC_QG, DynamicQryGrid.class);
+    	}
+          addClassName(CLASS_NAME);
         setFlexDirection(FlexDirection.COLUMN);
         setSizeFull();
 

@@ -25,7 +25,7 @@ class DynamicGrid extends PolymerElement {
 <vaadin-horizontal-layout> 
  <div id="divExporter"></div>
  <div id="itemButtons">
-  <vaadin-button id="newRow" theme="icon">
+  <vaadin-button id="newRow" theme="icon" on-click="_hideQuery" >
    <iron-icon icon="lumo:plus"></iron-icon>
   </vaadin-button>
   <vaadin-button id="deleteRow" theme="icon">
@@ -40,24 +40,15 @@ class DynamicGrid extends PolymerElement {
   static get is() {
     return 'dynamic-grid';
   }
-  _showHideQuery() {
-
-var elmnt = this.parentElement.querySelector("#divQuery") ; // <- How do i get this component that is in Js that contains this
-var vheight = elmnt.offsetHeight;
+  _hideQuery() {
+//var elmnt = this.parentElement.parentElement.parentElement.querySelector("#divQuery");// <- How do i get this component that is in Js that contains this
+//var elmnt = this.getRootNode().querySelector("#divQuery");
+//var vheight = elmnt.offsetHeight;
 alert(" H -> " +vheight);
 var c;
-if (vheight == 0)
-	{	
-	this.$.divQuery.style.setProperty('display', 'block');
-	vheight = elmnt.offsetHeight+60;
-	c = 'calc(100% - '+vheight+'px)';
-	}
-else
-	{
-	c = 'calc(100% - 30px)';
-	this.$.divQuery.style.setProperty('display', 'none');	
-	}
-this.$.querySplitGrid.style.setProperty('height', c);
+c = 'calc(100% - 30px)';
+elmnt.style.setProperty('display', 'none');	
+this.parentElement.parentElement.parentElement.style.setProperty('height', c);
  }
  // document.getElementById('querySplitGrid').style.setProperty('height', c);
 
