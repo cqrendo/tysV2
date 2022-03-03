@@ -92,6 +92,7 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String FORMAT_FOR_DATETIME = "TO_TIMESTAMP_TZ%28'#value#','YYYY-MM-DD hh24:mi:ss'%29"; // is use in Oracle (when you write a date with time in Query Form you don't use T  left empty for Mysql
 	public static final String FORMAT_FOR_SHORTDATETIME = "TO_TIMESTAMP_TZ%28'#value#','YYYY-MM-DD'%29"; // is use in Oracle, left empty for Mysql
 	public static final String RESOURCES_WITH_USER = "CR-ARTICULOS,CR-PED_PROVEED_CAB";
+	public static final boolean CONFIRM_DELETE = true;
 
 //	public static final String FORMAT_FOR_DATETIME = "TO_TIMESTAMP_TZ('#value#','YYYY-MM-DD\"T\"hh24:mi:ss')"; // is use in Oracle, left empty for Mysql
 	
