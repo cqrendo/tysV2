@@ -157,8 +157,10 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 			layoutPage = AppConst.PAGE_DYNAMIC_QGD;
 		else if (layoutPage.equals("PAGE_DYNAMIC_QG"))
 			layoutPage = AppConst.PAGE_DYNAMIC_QG;
+		else if (layoutPage.equals("PAGE_DYNAMIC_TREE"))
+			layoutPage = AppConst.PAGE_DYNAMIC_TREE;
 		else
-			DataService.get().showError("valor invalido para layoutPage, debe de ser (PAGE_DYNAMIC_QG o PAGE_DYNAMIC_QGD");
+			DataService.get().showError("valor invalido para layoutPage, debe de ser (PAGE_DYNAMIC_QG o PAGE_DYNAMIC_QGD o PAGE_DYNAMIC_TREE");
 		try {
 			String urlBase = "../"+layoutPage;
 			String hostName = InetAddress.getLocalHost().getHostName() ;

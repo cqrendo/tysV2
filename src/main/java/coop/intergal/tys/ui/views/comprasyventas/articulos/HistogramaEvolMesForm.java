@@ -22,6 +22,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.polymertemplate.EventHandler;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.BeforeEnterEvent;
@@ -31,6 +32,7 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 
 import coop.intergal.AppConst;
 import coop.intergal.ui.util.UtilSessionData;
+import coop.intergal.ui.utils.converters.DecimalFormatter;
 import coop.intergal.ui.views.DynamicViewGrid;
 import coop.intergal.ui.views.GenericDynamicForm;
 import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
@@ -108,7 +110,7 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 	@Id("alm10")
 	private TextField alm10;
 	@Id("alm17")
-	private TextField alm17;
+	private IntegerField alm17;
 	@Id("alm18")
 	private TextField alm18;
 	@Id("alm19")
@@ -252,22 +254,25 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 			int a = Integer.parseInt(AppConst.CURRENT_YEAR)-1;
 			desde = "20"+a+"01";//beanAlm.getCol14();
 			hasta = beanAlm.getCol15();
-			alm3.setValue(beanAlm.getCol3()); 
-			alm7.setValue(beanAlm.getCol7()); 
-			alm10.setValue(beanAlm.getCol10());
-			alm17.setValue(beanAlm.getCol17());
-			alm18.setValue(beanAlm.getCol18());
-			alm19.setValue(beanAlm.getCol19());
-			alm20.setValue(beanAlm.getCol20());
-			alm21.setValue(beanAlm.getCol21());
-			alm34.setValue(beanAlm.getCol34());
-			alm35.setValue(beanAlm.getCol35());
-			alm36.setValue(beanAlm.getCol36());
-			alm37.setValue(beanAlm.getCol37());
-			alm38.setValue(beanAlm.getCol38());
-			alm40.setValue(beanAlm.getCol40());
-			alm41.setValue(beanAlm.getCol41());
-			alm42.setValue(beanAlm.getCol42());
+			Binder<DynamicDBean>  binderAlm = new  Binder<DynamicDBean>();
+			binderAlm.setBean(beanAlm);
+			bindFields(HistogramaEvolMesForm.class, this, binderAlm, "alm" );
+//			alm3.setValue(beanAlm.getCol3()); 
+//			alm7.setValue(beanAlm.getCol7()); 
+//			alm10.setValue(beanAlm.getCol10());
+//			alm17.setValue(beanAlm.getCol17());
+//			alm18.setValue(beanAlm.getCol18());
+//			alm19.setValue(beanAlm.getCol19());
+//			alm20.setValue(beanAlm.getCol20());
+//			alm21.setValue(beanAlm.getCol21());
+//			alm34.setValue(beanAlm.getCol34());
+//			alm35.setValue(beanAlm.getCol35());
+//			alm36.setValue(beanAlm.getCol36());
+//			alm37.setValue(beanAlm.getCol37());
+//			alm38.setValue(beanAlm.getCol38());
+//			alm40.setValue(beanAlm.getCol40());
+//			alm41.setValue(beanAlm.getCol41());
+//			alm42.setValue(beanAlm.getCol42());
 		}
 		beanGen = RestData.getOneRow("CR-ARTICULOS.List-ARTICULOS_CONTROL_STOCK", "CLAVE_ARTICULO="+claveArticulo, UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM, null);
 		if (beanGen != null) {
@@ -277,30 +282,33 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 				col15.setValue(true);
 			else 
 				col15.setValue(false);
-			cols2.setValue(beanGen.getCol2());
-			cols3.setValue(beanGen.getCol3());
-			cols5.setValue(beanGen.getCol5());
-			cols11.setValue(beanGen.getCol11());
-			cols12.setValue(beanGen.getCol12());
-			cols13.setValue(beanGen.getCol13());
-			cols14.setValue(beanGen.getCol14());
-			cols15.setValue(beanGen.getCol15());
-			cols20.setValue(beanGen.getCol20());
-			cols21.setValue(beanGen.getCol21());
-			cols22.setValue(beanGen.getCol22());
-			cols23.setValue(beanGen.getCol23());
-			cols27.setValue(beanGen.getCol27());
-			cols29.setValue(beanGen.getCol29());
-			cols30.setValue(beanGen.getCol30());
-			cols31.setValue(beanGen.getCol31());
-			cols32.setValue(beanGen.getCol32());
-			cols36.setValue(beanGen.getCol36());
-			cols37.setValue(beanGen.getCol37());
-			cols38.setValue(beanGen.getCol38());
-			cols39.setValue(beanGen.getCol39());
-			cols48.setValue(beanGen.getCol48());
-			cols49.setValue(beanGen.getCol49());
-			cols50.setValue(beanGen.getCol50());
+//			cols2.setValue(beanGen.getCol2());
+			Binder<DynamicDBean>  binderACS = new  Binder<DynamicDBean>();
+			binderACS.setBean(beanGen);
+			bindFields(HistogramaEvolMesForm.class, this, binderACS, "cols" );
+//			cols3.setValue(beanGen.getCol3());
+//			cols5.setValue(beanGen.getCol5());
+//			cols11.setValue(beanGen.getCol11());
+//			cols12.setValue(beanGen.getCol12());
+//			cols13.setValue(beanGen.getCol13());
+//			cols14.setValue(beanGen.getCol14());
+//			cols15.setValue(beanGen.getCol15());
+//			cols20.setValue(beanGen.getCol20());
+//			cols21.setValue(beanGen.getCol21());
+//			cols22.setValue(beanGen.getCol22());
+//			cols23.setValue(beanGen.getCol23());
+//			cols27.setValue(beanGen.getCol27());
+//			cols29.setValue(beanGen.getCol29());
+//			cols30.setValue(beanGen.getCol30());
+//			cols31.setValue(beanGen.getCol31());
+//			cols32.setValue(beanGen.getCol32());
+//			cols36.setValue(beanGen.getCol36());
+//			cols37.setValue(beanGen.getCol37());
+//			cols38.setValue(beanGen.getCol38());
+//			cols39.setValue(beanGen.getCol39());
+//			cols48.setValue(beanGen.getCol48());
+//			cols49.setValue(beanGen.getCol49());
+//			cols50.setValue(beanGen.getCol50());
 		}
 	}
 

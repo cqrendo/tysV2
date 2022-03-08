@@ -141,11 +141,22 @@ public class MainLayout extends FlexBoxLayout
 		//				Class.forName(AppConst.MAIN_LAYOUT_CLASS).asSubclass(RouterLayout.class));
 			// 			MainLayout.class);
 			}
+    		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_TREE).isPresent() == false)
+			{
+				configuration.setRoute(AppConst.PAGE_DYNAMIC_TREE, DynamicTreeDisplay.class,
+						this.getClass());	
+		//				Class.forName(AppConst.MAIN_LAYOUT_CLASS).asSubclass(RouterLayout.class));
+			// 			MainLayout.class);
+			}
+
     	} else {
     		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_QGD).isPresent() == false)
     			configuration.setRoute(AppConst.PAGE_DYNAMIC_QGD, DynamicQryGridDisplay.class);
     		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_QG).isPresent() == false)
     			configuration.setRoute(AppConst.PAGE_DYNAMIC_QG, DynamicQryGrid.class);
+      		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_TREE).isPresent() == false)
+    			configuration.setRoute(AppConst.PAGE_DYNAMIC_TREE, DynamicTreeDisplay.class);
+ 
     	}
           addClassName(CLASS_NAME);
         setFlexDirection(FlexDirection.COLUMN);

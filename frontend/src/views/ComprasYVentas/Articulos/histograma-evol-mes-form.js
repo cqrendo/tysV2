@@ -231,7 +231,7 @@ vaadin-chart {
      <fieldset>
       <legend>Almacén</legend>
       <div style="width:300px;">
-       <vaadin-text-field id="alm17" class="verySmall6" label="Meses Calc VM" readonly></vaadin-text-field>
+       <vaadin-integer-field id="alm17" class="verySmall6" label="Meses Calc VM" readonly></vaadin-integer-field>
        <vaadin-text-field id="alm18" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
        <vaadin-text-field id="alm19" class="verySmall6" label="Total Sal VM" readonly></vaadin-text-field>
        <vaadin-text-field id="alm20" class="verySmall6" label="TAM" readonly></vaadin-text-field>
