@@ -1,31 +1,30 @@
 package coop.intergal.tys.ui.views.comprasyventas.articulos;
 
-import com.vaadin.flow.templatemodel.TemplateModel;
-
-import coop.intergal.AppConst;
-import coop.intergal.ui.views.GenericDynamicForm;
-import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
-import coop.intergal.vaadin.rest.utils.DynamicDBean;
-
 import com.vaadin.flow.component.Tag;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.checkbox.Checkbox;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.polymertemplate.EventHandler;
+import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.component.polymertemplate.EventHandler;
-import com.vaadin.flow.component.polymertemplate.Id;
-import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.templatemodel.TemplateModel;
 
+import coop.intergal.AppConst;
 import coop.intergal.ui.components.EsDatePicker;
+import coop.intergal.ui.util.UtilSessionData;
 import coop.intergal.ui.views.DynamicViewGrid;
-import com.vaadin.flow.component.checkbox.Checkbox;
-import com.vaadin.flow.component.combobox.ComboBox;
-import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.button.Button;
+import coop.intergal.ui.views.GenericDynamicForm;
+import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
+import coop.intergal.vaadin.rest.utils.DynamicDBean;
 
 /**
  * A Designer generated component for the articulo-form template.
@@ -320,6 +319,8 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		private DynamicViewGrid dVGrid;
 		@Id("b1")
 		private Button b1;
+//		@Id("tbTab1")
+//		private Tabs tbTab1;
 		public DynamicViewGrid getDVGrid() {
 			return dVGrid;
 		}
@@ -331,6 +332,22 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	/**
      * Creates a new ArticuloForm.
      */
+		@EventHandler
+		 private void handleClickTabStock() {
+			keepSelectedPage("0");			
+		}
+		@EventHandler
+		 private void handleClickTabValores() {
+			keepSelectedPage("1");			
+		}
+		@EventHandler
+		 private void handleClickTabImportes() {
+			keepSelectedPage("2");			
+		}
+		@EventHandler
+		 private void handleClickTabDatos() {
+			keepSelectedPage("3");			
+		}
 	   @EventHandler
 	    private void handleClickTabEvol() {
 	        System.out.println("Click Tab Evol");
@@ -340,7 +357,12 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgEvol.setButtonsRowVisible(false);
 			dgEvol.getGrid().setAllRowsVisible(true);
 			dgEvol.setupGrid(true,true);
+			keepSelectedPage("4");//tbTab1.getSelectedIndex();
 	    }
+		@EventHandler
+		 private void handleClickTabVar() {
+			keepSelectedPage("5");			
+		}
 	   @EventHandler
 	    private void handleClickTabAlter() {
 	        System.out.println("Click Tab Alter");
@@ -350,8 +372,12 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgAlter.setButtonsRowVisible(false);
 			dgAlter.getGrid().setAllRowsVisible(true);
 			dgAlter.setupGrid(true,true);
+			keepSelectedPage("6");//tbTab1.getSelectedIndex();
 	    }
-	   @EventHandler
+
+
+
+	@EventHandler
 	    private void handleClickTabTarif() {
 	        System.out.println("Click Tab Tar.Clie");
 			dgTarif1.setResourceName("CR-ARTICULOS.List-TARIFACLIENTELIN");
@@ -367,6 +393,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgTarif2.setButtonsRowVisible(false);
 			dgTarif2.getGrid().setAllRowsVisible(true);
 			dgTarif2.setupGrid(true,true);
+			keepSelectedPage("7");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
 	    private void handleClickTabAlterOfertas() {
@@ -384,6 +411,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgOferta2.setButtonsRowVisible(false);
 			dgOferta2.getGrid().setAllRowsVisible(true);
 			dgOferta2.setupGrid(true,true);
+			keepSelectedPage("8");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
 	    private void handleClickTabOfProv() {
@@ -394,6 +422,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgOfProv.setButtonsRowVisible(false);
 			dgOfProv.getGrid().setAllRowsVisible(true);
 			dgOfProv.setupGrid(true,true);
+			keepSelectedPage("9");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
 	    private void handleClickTabConsProv() {
@@ -404,6 +433,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgConsProv.setButtonsRowVisible(false);
 			dgConsProv.getGrid().setAllRowsVisible(true);
 			dgConsProv.setupGrid(true,true);
+			keepSelectedPage("10");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
 	    private void handleClickTabColec() {
@@ -414,6 +444,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgColec.setButtonsRowVisible(false);
 			dgColec.getGrid().setAllRowsVisible(true);
 			dgColec.setupGrid(true,true);
+			keepSelectedPage("11");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
 	    private void handleClickTabTrans() {
@@ -431,6 +462,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgTrans2.setButtonsRowVisible(false);
 			dgTrans2.getGrid().setAllRowsVisible(true);
 			dgTrans2.setupGrid(true,true);
+			keepSelectedPage("12");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
 	    private void handleClickTabFicha() {
@@ -441,7 +473,13 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgFicha.setButtonsRowVisible(false);
 			dgFicha.getGrid().setAllRowsVisible(true);
 			dgFicha.setupGrid(true,true);
+			keepSelectedPage("13");//tbTab1.getSelectedIndex();
 	    }
+	   
+	   private void keepSelectedPage(String page) {
+		String key = "ArticuloForm.keepSelectedPage";
+		UtilSessionData.setFormParams(key, page);
+	   }
 
     public ArticuloForm() {
 		super();
@@ -469,7 +507,15 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		super.binder = binder2;
 		if (bean != null)
 			binder.setBean(bean);
-		bindFields(ArticuloForm.class, this);
+//		tbTab1.addSelectedChangeListener(e -> System.out.println("Click Tab "+ e.getSelectedTab()));
+//		handleClickTabAlter();
+//  		if (keepSelectedPage != 0)
+//  			tbTab1.setSelectedIndex(keepSelectedPage);
+		String keepSelectedPage = UtilSessionData.getFormParams("ArticuloForm.keepSelectedPage");
+		if (keepSelectedPage == null)
+			keepSelectedPage = "0";
+		this.getElement().setProperty("page1", keepSelectedPage); // select the last tab that was ckicked
+ 		bindFields(ArticuloForm.class, this);
 		super.setDialogForPick(dialogForPick);
 	}
 	public DdbDataBackEndProvider getDataProvider() {

@@ -150,22 +150,22 @@ fieldset {
 </div>
 <div class="cel" id="cell1">
  <vaadin-tabs selected="{{page1}}" id="tbTab1">
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabStock">
     Stock 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabValores">
     Valores 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabImportes">
     Importes 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabDatos">
     Datos 
   </vaadin-tab>
   <vaadin-tab on-click="handleClickTabEvol">
     Evol.Diaria 
   </vaadin-tab>
-  <vaadin-tab>
+  <vaadin-tab on-click="handleClickTabVar">
     Var 
   </vaadin-tab>
   <vaadin-tab on-click="handleClickTabAlter">
