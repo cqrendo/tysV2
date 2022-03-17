@@ -515,9 +515,35 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		if (keepSelectedPage == null)
 			keepSelectedPage = "0";
 		this.getElement().setProperty("page1", keepSelectedPage); // select the last tab that was ckicked
+		handleClick(keepSelectedPage);
  		bindFields(ArticuloForm.class, this);
 		super.setDialogForPick(dialogForPick);
 	}
+	private void handleClick(String keepSelectedPage) {
+		if (keepSelectedPage.equals("4"))
+			handleClickTabEvol();
+		if (keepSelectedPage.equals("6"))
+			handleClickTabAlter();
+		if (keepSelectedPage.equals("7"))
+			handleClickTabTarif();
+		if (keepSelectedPage.equals("8"))
+			handleClickTabAlterOfertas();
+		if (keepSelectedPage.equals("9"))
+			handleClickTabOfProv();
+		if (keepSelectedPage.equals("10"))
+			handleClickTabConsProv();
+		if (keepSelectedPage.equals("11"))
+			handleClickTabColec() ;
+		if (keepSelectedPage.equals("12"))
+			handleClickTabTrans();
+		if (keepSelectedPage.equals("13"))
+			handleClickTabFicha();
+		
+		
+		
+		
+	}
+
 	public DdbDataBackEndProvider getDataProvider() {
 		return dataProvider;
 	}
