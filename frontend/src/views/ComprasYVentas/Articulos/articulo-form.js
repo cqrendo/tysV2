@@ -288,7 +288,7 @@ fieldset {
      <div style="margin: 0 auto;width: 307px;">
       <div style="width:100%;display:flex;">
        <div style="width:140px;display:inline-block;">
-        <vaadin-text-field id="col24" class="verySmall" label="Clave"></vaadin-text-field>
+        <vaadin-integer-field id="col24" class="verySmall" label="Clave"></vaadin-integer-field>
         <br>
         <vaadin-text-field id="col95" class="verySmall" label="Borrador"></vaadin-text-field>
        </div>
@@ -343,7 +343,7 @@ fieldset {
       <vaadin-text-field id="col76" class="small" label="Prec. corte"></vaadin-text-field>
       <span style="width:32px;display: inline-block;"></span>
       <br>
-      <vaadin-text-field id="col36" class="veryVerySmall" label="Clave"></vaadin-text-field>
+      <vaadin-integer-field id="col36" class="veryVerySmall" label="Clave"></vaadin-integer-field>
       <vaadin-button theme="icon small" aria-label="Add new" style="margin-right:20px; padding:0;">
        <iron-icon icon="lumo:plus"></iron-icon>
       </vaadin-button>
@@ -397,25 +397,25 @@ fieldset {
         <iron-icon icon="lumo:plus"></iron-icon>
        </vaadin-button>
        <vaadin-combo-box id="col20" class="veryVerySmall" label="Clase"></vaadin-combo-box>
-       <vaadin-text-field id="col105" class="veryVerySmall" label="IVA"></vaadin-text-field>
+       <vaadin-integer-field id="col105" class="veryVerySmall" label="IVA"></vaadin-integer-field>
        <vaadin-text-field id="col27" class="veryVerySmall" label="Dest."></vaadin-text-field>
       </div>
       <div>
        <vaadin-text-field id="col110" class="small" label="Info Tarifa"></vaadin-text-field>
        <vaadin-text-field id="col108" class="veryVerySmall" label="UCA"></vaadin-text-field>
-       <vaadin-text-field id="col109" class="veryVerySmall3" label="UxUCA"></vaadin-text-field>
-       <vaadin-text-field id="col122" class="veryVerySmall" label="ULC"></vaadin-text-field>
-       <vaadin-text-field id="col114" class="veryVerySmall3" label="UxULC"></vaadin-text-field>
+       <vaadin-integer-field id="col109" class="veryVerySmall3" label="UxUCA"></vaadin-integer-field>
+       <vaadin-integer-field id="col122" class="veryVerySmall" label="ULC"></vaadin-integer-field>
+       <vaadin-integer-field id="col114" class="veryVerySmall3" label="UxULC"></vaadin-integer-field>
        <vaadin-text-field id="col106" class="veryVerySmall" label="UVA"></vaadin-text-field>
-       <vaadin-text-field id="col107" class="veryVerySmall3" label="UxUVA"></vaadin-text-field>
+       <vaadin-integer-field id="col107" class="veryVerySmall3" label="UxUVA"></vaadin-integer-field>
       </div>
       <div>
        <vaadin-text-field id="col7" class="veryVerySmall3" label="Prov"></vaadin-text-field>
-       <vaadin-text-field id="col120" class="verySmall" label="Cta.P.Tar"></vaadin-text-field>
+       <vaadin-integer-field id="col120" class="verySmall" label="Cta.P.Tar"></vaadin-integer-field>
        <vaadin-button style="margin-right:20px;" id="btProv">
          Prov 
        </vaadin-button>
-       <vaadin-text-field id="col121" class="verySmall" label="Comprador"></vaadin-text-field>
+       <vaadin-integer-field id="col121" class="verySmall" label="Comprador"></vaadin-integer-field>
        <vaadin-text-field id="col104" class="verySmall" label="Peso Teóric"></vaadin-text-field>
        <vaadin-text-field id="col37" class="veryVerySmall3" label="Estac."></vaadin-text-field>
       </div>
@@ -441,7 +441,7 @@ fieldset {
         </div>
        </div>
        <vaadin-text-field id="col38" class="veryVerySmall" label="Tipo"></vaadin-text-field>
-       <vaadin-text-field id="col65" class="veryVerySmall" label="Área"></vaadin-text-field>
+       <vaadin-integer-field id="col65" class="veryVerySmall" label="Área"></vaadin-integer-field>
       </div>
       <div>
        <vaadin-date-picker id="col54" style="margin-left:0;" label="Fecha Recuento 1"></vaadin-date-picker>
@@ -452,7 +452,7 @@ fieldset {
        <vaadin-combo-box id="col69" style="width:100px" label="Unidad Produc."></vaadin-combo-box>
        <vaadin-text-field id="col70" class="verySmall" label="Cant.Prod."></vaadin-text-field>
        <vaadin-integer-field id="col19" class="verySmall5" label="Clave Distrits"></vaadin-integer-field>
-       <vaadin-text-field id="col23" class="verySmall5" label="Clave ferret"></vaadin-text-field>
+       <vaadin-integer-field id="col23" class="verySmall5" label="Clave ferret"></vaadin-integer-field>
       </div>
       <div>
        <vaadin-date-picker id="col96" style="margin-left:0;" label="Fecha Alta"></vaadin-date-picker>

@@ -80,9 +80,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col22")
 	private TextField col22;
 	@Id("col23")
-	private TextField col23;
+	private IntegerField col23;
 	@Id("col24")
-	private TextField col24;
+	private IntegerField col24;
 	@Id("col25")
 	private IntegerField col25;
 	@Id("col26")
@@ -92,7 +92,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col28")
 	private TextField col28;
 	@Id("col36")
-	private TextField col36;
+	private IntegerField col36;
 	@Id("col37")
 	private TextField col37;
 	@Id("col38")
@@ -150,7 +150,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col64")
 	private TextField col64;
 	@Id("col65")
-	private TextField col65;
+	private IntegerField col65;
 	@Id("col66")
 	private TextField col66;
 	@Id("col67")
@@ -226,15 +226,15 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col104")
 	private TextField col104;
 	@Id("col105")
-	private TextField col105;
+	private IntegerField col105;
 	@Id("col106")
 	private TextField col106;
 	@Id("col107")
-	private TextField col107;
+	private IntegerField col107;
 	@Id("col108")
 	private TextField col108;
 	@Id("col109")
-	private TextField col109;
+	private IntegerField col109;
 	@Id("col110")
 	private TextField col110;
 	@Id("col111")
@@ -244,7 +244,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col113")
 	private TextField col113;
 	@Id("col114")
-	private TextField col114;
+	private IntegerField col114;
 	@Id("col115")
 	private TextField col115;
 	@Id("col116")
@@ -256,11 +256,11 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col119")
 	private ComboBox<DynamicDBean> col119;
 	@Id("col120")
-	private TextField col120;
+	private IntegerField col120;
 	@Id("col121")
-	private TextField col121;
+	private IntegerField col121;
 	@Id("col122")
-	private TextField col122;
+	private IntegerField col122;
 	@Id("col123")
 	private TextField col123;
 	@Id("col124")
