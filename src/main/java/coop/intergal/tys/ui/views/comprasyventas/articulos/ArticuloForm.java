@@ -50,11 +50,11 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col3")
 	private TextField col3;
 	@Id("col4")
-	private TextField col4;
+	private IntegerField col4;
 	@Id("col5")
-	private TextField col5;
+	private IntegerField col5;
 	@Id("col6")
-	private TextField col6;
+	private IntegerField col6;
 	@Id("col7")
 	private TextField col7;
 	@Id("col10")

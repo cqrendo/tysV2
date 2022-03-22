@@ -430,18 +430,9 @@ fieldset {
     <fieldset>
      <div style="text-align: left;margin: 0 auto;width: 406px;">
       <div>
-       <vaadin-text-field id="col4" class="veryVerySmall" label="Cap"></vaadin-text-field>
-       <vaadin-button theme="icon" aria-label="">
-        <iron-icon icon="lumo:plus"></iron-icon>
-       </vaadin-button>
-       <vaadin-text-field id="col5" class="veryVerySmall" label="Gru"></vaadin-text-field>
-       <vaadin-button theme="icon" aria-label="">
-        <iron-icon icon="lumo:plus"></iron-icon>
-       </vaadin-button>
-       <vaadin-text-field id="col6" class="veryVerySmall" label="Sub"></vaadin-text-field>
-       <vaadin-button theme="icon" aria-label="">
-        <iron-icon icon="lumo:plus"></iron-icon>
-       </vaadin-button>
+       <vaadin-integer-field id="col4" class="veryVerySmall" label="Cap"></vaadin-integer-field>
+       <vaadin-integer-field id="col5" class="veryVerySmall" label="Gru"></vaadin-integer-field>
+       <vaadin-integer-field id="col6" class="veryVerySmall" label="Sub"></vaadin-integer-field>
        <div style="display: inline-flex;top: -15px;position: relative;font-weight: 500;font-size: 11px;color: #000040;">
         <div style="display: inline-block;line-height: 4px;">
          <span>Web</span>
