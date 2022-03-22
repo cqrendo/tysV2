@@ -451,7 +451,7 @@ fieldset {
       <div>
        <vaadin-combo-box id="col69" style="width:100px" label="Unidad Produc."></vaadin-combo-box>
        <vaadin-text-field id="col70" class="verySmall" label="Cant.Prod."></vaadin-text-field>
-       <vaadin-text-field id="col19" class="verySmall5" label="Clave Distrits"></vaadin-text-field>
+       <vaadin-integer-field id="col19" class="verySmall5" label="Clave Distrits"></vaadin-integer-field>
        <vaadin-text-field id="col23" class="verySmall5" label="Clave ferret"></vaadin-text-field>
       </div>
       <div>
