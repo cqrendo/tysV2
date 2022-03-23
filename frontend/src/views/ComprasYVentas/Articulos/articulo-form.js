@@ -242,7 +242,7 @@ fieldset {
     <fieldset style="width:50%;">
      <legend>Actual</legend>
      <div id="divpage22">
-      <vaadin-text-field id="col13" label="Cantidad"></vaadin-text-field>
+      <vaadin-text-field id="col128" label="Cantidad"></vaadin-text-field>
       <vaadin-text-field id="col48" label="Valor CM"></vaadin-text-field>
       <br>
       <vaadin-text-field id="col49" label="Coste Medio"></vaadin-text-field>

@@ -267,6 +267,8 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private TextField col124;
 	@Id("col125")
 	private TextField col125;
+	@Id("col128")
+	private TextField col128;
 
 	private DdbDataBackEndProvider dataProvider;
 	private DynamicDBean bean;
