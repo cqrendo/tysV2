@@ -120,11 +120,11 @@ public class HistogramaEvolMesForm extends GenericDynamicForm implements BeforeE
 	@Id("alm21")
 	private TextField alm21;
 	@Id("alm34")
-	private TextField alm34;
+	private IntegerField alm34;
 	@Id("alm35")
-	private TextField alm35;
+	private IntegerField alm35;
 	@Id("alm36")
-	private TextField alm36;
+	private IntegerField alm36;
 	@Id("alm37")
 	private TextField alm37;
 	@Id("alm38")

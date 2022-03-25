@@ -166,9 +166,9 @@ vaadin-chart {
 <fieldset style="width: 400px; margin: var(--lumo-space-s); display:inline-block; ">
  <legend>Cálculo x rango</legend>
  <div class="linCampos">
-  <vaadin-text-field id="alm34" class="verySmall7" label="Desde (AAAAMM)" readonly></vaadin-text-field>
-  <vaadin-text-field id="alm35" label="Hasta (AAAAMM)" class="verySmall7" readonly></vaadin-text-field>
-  <vaadin-text-field id="alm36" label="Meses Cálculo" class="verySmall7" readonly></vaadin-text-field>
+  <vaadin-integer-field id="alm34" class="verySmall7" label="Desde (AAAAMM)" readonly></vaadin-integer-field>
+  <vaadin-integer-field id="alm35" label="Hasta (AAAAMM)" class="verySmall7" readonly></vaadin-integer-field>
+  <vaadin-integer-field id="alm36" label="Meses Cálculo" class="verySmall7" readonly></vaadin-integer-field>
  </div>
 </fieldset>
 <div class="cel" id="cell1" style="">
