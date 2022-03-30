@@ -1,14 +1,5 @@
 package coop.intergal.tys.ui.views.maestros.articulos;
 
-import com.vaadin.flow.templatemodel.TemplateModel;
-
-import coop.intergal.AppConst;
-import coop.intergal.tys.ui.views.comprasyventas.compras.PedidoProveedorForm;
-import coop.intergal.ui.views.DynamicGridForPick;
-import coop.intergal.ui.views.GenericDynamicForm;
-import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
-import coop.intergal.vaadin.rest.utils.DynamicDBean;
-
 import java.util.ArrayList;
 
 import com.vaadin.flow.component.Tag;
@@ -16,10 +7,16 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.polymertemplate.Id;
-import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
+import com.vaadin.flow.templatemodel.TemplateModel;
+
+import coop.intergal.AppConst;
+import coop.intergal.ui.views.DynamicGridForPick;
+import coop.intergal.ui.views.GenericDynamicForm;
+import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
+import coop.intergal.vaadin.rest.utils.DynamicDBean;
 
 /**
  * A Designer generated component for the tablasdesc-form template.
@@ -59,7 +56,7 @@ public class TablasdescForm extends GenericDynamicForm implements BeforeEnterObs
 		super.binder = binder2;
 		if (bean != null)
 			binder.setBean(bean);
-		bindFields(PedidoProveedorForm.class, this);
+		bindFields(TablasdescForm.class, this);
 		super.setDialogForPick(dialogForPick);
 	}
 	@Override

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.polymertemplate.Id;
@@ -19,14 +20,15 @@ import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
 import coop.intergal.vaadin.rest.utils.DynamicDBean;
 
 /**
- * A Designer generated component for the clientes-cmando template.
+ * A Designer generated component for the visitas-form template.
  *
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("clientes-cmando")
-@JsModule("./src/views/Maestros/PersonasEntidades/clientes-cmando.js")
-public class ClientesCmando extends GenericDynamicForm implements BeforeEnterObserver {
+@Tag("visitas-form")
+@JsModule("./src/views/Maestros/PersonasEntidades/visitas-form.js")
+@NpmPackage(value = "@polymer/iron-pages", version = "3.0.1")  // when the view uses iron-pages, can be also be indicated in package.json file, but if is delete and regenerate will be loose
+public class VisitasForm extends GenericDynamicForm implements BeforeEnterObserver {
 	/**
 	 * 
 	 */
@@ -43,10 +45,10 @@ public class ClientesCmando extends GenericDynamicForm implements BeforeEnterObs
 	private DdbDataBackEndProvider dataProvider;
 	private ArrayList<String[]> rowsColList;
 
-    /**
-     * Creates a new ClientesCmando.
+	/**
+     * Creates a new VisitasForm.
      */
-    public ClientesCmando() {
+    public VisitasForm() {
 		super();
 		dialogForPick.setWidth(AppConst.DEFAULT_PICK_DIALOG_WITHD);
 		dialogForPick.setHeight(AppConst.DEFAULT_PICK_DIALOG_HEIGHT);
@@ -56,7 +58,7 @@ public class ClientesCmando extends GenericDynamicForm implements BeforeEnterObs
 		super.binder = binder2;
 		if (bean != null)
 			binder.setBean(bean);
-		bindFields(ClientesCmando.class, this);
+		bindFields(VisitasForm.class, this);
 		super.setDialogForPick(dialogForPick);
 	}
 	@Override
@@ -79,11 +81,11 @@ public class ClientesCmando extends GenericDynamicForm implements BeforeEnterObs
 	public void setDataProvider(DdbDataBackEndProvider dataProvider) {
 		this.dataProvider = dataProvider;
 	}
-
+	
     /**
-     * This model binds properties between ClientesCmando and clientes-cmando
+     * This model binds properties between VisitasForm and visitas-form
      */
-    public interface ClientesCmandoModel extends TemplateModel {
+    public interface VisitasFormModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
 }

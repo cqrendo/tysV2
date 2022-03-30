@@ -1,25 +1,22 @@
 package coop.intergal.tys.ui.views.maestros.personasentidades;
 
-import com.vaadin.flow.templatemodel.TemplateModel;
-
-import coop.intergal.AppConst;
-import coop.intergal.tys.ui.views.comprasyventas.compras.PedidoProveedorQuery;
-import coop.intergal.ui.components.QueryButtonsBar;
-import coop.intergal.ui.util.UtilSessionData;
-import coop.intergal.ui.views.DynamicViewGrid;
-import coop.intergal.ui.views.GenericDynamicQuery;
-import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
-import coop.intergal.vaadin.rest.utils.DynamicDBean;
-
 import java.util.ArrayList;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.polymertemplate.Id;
-import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
+import com.vaadin.flow.templatemodel.TemplateModel;
+
+import coop.intergal.AppConst;
+import coop.intergal.ui.components.QueryButtonsBar;
+import coop.intergal.ui.util.UtilSessionData;
+import coop.intergal.ui.views.DynamicViewGrid;
+import coop.intergal.ui.views.GenericDynamicQuery;
+import coop.intergal.vaadin.rest.utils.DdbDataBackEndProvider;
+import coop.intergal.vaadin.rest.utils.DynamicDBean;
 
 /**
  * A Designer generated component for the propaltaclien-query template.
@@ -34,7 +31,7 @@ public class PropaltaclienQuery extends GenericDynamicQuery implements BeforeEnt
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public static final String RESOURCE_NAME = "CR-ped_proveed_cab";
+	public static final String RESOURCE_NAME = "CR-CLIENTES_PROPUESTA";
 	private DynamicViewGrid grid;
 	@Id("title")
 	private H3 title;
@@ -57,19 +54,19 @@ public class PropaltaclienQuery extends GenericDynamicQuery implements BeforeEnt
 		super();
 		super.preConfParam = UtilSessionData.getCompanyYear()+AppConst.PRE_CONF_PARAM;
 		queryButtonsBar.addSearchListener(e -> createFilterFromQryForm());
-		queryButtonsBar.addClearSearchListener(e -> cleanQryForm());//System.out.println("PedidoProveedorQuery.beforeEnter() BUSCAR>>>>"));
+		queryButtonsBar.addClearSearchListener(e -> cleanQryForm());
 	}
 
 	private Object cleanQryForm() {
-		cleanForm(PedidoProveedorQuery.class, this, RESOURCE_NAME, false);
+		cleanForm(PropaltaclienQuery.class, this, RESOURCE_NAME, false);
 		return null;
 	}
 
 	private Object createFilterFromQryForm() {
 		stringFilter = "";
 		keysFromParent = "";
-		String filter = getFieldsDataForFilter(PedidoProveedorQuery.class, this, RESOURCE_NAME);
-		System.out.println("PedidoProveedorQuery.createFilter()...." + filter);
+		String filter = getFieldsDataForFilter(PropaltaclienQuery.class, this, RESOURCE_NAME);
+		System.out.println("PropaltaclienQuery.createFilter()...." + filter);
 		DdbDataBackEndProvider dataProvider = grid.getDataProvider();
 		dataProvider.setFilter(filter);
 		dataProvider.refreshAll();
@@ -91,7 +88,7 @@ public class PropaltaclienQuery extends GenericDynamicQuery implements BeforeEnt
 	public void beforeEnter(BeforeEnterEvent event) {
 		if (bean != null)
 			binder.setBean(bean);
-		queryButtonsBar.addSearchListener(e -> System.out.println("PedidoProveedorQuery.beforeEnter() BUSCAR>>>>"));
+		queryButtonsBar.addSearchListener(e -> System.out.println("PropaltaclienQuery.beforeEnter() BUSCAR>>>>"));
 	}
 
     /**
