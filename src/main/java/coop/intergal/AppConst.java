@@ -75,13 +75,13 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String EMAIL_CLAVE = "Susita123%";
 	public static final String EMAIL_HOST = "smtp.gmail.com";
 	public static final String EMAIL_PORT = "587";
-	public static final String LDAP_BASE = ",ou=anpas,dc=cloud";
+	public static final String LDAP_BASE = ",ou=central,ou=gfer,ou=tys,ou=groups";
 	public static final String COUNT_USED_BY_DB = "COUNT(*)";// depending on DB the result for count is different by example  "count(*)"; para mysql y COUNT(*) para Oracle //
 	public static final String DEFAULT_WIDTH_FORM = "1360px";
 	public static final String DEFAULT_WIDTH_FORM_MONBUS = "1160px"; // change name for apply
 	public static final String DEFAULT_FIELD_HEIGHT = "70px";
 	
-	public static final String TAGS_LIST = "company;user;row";
+	public static final String TAGS_LIST = "company;user;row;ldap";
 	public static final double DEFAULT_SPLIT_POS_QUERY_GRID = 200;
 	public static final double DEFAULT_SPLIT_POS_GRID_DISPLAY = 5;
 	public static final double DEFAULT_SPLIT_POS_DISPLAY_SUBGRID = 50;
@@ -94,6 +94,9 @@ public class AppConst {   // @@ TODO this class for now is copy and represents t
 	public static final String RESOURCES_WITH_USER = "CR-ARTICULOS,CR-PED_PROVEED_CAB";
 	public static final boolean CONFIRM_DELETE = true;
 	public static final String REPORT_PATH = "c:/reports/<<company>>/";
+	public static final String USER_PK = "lOGIN='<<user>>'";
+	public static final String USER_TABLE = "FISCALEURO:USUARIOS";
+	public static final String DEFAULT_COMPANY = "GFER";
 
 //	public static final String FORMAT_FOR_DATETIME = "TO_TIMESTAMP_TZ('#value#','YYYY-MM-DD\"T\"hh24:mi:ss')"; // is use in Oracle, left empty for Mysql
 	

@@ -6,8 +6,11 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+
+import javax.naming.NamingException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,10 +55,12 @@ import coop.intergal.tys.ui.util.LumoStyles;
 import coop.intergal.tys.ui.util.UIUtils;
 import coop.intergal.tys.ui.util.css.Overflow;
 import coop.intergal.tys.ui.views.Home;
+import coop.intergal.ui.security.ldap.LdapClient;
 import coop.intergal.ui.util.UtilSessionData;
 import coop.intergal.ui.views.DynamicQryGrid;
 import coop.intergal.ui.views.DynamicQryGridDisplay;
 import coop.intergal.ui.views.DynamicTreeDisplay;
+import coop.intergal.vaadin.rest.utils.DataService;
 
 @CssImport(value = "./styles/components/charts.css", themeFor = "vaadin-chart", include = "vaadin-chart-default-theme")
 @CssImport(value = "./styles/components/floating-action-button.css", themeFor = "vaadin-button")
@@ -603,6 +608,20 @@ public class MainLayout extends FlexBoxLayout
 //	    String filterMyData = SecurityUtils.getFilterMyData();
 //	    System.out.println("MainLayout.beforeEnter() username " + username + " filterMyData " + filterMyData);
 //	    CustomUser user = UserRepository.findByEmailIgnoreCase(username);;
+//	    System.out.println("UtilSessionData.userHasRole"+UtilSessionData.userHasRole("central"));
+//	    System.out.println("UtilSessionData.isMemberOfOu(central)"+UtilSessionData.userIsMemberOfOU("central"));
+//	    String[] types = {"admin"}; 
+//	    System.out.println("UtilSessionData.userHasAnyOfThisTypes " +UtilSessionData.userHasTypes(types));
+//	    try {
+//	    	Hashtable<String, String> rolesHT = new Hashtable<String, String>();
+//	    	rolesHT.put("employeeType","jefe compras");
+//	    	rolesHT.put("organizationName","GFER");
+//			LdapClient.createLDAPUser("uid=20user"+AppConst.LDAP_BASE, "admin", rolesHT, "apellido", "nombre");
+//			LdapClient.createLDAPUser("uid=user"+AppConst.LDAP_BASE, "admin", rolesHT, "apellido", "nombre" );
+//		} catch (NamingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	    if ( parametersMap.get("apiname") != null)	    	
 	    	apiname = parametersMap.get("apiname").get(0);
 	    else
@@ -617,6 +636,22 @@ public class MainLayout extends FlexBoxLayout
 	    		cache = "false";
 	    }		
 	    UtilSessionData.setCache(cache); // initNaviItems() -> is call from Home
+        String defaultPRE_CONF_PARAM = AppConst.DEFAULT_COMPANY+AppConst.CURRENT_YEAR+AppConst.PRE_CONF_PARAM;
+		String companies = UtilSessionData.getValueFromTableUser("EMPRESA",defaultPRE_CONF_PARAM);
+		UtilSessionData.setCompanies(companies);
+		if (companies.equals("N/A"))
+        {
+        	DataService.get().showError("ERROR -> Usuario no autorizado");
+        }        
+        else if (companies.indexOf(",") == -1) // only one company
+        {
+            String companyYear = companies+AppConst.CURRENT_YEAR;
+            UtilSessionData.setCompanyYear(companyYear);
+            UtilSessionData.setCompany(companies);
+            setTitleLogo(companyYear);
+            initNaviItems();
+         }
+
 //	    if (UtilSessionData.getCompanyYear() != null && UtilSessionData.getCompanyYear().isEmpty() == false) // not menu until company is choose
 //	    {
 //	    	if (naviDrawer.getMenu() == null || naviDrawer.getMenu().getNaviItems().isEmpty())
