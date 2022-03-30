@@ -22,7 +22,7 @@ const baseDir = path.resolve(__dirname);
 // this matches /themes/my-theme/ and is used to check css url handling and file path build.
 const themePartRegex = /(\\|\/)themes\1[\s\S]*?\1/;
 
-const frontendFolder = require('path').resolve(__dirname, './frontend');
+const frontendFolder = require('path').resolve(__dirname, 'frontend');
 
 const fileNameOfTheFlowGeneratedMainEntryPoint = require('path').resolve(__dirname, 'target/frontend/generated-flow-imports.js');
 const mavenOutputFolderForFlowBundledFiles = require('path').resolve(__dirname, 'target/classes/META-INF/VAADIN');
