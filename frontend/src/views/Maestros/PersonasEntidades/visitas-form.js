@@ -1,12 +1,14 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
-import '@vaadin/vaadin-text-field/src/vaadin-integer-field.js';
-import '@vaadin/vaadin-tabs/src/vaadin-tabs.js';
-import '@polymer/iron-pages/iron-pages.js';
-import '@vaadin/vaadin-tabs/src/vaadin-tab.js';
 
-class ProveedoresForm extends PolymerElement {
+/**
+ * `visitas-form`
+ *
+ * VisitasForm element.
+ *
+ * @customElement
+ * @polymer
+ */
+class VisitasForm extends PolymerElement {
 
     static get template() {
         return html`
@@ -131,7 +133,7 @@ class ProveedoresForm extends PolymerElement {
     }
 
     static get is() {
-        return 'proveedores-form';
+        return 'visitas-form';
     }
 
     static get properties() {
@@ -141,4 +143,4 @@ class ProveedoresForm extends PolymerElement {
     }
 }
 
-customElements.define(ProveedoresForm.is, ProveedoresForm);
+customElements.define(VisitasForm.is, VisitasForm);

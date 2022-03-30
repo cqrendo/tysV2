@@ -1,4 +1,4 @@
-package coop.intergal.tys.ui.views.maestros.personasentidades;
+package coop.intergal.tys.ui.views.maestros.articulos;
 
 import com.vaadin.flow.templatemodel.TemplateModel;
 
@@ -13,26 +13,23 @@ import java.util.ArrayList;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
-import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
 import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
-import com.vaadin.flow.component.html.H3;
 
 /**
- * A Designer generated component for the proveedores-form template.
+ * A Designer generated component for the tablasdesc-form template.
  *
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("proveedores-form")
-@JsModule("./src/views/Maestros/PersonasEntidades/proveedores-form.js")
-@NpmPackage(value = "@polymer/iron-pages", version = "3.0.1")  // when the view uses iron-pages, can be also be indicated in package.json file, but if is delete and regenerate will be loose
-public class ProveedoresForm extends GenericDynamicForm implements BeforeEnterObserver {
+@Tag("tablasdesc-form")
+@JsModule("./src/views/Maestros/Articulos/tablasdesc-form.js")
+public class TablasdescForm extends GenericDynamicForm implements BeforeEnterObserver {
 	/**
 	 * 
 	 */
@@ -50,9 +47,9 @@ public class ProveedoresForm extends GenericDynamicForm implements BeforeEnterOb
 	private ArrayList<String[]> rowsColList;
 
 	/**
-     * Creates a new ProveedoresForm.
+     * Creates a new TablasdescForm.
      */
-    public ProveedoresForm() {
+    public TablasdescForm() {
 		super();
 		dialogForPick.setWidth(AppConst.DEFAULT_PICK_DIALOG_WITHD);
 		dialogForPick.setHeight(AppConst.DEFAULT_PICK_DIALOG_HEIGHT);
@@ -85,11 +82,11 @@ public class ProveedoresForm extends GenericDynamicForm implements BeforeEnterOb
 	public void setDataProvider(DdbDataBackEndProvider dataProvider) {
 		this.dataProvider = dataProvider;
 	}
-	
+
     /**
-     * This model binds properties between ProveedoresForm and proveedores-form
+     * This model binds properties between TablasdescForm and tablasdesc-form
      */
-    public interface ProveedoresFormModel extends TemplateModel {
+    public interface TablasdescFormModel extends TemplateModel {
         // Add setters and getters for template properties here.
     }
 }
