@@ -8,6 +8,7 @@ import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
@@ -44,6 +45,9 @@ public class VisitasForm extends GenericDynamicForm implements BeforeEnterObserv
 	private DynamicDBean bean;
 	private DdbDataBackEndProvider dataProvider;
 	private ArrayList<String[]> rowsColList;
+
+	@Id("col3")
+	private TextField col3;
 
 	/**
      * Creates a new VisitasForm.

@@ -1,13 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 
-/**
- * `propaltaclien-query`
- *
- * PropaltaclienQuery element.
- *
- * @customElement
- * @polymer
- */
 class PropaltaclienQuery extends PolymerElement {
 
     static get template() {
@@ -126,9 +118,18 @@ class PropaltaclienQuery extends PolymerElement {
   border-top: none;
 }
     </style>
-<h3 id="title" style="height:0px"></h3>
-<div style="width: 100%; height: 100%;">
-</div>
+<h3 id="title"></h3>
+<vaadin-horizontal-layout theme="" style="width: 100%; height: 100%;">
+ <div class="linCampos" style="width: 5%; height: 10%;float:left;">
+  <query-buttons-bar id="queryButtonsBar"></query-buttons-bar>
+ </div>
+ <div>
+  <div class="linCampos">
+   <vaadin-text-field id="col0" label="xxx" maxlength="2" class="verySmall"></vaadin-text-field>
+   <vaadin-integer-field id="col1" label="Pedido" maxlength="" class="small"></vaadin-integer-field>
+  </div>
+ </div>
+</vaadin-horizontal-layout>
 `;
     }
 

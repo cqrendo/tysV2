@@ -1,13 +1,6 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
-/**
- * `visitas-form`
- *
- * VisitasForm element.
- *
- * @customElement
- * @polymer
- */
 class VisitasForm extends PolymerElement {
 
     static get template() {
@@ -128,7 +121,10 @@ class VisitasForm extends PolymerElement {
     </style>
 <h3 id="title" style="height:0px"></h3>
 <div style="width: 100%; height: 100%;">
+ <vaadin-text-field label="Label" placeholder="Placeholder" id="col3"></vaadin-text-field>
 </div>
+<vaadin-dialog id="dialogForPick"></vaadin-dialog>
+
 `;
     }
 

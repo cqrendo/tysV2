@@ -6,6 +6,7 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.polymertemplate.Id;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.templatemodel.TemplateModel;
@@ -31,7 +32,7 @@ public class VisitasQuery extends GenericDynamicQuery implements BeforeEnterObse
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public static final String RESOURCE_NAME = "CR-KITS";
+	public static final String RESOURCE_NAME = "CR-VISITASCOMERCIALES__Agenda";
 	private DynamicViewGrid grid;
 	@Id("title")
 	private H3 title;
@@ -40,6 +41,8 @@ public class VisitasQuery extends GenericDynamicQuery implements BeforeEnterObse
 	
  	private DynamicDBean bean;
 	private ArrayList<String[]> rowsColList;
+	@Id("col0")
+	private TextField col0;
 	public DynamicViewGrid getGrid() {
 		return grid;
 	}

@@ -129,6 +129,7 @@ class ClientesForm extends PolymerElement {
 <h3 id="title" style="height:0px"></h3>
 <div style="width: 100%; height: 100%;">
 </div>
+<vaadin-dialog id="dialogForPick"></vaadin-dialog>
 `;
     }
 

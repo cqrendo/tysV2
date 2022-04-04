@@ -3,8 +3,9 @@ import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-text-field/src/vaadin-integer-field.js';
 import '@vaadin/vaadin-tabs/src/vaadin-tabs.js';
-import '@polymer/iron-pages/iron-pages.js';
 import '@vaadin/vaadin-tabs/src/vaadin-tab.js';
+import '@polymer/iron-pages/iron-pages.js';
+import '../../admin/products/dynamic-view-grid.js';
 
 class ProveedoresForm extends PolymerElement {
 
@@ -52,12 +53,15 @@ class ProveedoresForm extends PolymerElement {
             }
       .verySmall{
             width: var(--vaadin-text-field-default-width, 4em);  
-/*  				width : 4em;  */
+ 				margin-left: 5px;
+             }  
+      .verySmall2{
+            width: var(--vaadin-text-field-default-width, 2em);  
  				margin-left: 5px;
              }  
       .small{
                 width: var(--vaadin-text-field-default-width, 8em);
-                margin-left: 5px;
+                margin-left: 15px;
             }  
       vaadin-date-picker {
       			width: var(--vaadin-text-field-default-width, 10em);
@@ -124,9 +128,46 @@ class ProveedoresForm extends PolymerElement {
   border-top: none;
 }
     </style>
-<h3 id="title" style="height:0px"></h3>
 <div style="width: 100%; height: 100%;">
+ <div></div>
+ <vaadin-integer-field id="col2" class="verySmall" label="Proveedor"></vaadin-integer-field>
+ <vaadin-text-field label="Nombre" id="col31" class="veryBig"></vaadin-text-field>
+ <vaadin-text-field id="col0" label="DNI o CIF"></vaadin-text-field>
+ <vaadin-text-field label="Tipo Prov." class="verySmall" id="col43" style="width:58px"></vaadin-text-field>
+ <vaadin-text-field id="col48" class="verySmall2" label="Origen" style="margin-right:0; width:40px;"></vaadin-text-field>
+ <vaadin-integer-field id="col49" label=" " style="margin-left: 0;"></vaadin-integer-field>
+ <div>
+  <vaadin-tabs selected="{{page}}">
+   <vaadin-tab selected>
+     Datos 
+   </vaadin-tab>
+   <vaadin-tab>
+     Datos CCS 
+   </vaadin-tab>
+   <vaadin-tab>
+     Avisos Observaciones 
+   </vaadin-tab>
+   <vaadin-tab>
+     Eventos 
+   </vaadin-tab>
+  </vaadin-tabs>
+  <iron-pages selected="[[page]]">
+   <page>
+    <h3>Page ewtert</h3>Hello World 
+   </page>
+   <page>
+    <h3>Page 2</h3>Hi All 
+   </page>
+   <page>
+    <h3>Page 3</h3>Good Morning 
+   </page>
+   <page>
+    <dynamic-grid id="dvgEventos"></dynamic-grid>
+   </page>
+  </iron-pages>
+ </div>
 </div>
+<vaadin-dialog id="dialogForPick"></vaadin-dialog>
 `;
     }
 
