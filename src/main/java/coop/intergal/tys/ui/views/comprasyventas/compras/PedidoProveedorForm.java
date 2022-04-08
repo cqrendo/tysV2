@@ -133,8 +133,8 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	@Id("col24")
 	private TextField col24;
 	
-	@Id("col25")
-	private TextField col25;
+//	@Id("col25")     // sustituido por col40
+//	private TextField col25;
 			
 	@Id("col27")
 	private TextField col27;
@@ -193,6 +193,10 @@ public class PedidoProveedorForm extends GenericDynamicForm implements BeforeEnt
 	
 	@Id("col39")
 	private TextField col39;
+	
+	@Id("col40")
+	private TextField col40;
+
 
 	@Id("dialogForPick")
 	private Dialog dialogForPick;

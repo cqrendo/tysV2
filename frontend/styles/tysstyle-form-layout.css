@@ -29,6 +29,15 @@
 :host(.formMarginL0) {
 	margin-left: 0px;
 }
+:host(.formMarginL10) {
+	margin-left: 10px;
+}
+:host(.formMarginL20) {
+	margin-left: 20px;
+}
+:host(.formMarginL30) {
+	margin-left: 30px;
+}
 :host(.formMarginL50) {
 	margin-left: 50px;
 }

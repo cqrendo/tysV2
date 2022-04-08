@@ -191,7 +191,7 @@ class PedidoProveedorForm extends PolymerElement {
    </vaadin-checkbox>
   </div>
   <div class="lastColumn">
-   <vaadin-text-field id="col25" label="Total" class="Small"></vaadin-text-field>
+   <vaadin-text-field id="col40" label="Total" class="Small"></vaadin-text-field>
   </div>
   <div class="linCampos">
    <vaadin-text-field id="col21" label="Suma Peso" class="verySmall"></vaadin-text-field>
