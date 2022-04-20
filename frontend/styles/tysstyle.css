@@ -6,6 +6,14 @@
 	background-color: darkblue;
 	color: white;
 }
+:host([legend]) { border: 1px solid; }
+:host::before {	
+    content: attr(legend);
+    top: -14px;
+    position: relative;
+    background: white;
+    left: 4px;
+}
 .onlyButtons {
 	overflow: hidden;
 }
@@ -19,3 +27,4 @@
 }  .editable {
     background-color: #b1ffb7;
 }
+	

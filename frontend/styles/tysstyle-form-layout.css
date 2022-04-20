@@ -64,4 +64,13 @@
 }
 :host(.formMarginL400) {
 	margin-left: 400px;
-}	
+}
+:host([legend]) { border: 1px solid; }
+:host::before {	
+    content: attr(legend);
+    top: -14px;
+    position: relative;
+    background: white;
+    left: 4px;
+}
+	
