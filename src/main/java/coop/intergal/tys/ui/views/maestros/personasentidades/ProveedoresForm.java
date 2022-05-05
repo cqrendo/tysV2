@@ -79,11 +79,11 @@ public class ProveedoresForm extends GenericDynamicForm implements BeforeEnterOb
     }
     
     public void setupGridEventos() {
-    	dvgEventos.setResourceName("CR-PROVEEDORES.02List-FormExt__CONTACTOSPROVEEDORES");
+    	dvgEventos.setResourceName("CR-PROVEEDORES.07List-EVENTOSPROVEEDORES");
     	dvgEventos.setFilter("CLAVEPROVEEDOR="+ bean.getCol2());
-    	dvgEventos.setupGrid(false, true); // false es que no es modificable el grid, true que si
-    	dvgEventos.setHasSideDisplay(false);
-    	dvgEventos.setButtonsRowVisible(false);
+    	dvgEventos.setupGrid(true, true); // false es que no es modificable el grid, true que si
+//    	dvgEventos.setHasSideDisplay(false);
+//    	dvgEventos.setButtonsRowVisible(false);
 //    	dvgEventos.getGrid().addSelectionListener(e -> {
 //			if (e.getFirstSelectedItem().isPresent())
 //				showBeanEntidad((DynamicDBean)e.getFirstSelectedItem().get());

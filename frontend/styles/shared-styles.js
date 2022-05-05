@@ -293,7 +293,6 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
         font-size: 11px;
         color: #000040;
         padding: 0 !important;
-        margin: 0 !important;
       }
       [part="label"] {
         color: #000040 !important;
@@ -336,11 +335,11 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
  <dom-module id="vaadin-form-item-tys" theme-for="vaadin-form-item"> 
   <template> 
    <style>
-      [part="label"] {
+    [part="label"] {
         color: #000040 !important;
         font-size:11px !important;
-        height: 16px;
-      }
+        margin: 0 !important;
+    }
     </style> 
   </template> 
  </dom-module>
@@ -393,12 +392,12 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
   <template> 
    <style>
       :host {
-      --lumo-button-size: var(--lumo-size-s) !important;
+		--lumo-button-size: var(--lumo-size-s) !important;
         font-size: 13px !important;
         color: #982e5e !important;
 //        padding: 0 !important;
-//        margin: 4px !important;
-        border-radius: 0 !important;
+        margin-right: 4px !important;
+//        border-radius: 0 !important;
       }
 	:host([theme~="primary"]) {
     	background-color: #c6c6c6 !important;
@@ -483,7 +482,6 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
    <style>
       :host {
 		font-size: 12px !important;
-    	top: 8px;
     	position: relative;
       }
 
