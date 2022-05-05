@@ -333,7 +333,17 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
     </style> 
   </template> 
  </dom-module>
- 
+ <dom-module id="vaadin-form-item-tys" theme-for="vaadin-form-item"> 
+  <template> 
+   <style>
+      [part="label"] {
+        color: #000040 !important;
+        font-size:11px !important;
+        height: 16px;
+      }
+    </style> 
+  </template> 
+ </dom-module>
  <dom-module id="vaadin-text-area-tys" theme-for="vaadin-text-area"> 
   <template> 
    <style>
