@@ -142,7 +142,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col59")
 	private Checkbox col59;
 	@Id("col60")
-	private TextField col60;
+	private IntegerField col60;
 	@Id("col61")
 	private TextField col61;
 	@Id("col62")
@@ -153,8 +153,6 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private TextField col64;
 	@Id("col65")
 	private IntegerField col65;
-	@Id("col66")
-	private TextField col66;
 	@Id("col67")
 	private TextField col67;
 	@Id("col68")
@@ -163,10 +161,6 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private ComboBox<DynamicDBean> col69;
 	@Id("col70")
 	private TextField col70;
-	@Id("col71")
-	private TextField col71;
-	@Id("col72")
-	private TextField col72;
 	@Id("col73")
 	private EsDatePicker col73;
 	@Id("col74")
@@ -210,7 +204,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col94")
 	private TextField col94;
 	@Id("col95")
-	private TextField col95;
+	private IntegerField col95;
 	@Id("col96")
 	private EsDatePicker col96;
 	@Id("col97")
