@@ -517,7 +517,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		this.getElement().setProperty("page1", keepSelectedPage); // select the last tab that was ckicked
 		handleClick(keepSelectedPage);
  		bindFields(ArticuloForm.class, this);
- 		col160.setText(bean.getCol160()); // HTML_Oferta metido en un span
+ 		col160.getElement().setProperty("innerHTML", bean.getCol17()); // HTML_Oferta metido en un span
 		super.setDialogForPick(dialogForPick);
 	}
 	private void handleClick(String keepSelectedPage) {
