@@ -131,7 +131,7 @@ class ArticuloForm extends PolymerElement {
   }
 fieldset {
     color: #29477d;
-    font-size: smaller;
+    font-size: 15px;
     border: 1px solid #4c6ba3;
     width:100%;
 }

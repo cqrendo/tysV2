@@ -564,7 +564,7 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 	    background-color: white !important;
 	    border-bottom: #284c96 10px solid;
 	    color: transparent !important;
-	    background-image: url("/images/logos/tys3.png");
+	    background-image: url("/tys22/images/logos/tys3.png");
 	}
 	[part="description"] {
 		color: #284c96 !important;

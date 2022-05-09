@@ -139,6 +139,12 @@ class ArticuloStockForm extends PolymerElement {
   border: 1px solid #ccc;
   border-top: none;
 }
+fieldset {
+    color: #29477d;
+    font-size: 15px;
+    border: 1px solid #4c6ba3;
+    width:100%;
+}
     </style>
 <h3 id="title" style="height:0px"></h3>
 <fieldset style="display:inline-block;">
