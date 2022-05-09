@@ -147,7 +147,7 @@ fieldset {
 }
     </style>
 <h3 id="title" style="height:0px"></h3>
-<fieldset style="display:inline-block;">
+<fieldset style="display:inline-block;width: 300px;">
  <legend>Entradas</legend>
  <div style="width:200px;">
   <vaadin-text-field id="col0" class="verySmall6" label="Propuestas" readonly></vaadin-text-field>
@@ -156,7 +156,7 @@ fieldset {
   <vaadin-text-field id="col3" class="verySmall6" label="Traslado" readonly></vaadin-text-field>
  </div>
 </fieldset>
-<fieldset style="display:inline-block;">
+<fieldset style="display:inline-block;width: 300px;">
  <legend>Salidas</legend>
  <div style="width:200px;">
   <vaadin-text-field id="col4" class="verySmall6" label="Pdtes. Servir" readonly></vaadin-text-field>
@@ -164,7 +164,7 @@ fieldset {
   <vaadin-text-field id="col6" class="verySmall6" label="Traslado" readonly></vaadin-text-field>
  </div>
 </fieldset>
-<fieldset style="display:inline-block;">
+<fieldset style="display:inline-block;width: 300px;">
  <legend>Stock</legend>
  <div style="width:200px;">
   <vaadin-text-field id="col7" class="verySmall6" label="Iniciales" readonly></vaadin-text-field>

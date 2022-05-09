@@ -147,6 +147,7 @@ fieldset {
  <vaadin-integer-field id="col12" class="verySmall" label="NPV"></vaadin-integer-field>
  <vaadin-integer-field id="col25" class="verySmall" label="Cod Ede"></vaadin-integer-field>
  <vaadin-integer-field id="col26" class="verySmall" label="SubCod Ede"></vaadin-integer-field>
+ <span inner-h-t-m-l=[[item.HTML]] id="col160"></span>
 </div>
 <div class="cel" id="cell1">
  <vaadin-tabs selected="{{page1}}" id="tbTab1">
@@ -282,43 +283,43 @@ fieldset {
       <vaadin-text-field id="col103" label="Mod Trf Auto" class="small"></vaadin-text-field>
      </div>
     </fieldset>
-    <fieldset style="min-width:360px;width:360px;">
+    <fieldset style="min-width:445px;width:445px;">
      <legend>Descuentos</legend>
      <div style="margin: 0 auto;">
       <div style="width:100%;display:flex;">
-       <div style="width:165px;display:inline-block;">
+       <div style="width:176px;display:inline-block;">
         <vaadin-integer-field id="col24" class="verySmall" label="Clave" style="width:70px;"></vaadin-integer-field>
-        <vaadin-text-field id="col95" class="verySmall" label="Borrador" style="width:70px;"></vaadin-text-field>
+        <vaadin-integer-field id="col95" class="verySmall" label="Borrador" style="width:70px;"></vaadin-integer-field>
        </div>
-       <fieldset style="width:157px;display: inline-flex;">
+       <fieldset style="min-width:240px;width:240px;display: inline-flex;">
         <legend>Descuentos</legend>
-        <vaadin-text-field id="col78" class="verySmall" label="Contable"></vaadin-text-field>&nbsp; 
-        <vaadin-text-field id="col83" class="verySmall" label="Comercial"></vaadin-text-field>
+        <vaadin-text-field id="col78" style="width:100px;" label="Contable"></vaadin-text-field>&nbsp; 
+        <vaadin-text-field id="col83" style="width: 100px;" label="Comercial"></vaadin-text-field>
        </fieldset>
       </div>
       <div style="width:100%;display:flex;">
-       <fieldset style="width:203px;min-width:203px;display: inline-block;text-align: left;">
-        <legend style="font-size:11px;">&nbsp; &nbsp;(A)Dtos.&nbsp; (B)Boni.&nbsp; (C)Rap.&nbsp; (D)Incr.</legend>
+       <fieldset style="width:285px;min-width:285px;display: inline-block;text-align: left;">
+        <legend style="font-size:11px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A)Dctos.&nbsp;&nbsp;&nbsp;&nbsp;(B)Bonific.&nbsp;&nbsp;(C)Rappels&nbsp;(D)Increm.</legend>
         1&nbsp; 
-        <vaadin-text-field id="col85" class="veryVerySmall"></vaadin-text-field>
-        <vaadin-text-field id="col89" class="veryVerySmall"></vaadin-text-field>
-        <vaadin-text-field id="col92" class="veryVerySmall"></vaadin-text-field>
-        <vaadin-text-field id="col123" class="veryVerySmall"></vaadin-text-field>
+        <vaadin-text-field id="col85" style="width: 52px;"></vaadin-text-field>
+        <vaadin-text-field id="col89" style="width: 52px;"></vaadin-text-field>
+        <vaadin-text-field id="col92" style="width: 52px;"></vaadin-text-field>
+        <vaadin-text-field id="col123" style="width: 52px;"></vaadin-text-field>
         <br> 2&nbsp; 
-        <vaadin-text-field id="col86" class="veryVerySmall"></vaadin-text-field>
-        <vaadin-text-field id="col90" class="veryVerySmall"></vaadin-text-field>
-        <vaadin-text-field id="col93" class="veryVerySmall"></vaadin-text-field>
-        <vaadin-text-field id="col124" class="veryVerySmall"></vaadin-text-field>
+        <vaadin-text-field id="col86" style="width: 52px;"></vaadin-text-field>
+        <vaadin-text-field id="col90" style="width: 52px;"></vaadin-text-field>
+        <vaadin-text-field id="col93" style="width: 52px;"></vaadin-text-field>
+        <vaadin-text-field id="col124" style="width: 52px;"></vaadin-text-field>
         <br> 3&nbsp; 
-        <vaadin-text-field id="col87" class="veryVerySmall"></vaadin-text-field>
-        <vaadin-text-field id="col91" class="veryVerySmall"></vaadin-text-field>
+        <vaadin-text-field id="col87" style="width: 52px;"></vaadin-text-field>
+        <vaadin-text-field id="col91" style="width: 52px;"></vaadin-text-field>
         <br> 4&nbsp; 
-        <vaadin-text-field id="col88" class="veryVerySmall"></vaadin-text-field>
+        <vaadin-text-field id="col88" style="width: 52px;"></vaadin-text-field>
        </fieldset>
        <fieldset style="width:115px;display: inline-block;">
         <legend>Patrón</legend>
         <div style="text-align: left;margin-left: 2px;font-size: 16px;">
-         <span style="color: white;">A &nbsp; &nbsp;&nbsp; B &nbsp; C &nbsp;D</span>
+         <span style="color: #000040;">A &nbsp; &nbsp;&nbsp; B &nbsp; C &nbsp;D</span>
          <br>
          <span style="color: #000040;">12341231212 </span>
         </div>
@@ -327,7 +328,7 @@ fieldset {
       </div>
      </div>
     </fieldset>
-    <fieldset style="min-width: 265px;width: 265px;">
+    <fieldset style="min-width: 235px;width: 235px;text-align: left;">
      <legend>Precios</legend>
      <div>
       <vaadin-text-field id="col58" style="width: 100px;" label="Intercambio"></vaadin-text-field>
@@ -339,16 +340,13 @@ fieldset {
       <vaadin-text-field id="col52" style="width: 100px;" label="PVP"></vaadin-text-field>
       <vaadin-text-field id="col57" style="width: 100px;" label=" "></vaadin-text-field>
       <br>
-      <vaadin-text-field id="col76" style="width: 100px;" label="Precio Corte"></vaadin-text-field>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <vaadin-button id="btDetalle" style="top: 4px;">+ detalle</vaadin-button>
-      
+      <vaadin-text-field id="col76" style="width: 100px;" label="Precio Corte"></vaadin-text-field>  
       <br>
       <vaadin-integer-field id="col36" style="width: 100px;" label="Clave" style="width:70px;"></vaadin-integer-field>
-      <vaadin-text-field id="col60" style="width: 100px;" label="Borrador" style="width:70px;"></vaadin-text-field>
+      <vaadin-integer-field id="col60" style="width: 100px;" label="Borrador" style="width:70px;"></vaadin-integer-field>
      </div>
     </fieldset>
-    <fieldset style="min-width: 325px; width: 325px;">
+    <fieldset style="min-width: 235px; width: 235px;">
      <legend>Precios Tienda</legend>
      <div>
       <vaadin-text-field id="col63" style="width: 100px;" label="Mínimo"></vaadin-text-field>
@@ -360,20 +358,16 @@ fieldset {
       <vaadin-text-field id="col74" style="width: 100px;" label="Objetivo"></vaadin-text-field>
       <vaadin-text-field id="col75" style="width: 100px;" label=" "></vaadin-text-field>
       <br>
-      <fieldset style="width: 300px;">
-       <legend>PVP</legend>
-       <div>
-        <span style="color:red;">Gal</span>
-        <vaadin-text-field id="col67" style="width: 100px;"></vaadin-text-field>
-        <vaadin-text-field id="col66" class="veryVerySmall"></vaadin-text-field>
-        <vaadin-text-field id="col68" style="width: 100px;"></vaadin-text-field>
-        <br>
-        <span style="color:red;">Hos</span>
-        <vaadin-text-field id="col72" style="width: 100px;"></vaadin-text-field>
-        <vaadin-text-field id="col71" class="veryVerySmall"></vaadin-text-field>
-        <vaadin-text-field style="width: 100px;"></vaadin-text-field>Falta el col
-       </div>
-      </fieldset>
+      <vaadin-text-field id="col67" style="width: 100px;" label="PVP"></vaadin-text-field>
+      <vaadin-text-field id="col68" style="width: 100px;"></vaadin-text-field>
+      <br>
+      <span style="width:100%;text-align:center;"><vaadin-button id="btDetalle" style="top: 4px;">+ detalle</vaadin-button></span>
+
+
+
+
+
+
      </div>
     </fieldset>
    </div>

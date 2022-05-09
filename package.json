@@ -1,4 +1,6 @@
 {
+  "name": "no-name",
+  "license": "UNLICENSED",
   "dependencies": {
     "@polymer/iron-a11y-announcer": "3.0.2",
     "@polymer/iron-a11y-keys-behavior": "3.0.1",
@@ -10,7 +12,7 @@
     "@polymer/iron-media-query": "3.0.1",
     "@polymer/iron-meta": "3.0.1",
     "@polymer/iron-overlay-behavior": "3.0.3",
-    "@polymer/iron-pages": "^3.0.1",
+    "@polymer/iron-pages": "3.0.1",
     "@polymer/iron-resizable-behavior": "3.0.1",
     "@polymer/iron-scroll-target-behavior": "3.0.1",
     "@polymer/polymer": "3.2.0",
@@ -89,8 +91,6 @@
     "webpack-dev-server": "3.11.0",
     "webpack-merge": "4.2.2"
   },
-  "license": "UNLICENSED",
-  "name": "no-name",
   "vaadin": {
     "dependencies": {
       "@polymer/iron-a11y-announcer": "3.0.2",
@@ -182,6 +182,6 @@
       "webpack-dev-server": "3.11.0",
       "webpack-merge": "4.2.2"
     },
-    "hash": "540f10b5c004c7e1d21d64910ea7c3d9a73ef3e5249d4281a48de046177dcba2"
+    "hash": "7e2884c0fd1120b1022030437d2e415108ccf827d32484a396588a0a77c567a4"
   }
 }

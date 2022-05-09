@@ -7,12 +7,14 @@ import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.polymertemplate.EventHandler;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
+import com.vaadin.flow.data.renderer.TemplateRenderer;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
@@ -269,6 +271,8 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private TextField col125;
 	@Id("col128")
 	private TextField col128;
+	@Id("col160")
+	private Span col160;
 
 	private DdbDataBackEndProvider dataProvider;
 	private DynamicDBean bean;
@@ -519,6 +523,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		this.getElement().setProperty("page1", keepSelectedPage); // select the last tab that was ckicked
 		handleClick(keepSelectedPage);
  		bindFields(ArticuloForm.class, this);
+ 		col160.setText(bean.getCol160()); // HTML_Oferta metido en un span
 		super.setDialogForPick(dialogForPick);
 	}
 	private void handleClick(String keepSelectedPage) {
