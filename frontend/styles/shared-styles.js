@@ -591,6 +591,15 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
     </style>
   </template>
 </dom-module>
+<dom-module id="dynamic-qry-grid-tys" theme-for="dynamic-qry-grid"> 
+  <template> 
+   <style>
+    #divQuery {
+    	background: #e0e4eb !important;
+    }
+    </style>
+  </template>
+</dom-module>
  <custom-style> 
   <style>
     @keyframes v-progress-start {

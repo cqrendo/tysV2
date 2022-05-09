@@ -282,11 +282,11 @@ fieldset {
       <vaadin-text-field id="col103" label="Mod Trf Auto" class="small"></vaadin-text-field>
      </div>
     </fieldset>
-    <fieldset style="min-width:350px;width:350px;">
+    <fieldset style="min-width:360px;width:360px;">
      <legend>Descuentos</legend>
      <div style="margin: 0 auto;">
       <div style="width:100%;display:flex;">
-       <div style="width:161px;display:inline-block;">
+       <div style="width:165px;display:inline-block;">
         <vaadin-integer-field id="col24" class="verySmall" label="Clave" style="width:70px;"></vaadin-integer-field>
         <vaadin-text-field id="col95" class="verySmall" label="Borrador" style="width:70px;"></vaadin-text-field>
        </div>
@@ -297,8 +297,9 @@ fieldset {
        </fieldset>
       </div>
       <div style="width:100%;display:flex;">
-       <fieldset style="width:199px;display: inline-block;text-align: left;">
-        <legend style="font-size: smaller;">&nbsp; &nbsp; (A)Dtos.&nbsp; (B)Boni.&nbsp; (C)Rap.&nbsp; (D)Incr.</legend> 1&nbsp; 
+       <fieldset style="width:203px;min-width:203px;display: inline-block;text-align: left;">
+        <legend style="font-size:11px;">&nbsp; &nbsp;(A)Dtos.&nbsp; (B)Boni.&nbsp; (C)Rap.&nbsp; (D)Incr.</legend>
+        1&nbsp; 
         <vaadin-text-field id="col85" class="veryVerySmall"></vaadin-text-field>
         <vaadin-text-field id="col89" class="veryVerySmall"></vaadin-text-field>
         <vaadin-text-field id="col92" class="veryVerySmall"></vaadin-text-field>
