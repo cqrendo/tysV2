@@ -134,9 +134,9 @@ class HistogramaEvolMesForm extends PolymerElement {
     width:100%;
   }
 fieldset {
-    color: #9a3261;
+    color: #29477d;
     font-size: smaller;
-    border: 1px solid #9a3261;
+    border: 1px solid #4c6ba3;
     width:100%;
 }
 /* Style las lineas de las gráficas */
@@ -163,7 +163,7 @@ vaadin-chart {
   </vaadin-button>
  </div>
 </fieldset>
-<fieldset style="width: 400px; margin: var(--lumo-space-s); display:inline-block; ">
+<fieldset style="width: 440px; margin: var(--lumo-space-s); display:inline-block; ">
  <legend>Cálculo x rango</legend>
  <div class="linCampos">
   <vaadin-integer-field id="alm34" class="verySmall7" label="Desde (AAAAMM)" readonly></vaadin-integer-field>
@@ -231,7 +231,7 @@ vaadin-chart {
      <fieldset>
       <legend>Almacén</legend>
       <div style="width:300px;">
-       <vaadin-integer-field id="alm17" class="verySmall6" label="Meses Calc VM" readonly></vaadin-integer-field>
+       <vaadin-integer-field id="alm17" style="width:96px;" label="Meses Calc VM" readonly></vaadin-integer-field>
        <vaadin-text-field id="alm18" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
        <vaadin-text-field id="alm19" class="verySmall6" label="Total Sal VM" readonly></vaadin-text-field>
        <vaadin-text-field id="alm20" class="verySmall6" label="TAM" readonly></vaadin-text-field>

@@ -314,12 +314,4 @@ $_documentContainer.innerHTML = `<dom-module id="dynamic-grid-tys" theme-for="va
 
 document.head.appendChild($_documentContainer.content);
 
-/* Theme for the vaadin-grid */
-/* shared styles for all views */
-/*
-  FIXME(polymer-modulizer): the above comments were extracted
-  from HTML and may be out of place here. Review them and
-  then delete this comment!
-*/
-;
 

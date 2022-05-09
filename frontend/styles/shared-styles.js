@@ -256,7 +256,8 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 	[part~="header-cell"] ::slotted(vaadin-grid-cell-content), [part~="footer-cell"] ::slotted(vaadin-grid-cell-content), [part~="reorder-ghost"] {
 	    font-size: 12px;
 	    font-weight: 800;
-	    background: #a4a5dd !important;
+//	    background: #a4a5dd !important;
+	    background: #4c6ba3 !important;
 	    color: white;
 	    padding: 0 3px;
 	    margin: 0;
@@ -270,11 +271,13 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 	    min-height: 30px;
 	}
 	[part~="cell"] {
-	    background-color: #dddddd;
+//	    background-color: #dddddd;
+	    background-color: #eaeaea;
 	    border-right: 1px solid #c9cdd1;
 	}
 		[part~="header-cell"] {	
-		  background: #a4a5dd !important;
+//		  background: #a4a5dd !important;
+		  background: #4c6ba3 !important;
 	}
 	:host(:not([theme~="no-row-borders"])) [part="row"]:last-child [part~="header-cell"] {
     	border: #c9cdd1 1px solid;
@@ -324,7 +327,7 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 	:host([readonly]) [part="input-field"] {
 	    color: var(--lumo-secondary-text-color);
 	    cursor: default;
-	    background: #ffffc1 !important;
+	    background: #ffffe4 !important;
 	}
 	:host([readonly]) [part="input-field"]::after {
 	    border: none !important;
@@ -379,7 +382,7 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 	:host([readonly]) [part="input-field"] {
 	    color: var(--lumo-secondary-text-color);
 	    cursor: default;
-	    background: #ffffc1 !important;
+	    background: #ffffe4 !important;
 	}
 	:host([readonly]) [part="input-field"]::after {
 	    border: none !important;
@@ -400,7 +403,8 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 //        border-radius: 0 !important;
       }
 	:host([theme~="primary"]) {
-    	background-color: #c6c6c6 !important;
+//    	background-color: #c6c6c6 !important;
+    	background-color: #acbcd9 !important;
     }
     :host([theme~="titulomenu"]:hover)::before {
 		opacity: 0;
@@ -411,19 +415,33 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
     :host([theme~="entradamenu"]:hover) {
 		cursor: pointer;
 	}
+//    :host([theme~="titulomenu"]) {
+//        width: 100%;
+//		background: transparent;
+//		color: black !important;
+//    }
     :host([theme~="titulomenu"]) {
         width: 100%;
-		background: transparent;
-		color: black !important;
+		background: #4c6ba3;
+		color: white !important;
+		border-bottom: none !important;
+		border-radius: 0;
     }
     :host([theme~="titulomenu"]) .vaadin-button-container {
         justify-content: left !important;
     	font-size: 20px;
     }
+//    :host([theme~="entradamenu"]) {
+//		background: transparent;
+//		height: 10px;
+//		line-height: 10px;
+//	}
     :host([theme~="entradamenu"]) {
 		background: transparent;
-		height: 10px;
-		line-height: 10px;
+		height: 4px;
+		line-height: 4px;
+		margin-left: 10px;
+		border-left: 10px solid #4c6ba3 !important;
 	}
     :host([theme~="t-green"]) {
 		border-bottom: solid 7px darkgreen;
@@ -501,8 +519,10 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
 	  }
       :host([selected]){
 		font-size: 14px !important;
-      	color: #515151 !important;
-      	background: #f7f7f7;
+//      	color: #515151 !important;
+//      	background: #f7f7f7;
+      	color: #4c6ba3 !important;
+      	background: #e4eaf1;
       }
     </style> 
   </template> 
@@ -534,6 +554,40 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
       :host([height-by-rows]) #outerscroller {
         overflow: hidden;
       }
+    </style>
+  </template>
+</dom-module>
+<dom-module id="vaadin-login-overlay-wrapper-tys" theme-for="vaadin-login-overlay-wrapper"> 
+  <template> 
+   <style>
+	[part="brand"] {
+	    background-color: white !important;
+	    border-bottom: #284c96 10px solid;
+	    color: transparent !important;
+	    background-image: url("/images/logos/tys3.png");
+	}
+	[part="description"] {
+		color: #284c96 !important;
+		text-align: center;
+	}
+    </style>
+  </template>
+</dom-module>
+<dom-module id="vaadin-login-form-wrapper-tys" theme-for="vaadin-login-form-wrapper"> 
+  <template> 
+   <style>
+   :host {
+		background: #f0f0ee !important;
+	}
+    </style>
+  </template>
+</dom-module>
+<dom-module id="dynamic-qry-grid-display-tys" theme-for="dynamic-qry-grid-display"> 
+  <template> 
+   <style>
+    #divQuery {
+    	background: #e0e4eb !important;
+    }
     </style>
   </template>
 </dom-module>
@@ -616,28 +670,11 @@ $_documentContainer.innerHTML = `<dom-module id="bakery-dialog-overlay-theme" th
     
     
     body {
-	    color: #000040 !important;
-	    background: #f0f0f0 !important;
+	    color: #29477d !important;
+//	    background: #f0f0f0 !important;
+	    background: #f9f9f9 !important;
 	}
-	[part="brand"] {
-	    padding: var(--lumo-space-l) var(--lumo-space-xl) var(--lumo-space-l) var(--lumo-space-l);
-	    background-color: white;
-	    border-bottom: #284c96 10px solid;
-	    color: transparent !important;
-	    background-image: url("/images/logos/tys3.png");
-	}
-
   </style> 
  </custom-style>`;
 
 document.head.appendChild($_documentContainer.content);
-
-/* Theme for the vaadin-grid */
-/* shared styles for all views */
-/*
-  FIXME(polymer-modulizer): the above comments were extracted
-  from HTML and may be out of place here. Review them and
-  then delete this comment!
-*/
-;
-

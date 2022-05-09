@@ -130,9 +130,9 @@ class HistogramaForm extends PolymerElement {
     width:100%;
   }
 fieldset {
-    color: #9a3261;
+    color: #29477d;
     font-size: smaller;
-    border: 1px solid #9a3261;
+    border: 1px solid #4c6ba3;
     width:100%;
 }
 /* Style las lineas de las gráficas */
@@ -209,7 +209,7 @@ vaadin-chart {
   </vaadin-tabs>
   <iron-pages selected="[[page1]]">
    <page>
-    <div style="width:200px;">
+    <div style="width:230px;">
      <vaadin-text-field id="alm6" class="verySmall6" label="Venta Media" readonly></vaadin-text-field>
      <vaadin-text-field id="alm7" class="verySmall6" label="Total Salidas VM" readonly></vaadin-text-field>
      <vaadin-text-field id="alm9" class="verySmall6" label="TAM" readonly></vaadin-text-field>
@@ -217,7 +217,7 @@ vaadin-chart {
     </div>
    </page>
    <page>
-    <div style="width:200px;">
+    <div style="width:230px;">
      <vaadin-text-field id="col5" class="verySmall6" label="Venta Media"></vaadin-text-field>
      <vaadin-text-field id="col6" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
      <vaadin-text-field id="col7" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>
@@ -225,7 +225,7 @@ vaadin-chart {
     </div>
    </page>
    <page>
-    <div style="width:200px;">
+    <div style="width:230px;">
      <vaadin-text-field id="col8" class="verySmall6" label="Venta Media"></vaadin-text-field>
      <vaadin-text-field id="col9" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
      <vaadin-text-field id="col10" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>
@@ -233,7 +233,7 @@ vaadin-chart {
     </div>
    </page>
    <page>
-    <div style="width:200px;">
+    <div style="width:230px;">
      <vaadin-text-field id="col12" class="verySmall6" label="Venta Media"></vaadin-text-field>
      <vaadin-text-field id="col13" class="verySmall6" label="Stock Mínimo"></vaadin-text-field>
      <vaadin-text-field id="col14" class="verySmall6" label="Cantidad a Pedir"></vaadin-text-field>

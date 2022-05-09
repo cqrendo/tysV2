@@ -135,14 +135,17 @@
 	padding-bottom:20px;
 }			
 :host([legend]) { 
-	border: 1px solid #a2436e; 
+/* 	border: 1px solid #a2436e; */
+	border: 1px solid #4c6ba3; 
 	}
 :host::before {	
     content: attr(legend);
     position: relative;
 	top: -15px;
-	background: #f0f0f0;
+/* 	background: #f0f0f0; */
+	background: #f9f9f9;
 	left: 4px;
     font-size: 15px;
+    color: #29477d;
 }
 	

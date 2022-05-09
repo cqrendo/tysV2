@@ -79,7 +79,7 @@
 --lumo-secondary-text-color: green;
 }
 :host(.fieldInAGroup) {
-	top: -13px;
+	top: -11px;
 	position: relative;
 }
 vaadin-form-item {

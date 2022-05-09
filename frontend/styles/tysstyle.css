@@ -28,6 +28,6 @@
 :host(.editable-custom-effect) [part~="editable-cell"] {
   background: var(--lumo-contrast-5pct);
 }  .editable {
-    background-color: #b1ffb7;
+    background-color: #adcef9;
 }
 	
