@@ -387,7 +387,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgTarif1.getGrid().setAllRowsVisible(true);
 			dgTarif1.setupGrid(true,true);
 			
-			dgTarif2.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__TARIFACLIENTE");
+			dgTarif2.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__TARIFACLIENTE_SF");
 			dgTarif2.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgTarif2.getElement().getStyle().set("display", "block");
 			dgTarif2.setButtonsRowVisible(false);
@@ -398,7 +398,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	   @EventHandler
 	    private void handleClickTabAlterOfertas() {
 	        System.out.println("Click Tab ofertas");
-			dgOferta1.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__SINCLIENTE");
+			dgOferta1.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__SINCLIENTE_SF");
 			dgOferta1.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgOferta1.getElement().getStyle().set("display", "block");
 			dgOferta1.setButtonsRowVisible(false);
@@ -517,7 +517,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		this.getElement().setProperty("page1", keepSelectedPage); // select the last tab that was ckicked
 		handleClick(keepSelectedPage);
  		bindFields(ArticuloForm.class, this);
- 		col160.getElement().setProperty("innerHTML", bean.getCol17()); // HTML_Oferta metido en un span
+ 		col160.getElement().setProperty("innerHTML", bean.getCol160()); // HTML_Oferta metido en un span
 		super.setDialogForPick(dialogForPick);
 	}
 	private void handleClick(String keepSelectedPage) {
