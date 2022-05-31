@@ -221,8 +221,8 @@ fieldset {
       <vaadin-text-field id="col14" label="Pendiente Recibir" style="width: 110px;"></vaadin-text-field>
       <br>
       <vaadin-text-field id="col16" label="Cantidad Neta a Pedir" style="width: 110px;"></vaadin-text-field>
-      <vaadin-combo-box id="col117" label="Plazo Entrega" style="width: 110px;"></vaadin-combo-box>
-      <vaadin-text-field id="col51" label="Int. Pedido" style="width: 110px;"></vaadin-text-field>
+      <vaadin-combo-box id="col134" label="Plazo Entrega" style="width: 110px;"></vaadin-combo-box>
+      <vaadin-text-field id="col161" label="Int. Pedido" style="width: 110px;"></vaadin-text-field>
      </div>
     </fieldset>
    </div>
@@ -294,7 +294,7 @@ fieldset {
        <fieldset style="min-width:240px;width:240px;display: inline-flex;">
         <legend>Descuentos</legend>
         <vaadin-text-field id="col78" style="width:100px;" label="Contable"></vaadin-text-field>&nbsp; 
-        <vaadin-text-field id="col83" style="width: 100px;" label="Comercial"></vaadin-text-field>
+        <vaadin-text-field id="col83" style="width: 100px;" label="Comercial"></vaadin-text-field7
        </fieldset>
       </div>
       <div style="width:100%;display:flex;">

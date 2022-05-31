@@ -30,7 +30,13 @@ public class Person {
         this.lastModified = lastModified;
     }
 
-    public Long getId() {
+    public Person(int i, String string, String string2, String string3, String string4) {
+        this.firstName = string2;
+        this.lastName = string3;
+        this.email = string4;
+	}
+
+	public Long getId() {
         return id;
     }
 

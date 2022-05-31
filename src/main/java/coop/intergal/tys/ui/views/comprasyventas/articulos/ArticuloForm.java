@@ -123,8 +123,7 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private TextField col49;
 	@Id("col50")
 	private TextField col50;
-	@Id("col51")
-	private TextField col51;
+	
 	@Id("col52")
 	private TextField col52;
 	@Id("col53")
@@ -181,6 +180,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private TextField col81;
 	@Id("col82")
 	private TextField col82;
+	@Id("col83")
+	private TextField col83;
+
 	@Id("col84")
 	private TextField col84;
 	@Id("col85")
@@ -245,8 +247,8 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private TextField col115;
 	@Id("col116")
 	private TextField col116;
-	@Id("col117")
-	private ComboBox<DynamicDBean> col117;
+	@Id("col134")
+	private ComboBox<DynamicDBean> col134;
 	@Id("col118")
 	private TextField col118;
 	@Id("col119")
@@ -263,10 +265,15 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private TextField col124;
 	@Id("col125")
 	private TextField col125;
+//	@Id("col126")
+//	private TextField col126;
+
 	@Id("col128")
 	private TextField col128;
 	@Id("col160")
 	private Span col160;
+	@Id("col161")
+	private TextField col161;
 
 	private DdbDataBackEndProvider dataProvider;
 	private DynamicDBean bean;
