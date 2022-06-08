@@ -22,21 +22,28 @@ class DynamicTreeDisplay extends PolymerElement {
 }
 </style>
 <div id="divQuery" style="flex:none"></div>
-<div>
- <vaadin-split-layout id="gridSplitDisplay" style="height: 99%;">
-  <div id="divTree">
+<vaadin-horizontal-layout>
+ <div id="divExporter"></div>
+ <div id="itemButtons">
+  <vaadin-button id="newRow" theme="icon" on-click="_hideQuery">
+   <iron-icon icon="lumo:plus"></iron-icon>
+  </vaadin-button>
+  <vaadin-button id="deleteRow" theme="icon">
+   <iron-icon icon="lumo:cross"></iron-icon>
+  </vaadin-button>
+ </div>
+</vaadin-horizontal-layout>
+<div id="divTree"></div>
+<div id="divDisplayAndSubgrids">
+ <vaadin-split-layout orientation="vertical">
+  <div>
+   <form-buttons-bar id="buttons"></form-buttons-bar>
+   <div id="divDisplay"></div>
   </div>
-  <div id="divDisplayAndSubgrids">
-   <vaadin-split-layout orientation="vertical">
-    <div>
-     <form-buttons-bar id="buttons"></form-buttons-bar>
-     <div id="divDisplay"></div>
-    </div>
-    <div id="divSubGrid" style="flex: 1 1 667px;"></div>
-   </vaadin-split-layout>
-  </div>
+  <div id="divSubGrid" style="flex: 1 1 667px;"></div>
  </vaadin-split-layout>
 </div>
+<vaadin-grid-pro id="grid" column-reordering-allowed="" style="display:none"></vaadin-grid-pro>
 `;
   }
 

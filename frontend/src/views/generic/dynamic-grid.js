@@ -33,7 +33,8 @@ class DynamicGrid extends PolymerElement {
   </vaadin-button>
  </div>
 </vaadin-horizontal-layout>
-<vaadin-grid-pro id="grid" column-reordering-allowed=""></vaadin-grid-pro>
+<div id="divGrid"  style="height:97%;"></div>
+
 `;
   }
 
@@ -43,7 +44,7 @@ class DynamicGrid extends PolymerElement {
   _hideQuery() {
 //var elmnt = this.parentElement.parentElement.parentElement.querySelector("#divQuery");// <- How do i get this component that is in Js that contains this
 //var elmnt = this.getRootNode().querySelector("#divQuery");
-//var vheight = elmnt.offsetHeight;
+//var vheight = elmnt.offsetHeight;  <vaadin-grid-pro id="grid" column-reordering-allowed=""></vaadin-grid-pro>
 alert(" H -> " +vheight);
 var c;
 c = 'calc(100% - 30px)';

@@ -57,6 +57,7 @@ import coop.intergal.tys.ui.util.css.Overflow;
 import coop.intergal.tys.ui.views.Home;
 import coop.intergal.ui.security.ldap.LdapClient;
 import coop.intergal.ui.util.UtilSessionData;
+import coop.intergal.ui.views.DynamicGridDisplay;
 import coop.intergal.ui.views.DynamicQryGrid;
 import coop.intergal.ui.views.DynamicQryGridDisplay;
 import coop.intergal.ui.views.DynamicTreeDisplay;
@@ -141,14 +142,14 @@ public class MainLayout extends FlexBoxLayout
     			}
     		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_QG).isPresent() == false)
 			{
-				configuration.setRoute(AppConst.PAGE_DYNAMIC_QG, DynamicQryGrid.class,
+				configuration.setRoute(AppConst.PAGE_DYNAMIC_QG, DynamicGridDisplay.class,
 						this.getClass());	
 		//				Class.forName(AppConst.MAIN_LAYOUT_CLASS).asSubclass(RouterLayout.class));
 			// 			MainLayout.class);
 			}
-    		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_TREE).isPresent() == false)
+    		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_GD).isPresent() == false)
 			{
-				configuration.setRoute(AppConst.PAGE_DYNAMIC_TREE, DynamicTreeDisplay.class,
+				configuration.setRoute(AppConst.PAGE_DYNAMIC_GD, DynamicGridDisplay.class,
 						this.getClass());	
 		//				Class.forName(AppConst.MAIN_LAYOUT_CLASS).asSubclass(RouterLayout.class));
 			// 			MainLayout.class);
@@ -159,8 +160,8 @@ public class MainLayout extends FlexBoxLayout
     			configuration.setRoute(AppConst.PAGE_DYNAMIC_QGD, DynamicQryGridDisplay.class);
     		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_QG).isPresent() == false)
     			configuration.setRoute(AppConst.PAGE_DYNAMIC_QG, DynamicQryGrid.class);
-      		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_TREE).isPresent() == false)
-    			configuration.setRoute(AppConst.PAGE_DYNAMIC_TREE, DynamicTreeDisplay.class);
+      		if (configuration.getRoute(AppConst.PAGE_DYNAMIC_GD).isPresent() == false)
+    			configuration.setRoute(AppConst.PAGE_DYNAMIC_GD, DynamicGridDisplay.class);
  
     	}
           addClassName(CLASS_NAME);
@@ -217,6 +218,7 @@ public class MainLayout extends FlexBoxLayout
 				String params = eachRow.get("params").asText();
 				String queryFormClassName = eachRow.get("queryFormClassName").asText();
 				String displayFormClassName = eachRow.get("displayFormClassName").asText();
+				String gridClassName = eachRow.get("gridClassName").asText();
 				String idMenu00 = eachRow.get("idMenu").asText();
 				String esTab = eachRow.get("esTab").asText();
 				int countSubMenus= eachRow.get("countSubmenus").asInt();
@@ -230,6 +232,7 @@ public class MainLayout extends FlexBoxLayout
 					parameters0.put("params", Collections.singletonList(params));
 					parameters0.put("queryFormClassName" , Collections.singletonList(queryFormClassName));
 					parameters0.put("displayFormClassName" , Collections.singletonList(displayFormClassName));
+					parameters0.put("gridClassName" , Collections.singletonList(gridClassName));
 					
 					parameters0.put("filter",  Collections.singletonList("isFKidMenuEEQQ"+idMenu00));  // ("&filter=isFKidMenuEEQQ"oinly when calls to idMenu @@ TODO apply filter is exist to all options
  
@@ -252,6 +255,8 @@ public class MainLayout extends FlexBoxLayout
 							String params1 = eachRow1.get("params").asText();
 							String queryFormClassName1 = eachRow1.get("queryFormClassName").asText();
 							String displayFormClassName1 = eachRow1.get("displayFormClassName").asText();
+							String gridClassName1 = eachRow1.get("gridClassName").asText();
+							
 
 							int countSubMenus1= eachRow1.get("countSubmenus").asInt();
 							if (countSubMenus1 > 0)
@@ -267,6 +272,7 @@ public class MainLayout extends FlexBoxLayout
 										String params2 = eachRow2.get("params").asText();
 										String queryFormClassName2 = eachRow2.get("queryFormClassName").asText();
 										String displayFormClassName2 = eachRow2.get("displayFormClassName").asText();
+										String gridClassName2 = eachRow2.get("gridClassName").asText();
 										
 										int countSubMenus2= eachRow2.get("countSubmenus").asInt();
 										if (countSubMenus2 > 0)
@@ -281,6 +287,7 @@ public class MainLayout extends FlexBoxLayout
 													String params3 = eachRow3.get("params").asText();
 													String queryFormClassName3 = eachRow3.get("queryFormClassName").asText();
 													String displayFormClassName3 = eachRow3.get("displayFormClassName").asText();
+													String gridClassName3 = eachRow3.get("gridClassName").asText();
 													
 													int countSubMenus3= eachRow3.get("countSubmenus").asInt();
 													if (countSubMenus3 > 0)
@@ -296,6 +303,7 @@ public class MainLayout extends FlexBoxLayout
 																String params4 = eachRow4.get("params").asText();
 																String queryFormClassName4 = eachRow4.get("queryFormClassName").asText();
 																String displayFormClassName4 = eachRow4.get("displayFormClassName").asText();
+																String gridClassName4 = eachRow4.get("gridClassName").asText();
 																
 																int countSubMenus4= eachRow3.get("countSubmenus").asInt();
 																if (countSubMenus4 > 0)
@@ -316,6 +324,7 @@ public class MainLayout extends FlexBoxLayout
 																	parameters.put("params", Collections.singletonList(params4));
 																	parameters.put("queryFormClassName" , Collections.singletonList(queryFormClassName4));
 																	parameters.put("displayFormClassName" , Collections.singletonList(displayFormClassName4));
+																	parameters.put("gridClassName" , Collections.singletonList(gridClassName4));
 
 																	
 																	if (cache != null)
@@ -338,6 +347,7 @@ public class MainLayout extends FlexBoxLayout
 														parameters.put("params", Collections.singletonList(params3));
 														parameters.put("queryFormClassName" , Collections.singletonList(queryFormClassName3));
 														parameters.put("displayFormClassName" , Collections.singletonList(displayFormClassName3));
+														parameters.put("gridClassName" , Collections.singletonList(gridClassName3));
 
 														if (cache != null)
 															parameters.put("cache", Collections.singletonList(cache));
@@ -358,6 +368,7 @@ public class MainLayout extends FlexBoxLayout
 											parameters.put("params", Collections.singletonList(params2));
 											parameters.put("queryFormClassName" , Collections.singletonList(queryFormClassName2));
 											parameters.put("displayFormClassName" , Collections.singletonList(displayFormClassName2));
+											parameters.put("gridClassName" , Collections.singletonList(gridClassName2));
 
 											if (cache != null)
 												parameters.put("cache", Collections.singletonList(cache));
@@ -368,12 +379,13 @@ public class MainLayout extends FlexBoxLayout
 							}
 							else
 							{
-			Map<String,List<String>> parameters = new HashMap<>();
+								Map<String,List<String>> parameters = new HashMap<>();
 								parameters.put("resourceName", Collections.singletonList(resource1));
 								parameters.put("title", Collections.singletonList(optionName1));
 								parameters.put("params", Collections.singletonList(params1));
 								parameters.put("queryFormClassName" , Collections.singletonList(queryFormClassName1));
 								parameters.put("displayFormClassName" , Collections.singletonList(displayFormClassName1));
+								parameters.put("gridClassName" , Collections.singletonList(gridClassName1));
 
 								if (cache != null)
 									parameters.put("cache", Collections.singletonList(cache));
@@ -391,6 +403,7 @@ public class MainLayout extends FlexBoxLayout
 					parameters.put("params", Collections.singletonList(params));
 					parameters.put("queryFormClassName" , Collections.singletonList(queryFormClassName));
 					parameters.put("displayFormClassName" , Collections.singletonList(displayFormClassName));
+					parameters.put("gridClassName" , Collections.singletonList(gridClassName));
 
 					if (cache != null)
 						parameters.put("cache", Collections.singletonList(cache));
@@ -412,30 +425,30 @@ public class MainLayout extends FlexBoxLayout
 //        menu.addNaviItem(personnel, "Managers", Managers.class);
     }
 
-	private void initNaviItemsOld() {
-        NaviMenu menu = naviDrawer.getMenu();
-        menu.removeAll();
-        Map<String,List<String>> parameters = new HashMap<>();
-		parameters.put("resourceName", Collections.singletonList("CR-FormTemplate"));
-		parameters.put("title", Collections.singletonList("Compras y Ventas"));
-		parameters.put("queryFormClassName", Collections.singletonList("dev.lac.FormTemplateQuery"));
-		parameters.put("displayFormClassName", Collections.singletonList("dev.lac.FormTemplateForm"));
-		parameters.put("apiname", Collections.singletonList(apiname));
-		parameters.put("filter",  Collections.singletonList("&filter=isFKidMenuEEQQ1"));
-//		parameters.put("inlinelimit",  Collections.singletonList("10240")); // to bring big (100k)text string in result
-		menu.addNaviItem(VaadinIcon.ASTERISK, "Compras y Ventas", SubMenu.class, parameters); 
-        parameters = new HashMap<>();
-		parameters.put("resourceName", Collections.singletonList("CR-menu"));
-		parameters.put("title", Collections.singletonList("Menu"));
-		parameters.put("queryFormClassName", Collections.singletonList("dev.lac.MenuQuery"));
-		parameters.put("displayFormClassName", Collections.singletonList("dev.lac.MenuForm"));
-		parameters.put("apiname", Collections.singletonList(apiname));
-
-		menu.addNaviItem(VaadinIcon.ASTERISK, "Menus", DynamicTreeDisplay.class, parameters); 
-
-//		menu.addNaviItem(VaadinIcon.ASTERISK, "Plantillas formularios", FormTemplateQuery.class, parameters); 
-		
-     }
+//	private void initNaviItemsOld() {
+//        NaviMenu menu = naviDrawer.getMenu();
+//        menu.removeAll();
+//        Map<String,List<String>> parameters = new HashMap<>();
+//		parameters.put("resourceName", Collections.singletonList("CR-FormTemplate"));
+//		parameters.put("title", Collections.singletonList("Compras y Ventas"));
+//		parameters.put("queryFormClassName", Collections.singletonList("dev.lac.FormTemplateQuery"));
+//		parameters.put("displayFormClassName", Collections.singletonList("dev.lac.FormTemplateForm"));
+//		parameters.put("apiname", Collections.singletonList(apiname));
+//		parameters.put("filter",  Collections.singletonList("&filter=isFKidMenuEEQQ1"));
+////		parameters.put("inlinelimit",  Collections.singletonList("10240")); // to bring big (100k)text string in result
+//		menu.addNaviItem(VaadinIcon.ASTERISK, "Compras y Ventas", SubMenu.class, parameters); 
+//        parameters = new HashMap<>();
+//		parameters.put("resourceName", Collections.singletonList("CR-menu"));
+//		parameters.put("title", Collections.singletonList("Menu"));
+//		parameters.put("queryFormClassName", Collections.singletonList("dev.lac.MenuQuery"));
+//		parameters.put("displayFormClassName", Collections.singletonList("dev.lac.MenuForm"));
+//		parameters.put("apiname", Collections.singletonList(apiname));
+//
+//		menu.addNaviItem(VaadinIcon.ASTERISK, "Menus", DynamicTreeDisplay.class, parameters); 
+//
+////		menu.addNaviItem(VaadinIcon.ASTERISK, "Plantillas formularios", FormTemplateQuery.class, parameters); 
+//		
+//     }
 
 //    private Object onCLickOptionMenu(String resource, String title) {
 //    		ComponentUtil.setData(UI.getCurrent(), "resource", resource);

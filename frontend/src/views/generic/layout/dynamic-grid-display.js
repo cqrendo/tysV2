@@ -19,14 +19,15 @@ class DynamicGridDisplay extends ThemableMixin(PolymerElement) {
 /*	width: 100%; */
 /* 		 display: flex;  */
 /*          flex-direction: column;  */
-/*          height: 100%; */
+        height: 100%; 
 	 
 }
 </style> 
+ <div style="height: 100%;">
      <vaadin-split-layout id="gridSplitDisplay" style="height: 99%;" > 
       	<dynamic-grid id="grid"></dynamic-grid> 
       	<div id="divDisplayAndSubgrids"> 
-       		<vaadin-split-layout id="displaySplitSubGrid" orientation="vertical" > 
+       		<vaadin-split-layout id="displaySplitSubGrid" orientation="vertical" style="height: 100%;"> 
         	<div> 
     			<form-buttons-bar id="buttons"></form-buttons-bar> 
     		<div id="divDisplay"></div> 
@@ -35,6 +36,7 @@ class DynamicGridDisplay extends ThemableMixin(PolymerElement) {
       		</vaadin-split-layout> 
       	</div> 
      </vaadin-split-layout> 
+	</div> 
 `;
   }
 

@@ -157,8 +157,8 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 			layoutPage = AppConst.PAGE_DYNAMIC_QGD;
 		else if (layoutPage.equals("PAGE_DYNAMIC_QG"))
 			layoutPage = AppConst.PAGE_DYNAMIC_QG;
-		else if (layoutPage.equals("PAGE_DYNAMIC_TREE"))
-			layoutPage = AppConst.PAGE_DYNAMIC_TREE;
+		else if (layoutPage.equals("PAGE_DYNAMIC_GD"))
+			layoutPage = AppConst.PAGE_DYNAMIC_GD;
 		else
 			DataService.get().showError("valor invalido para layoutPage, debe de ser (PAGE_DYNAMIC_QG o PAGE_DYNAMIC_QGD o PAGE_DYNAMIC_TREE");
 		try {
@@ -170,10 +170,11 @@ public class SubSubmenu extends PolymerTemplate<TemplateModel> implements Before
 		String queryFormClassName = rowSubMenu.get("queryFormClassName").asText();
 		String displayFormClassName = rowSubMenu.get("displayFormClassName").asText();
 		String addFormClassName = rowSubMenu.get("addFormClassName").asText();
+		String gridClassName = rowSubMenu.get("gridClassName").asText();
 		String idMenu = rowSubMenu.get("idMenu").asText();
 		
 //		titleOption = titleOption.replace(" ", "%20");
-		UI.getCurrent().getPage().executeJs("window.open('"+urlBase+"?resourceName="+resource+"&queryFormClassName="+queryFormClassName+"&displayFormClassName="+displayFormClassName+"&addFormClassName="+addFormClassName+"&title="+titleOption+"&idMenu="+idMenu+"', '_blank');") ;
+		UI.getCurrent().getPage().executeJs("window.open('"+urlBase+"?resourceName="+resource+"&queryFormClassName="+queryFormClassName+"&displayFormClassName="+displayFormClassName+"&addFormClassName="+addFormClassName+"&gridClassName="+gridClassName+"&title="+titleOption+"&idMenu="+idMenu+"', '_blank');") ;
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
