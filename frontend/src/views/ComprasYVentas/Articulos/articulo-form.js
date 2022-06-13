@@ -279,8 +279,8 @@ fieldset {
       <vaadin-text-field id="col80" label="Contable" class="small"></vaadin-text-field>
       <vaadin-text-field id="col98" label="Reciclaje" class="small"></vaadin-text-field>
       <br>
-      <vaadin-text-field id="col82" label="Mod Trf Man" class="small"></vaadin-text-field>
-      <vaadin-text-field id="col103" label="Mod Trf Auto" class="small"></vaadin-text-field>
+      <vaadin-date-picker id="col82" label="Mod Trf Man" class="small"></vaadin-date-picker>
+      <vaadin-date-picker id="col103" label="Mod Trf Auto" class="small"></vaadin-date-picker>
      </div>
     </fieldset>
     <fieldset style="min-width:445px;width:445px;">
@@ -525,9 +525,6 @@ fieldset {
    </div>
   </page>
  </iron-pages>
-</div>
-<div id="extButtons">
- <vaadin-button aria-label="Pasar a pedido" id="b1"></vaadin-button>
 </div>
 <vaadin-dialog id="dialogForPick"></vaadin-dialog>
 `;

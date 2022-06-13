@@ -179,7 +179,8 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	@Id("col81")
 	private TextField col81;
 	@Id("col82")
-	private TextField col82;
+	private EsDatePicker col82;
+	
 	@Id("col83")
 	private TextField col83;
 
@@ -221,8 +222,13 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 	private TextField col101;
 	@Id("col102")
 	private Checkbox col102;
+	
+	@Id("col103")
+	private EsDatePicker col103;
+	
 	@Id("col104")
 	private TextField col104;
+	
 	@Id("col105")
 	private IntegerField col105;
 	@Id("col106")
@@ -324,8 +330,8 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 		}
 
 		private DynamicViewGrid dVGrid;
-		@Id("b1")
-		private Button b1;
+//		@Id("b1")
+//		private Button b1;
 //		@Id("tbTab1")
 //		private Tabs tbTab1;
 		public DynamicViewGrid getDVGrid() {
@@ -361,9 +367,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgEvol.setResourceName("CR-ARTICULOS.List-CONTROLSTOCKDIARIO__MJ");
 			dgEvol.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgEvol.getElement().getStyle().set("display", "block");
-			dgEvol.setButtonsRowVisible(false);
-			dgEvol.getGrid().setAllRowsVisible(true);
+			dgEvol.setButtonsRowVisible(false);			
 			dgEvol.setupGrid(true,true);
+			dgEvol.getGrid().setAllRowsVisible(true);
 			keepSelectedPage("4");//tbTab1.getSelectedIndex();
 	    }
 		@EventHandler
@@ -377,8 +383,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgAlter.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgAlter.getElement().getStyle().set("display", "block");
 			dgAlter.setButtonsRowVisible(false);
-			dgAlter.getGrid().setAllRowsVisible(true);
+
 			dgAlter.setupGrid(true,true);
+			dgAlter.getGrid().setAllRowsVisible(true);
 			keepSelectedPage("6");//tbTab1.getSelectedIndex();
 	    }
 
@@ -391,15 +398,17 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgTarif1.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgTarif1.getElement().getStyle().set("display", "block");
 			dgTarif1.setButtonsRowVisible(false);
-			dgTarif1.getGrid().setAllRowsVisible(true);
 			dgTarif1.setupGrid(true,true);
+			dgTarif1.getGrid().setAllRowsVisible(true);
+			
 			
 			dgTarif2.setResourceName("CR-ARTICULOS.List-TARIFAOFERTASLIN__TARIFACLIENTE_SF");
 			dgTarif2.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgTarif2.getElement().getStyle().set("display", "block");
 			dgTarif2.setButtonsRowVisible(false);
-			dgTarif2.getGrid().setAllRowsVisible(true);
+			
 			dgTarif2.setupGrid(true,true);
+			dgTarif2.getGrid().setAllRowsVisible(true);
 			keepSelectedPage("7");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
@@ -409,15 +418,16 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgOferta1.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgOferta1.getElement().getStyle().set("display", "block");
 			dgOferta1.setButtonsRowVisible(false);
-			dgOferta1.getGrid().setAllRowsVisible(true);
-			dgOferta1.setupGrid(true,true);
 			
+			dgOferta1.setupGrid(true,true);
+			dgOferta1.getGrid().setAllRowsVisible(true);
 			dgOferta2.setResourceName("CR-ARTICULOS.List-TARIFAVENDEDORLIN");
 			dgOferta2.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgOferta2.getElement().getStyle().set("display", "block");
 			dgOferta2.setButtonsRowVisible(false);
-			dgOferta2.getGrid().setAllRowsVisible(true);
+			
 			dgOferta2.setupGrid(true,true);
+			dgOferta2.getGrid().setAllRowsVisible(true);
 			keepSelectedPage("8");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
@@ -427,8 +437,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgOfProv.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgOfProv.getElement().getStyle().set("display", "block");
 			dgOfProv.setButtonsRowVisible(false);
-			dgOfProv.getGrid().setAllRowsVisible(true);
+			
 			dgOfProv.setupGrid(true,true);
+			dgOfProv.getGrid().setAllRowsVisible(true);
 			keepSelectedPage("9");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
@@ -438,8 +449,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgConsProv.setFilter("CLAVEARTICULO="+bean.getCol0());
 			dgConsProv.getElement().getStyle().set("display", "block");
 			dgConsProv.setButtonsRowVisible(false);
-			dgConsProv.getGrid().setAllRowsVisible(true);
+			
 			dgConsProv.setupGrid(true,true);
+			dgConsProv.getGrid().setAllRowsVisible(true);
 			keepSelectedPage("10");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
@@ -449,8 +461,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgColec.setFilter("ARTICULO="+bean.getCol0());
 			dgColec.getElement().getStyle().set("display", "block");
 			dgColec.setButtonsRowVisible(false);
-			dgColec.getGrid().setAllRowsVisible(true);
+		
 			dgColec.setupGrid(true,true);
+			dgColec.getGrid().setAllRowsVisible(true);
 			keepSelectedPage("11");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
@@ -460,15 +473,17 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgTrans1.setFilter("ARTICULOORIGEN="+bean.getCol0());
 			dgTrans1.getElement().getStyle().set("display", "block");
 			dgTrans1.setButtonsRowVisible(false);
-			dgTrans1.getGrid().setAllRowsVisible(true);
+			
 			dgTrans1.setupGrid(true,true);
+			dgTrans1.getGrid().setAllRowsVisible(true);
 			
 			dgTrans2.setResourceName("CR-ARTICULOS.List-ARTICULOSTRANSFORMADOS__TRANSF");
 			dgTrans2.setFilter("ARTICULOTRANSFORMADO="+bean.getCol0());
 			dgTrans2.getElement().getStyle().set("display", "block");
 			dgTrans2.setButtonsRowVisible(false);
-			dgTrans2.getGrid().setAllRowsVisible(true);
+			
 			dgTrans2.setupGrid(true,true);
+			dgTrans2.getGrid().setAllRowsVisible(true);
 			keepSelectedPage("12");//tbTab1.getSelectedIndex();
 	    }
 	   @EventHandler
@@ -478,8 +493,9 @@ public class ArticuloForm extends GenericDynamicForm implements BeforeEnterObser
 			dgFicha.setFilter("CLAVE_ARTICULO="+bean.getCol0());
 			dgFicha.getElement().getStyle().set("display", "block");
 			dgFicha.setButtonsRowVisible(false);
-			dgFicha.getGrid().setAllRowsVisible(true);
+			
 			dgFicha.setupGrid(true,true);
+			dgFicha.getGrid().setAllRowsVisible(true);
 			keepSelectedPage("13");//tbTab1.getSelectedIndex();
 	    }
 	   
